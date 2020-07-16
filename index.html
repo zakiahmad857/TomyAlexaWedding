@@ -1,57 +1,145 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Tomy & Lexa</title>
 
-    <!-- Bootstrap Tour-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
+<head>
+  <meta charset="utf-8">
+  <title>Tomy & Lexa</title>
 
-    <!-- CSS Stylesheet  -->
-    <link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
 
-  </head>
-  <body>
+  <!-- CSS Stylesheet  -->
+  <link rel="stylesheet" href="css/style.css">
 
+  <!-- Parallax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
-    <div class="container-fluid">
-      <div class="information">
-        <img id="info" src="images/information.svg" alt="">
-      </div>
-      <div id="scene">
-        <div class="layer" data-depth="-0.5">
-          <div id="idBulan" class="bulan">
-            <img src="images/bulan.png" alt="">
-          </div>
-        </div>
-        <div class="layer astronaut" data-depth="-1">
-          <div id="idAstronaut" class="">
-            <img src="images/astronaut.png" alt="">
-          </div>
-        </div>
-        <div class="layer planet" data-depth="0.5">
-          <div id="idPlanet" class="">
-            <img src="images/planet.png" alt="">
-          </div>
-        </div>
-        <div class="layer rocket" data-depth="-1">
-          <div id="idRocket" class="">
-            <img src="images/rocket.png" alt="">
-          </div>
+</head>
+
+<body>
+
+  <!-- WELCOMING MODAL -->
+  <div id="welcomeModal" class="modal">
+
+    <!-- Welcoming Modal Content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h4 class="lang" key="welcome">Selamat Datang</h4>
+      <h5>Syifa Andini Muhammad</h5>
+      <p class="lang lang-head" key="language">Pilih Bahasa</p>
+
+      <div id="checkbox-container" class="lang-wrapper">
+        <div class="mx-auto">
+          <label class="option_item">
+            <input type="checkbox" id="checkbox-ind" class="checkbox">
+            <div class="option_inner">
+              <div class="icon"><img src="images/lang/indonesia.png" class="flag" alt="indonesia"></div>
+            </div>
+          </label>
+          <label class="option_item">
+            <input type="checkbox" id="checkbox-eng" class="checkbox">
+            <div class="option_inner">
+              <div class="icon"><img src="images/lang/united-kingdom.png" class="flag" alt="indonesia"></div>
+            </div>
+          </label>
         </div>
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
+  </div>
 
-    <!-- Parallax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <!-- WEB CONTENT -->
+  <div class="container-fluid">
 
-    <!-- Js -->
-    <script type="text/javascript" src="parallax.js"></script>
-    <script type="text/javascript" src="tour.js"></script>
-    <script type="text/javascript" src="language.js"></script>
+    <!-- Header -->
+    <div class="header">
 
-  </body>
+      <div id="checkbox-container" class="toggle header-icon">
+        <input type="checkbox" class="checkbox" id="toggleLang" />
+        <label class="label" for="toggleLang">
+          <img class="flag-circle uk" src="images/lang/uk-circle.png" alt="">
+          <img class="flag-circle ind" src="images/lang/ind-circle.png" alt="">
+          <div class="ball"></div>
+        </label>
+      </div>
+
+      <!-- FAQ -->
+
+      <!-- Info web tour -->
+      <div id="info" class="information">
+        <img class="header-icon" src="images/information.svg" alt="">
+      </div>
+
+      <!-- Logout -->
+      <div class="logout">
+        <img class="header-icon" src="images/exit.svg" alt="">
+      </div>
+    </div>
+
+    <!-- Scene Parallax -->
+    <div id="scene">
+      <div class="layer" data-depth="-0.5">
+        <div id="idBulan" class="bulan">
+          <img src="images/bulan.png" alt="">
+        </div>
+      </div>
+      <div class="layer astronaut" data-depth="-1">
+        <div id="idAstronaut" class="">
+          <img src="images/astronaut.png" alt="">
+        </div>
+      </div>
+      <div class="layer planet" data-depth="0.5">
+        <div id="idPlanet" class="">
+          <img src="images/planet.png" alt="">
+        </div>
+      </div>
+      <div class="layer rocket" data-depth="-1">
+        <div id="idRocket" class="">
+          <img src="images/rocket.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <img id="angpao" src="images/envelope.svg" alt="">
+  </div>
+
+  <!-- ANGPAO MODAL -->
+  <div id="angpaoModal" class="modal">
+
+    <!-- Angpao Modal Content -->
+    <div class="modal-content modal-angpao">
+      <span class="close">&times;</span>
+      <h5 class="lang" key="gift">Kirim hadiah dengan mudah :) wkwk</h5>
+      <div class="qrcode-list">
+        <div class="qrcode ovo">
+          <p>Via OVO</p>
+          <img src="images/angpao/ovo.png" alt="ovo">
+        </div>
+        <div class="qrcode">
+          <p class="lang" key="bank">Via Transfer Bank</p>
+          <img class="bca" src="images/angpao/bca.png" alt="ovo">
+          <p><span class="lang" key="norek">No rekening </span>123456789</p>
+          <p>Tomy Herseta</p>
+        </div>
+        <div class="qrcode gopay">
+          <p>Via Gopay</p>
+          <img src="images/angpao/gopay.png" alt="ovo">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
+
+  <!-- js -->
+  <script type="text/javascript" src="index.js"></script>
+
+</body>
+
 </html>
