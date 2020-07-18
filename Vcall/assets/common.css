@@ -9137,11 +9137,16 @@ html, body {
 .agora-theme .video-view {
   position: relative; }
 
-.agora-theme .video-view,
-.agora-theme .video-placeholder,
-.agora-theme #local_stream, .agora-theme #local_video_info {
-  width: 480px;
-  height: 320px; }
+.video-view,
+.video-placeholder{
+  height: 200px;
+  width: 200px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  -webkit-mask-box-image: url(../images/circle.svg);
+ }
 
 .agora-theme .video-profile {
   position: absolute;
