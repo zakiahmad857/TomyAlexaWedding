@@ -73,18 +73,19 @@ $(document).ready(function(){
   // When the user clicks on (x), close the modal
     $("span").click(function(){
       $("#angpaoModal").css("display", "none");
-      $("#welcomeModal").css("display", "none");
     });
 
     $("#checkbox-ind").click(function(){
       $("#welcomeModal").delay(1000).queue(function(next){
         $("#welcomeModal").css("display", "none")
+        tour.init();
       });
     });
 
     $("#checkbox-eng").click(function(){
       $("#welcomeModal").delay(1000).queue(function(next){
         $("#welcomeModal").css("display", "none")
+        tour.init();
       });
     });
 
@@ -93,6 +94,13 @@ $(document).ready(function(){
       if ((e.target.id == "angpaoModal")||(e.target.id == "welcomeModal")) {
         $("#angpaoModal").css("display", "none");
         $("#welcomeModal").css("display", "none");
+      }
+    });
+
+    $(document).keypress(function(e){
+      console.log(e);
+      if (e.key == "Escape") {
+        $("#angpaoModal").css("display", "none");
       }
     });
 
@@ -159,15 +167,10 @@ $(document).ready(function(){
   });
 
 
-  // tour.init();
-  // tour.start();
   $("#info").click(function(){
     tour.restart();
   });
 
-  $("#idPlanet").click(function(){
-    console.log("masuk");
-  });
 });
 
 // lANGUANGE FUNCTIONS
