@@ -412,7 +412,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-        if (id == 0000){
+        if (id == 8888){
           $("<div/>", {
             id: "remote_video_panel_" + id,
             class: "video-view2",
@@ -432,13 +432,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-        else {
-          $("<div/>", {
-            id: "remote_video_panel_" + id,
-            class: "video-view",
-          }).appendTo("#video")
 
-        }
 
       }
     }
@@ -685,7 +679,7 @@
             else if(params2["uid"] == 7777){
               rtc.localStream.play("local_stream_7")
             }
-            else if(params2["uid"] == 0000){
+            else if(params2["uid"] == 8888){
               rtc.localStream.play("local_stream_0")
             }
 
