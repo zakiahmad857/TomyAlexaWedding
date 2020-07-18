@@ -76,6 +76,21 @@ body {
   height: 100vh;
 }
 
+.vidPosition{
+  margin: 0;
+  padding: 0;
+}
+
+#local_stream{
+  height: 200px;
+  width: 200px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  -webkit-mask-box-image: url(../images/circle.svg);
+}
+
 .dot {
   height: 200px;
   width: 200px;
@@ -93,6 +108,8 @@ body {
 .dot2 {
   bottom: 20%;
   left: 2%;
+  position: absolute;
+  z-index: 10 !important;
 }
 
 .dot3 {
