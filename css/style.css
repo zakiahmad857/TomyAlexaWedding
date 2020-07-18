@@ -201,6 +201,10 @@ body{
   transform: translateY(50%) translateX(20%);
 }
 
+.layer {
+   pointer-events: auto;
+}
+
 /* Angpao */
 #angpao{
   display: inline;

@@ -164,6 +164,10 @@ $(document).ready(function(){
   $("#info").click(function(){
     tour.restart();
   });
+
+  $("#idPlanet").click(function(){
+    console.log("masuk");
+  });
 });
 
 // lANGUANGE FUNCTIONS
