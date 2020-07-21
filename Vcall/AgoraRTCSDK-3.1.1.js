@@ -10441,7 +10441,7 @@
                     o.default.warning("[".concat(t.streamId, "] can't get audioLevel beacuse no stream exist"))
             }
             ,
-            t.setVideoProfile("720p_1"),
+            t.setVideoProfile("360p_10"),
             t._switchVideoDevice = function(e, n, i) {
                 if (e === t.cameraId)
                     return n && n();
