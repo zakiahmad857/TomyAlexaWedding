@@ -8,26 +8,36 @@ var arrLang = {
     // welcoming modal
     'welcome': 'Welcome',
     'language': 'Choose Language',
-    // welcoming modal 2
-    'welcome-desc': 'Video Call Access',
-    'welcome-desc-2': 'We will give you the video call access in',
-    'welcome-desc-3': 'The video call access will show up automatically when the countdown is done.',
-    'welcome-desc-4': 'While waiting, let us show you around the "Reception Venue"',
+    // welcoming modal - early bird
+    'earlyBird_1': 'Video Call Access',
+    'earlyBird_2': 'We will give you the video call access in',
+    'earlyBird_3': 'The video call access will show up automatically when the countdown is done.',
+    'earlyBird_4': 'While waiting, let us show you around the "Reception Venue"',
+    // welcoming modal - jam Karet
+    'sorry': 'Whoops you’re late, we’re sorry you’re not able to meet Tomy & Lexa. Here some message from them..',
+    // video call pop-up
+    'vcall_1': '5 Minutes to Meet The Bride & Groom',
+    'vcall_2': 'You will be seated in the waiting room, you can explore the website after the video call',
     // angpao
     'gift': 'Send Gift with Ease :)',
     'bank': 'Via Bank Transfer',
-    'norek': 'Account number'
+    'norek': 'Account number',
   },
 
   'ind': {
     // welcoming modal
     'welcome': 'Selamat Datang',
     'language': 'Pilih Bahasa',
-    // welcoming modal 2
-    'welcome-desc': 'Akses Video Call',
-    'welcome-desc-2': 'Akses video call akan kami berikan dalam waktu',
-    'welcome-desc-3': 'Akses video call akan muncul otomatis ketika hitungan mundur selesai',
-    'welcome-desc-4': 'Sambil menunggu, ayo kita berkeliling venue!',
+    // welcoming modal - early bird
+    'earlyBird_1': 'Akses Video Call',
+    'earlyBird_2': 'Akses video call akan kami berikan dalam waktu',
+    'earlyBird_3': 'Akses video call akan muncul otomatis ketika hitungan mundur selesai',
+    'earlyBird_4': 'Sambil menunggu, ayo kita berkeliling venue!',
+    // welcoming modal - jam Karet
+    'sorry': 'Ups Anda telat, mohon maaf Anda tidak dapat bertemu dengan Tomy & Lexa. Berikut pesan dari Tomy & Lexa..',
+    // video call pop-up
+    'vcall_1': '5 Menit Lagi untuk Bertemu Kedua Mempelai',
+    'vcall_2': 'Anda akan menunggu di ruang tunggu dan dapat kembali mengexplore website setelah video call',
     // angpao
     'gift': 'Kirim hadiah dengan mudah :) wkwk',
     'bank': 'Via Transfer Bank',
@@ -105,12 +115,13 @@ $(document).ready(function() {
 
   // When the user clicks anywhere outside of the modal, close it
   $(window).click(function(e) {
-    if ((e.target.id == "angpaoModal") || (e.target.id == "welcomeModal") || (e.target.id == "earlyBird")) {
+    if ((e.target.id == "angpaoModal") || (e.target.id == "earlyBird")) {
       $("#angpaoModal").css("display", "none");
       $("#earlyBird").css("display", "none");
     }
   });
 
+  // When the user press escape button, close it
   $("body").keydown(function(e) {
     if (e.key == "Escape") {
       $("#angpaoModal").css("display", "none");
@@ -120,12 +131,18 @@ $(document).ready(function() {
   $("body").keydown(function(e) {
     if (e.key == "Escape") {
       $("#earlyBird").css("display", "none");
+      $("#karetModal").css("display", "none");
       tour.init();
     }
   });
 
+  // When the user clicks next button, close it & init web tour
   $("#btn-next").click(function(){
     $("#earlyBird").css("display", "none");
+    tour.init();
+  });
+  $("#btn-next-2").click(function(){
+    $("#karetModal").css("display", "none");
     tour.init();
   });
 

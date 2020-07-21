@@ -1,170 +1,196 @@
-body{
+body {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
 /* Welcoming popup */
-  /* The Modal (background) */
-  .modal {
-    display: none;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-  }
+/* The Modal (background) */
+.modal {
+  display: none;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
-  /* Modal Content/Box */
-  .modal-content {
-    box-sizing: border-box;
-    background-color: #fefefe;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    padding: 20px;
-    text-align: center;
-    border-radius: 3rem;
-  }
+/* Modal Content/Box */
+.modal-content {
+  box-sizing: border-box;
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 20px;
+  text-align: center;
+  border-radius: 3rem;
+}
 
-  .content-welcome{
-    width: 30%;
-    padding-top: 30px;
-  }
+.content-welcome {
+  width: 30%;
+  padding-top: 30px;
+}
 
-  .content-desc{
-    width: 40%;
-    padding: 30px;
-  }
+.content-earlyBird {
+  width: 40%;
+  padding: 30px;
+}
 
-  .content-desc h5{
-    padding: 5px;
-    width: 25%;
-    margin: auto;
-    background-color: lightgrey;
-    border-radius: 1rem;
-  }
+.content-earlyBird h5 {
+  padding: 5px;
+  width: 25%;
+  margin: auto;
+  background-color: lightgrey;
+  border-radius: 1rem;
+}
 
-  .content-desc h6{
-    font-weight: normal;
-    margin: 15px auto;
-  }
+.content-earlyBird h6 {
+  font-weight: normal;
+  margin: 15px auto;
+}
 
-  #btn-next{
-    padding: 5px;
-    width: 25%;
-    margin: auto;
-    background-color: rgba(50, 130, 184, 0.9);
-    border-radius: 1rem;
-    border: none;
-    outline: none;
-  }
+.btn-modal {
+  padding: 5px;
+  width: 25%;
+  margin: auto;
+  background-color: rgba(50, 130, 184, 0.9);
+  border-radius: 1rem;
+  border: none;
+}
 
-  #btn-next:hover{
-    background-color: #3282b8;
+.btn-modal:hover {
+  background-color: #3282b8;
+}
 
-  }
+.btn-modal:active {
+  outline: none;
+}
 
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    text-align: right;
-    font-size: 28px;
-    font-weight: bold;
-    display: block;
-    margin: 5px 15px 0 0;
-  }
+.content-vcall {
+  width: 30%;
+  padding-top: 30px;
+}
 
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+.content-vcall h4 {
+  width: 60%;
+  margin: auto;
+}
 
-  .content-welcome h5{
-    font-weight: normal;
-    border-bottom: 1px solid #000;
-    padding-bottom: 7px;
-    width: 60%;
-    margin: 20px auto;
-  }
+.content-vcall h6 {
+  font-weight: normal;
+  margin: 35px auto;
+  width: 60%;
+}
 
-  .lang-head{
-    margin: 20px;
-  }
+.content-karet {
+  width: 50%;
+  padding: 40px;
+}
 
-  .flag{
-    width: 50%;
-  }
+.content-karet iframe {
+  margin: 30px auto;
+}
 
-  .lang-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    margin-bottom: 10px;
-  }
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  text-align: right;
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+  margin: 5px 15px 0 0;
+}
 
-  .lang-wrapper .option_item {
-    display: block;
-    position: relative;
-    width: 175px;
-  }
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-  .lang-wrapper .option_item .checkbox {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    opacity: 0;
-  }
+.content-welcome h5 {
+  font-weight: normal;
+  border-bottom: 1px solid #000;
+  padding-bottom: 7px;
+  width: 60%;
+  margin: 20px auto;
+}
 
-  .option_item .option_inner {
+.lang-head {
+  margin: 20px;
+}
+
+.flag {
+  width: 50%;
+}
+
+.lang-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.lang-wrapper .option_item {
+  display: block;
+  position: relative;
+  width: 175px;
+}
+
+.lang-wrapper .option_item .checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.option_item .option_inner {
   background: #fff;
   border-radius: 5px;
   cursor: pointer;
   color: #585c68;
   border: 5px solid transparent;
   padding: 10px;
-  }
+}
 
-  .option_item .checkbox:checked ~ .option_inner {
+.option_item .checkbox:checked~.option_inner {
   border-color: #3b5999;
   color: #3b5999;
-  }
+}
 
-  .flag{
-    width: 80%;
-    margin: 0;
-  }
+.flag {
+  width: 80%;
+  margin: 0;
+}
 
-  .mx-auto{
-    display: flex;
-  }
+.mx-auto {
+  display: flex;
+}
 
-  /* WEB TOUR */
-  .popover-title{
-    border: 0;
-    background-color: white;
-  }
+/* WEB TOUR */
+.popover-title {
+  border: 0;
+  background-color: white;
+}
 
-  .popover-content{
-    height: 60px;
-  }
+.popover-content {
+  height: 60px;
+}
 
-  .steps{
-    font-size: 12px;
-  }
+.steps {
+  font-size: 12px;
+}
 
-  .end{
-    margin-left: 10px;
-  }
-
+.end {
+  margin-left: 10px;
+}
 
 /* Homepage */
-.container-fluid{
+.container-fluid {
   margin: 0 !important;
   padding: 0 !important;
   min-width: 100% !important;
@@ -176,9 +202,9 @@ body{
 }
 
 /* Header */
-.header{
+.header {
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   overflow: hidden;
   width: 100%;
   padding: 1.5%;
@@ -187,62 +213,60 @@ body{
 }
 
 /* Header icon */
-.header-icon{
+.header-icon {
   width: 2%;
   margin-left: 2%;
 }
 
-.header-icon:hover{
+.header-icon:hover {
   cursor: pointer;
 }
 
 /* Toggle button */
-.toggle{
+.toggle {
   display: inline;
 }
 
 /* FAQ button */
-
 /* Info button */
-.information{
+.information {
   display: inline;
 }
 
 /* Logout button */
-.logout{
+.logout {
   display: inline;
 }
 
-
 /* Scene Parallax */
-.astronaut{
+.astronaut {
   top: 130% !important;
   left: 20% !important;
   transform: translateY(90%) translateX(50%);
 }
 
-.bulan{
+.bulan {
   display: inline-block;
 }
 
-.rocket{
+.rocket {
   top: 50% !important;
   left: 70% !important;
   transform: translateY(50%) translateX(20%);
 }
 
-.planet{
+.planet {
   top: 30% !important;
   left: 50% !important;
   transform: translateY(50%) translateX(20%);
 }
 
 .layer {
-   pointer-events: auto;
+  pointer-events: auto;
 }
 
 /* Angpao */
-#angpao{
+#angpao {
   display: inline;
   position: absolute;
   bottom: 0;
@@ -251,53 +275,51 @@ body{
   margin: 1%;
 }
 
-#angpao:hover{
+#angpao:hover {
   cursor: pointer;
   bottom: 1%;
 }
 
 /* Popup Angpao */
+/* Modal Content/Box */
+.modal-angpao {
+  width: 800px !important;
+  border-radius: 0 !important;
+  padding: 10px !important;
+  border-collapse: separate !important;
+  border-radius: 3rem !important;
+}
 
-  /* Modal Content/Box */
-  .modal-angpao {
-    width: 800px !important;
-    border-radius: 0 !important;
-    padding: 10px !important;
-    border-collapse: separate !important;
-    border-radius: 3rem !important;
-  }
+#angpaoModal h5 {
+  font-weight: bold;
+  border-bottom: 0;
+  margin: 0 auto;
+}
 
-  #angpaoModal h5{
-    font-weight: bold;
-    border-bottom: 0;
-    margin: 0 auto;
-  }
+.qrcode-list {
+  display: flex;
+  margin: 5% 0;
+}
 
-  .qrcode-list{
-    display: flex;
-    margin: 5% 0;
-  }
+.qrcode {
+  flex: auto;
+}
 
-  .qrcode{
-    flex: auto;
-  }
+.qrcode p {
+  margin-bottom: 0;
+}
 
-  .qrcode p{
-    margin-bottom: 0;
-  }
+.ovo {
+  margin-left: 50px;
+}
 
-  .ovo{
-    margin-left: 50px;
-  }
+.gopay {
+  margin-right: 50px;
+}
 
-  .gopay{
-    margin-right: 50px;
-  }
-
-  .bca{
-    width: 40%;
-  }
-
+.bca {
+  width: 40%;
+}
 
 /* Language toggle */
 /* New toggle */
@@ -317,7 +339,7 @@ body{
   height: 20px;
   width: 40px;
   transform: scale(1.5);
-	top: 14px;
+  top: 14px;
 }
 
 .label .ball {
@@ -336,16 +358,16 @@ body{
   transform: translateX(20px);
 }
 
-.uk{
-	position: absolute;
+.uk {
+  position: absolute;
   top: 2px;
   left: 2px;
   height: 16px;
   width: 16px;
 }
 
-.ind{
-	position: absolute;
+.ind {
+  position: absolute;
   top: 2px;
   right: 2px;
   height: 16px;
