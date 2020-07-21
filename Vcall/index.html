@@ -183,7 +183,7 @@
   <script src="vendor/jquery.min.js"></script>
   <script src="vendor/materialize.min.js"></script>
   <script src="AgoraRTCSDK-3.1.1.js"></script>
-  <script src="processor.js"></script>
+  <!-- <script src="processor.js"></script> -->
   <script type="text/javascript">
     $(document).ready(function() {
       $("#setAgora").css("display", "block");
@@ -608,6 +608,10 @@
       // handle AgoraRTC client event
       handleEvents(rtc)
 
+      // rtc.setVideoProfile = AgoraRTC.setVideoProfile("720p_2");
+
+
+
       // init client
       rtc.client.init(option.appID, function() {
         console.log("init success")
@@ -678,7 +682,7 @@
               rtc.localStream.play("local_stream_7")
             }
             else if(params2["uid"] == 8888){
-              rtc.localStream.play("local_stream_0")
+              rtc.localStream.play("local_stream_0", {fit: "contain"})
             }
 
 
