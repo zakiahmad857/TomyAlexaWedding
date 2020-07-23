@@ -62,13 +62,13 @@ $(document).ready(function() {
     localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
 
     selectLanguage(this);
-
   });
 
   // On page load
   $.each(checkboxValues, function(key, value) {
     $("#toggleLang").prop('checked', value);
     selectLanguage(this);
+    toggleLanguange(value);
   });
 
   var $checkbox = $('input[type=checkbox]');
