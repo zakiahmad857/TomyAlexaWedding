@@ -46,13 +46,9 @@
 
   <div class="pelaminan">
     <!-- Header -->
-    <!-- <div class="container-fluid">
-        <div class="logout">
-          <a href="../index.html"><img class="header-icon" src="../images/exit.svg" alt=""></a>
-
-        </div>
-    </div> -->
-
+    <div class="logout">
+      <a href="../index.html"><img class="header-icon" src="../images/exit.svg" alt=""></a>
+    </div>
 
     <!-- Video -->
     <span class="dot dot1">
@@ -290,7 +286,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-        if (id == 2222){
+        if (id == 2222) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
             class: "video-view",
@@ -310,7 +306,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-        if (id == 3333){
+        if (id == 3333) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
             class: "video-view",
@@ -330,7 +326,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-        if (id == 4444){
+        if (id == 4444) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
             class: "video-view",
@@ -350,7 +346,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-        if (id == 5555){
+        if (id == 5555) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
             class: "video-view",
@@ -370,7 +366,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-        if (id == 6666){
+        if (id == 6666) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
             class: "video-view",
@@ -390,7 +386,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-        if (id == 7777){
+        if (id == 7777) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
             class: "video-view",
@@ -410,7 +406,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-        if (id == 8888){
+        if (id == 8888) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
             class: "video-view2",
@@ -659,30 +655,25 @@
             // play stream with html element id "local_stream"
             var params2 = serializeformData();
             console.log("luar" + params2["uid"]);
-            if(params2["uid"] == 1111){
+            if (params2["uid"] == 1111) {
               console.log("mazuk");
               rtc.localStream.play("local_stream_1")
-            }
-            else if(params2["uid"] == 2222){
+            } else if (params2["uid"] == 2222) {
               rtc.localStream.play("local_stream_2")
-            }
-            else if(params2["uid"] == 3333){
+            } else if (params2["uid"] == 3333) {
               rtc.localStream.play("local_stream_3")
-            }
-            else if(params2["uid"] == 4444){
+            } else if (params2["uid"] == 4444) {
               rtc.localStream.play("local_stream_4")
-            }
-            else if(params2["uid"] == 5555){
+            } else if (params2["uid"] == 5555) {
               rtc.localStream.play("local_stream_5")
-            }
-            else if(params2["uid"] == 6666){
+            } else if (params2["uid"] == 6666) {
               rtc.localStream.play("local_stream_6")
-            }
-            else if(params2["uid"] == 7777){
+            } else if (params2["uid"] == 7777) {
               rtc.localStream.play("local_stream_7")
-            }
-            else if(params2["uid"] == 8888){
-              rtc.localStream.play("local_stream_0", {fit: "cover"})
+            } else if (params2["uid"] == 8888) {
+              rtc.localStream.play("local_stream_0", {
+                fit: "cover"
+              })
             }
 
 

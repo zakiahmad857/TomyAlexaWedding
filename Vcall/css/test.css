@@ -55,34 +55,25 @@ input[type=number] {
 }
 
 /* Header */
-.container-fluid {
-  margin: 0 !important;
-  padding: 0 !important;
-  max-width: 100vw !important;
-  height: 40px !important;
-  overflow: hidden !important;
-}
-
-/* Header icon */
 .header-icon {
-  width: 2%;
+  width: 50%;
   display: inline;
-  padding-top: 1%;
+  padding-top: 20%;
+  color: black;
 }
 
 .logout {
   display: inline;
-  position: relative;
+  position: absolute;
   left: 95%;
+  z-index: 30;
 }
 
 .pelaminan {
-  /* background-image: url(../images/background.jpg); */
-  /* background-attachment: fixed; */
-  /* background-size: cover; */
   overflow: hidden;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .vidPosition {

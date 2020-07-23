@@ -49,45 +49,58 @@ var arrLang = {
 $(document).ready(function() {
 
   // LANGUAGE
-  $(document).on('click', 'input[type="checkbox"]', function() {
-    $('input[type="checkbox"]').not(this).prop('checked', false);
+  $(document).on('click', '#checkbox-container input[type="checkbox"]', function() {
+    $('#checkbox-container input[type="checkbox"]').not(this).prop('checked', false);
   });
 
-  var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues")) || {},
-    $checkboxes = $("#checkbox-container :checkbox");
+  var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues")) || {};
+  var $checkboxes = $("#toggleLang");
 
-  // console.log($checkboxes);
   $checkboxes.on("change", function() {
-    checkboxValues[this.id] = this.checked;
 
+    checkboxValues[this.id] = this.checked;
     localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
 
     selectLanguage(this);
+
   });
 
   // On page load
   $.each(checkboxValues, function(key, value) {
+    $("#toggleLang").prop('checked', value);
     selectLanguage(this);
   });
 
   var $checkbox = $('input[type=checkbox]');
   $checkbox.change(function() {
-
     var checked = $(this).prop('checked');
-
     selectLanguage(this);
   });
+
+  // Welcoming modal once shown per user
+  var welcomeState = localStorage.getItem("welcomeState");
+
+  if(welcomeState != 'shown'){
+
+      $("#welcomeModal").css('display', 'block');
+      localStorage.setItem('welcomeState','shown');
+
+      $("#checkbox-ind").click(function() {
+        checkboxValues["toggleLang"] = false;
+        localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+      });
+
+      $("#checkbox-eng").click(function() {
+        checkboxValues["toggleLang"] = true;
+        localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+      });
+  }
 
 
   $("#toggleLang").on('change', function() {
     var tog = $("#toggleLang").prop('checked');
     toggleLanguange(tog);
-    console.log(tog);
   });
-
-  // MODALS
-  // Welcoming and Angpao Modal
-  $("#welcomeModal").css("display", "block");
 
   // Angpao Modal, when the user clicks on the angpao-button, open the modal
   $("#angpao").click(function() {
@@ -99,7 +112,11 @@ $(document).ready(function() {
     $("#angpaoModal").css("display", "none");
   });
 
+  // Select language @ modal
   $("#checkbox-ind").click(function() {
+    $("#toggleLang").prop('checked', false);
+
+    // close modal, pop user modal
     $("#welcomeModal").delay(1000).queue(function(next) {
       $("#welcomeModal").css("display", "none");
       $("#earlyBird").css("display", "block");
@@ -107,6 +124,8 @@ $(document).ready(function() {
   });
 
   $("#checkbox-eng").click(function() {
+    $("#toggleLang").prop('checked', true);
+
     $("#welcomeModal").delay(1000).queue(function(next) {
       $("#welcomeModal").css("display", "none");
       $("#earlyBird").css("display", "block");
@@ -234,7 +253,6 @@ function selectLanguage(check) {
 }
 
 function toggleLanguange(tog) {
-  console.log("func: " + tog);
   if (tog) {
     var lang = "eng";
     $(".lang").each(function(index, element) {
