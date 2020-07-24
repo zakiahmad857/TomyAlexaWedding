@@ -46,6 +46,50 @@ body {
   border-radius: 1rem;
 }
 
+.content-faq {
+  width: 40%;
+  padding: 20px;
+}
+
+.content-faq h4{
+  margin-bottom: 20px;
+}
+
+.content-faq ol{
+  text-align: left;
+}
+
+.chat{
+  width: 40%;
+  margin: auto;
+  height: 45px;
+  line-height: 45px;
+  background-color: #25d366;
+  border-radius: 2rem;
+  border: none;
+  /* float: left; */
+}
+
+.chat:focus{
+  border: none;
+  outline: none;
+}
+
+.content-faq a{
+  text-decoration: none;
+  color: white;
+}
+
+.content-faq p{
+  display: inline;
+  font-weight: bold;
+}
+
+.fa-whatsapp{
+  vertical-align: middle;
+  margin: auto 10px 5px auto;
+}
+
 .content-earlyBird h6 {
   font-weight: normal;
   margin: 15px auto;
@@ -64,7 +108,7 @@ body {
   background-color: #3282b8;
 }
 
-.btn-modal:active {
+.btn-modal:focus {
   outline: none;
 }
 
@@ -175,14 +219,16 @@ body {
 .popover-title {
   border: 0;
   background-color: white;
+  font-weight: bold;
 }
 
 .popover-content {
   height: 60px;
+  margin-bottom: 20px;
 }
 
-.steps {
-  font-size: 12px;
+.btn:focus{
+  border: none;
 }
 
 .end {

@@ -3,11 +3,16 @@
 
 <head>
   <meta charset="utf-8">
+  <meta property="og:image" content="images/bride.svg">
+
   <title>Tomy & Lexa</title>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="css/style.css">
@@ -18,11 +23,10 @@
 </head>
 
 <body>
-
+  <!-- MODALS -->
   <!-- WELCOMING MODAL -->
   <div id="welcomeModal" class="modal">
 
-    <!-- Welcoming Modal Content -->
     <div class="modal-content content-welcome">
       <h4 class="lang" key="welcome">Selamat Datang</h4>
       <h5>Syifa Andini Muhammad</h5>
@@ -48,12 +52,9 @@
 
   </div>
 
-
-
   <!-- WELCOMING MODAL - EARLY BIRD -->
   <div id="earlyBird" class="modal">
 
-    <!-- Welcoming Modal Early Bird Content -->
     <div class="modal-content content-earlyBird">
       <h4 class="lang" key="earlyBird_1">Video Call Access</h4>
       <h6 class="lang" key="earlyBird_2">We will give you the video call access in</h6>
@@ -69,7 +70,6 @@
   <!-- Video Call Modal -->
   <div id="vcallModal" class="modal">
 
-    <!-- Early Bird Modal Content -->
     <div class="modal-content content-vcall">
       <h4 class="lang" key="vcall_1">5 Minutes to Meet The Bride & Groom</h4>
       <h6 class="lang" key="vcall_2">You will be seated in the waiting room, you can explore the website after the video call</h6>
@@ -81,11 +81,59 @@
   <!-- Jam Karet Modal -->
   <div id="karetModal" class="modal">
 
-    <!-- Jam Karet Modal Content -->
     <div class="modal-content content-karet">
       <h6 class="lang" key="sorry">Whoops you’re late, we’re sorry you’re not able to meet Tomy & Lexa. Here some message from them..</h6>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/1Sj-UdjqlFw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <button type="button" class="btn-modal" id="btn-next-2" name="okay">Next</button>
+    </div>
+
+  </div>
+
+  <!-- FAQ Modal -->
+  <!-- <div id="faqModal" class="modal">
+
+    <div class="modal-content content-faq">
+      <span class="close">&times;</span>
+      <h4 class="lang" key="">Frequently Asked Questions</h4>
+      <ol>
+        <li>Pertanyaan pertama?</li>
+        <li>Pertanyaan kedua?</li>
+      </ol>
+      <h5>Contact Customer Service</h5>
+      <a href="https://wa.me/6281386626186" target="_blank">
+        <button class="chat" type="button" name="button">
+          <i class="fab fa-whatsapp fa-2x"></i>
+          <p>Click to chat</p>
+        </button>
+      </a>
+      <button type="button" class="btn-modal" id="btn-next-2" name="okay">Next</button>
+    </div>
+
+  </div> -->
+
+  <!-- Angpao Modal -->
+  <div id="angpaoModal" class="modal">
+
+    <!-- Angpao Modal Content -->
+    <div class="modal-content modal-angpao">
+      <span class="close">&times;</span>
+      <h5 class="lang" key="gift">Kirim hadiah dengan mudah :) wkwk</h5>
+      <div class="qrcode-list">
+        <div class="qrcode ovo">
+          <p>Via OVO</p>
+          <img src="images/angpao/ovo.png" alt="ovo">
+        </div>
+        <div class="qrcode">
+          <p class="lang" key="bank">Via Transfer Bank</p>
+          <img class="bca" src="images/angpao/bca.png" alt="ovo">
+          <p><span class="lang" key="norek">No rekening </span>123456789</p>
+          <p>Tomy Herseta</p>
+        </div>
+        <div class="qrcode gopay">
+          <p>Via Gopay</p>
+          <img src="images/angpao/gopay.png" alt="ovo">
+        </div>
+      </div>
     </div>
 
   </div>
@@ -105,16 +153,14 @@
         </label>
       </div>
 
-      <!-- FAQ -->
-
       <!-- Info web tour -->
       <div id="info" class="information">
         <img class="header-icon" src="images/information.svg" alt="">
       </div>
 
-      <!-- Logout -->
-      <div class="logout">
-        <img class="header-icon" src="images/exit.svg" alt="">
+      <!-- FAQ -->
+      <div id="faq" class="logout">
+        <img class="header-icon" src="images/faq.svg" alt="">
       </div>
     </div>
 
@@ -144,33 +190,6 @@
 
     <!-- Footer -->
     <img id="angpao" src="images/envelope.svg" alt="">
-  </div>
-
-  <!-- ANGPAO MODAL -->
-  <div id="angpaoModal" class="modal">
-
-    <!-- Angpao Modal Content -->
-    <div class="modal-content modal-angpao">
-      <span class="close">&times;</span>
-      <h5 class="lang" key="gift">Kirim hadiah dengan mudah :) wkwk</h5>
-      <div class="qrcode-list">
-        <div class="qrcode ovo">
-          <p>Via OVO</p>
-          <img src="images/angpao/ovo.png" alt="ovo">
-        </div>
-        <div class="qrcode">
-          <p class="lang" key="bank">Via Transfer Bank</p>
-          <img class="bca" src="images/angpao/bca.png" alt="ovo">
-          <p><span class="lang" key="norek">No rekening </span>123456789</p>
-          <p>Tomy Herseta</p>
-        </div>
-        <div class="qrcode gopay">
-          <p>Via Gopay</p>
-          <img src="images/angpao/gopay.png" alt="ovo">
-        </div>
-      </div>
-    </div>
-
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

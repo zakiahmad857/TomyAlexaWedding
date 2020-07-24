@@ -107,6 +107,11 @@ $(document).ready(function() {
     $("#angpaoModal").css("display", "block");
   });
 
+  $("#faq").click(function() {
+      $("#faqModal").css("display", "block");
+  });
+
+
   // When the user clicks on (x), close the modal
   $("span").click(function() {
     $("#angpaoModal").css("display", "none");
@@ -151,6 +156,7 @@ $(document).ready(function() {
     if (e.key == "Escape") {
       $("#earlyBird").css("display", "none");
       $("#karetModal").css("display", "none");
+      $("#faqModal").css("display", "none");
       tour.init();
     }
   });
@@ -223,7 +229,7 @@ $(document).ready(function() {
     debug: false,
     backdropPadding: 0,
     redirect: true,
-    template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <p class="steps">Step 1 of 7</p> <div class="btn-group"> <button class="btn btn-sm btn-secondary btn-prev" data-role="prev">&lt;</button> <button class="btn btn-sm btn-secondary btn-next" data-role="next">Next &gt;</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm btn-secondary" data-role="end">End tour</button> </div> </div>',
+    template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-secondary btn-prev" data-role="prev">&lt;</button> <button class="btn btn-sm btn-secondary btn-next" data-role="next">Next &gt;</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm btn-secondary" data-role="end">End tour</button> </div> </div>',
   });
 
 
