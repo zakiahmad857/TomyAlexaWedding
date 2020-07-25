@@ -218,7 +218,7 @@ $(document).ready(function() {
         element: "#info",
         title: "Instructions",
         content: "If you want to re-read these instructions again just click this icon",
-        placement: "bottom",
+        placement: "left",
       }
     ],
     container: 'body',
@@ -229,7 +229,7 @@ $(document).ready(function() {
     debug: false,
     backdropPadding: 0,
     redirect: true,
-    template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-secondary btn-prev" data-role="prev">&lt;</button> <button class="btn btn-sm btn-secondary btn-next" data-role="next">Next &gt;</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm btn-secondary" data-role="end">End tour</button> </div> </div>',
+    template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
   });
 
 
