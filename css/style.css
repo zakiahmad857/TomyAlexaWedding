@@ -28,7 +28,7 @@ body {
   }
 }
 
-/* @media screen and (min-width: 1000px) and (max-width: 1370px) and (min-height: 1000px) and (max-width: 1370px){
+@media (min-width: 1000px) and (max-width: 1370px) and (min-height: 1000px) and (max-width: 1370px){
   .desktop-content{
     display: none;
   }
@@ -36,7 +36,7 @@ body {
   .mobile-content{
     display: block;
   }
-} */
+}
 
 /* Welcoming popup */
 /* The Modal (background) */
