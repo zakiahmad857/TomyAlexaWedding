@@ -38,6 +38,14 @@ body {
   }
 }
 
+/* LOGIN */
+.login-form{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
 /* Welcoming popup */
 /* The Modal (background) */
 .modal {
@@ -332,7 +340,7 @@ body {
   padding: 0 !important;
   min-width: 100% !important;
   height: 100vh !important;
-  background-image: url("../images/background.jpg") !important;
+  background-image: url("../images/background2.jpg") !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   overflow: hidden !important;
@@ -402,8 +410,58 @@ body {
   pointer-events: auto;
 }
 
+/* Scene Parallax */
+.live-mc{
+  position: absolute;
+  left: 55%;
+  top: 56%;
+  width: 400px;
+  height: 400px;
+}
+
+.live-mc img{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+}
+
+.live-mc iframe{
+  width: 120px;
+  height: 90px;
+  pointer-events: none;
+  position: absolute;
+  top: 42%;
+  left: 35%;
+  z-index: 0;
+}
+
+.angpao{
+  position: absolute;
+  left: 15%;
+  top: 70%;
+  width: 13%;
+  height: 30%;
+  background: url('../images/png-seq/animatedayam.png');
+  background-size: 220% 220%;
+  background-repeat: no-repeat;
+  background-position: 55% 65%;
+}
+
+.angpao img{
+  display: none;
+}
+
+.angpao:hover{
+  background: url('../images/png-seq/staticayam.png');
+  background-size: 220% 220%;
+  background-repeat: no-repeat;
+  background-position: 55% 65%;
+  cursor: pointer;
+}
+
 /* Angpao */
-#angpao {
+/* #angpao {
   display: inline;
   position: absolute;
   bottom: 0;
@@ -415,7 +473,7 @@ body {
 #angpao:hover {
   cursor: pointer;
   bottom: 1%;
-}
+} */
 
 /* Popup Angpao */
 /* Modal Content/Box */

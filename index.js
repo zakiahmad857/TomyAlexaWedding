@@ -1,6 +1,6 @@
 // PARALLAX
 var scene = document.getElementById("scene");
-var parallax = new Parallax(scene);
+// var parallax = new Parallax(scene);
 
 // LANGUAGE
 var arrLang = {
@@ -46,7 +46,27 @@ var arrLang = {
 };
 
 
+
 $(document).ready(function() {
+
+  // login localStorage
+  var dirPath = dirname(location.href);
+
+  // LOGIN
+  $("#btn-login").click(function(){
+    var inputID = $("#idNumber").val();
+    if(inputID === "haloha123"){
+      var fullPath = dirPath + "/homepage.html";
+      window.location=fullPath;
+      return false;
+    } else {
+      alert("inputID sala");
+    }
+  });
+
+  function dirname(path){
+   return path.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
+  }
 
   // LANGUAGE
   $(document).on('click', '#checkbox-container input[type="checkbox"]', function() {
@@ -170,18 +190,6 @@ $(document).ready(function() {
     $("#karetModal").css("display", "none");
     tour.init();
   });
-
-  // ANGPAO
-  // Angpao Hover
-  $("#angpao").hover(
-    function() {
-      $("#angpao").attr("src", "images/open-envelope.svg");
-    },
-    function() {
-      $("#angpao").attr("src", "images/envelope.svg");
-    }
-  );
-
 
   // WEB TOUR
   var tour = new Tour({
