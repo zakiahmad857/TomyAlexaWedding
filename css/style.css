@@ -344,6 +344,7 @@ body {
   background-attachment: fixed !important;
   background-size: cover !important;
   overflow: hidden !important;
+  z-index: -100;
 }
 
 /* Header */
@@ -413,28 +414,31 @@ body {
 /* Scene Parallax */
 .live-mc{
   position: absolute;
-  left: 60%;
-  top: 70%;
+  left: 59%;
+  top: 50%;
   width: 20%;
-  height: 30%;
+  height: 70%;
+  background: url('../images/png-seq/tvmc.png');
+  background-position: center;
+  background-size: cover;
+  z-index: 10;
 }
 
-.live-mc img{
+.video-mc{
   position: absolute;
-  top: -70%;
-  width: 100%;
-  height: auto;
-  z-index: 1;
+  left: 59%;
+  top: 50%;
+  width: 20%;
+  height: 70%;
 }
 
-.live-mc iframe{
+.video-mc iframe{
   width: 60%;
-  height: 52%;
+  height: 22%;
   pointer-events: none;
   position: absolute;
-  top: 26%;
+  top: 41%;
   left: 20%;
-  z-index: 0;
 }
 
 .angpao{
@@ -444,7 +448,7 @@ body {
   width: 13%;
   height: 30%;
   background: url('../images/png-seq/animatedayam.png');
-  background-size: 220% 220%;
+  background-size: 220% auto;
   background-repeat: no-repeat;
   background-position: 55% 65%;
 }
