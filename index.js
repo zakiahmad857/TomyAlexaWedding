@@ -49,6 +49,114 @@ var arrLang = {
 
 $(document).ready(function() {
 
+  // WEB TOUR
+  var tour = new Tour({
+    steps: [{
+        element: "#gallery",
+        title: "Gallery Foto & Video",
+        content: "Kamu bisa melihat foto dan video Pre-Wed, Lamaran, serta Akad Pernikahan dari Tomy & Lexa ",
+        placement: "right",
+      },
+      {
+        element: "#idPlanet",
+        title: "Pelaminan",
+        content: "Di sini kamu bisa melihat siapa yang sedang bertemu dengan mempelai dan siapa yang ada di antrian berikutnya",
+        placement: "top",
+      },
+      {
+        element: "#angpao",
+        title: "Donasi",
+        content: "Kamu bisa memberikan rasa sayangmu untuk masa depan Tomy & Lexa di sini",
+        placement: "right",
+      },
+      {
+        element: "#souvenir",
+        title: "Cinderamata",
+        content: "Sebagai tanda terima kasih dari Tomy & Lexa, ada cinderamata untukmu di sini",
+        placement: "top",
+      },
+      {
+        element: "#live-mc",
+        content: "MC (nama) akan menemanimu selama acara berlangsung",
+        placement: "top",
+      },
+      {
+        element: "#info",
+        title: "Instructions",
+        content: "Jika kamu ingin membaca ulang petunjuk sebelumnya, silakan klik tombol ini",
+        placement: "left",
+      }
+    ],
+    container: 'body',
+    backdrop: true,
+    smartPlacement: true,
+    keyboard: true,
+    storage: window.localStorage,
+    debug: false,
+    autoscroll: false,
+    backdropPadding: 0,
+    redirect: true,
+    template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+  });
+
+  var tourEng = new Tour({
+    steps: [{
+        element: "#gallery",
+        title: "Video & Photo Gallery",
+        content: "Take a look of Lexa & Tomy’s Pre-Wedding, Engagement and Wedding Ceremony photos and videos here",
+        placement: "right",
+      },
+      {
+        element: "#idPlanet",
+        title: "The Aisle",
+        content: "Take a peak of who are currently meeting the bride & groom. You can also see who’s up in the line to meet them soon!",
+        placement: "top",
+      },
+      {
+        element: "#angpao",
+        title: "Show your support here",
+        content: "We have provided ways on how you can support Tomy & Lexa’s in their next season.",
+        placement: "right",
+      },
+      {
+        element: "#souvenir",
+        title: "Wedding Souvenir",
+        content: "As a thank you, Tomy & Lexa have a special little something for you to remember this precious moment with them",
+        placement: "top",
+      },
+      {
+        element: "#live-mc",
+        content: "MC (name) will accompany the guests during the event but we’re sorry he/she will only use Bahasa",
+        placement: "top",
+      },
+      {
+        element: "#info",
+        title: "Instructions",
+        content: "You can click this icon if you want to repeat the instructions",
+        placement: "left",
+      }
+    ],
+    container: 'body',
+    backdrop: true,
+    smartPlacement: true,
+    keyboard: true,
+    storage: window.localStorage,
+    debug: false,
+    autoscroll: false,
+    backdropPadding: 0,
+    redirect: true,
+    template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+  });
+
+
+  $("#info").click(function() {
+    if(toggleLang.checked){
+      tourEng.restart();
+    } else {
+      tour.restart();
+    }
+  });
+
   // login localStorage
   var dirPath = dirname(location.href);
 
@@ -169,6 +277,7 @@ $(document).ready(function() {
   $("body").keydown(function(e) {
     if (e.key == "Escape") {
       $("#angpaoModal").css("display", "none");
+      $("#faqModal").css("display", "none");
     }
   });
 
@@ -176,73 +285,30 @@ $(document).ready(function() {
     if (e.key == "Escape") {
       $("#earlyBird").css("display", "none");
       $("#karetModal").css("display", "none");
-      $("#faqModal").css("display", "none");
-      tour.init();
+      if(toggleLang.checked){
+        tourEng.restart();
+      } else {
+        tour.restart();
+      }
     }
   });
 
   // When the user clicks next button, close it & init web tour
   $("#btn-next").click(function(){
     $("#earlyBird").css("display", "none");
-    tour.init();
+    if(toggleLang.checked){
+      tourEng.restart();
+    } else {
+      tour.restart();
+    }
   });
   $("#btn-next-2").click(function(){
     $("#karetModal").css("display", "none");
-    tour.init();
-  });
-
-  // WEB TOUR
-  var tour = new Tour({
-    steps: [{
-        element: "#idBulan",
-        title: "Bulan",
-        content: "Here is the ‘pelaminan’ live streaming area. You can see Who’s in the pelaminan, also the next guest names.",
-        placement: "right",
-      },
-      {
-        element: "#idAstronaut",
-        title: "Astronaut",
-        content: "lalalallalalalalallalalalalalalalallalalalalla",
-        placement: "top",
-      },
-      {
-        element: "#idPlanet",
-        title: "Planet",
-        content: "Here is the ‘pelaminan’ live streaming area. You can see Who’s in the pelaminan, also the next guest names.",
-      },
-      {
-        element: "#idRocket",
-        title: "Rocket",
-        content: "lalalallalalalalallalalalalalalalallalalalalla",
-        placement: "left",
-      },
-      {
-        element: "#angpao",
-        title: "Angpao gift for the newly wed",
-        content: "Don’t worry you can still send your gift, see more info here ;)",
-        placement: "right",
-      },
-      {
-        element: "#info",
-        title: "Instructions",
-        content: "If you want to re-read these instructions again just click this icon",
-        placement: "left",
-      }
-    ],
-    container: 'body',
-    backdrop: true,
-    smartPlacement: true,
-    keyboard: true,
-    storage: window.localStorage,
-    debug: false,
-    backdropPadding: 0,
-    redirect: true,
-    template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
-  });
-
-
-  $("#info").click(function() {
-    tour.restart();
+    if(toggleLang.checked){
+      tourEng.restart();
+    } else {
+      tour.restart();
+    }
   });
 
 });
@@ -279,3 +345,11 @@ function toggleLanguange(tog) {
     });
   }
 }
+
+// function webTour(){
+//   if(toggleLang.checked){
+//     tourEng.restart();
+//   } else {
+//     tour.restart();
+//   }
+// }

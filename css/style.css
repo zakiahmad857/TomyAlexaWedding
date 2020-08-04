@@ -352,44 +352,37 @@ body {
   position: absolute;
   z-index: 1;
   overflow: hidden;
-  width: 100%;
+  width: 70%;
   padding: 1.5%;
   float: right;
-  left: 82%;
+  left: 85%;
+  margin: 1% auto;
 }
 
 /* Header icon */
 .header-icon {
-  width: 2%;
-  margin-left: 2%;
+  width: 5%;
+  margin: 1%;
 }
 
 .header-icon:hover {
   cursor: pointer;
 }
 
-/* Toggle button */
-.toggle {
-  display: inline;
+.header-div {
+  display: inline-block;
+  width: 60%;
 }
 
-/* FAQ button */
-/* Info button */
-.information {
-  display: inline;
-}
-
-/* Logout button */
-.logout {
-  display: inline;
+.info{
+  margin-left: 4%;
 }
 
 /* Scene Parallax */
 .planet {
-  /* position: absolute; */
-  top: 30% !important;
-  left: 120% !important;
-  /* transform: translateY(50%) translateX(20%); */
+  position: absolute;
+  top: 40%;
+  left: 45%;
 }
 
 .layer {
@@ -402,17 +395,17 @@ body {
   left: 59%;
   top: 50%;
   width: 20%;
-  height: 70%;
+  height: 50%;
   background: url('../images/png-seq/tvmc.png');
   background-position: center;
-  background-size: cover;
-  z-index: 10;
+  background-size: 100% auto;
+  z-index: 2;
 }
 
 .video-mc{
   position: absolute;
   left: 59%;
-  top: 50%;
+  top: 48%;
   width: 20%;
   height: 70%;
 }
