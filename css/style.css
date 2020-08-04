@@ -385,33 +385,18 @@ body {
 }
 
 /* Scene Parallax */
-.astronaut {
-  top: 130% !important;
-  left: 20% !important;
-  transform: translateY(90%) translateX(50%);
-}
-
-.bulan {
-  display: inline-block;
-}
-
-.rocket {
-  top: 50% !important;
-  left: 70% !important;
-  transform: translateY(50%) translateX(20%);
-}
-
 .planet {
+  /* position: absolute; */
   top: 30% !important;
-  left: 50% !important;
-  transform: translateY(50%) translateX(20%);
+  left: 120% !important;
+  /* transform: translateY(50%) translateX(20%); */
 }
 
 .layer {
   pointer-events: auto;
 }
 
-/* Scene Parallax */
+/* LIVE MC */
 .live-mc{
   position: absolute;
   left: 59%;
@@ -441,6 +426,82 @@ body {
   left: 20%;
 }
 
+/* SOUVENIR */
+.souvenir{
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  width: 10%;
+  height: 40%;
+  background: url('../images/png-seq/statickaset.png');
+  background-size: 300% auto;
+  background-repeat: no-repeat;
+  background-position: 55% 65%;
+}
+
+/* GALLERY */
+.gallery{
+  width: 25%;
+  height: 40%;
+  position: absolute;
+  top: 17%;
+  left: 0;
+  perspective: 200px;
+}
+
+.gal{
+  position: relative;
+  width: 30%;
+  height: 40%;
+  background: url('../images/png-seq/tvtamu.png');
+  background-repeat: no-repeat;
+  background-position: 55% 65%;
+
+}
+
+.gallery1{
+  left: 58%;
+  top: 55%;
+  background-size: 125% auto;
+  transform: rotate3d(0, 1, 0, 15deg);
+}
+
+.gallery2{
+  left: 35%;
+  top: 18%;
+  background-size: 130% auto;
+  transform: rotate3d(0, 1, 0, 17deg);
+}
+
+.gallery3{
+  left: 7%;
+  top: -18%;
+  background-size: 140% auto;
+  transform: rotate3d(0, 1, 0, 19deg);
+}
+
+.gallery4{
+  left: 22%;
+  top: -86%;
+  background-size: 130% auto;
+  transform: rotate3d(0, 1, 0, 19deg);
+}
+
+.gallery5{
+  left: 46%;
+  top: -128%;
+  background-size: 122% auto;
+  transform: rotate3d(0, 1, 0, 19deg);
+}
+
+.gallery6{
+  left: 33%;
+  top: -193%;
+  background-size: 122% auto;
+  transform: rotate3d(0, 1, 0, 19deg);
+}
+
+/* ANGPAO */
 .angpao{
   position: absolute;
   left: 15%;
@@ -459,26 +520,11 @@ body {
 
 .angpao:hover{
   background: url('../images/png-seq/staticayam.png');
-  background-size: 220% 220%;
+  background-size: 220% auto;
   background-repeat: no-repeat;
   background-position: 55% 65%;
   cursor: pointer;
 }
-
-/* Angpao */
-/* #angpao {
-  display: inline;
-  position: absolute;
-  bottom: 0;
-  left: 1%;
-  width: 4%;
-  margin: 1%;
-}
-
-#angpao:hover {
-  cursor: pointer;
-  bottom: 1%;
-} */
 
 /* Popup Angpao */
 /* Modal Content/Box */
