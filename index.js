@@ -281,18 +281,6 @@ $(document).ready(function() {
     }
   });
 
-  $("body").keydown(function(e) {
-    if (e.key == "Escape") {
-      $("#earlyBird").css("display", "none");
-      $("#karetModal").css("display", "none");
-      if(toggleLang.checked){
-        tourEng.restart();
-      } else {
-        tour.restart();
-      }
-    }
-  });
-
   // When the user clicks next button, close it & init web tour
   $("#btn-next").click(function(){
     $("#earlyBird").css("display", "none");

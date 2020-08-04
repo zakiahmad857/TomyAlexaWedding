@@ -340,12 +340,23 @@ body {
   padding: 0 !important;
   min-width: 100% !important;
   height: 100vh !important;
-  background-image: url("../images/background2.jpg") !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-repeat: no-repeat;
   overflow: hidden !important;
   z-index: -100;
+}
+
+.homepage{
+  background-image: url("../images/background2.jpg") !important;
+}
+
+.gallery-page{
+  background-color: lightblue;
+}
+
+.souvenir-page{
+  background-image: url("../images/background2.jpg") !important;
 }
 
 /* Header */
@@ -358,6 +369,10 @@ body {
   float: right;
   left: 85%;
   margin: 1% auto;
+}
+
+.header-gallery{
+  left: 80%;
 }
 
 /* Header icon */
@@ -431,6 +446,10 @@ body {
   background-size: 160% auto;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.souvenir:hover{
+  cursor: pointer;
 }
 
 /* GALLERY */
