@@ -163,7 +163,7 @@ $(document).ready(function() {
   // LOGIN
   $("#btn-login").click(function(){
     var inputID = $("#idNumber").val();
-    if(inputID === "haloha123"){
+    if(inputID === "hai123"){
       var fullPath = dirPath + "/homepage.html";
       window.location=fullPath;
       return false;
