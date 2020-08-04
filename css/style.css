@@ -433,19 +433,19 @@ body {
   position: absolute;
   left: 65%;
   bottom: 8%;
-  width: 11%;
-  height: 17%;
+  width: 20%;
+  height: 50%;
 }
 
 .video-mc iframe{
   width: 60%;
-  height: 23%;
+  height: 40%;
   pointer-events: none;
   position: absolute;
-  top: 41%;
-  left: 20%;
-  display: inline-block;
-  -webkit-mask-box-image: url(../images/circle.svg);
+  top: 62%;
+  left: -4%;
+  /* display: inline-block; */
+  -webkit-mask-box-image: url(../images/circle.png);
 
 }
 
