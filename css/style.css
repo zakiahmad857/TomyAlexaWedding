@@ -343,6 +343,7 @@ body {
   background-image: url("../images/background2.jpg") !important;
   background-attachment: fixed !important;
   background-size: cover !important;
+  background-repeat: no-repeat;
   overflow: hidden !important;
   z-index: -100;
 }
@@ -422,14 +423,14 @@ body {
 /* SOUVENIR */
 .souvenir{
   position: absolute;
-  left: 30%;
-  top: 50%;
-  width: 10%;
-  height: 40%;
+  left: 28%;
+  top: 60%;
+  width: 15%;
+  height: 25%;
   background: url('../images/png-seq/statickaset.png');
-  background-size: 300% auto;
+  background-size: 160% auto;
   background-repeat: no-repeat;
-  background-position: 55% 65%;
+  background-position: center;
 }
 
 /* GALLERY */
