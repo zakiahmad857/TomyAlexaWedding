@@ -48,7 +48,6 @@ var arrLang = {
 
 
 $(document).ready(function() {
-
   // WEB TOUR
   var tour = new Tour({
     steps: [{
@@ -150,7 +149,7 @@ $(document).ready(function() {
 
 
   $("#info").click(function() {
-    if(toggleLang.checked){
+    if (toggleLang.checked) {
       tourEng.restart();
     } else {
       tour.restart();
@@ -160,21 +159,34 @@ $(document).ready(function() {
   // login localStorage
   var dirPath = dirname(location.href);
 
-  // LOGIN
-  $("#btn-login").click(function(){
-    var inputID = $("#idNumber").val();
-    if(inputID === "hai123"){
-      var fullPath = dirPath + "/homepage.html";
-      window.location=fullPath;
-      return false;
-    } else {
-      alert("inputID sala");
-    }
-  });
-
-  function dirname(path){
-   return path.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
+  function dirname(path) {
+    return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
   }
+
+
+  // $("#test").click(function() {
+  //   console.log($.cookie("token"));
+  // });
+
+  //
+  // var div = $("#welcome-name")[0];
+  // jQuery.data(div, "test", {
+  //   first: 16,
+  //   last: "pizza!"
+  // });
+
+  // LOGIN
+  // $("#btn-login").click(function(){
+  //   var inputID = $("#idNumber").val();
+  //   if(inputID === "hai123"){
+  //     var fullPath = dirPath + "/homepage.html";
+  //     window.location=fullPath;
+  //     return false;
+  //   } else {
+  //     alert("inputID sala");
+  //   }
+  // });
+
 
   // LANGUAGE
   $(document).on('click', '#checkbox-container input[type="checkbox"]', function() {
@@ -208,20 +220,20 @@ $(document).ready(function() {
   // Welcoming modal once shown per user
   var welcomeState = localStorage.getItem("welcomeState");
 
-  if(welcomeState != 'shown'){
+  if (welcomeState != 'shown') {
 
-      $("#welcomeModal").css('display', 'block');
-      localStorage.setItem('welcomeState','shown');
+    $("#welcomeModal").css('display', 'block');
+    localStorage.setItem('welcomeState', 'shown');
 
-      $("#checkbox-ind").click(function() {
-        checkboxValues["toggleLang"] = false;
-        localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
-      });
+    $("#checkbox-ind").click(function() {
+      checkboxValues["toggleLang"] = false;
+      localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+    });
 
-      $("#checkbox-eng").click(function() {
-        checkboxValues["toggleLang"] = true;
-        localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
-      });
+    $("#checkbox-eng").click(function() {
+      checkboxValues["toggleLang"] = true;
+      localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+    });
   }
 
 
@@ -236,7 +248,7 @@ $(document).ready(function() {
   });
 
   $("#faq").click(function() {
-      $("#faqModal").css("display", "block");
+    $("#faqModal").css("display", "block");
   });
 
 
@@ -268,7 +280,7 @@ $(document).ready(function() {
 
   // When the user clicks anywhere outside of the modal, close it
   $(window).click(function(e) {
-    if ((e.target.id == "angpaoModal") || (e.target.id == "earlyBird")  || (e.target.id == "faqModal")) {
+    if ((e.target.id == "angpaoModal") || (e.target.id == "earlyBird") || (e.target.id == "faqModal")) {
       $("#angpaoModal").css("display", "none");
       $("#earlyBird").css("display", "none");
       $("#faqModal").css("display", "none");
@@ -284,17 +296,17 @@ $(document).ready(function() {
   });
 
   // When the user clicks next button, close it & init web tour
-  $("#btn-next").click(function(){
+  $("#btn-next").click(function() {
     $("#earlyBird").css("display", "none");
-    if(toggleLang.checked){
+    if (toggleLang.checked) {
       tourEng.restart();
     } else {
       tour.restart();
     }
   });
-  $("#btn-next-2").click(function(){
+  $("#btn-next-2").click(function() {
     $("#karetModal").css("display", "none");
-    if(toggleLang.checked){
+    if (toggleLang.checked) {
       tourEng.restart();
     } else {
       tour.restart();
@@ -335,11 +347,3 @@ function toggleLanguange(tog) {
     });
   }
 }
-
-// function webTour(){
-//   if(toggleLang.checked){
-//     tourEng.restart();
-//   } else {
-//     tour.restart();
-//   }
-// }
