@@ -243,6 +243,7 @@ $(document).ready(function() {
   // When the user clicks on (x), close the modal
   $("span").click(function() {
     $("#angpaoModal").css("display", "none");
+    $("#faqModal").css("display", "none");
   });
 
   // Select language @ modal
@@ -267,9 +268,10 @@ $(document).ready(function() {
 
   // When the user clicks anywhere outside of the modal, close it
   $(window).click(function(e) {
-    if ((e.target.id == "angpaoModal") || (e.target.id == "earlyBird")) {
+    if ((e.target.id == "angpaoModal") || (e.target.id == "earlyBird")  || (e.target.id == "faqModal")) {
       $("#angpaoModal").css("display", "none");
       $("#earlyBird").css("display", "none");
+      $("#faqModal").css("display", "none");
     }
   });
 

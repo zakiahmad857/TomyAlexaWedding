@@ -262,11 +262,12 @@ body {
   border: 0;
   background-color: white;
   font-weight: bold;
+  margin-top: 5px;
 }
 
 .popover-content {
   height: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .popover-navigation .btn-sm{
@@ -356,13 +357,12 @@ body {
 }
 
 .souvenir-page{
-  background-image: url("../images/background2.jpg") !important;
+  background-color: lightblue;
 }
 
 /* Header */
 .header {
   position: absolute;
-  z-index: 1;
   overflow: hidden;
   width: 70%;
   padding: 1.5%;
@@ -388,6 +388,7 @@ body {
 .header-div {
   display: inline-block;
   width: 60%;
+  /* z-index: 10; */
 }
 
 .info{
@@ -397,8 +398,8 @@ body {
 /* Scene Parallax */
 .planet {
   position: absolute;
-  top: 40%;
-  left: 45%;
+  top: 30%;
+  left: 65%;
 }
 
 .layer {
@@ -406,14 +407,23 @@ body {
 }
 
 /* LIVE MC */
+
+.mc{
+  position: absolute;
+  left: 60%;
+  bottom: 0;
+  width: 20%;
+  height: 40%;
+}
+
 .live-mc{
   position: absolute;
-  left: 59%;
-  top: 50%;
+  left: 60%;
+  bottom: 0%;
   width: 20%;
   height: 50%;
   background: url('../images/png-seq/tvmc.png');
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: 100% auto;
   z-index: 2;
@@ -421,8 +431,8 @@ body {
 
 .video-mc{
   position: absolute;
-  left: 63.7%;
-  top: 76%;
+  left: 65%;
+  bottom: 8%;
   width: 11%;
   height: 17%;
 }
@@ -434,6 +444,9 @@ body {
   position: absolute;
   top: 41%;
   left: 20%;
+  display: inline-block;
+  -webkit-mask-box-image: url(../images/circle.svg);
+
 }
 
 /* SOUVENIR */
@@ -585,7 +598,7 @@ body {
 /* New toggle */
 .checkbox {
   opacity: 0;
-  /* position: absolute; */
+  position: absolute;
 }
 
 .label {
@@ -595,7 +608,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 5px;
-  position: relative;
+  position: relative !important;
   height: 20px;
   width: 40px;
   transform: scale(1.5);
