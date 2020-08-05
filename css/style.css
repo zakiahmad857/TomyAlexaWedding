@@ -18,7 +18,7 @@ body {
   margin-top: 30px;
 }
 
-@media (max-width: 1300px){
+/* @media (max-width: 1300px){
   .desktop-content{
     display: none;
   }
@@ -26,7 +26,7 @@ body {
   .mobile-content{
     display: block;
   }
-}
+} */
 
 /* @media (min-width: 1000px) and (max-width: 1370px) and (min-height: 1000px) and (max-width: 1370px){
   .desktop-content{
