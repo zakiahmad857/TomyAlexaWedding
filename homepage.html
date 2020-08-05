@@ -65,7 +65,13 @@
       <div class="modal-content content-earlyBird">
         <h4 class="lang" key="earlyBird_1">Video Call Access</h4>
         <h6 class="lang" key="earlyBird_2">We will give you the video call access in</h6>
-        <h5 class="countdown"></h5>
+        <!-- <h5 class="countdown"></h5> -->
+        <div id="timer">
+          <div id="days"></div>
+          <div id="hours"></div>
+          <div id="minutes"></div>
+          <div id="seconds"></div>
+        </div>
         <h6 class="lang" key="earlyBird_3">The video call access will show up automatically when the countdown is done.</h6>
         <p>(screenshot popupnya nanti)</p>
         <h6 class="lang" key="earlyBird_4">While waiting, let us show you around the "Reception Venue"</h6>
@@ -201,13 +207,12 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
+  
   <!-- js -->
   <!-- <script type="text/javascript" src="homepage.js"></script> -->
   <script type="text/javascript" src="index.js"></script>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
   <script type="text/javascript">
     var name = null;
 
@@ -244,19 +249,18 @@
     s = timeNow.split(':');
     e = timeSet.split(':');
 
-    min = e[1]-s[1];
+    min = e[1] - s[1];
     hour_carry = 0;
-    if(min < 0){
-        min += 60;
-        hour_carry += 1;
+    if (min < 0) {
+      min += 60;
+      hour_carry += 1;
     }
-    hour = e[0]-s[0]-hour_carry;
+    hour = e[0] - s[0] - hour_carry;
     count = hour + ":" + min;
 
     console.log("countdown " + count);
 
     $(".countdown").html("-" + count);
-
   </script>
 
 </body>
