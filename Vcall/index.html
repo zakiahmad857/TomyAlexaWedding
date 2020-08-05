@@ -27,10 +27,10 @@
     <div class="modal-content">
       <h4 class="lang" key="welcome">settings</h4>
       <form id="form">
-        <div class="input-field">
+        <!-- <div class="input-field">
           <label for="UID">User ID</label>
           <input type="number" name="uid" placeholder="">
-        </div>
+        </div> -->
         <div class="input-field">
           <label for="cameraId" class="active">CAMERA</label>
           <select class="" name="cameraId" id="cameraId"></select>
@@ -179,8 +179,44 @@
   <script src="vendor/jquery.min.js"></script>
   <script src="vendor/materialize.min.js"></script>
   <script src="AgoraRTCSDK-3.1.1.js"></script>
-  <!-- <script src="processor.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
+
   <script type="text/javascript">
+  // TOKEN DATA
+  var name = null;
+  var vcallPos = null;
+
+  cookieToken = $.cookie("token");
+  console.log("token " + cookieToken);
+
+  $.ajax({
+    url: "https://webnikahapi.arthatronic.com/api/user/",
+    async: false,
+    type: "GET",
+    global: false,
+    // Fetch the stored token from localStorage and set in the header
+    headers: {
+      "Authorization": "Token " + cookieToken
+    },
+    success: function(result) {
+      console.log(result);
+      vcallPos = result[0].id_room;
+      room = result[0].room;
+      console.log(vcallPos);
+      console.log(room);
+
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  });
+
+  if (room == 1){
+    var id_room = "room1";
+  } else {
+    var id_room = "room2";
+  }
+
     $(document).ready(function() {
       $("#setAgora").css("display", "block");
     });
@@ -254,8 +290,9 @@
         obj[key] = val
       }
 
+      obj["uid"] = vcallPos
       obj["appID"] = "48025a2877b744c4afee2182bb106981"
-      obj["channel"] = "tes"
+      obj["channel"] = id_room
       obj["cameraResolution"] = "720p"
       obj["mode"] = "live"
       obj["codec"] = "h264"

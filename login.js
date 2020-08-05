@@ -52,8 +52,10 @@ $(document).ready(function() {
       alert("salah");
     } else {
       var fullPath = dirPath + "/homepage.html";
+
       window.location = fullPath;
       return false;
+
     }
 
     return false;
@@ -62,7 +64,7 @@ $(document).ready(function() {
 
 
 
-
+// return false;
 
 
 });
