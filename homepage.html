@@ -17,9 +17,45 @@
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="css/style.css">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  var name = null;
+
+  cookieToken = $.cookie("token");
+  console.log("token " + cookieToken);
+
+  $.ajax({
+    url: "https://webnikahapi.arthatronic.com/api/user/",
+    async: false,
+    type: "GET",
+    global: false,
+    // Fetch the stored token from localStorage and set in the header
+    headers: {
+      "Authorization": "Token " + cookieToken
+    },
+    success: function(result) {
+      console.log(result);
+      name = result[0].name;
+      console.log(name);
+
+      // var result = $('<div />').append(name).find('#welcomeName').html();
+      //    $('#welcomeName').html(result);
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  });
+
+  console.log("nama " + name);
+  $("#welcomeName").html(name);
+  </script>
+
 </head>
 
 <body>
+
+
   <div class="mobile-content">
     <h1>Please Access This Website from Desktop</h1>
     <h2>Can't wait to see you!</h2>
@@ -32,9 +68,7 @@
 
     <div class="modal-content content-welcome">
       <h4 class="lang" key="welcome">Selamat Datang</h4>
-      <h5 id="welcomeName">
-
-      </h5>
+      <h5 id="welcomeName"></h5>
       <p class="lang lang-head" key="language">Pilih Bahasa</p>
 
       <div id="checkbox-container" class="lang-wrapper">
@@ -192,13 +226,13 @@
   </div>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
 
   <!-- js -->
-  <script type="text/javascript" src="homepage.js"></script>
+  <!-- <script type="text/javascript" src="homepage.js"></script> -->
   <script type="text/javascript" src="index.js"></script>
 
 </body>
