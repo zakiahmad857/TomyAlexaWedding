@@ -3,6 +3,12 @@ $(document).ready(function() {
   var token;
   var tmp = null;
 
+  var dirPath = dirname(location.href);
+
+  function dirname(path) {
+    return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+  }
+
   $("#btn-login").click(function() {
     var person = new Object();
     person.username = $("#username").val();
@@ -11,8 +17,9 @@ $(document).ready(function() {
     console.log(person);
 
     var tmp = null;
+    var statusError = false;
     $.ajax({
-     async: false,
+      async: false,
       type: "POST",
       global: false,
       dataType: 'json',
@@ -20,8 +27,23 @@ $(document).ready(function() {
       data: person,
       success: function(data) {
         tmp = data;
+      },
+      statusCode: {
+        400: function() {
+          statusError = true;
+        }
       }
     });
+
+    console.log("status " + statusError);
+
+    if (statusError) {
+      alert("salah");
+    } else {
+      var fullPath = dirPath + "/homepage.html";
+      window.location = fullPath;
+      return false;
+    }
 
     var token = tmp.token;
     console.log(token);
@@ -31,6 +53,7 @@ $(document).ready(function() {
     });
     // $.removeCookie("token");
     cookieToken = $.cookie("token");
+    console.log("token " + cookieToken);
     // alert(cookieToken);
 
     var name = null;
@@ -44,16 +67,27 @@ $(document).ready(function() {
         "Authorization": "Token " + cookieToken
       },
       success: function(result) {
-        console.log(result[0]);
+        console.log(result);
         name = result[0].name;
         console.log(name);
+
+        // var result = $('<div />').append(name).find('#welcomeName').html();
+        //    $('#welcomeName').html(result);
       },
-      error: function(err){
+      error: function(err) {
         console.log(err);
       }
     });
 
     console.log("nama " + name);
+
+    // var div = $("div")[0];
+    // jQuery.data(div, "test", {
+    //   first: name
+    // });
+    // $("span").first().text(jQuery.data(div, "test").first);
+
+    $("#welcomeName").html(name);
 
     return false;
   });
