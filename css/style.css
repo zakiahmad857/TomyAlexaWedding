@@ -80,7 +80,7 @@ body {
   padding: 30px;
 }
 
-.content-earlyBird h5 {
+.content-earlyBird .timer {
   padding: 5px;
   width: 25%;
   margin: auto;

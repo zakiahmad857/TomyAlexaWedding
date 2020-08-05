@@ -65,12 +65,10 @@
       <div class="modal-content content-earlyBird">
         <h4 class="lang" key="earlyBird_1">Video Call Access</h4>
         <h6 class="lang" key="earlyBird_2">We will give you the video call access in</h6>
-        <!-- <h5 class="countdown"></h5> -->
-        <div id="timer">
-          <div id="days"></div>
-          <div id="hours"></div>
-          <div id="minutes"></div>
-          <div id="seconds"></div>
+        <div class="timer">
+          <span class="countdown" id="hours"></span>
+          <span class="countdown" id="minutes"></span>
+          <span class="countdown" id="seconds"></span>
         </div>
         <h6 class="lang" key="earlyBird_3">The video call access will show up automatically when the countdown is done.</h6>
         <p>(screenshot popupnya nanti)</p>
@@ -208,7 +206,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
-  
+
   <!-- js -->
   <!-- <script type="text/javascript" src="homepage.js"></script> -->
   <script type="text/javascript" src="index.js"></script>
@@ -244,23 +242,58 @@
     console.log("nama homepage " + name);
     $("#welcomeName").html(name);
 
-    var date = new Date();
-    var timeNow = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    s = timeNow.split(':');
-    e = timeSet.split(':');
+    // var date = new Date();
+    // var timeNow = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    // s = timeNow.split(':');
+    // e = timeSet.split(':');
+    //
+    // min = e[1] - s[1];
+    // hour_carry = 0;
+    // if (min < 0) {
+    //   min += 60;
+    //   hour_carry += 1;
+    // }
+    // hour = e[0] - s[0] - hour_carry;
+    // count = hour + ":" + min;
+    //
+    // console.log("countdown " + count);
+    //
+    // $(".countdown").html("-" + count);
 
-    min = e[1] - s[1];
-    hour_carry = 0;
-    if (min < 0) {
-      min += 60;
-      hour_carry += 1;
-    }
-    hour = e[0] - s[0] - hour_carry;
-    count = hour + ":" + min;
 
-    console.log("countdown " + count);
+    function makeTimer() {
 
-    $(".countdown").html("-" + count);
+  	//		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");
+  		var endTime = new Date("5 August 2020 " + timeSet + " GMT+07:00");
+      // var endTime = "16:00:00";
+  			endTime = (Date.parse(endTime) / 1000);
+
+  			var now = new Date();
+        var timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+  			timeNow = (Date.parse(now) / 1000);
+
+  			var timeLeft = endTime - timeNow;
+
+  			var days = Math.floor(timeLeft / 86400);
+  			var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+  			var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+  			var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+  			if (hours < "10") { hours = "0" + hours; }
+  			if (minutes < "10") { minutes = "0" + minutes; }
+  			if (seconds < "10") { seconds = "0" + seconds; }
+
+  			// $("#days").html(days + "<span>Days</span>");
+  			$("#hours").html(hours + "<span> :</span>");
+  			$("#minutes").html(minutes + "<span> :</span>");
+  			$("#seconds").html(seconds);
+
+  	}
+
+  	setInterval(function() { makeTimer(); }, 1000);
+
+
+
   </script>
 
 </body>
