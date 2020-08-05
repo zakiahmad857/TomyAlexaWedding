@@ -263,8 +263,7 @@ $(document).ready(function() {
     // close modal, pop user modal
     $("#welcomeModal").delay(1000).queue(function(next) {
       $("#welcomeModal").css("display", "none");
-      tour.restart();
-      // $("#earlyBird").css("display", "block");
+      $("#earlyBird").css("display", "block");
     });
   });
 
@@ -273,8 +272,7 @@ $(document).ready(function() {
 
     $("#welcomeModal").delay(1000).queue(function(next) {
       $("#welcomeModal").css("display", "none");
-      tourEng.restart();
-      // $("#earlyBird").css("display", "block");
+      $("#earlyBird").css("display", "block");
     });
   });
 
