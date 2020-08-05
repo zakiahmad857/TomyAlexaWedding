@@ -9145,7 +9145,7 @@ html, body {
   border-radius: 50%;
   display: inline-block;
   position: absolute;
-  -webkit-mask-box-image: url(../images/circle.svg);
+  -webkit-mask-image: url(../images/circle.svg);
  }
 
 .agora-theme .video-profile {
