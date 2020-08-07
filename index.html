@@ -418,7 +418,7 @@
 
       // Popup Vcall
       // if (hours == "00" && minutes == "00" && seconds == "00")
-      if (timeLeft <= 0 && timeLeft >= 600) {
+      if (timeLeft <= 0 && timeLeft >= -600) {
         $("#welcomeModal").css('display', 'none');
         $("#earlyBird").css('display', 'none');
         $("#vcallModal").css('display', 'block');

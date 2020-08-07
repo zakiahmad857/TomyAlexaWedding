@@ -196,7 +196,7 @@
     console.log(hours + ":" + minutes + ":" + seconds);
 
     // Popup Vcall
-    if (parseInt(hours) <= 0 && parseInt(minutes) <= 0 && parseInt(seconds) <= 0) {
+    if (timeLeft <= 0 && timeLeft >= -600) {
       $("#welcomeModal").css('display', 'none');
       $("#earlyBird").css('display', 'none');
       $("#vcallModal").css('display', 'block');
@@ -224,7 +224,7 @@
     }
 
     // Jam Karet
-    if (hours < "3") {
+    if (timeLeft > 0) {
       // Select language @ modal
       $("#checkbox-ind").click(function() {
         $("#toggleLang").prop('checked', false);
@@ -246,7 +246,7 @@
       });
     }
 
-    if (hours > "20") {
+    if (timeLeft < -600) {
       $("#checkbox-ind").click(function() {
         $("#welcomeModal").delay(1000).queue(function(next) {
           $("#earlyBird").css('display', 'none');
