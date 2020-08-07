@@ -15,8 +15,18 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-agora{
+.modal-agora {
   z-index: 50;
+}
+
+.modal2 {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Modal Content/Box */
@@ -31,6 +41,36 @@ body {
   width: 30%;
   text-align: center;
   border-radius: 3rem;
+  z-index: 101;
+}
+
+.modal-content2 {
+  box-sizing: border-box;
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 20px;
+  text-align: center;
+  border-radius: 3rem;
+}
+
+.modal-content2 h5 {
+  font-weight: normal;
+  border-bottom: 1px solid #000;
+  padding-bottom: 7px;
+  width: 60%;
+  margin: 20px auto;
+}
+
+.content-karet {
+  width: 50%;
+  padding: 40px;
+}
+
+.content-karet iframe {
+  margin: 30px auto;
 }
 
 .modal-content h5 {
@@ -93,17 +133,17 @@ input[type=number] {
 }
 
 .dot1 {
-  bottom: 1%;
+  bottom: 4%;
   left: 15%;
 }
 
 .dot2 {
-  bottom: 20%;
+  bottom: 32%;
   left: 2%;
 }
 
 .dot3 {
-  bottom: 45%;
+  bottom: 66%;
   left: 13%;
 }
 
@@ -113,18 +153,31 @@ input[type=number] {
 }
 
 .dot5 {
-  bottom: 1%;
+  bottom: 4%;
   right: 15%;
 }
 
 .dot6 {
-  bottom: 20%;
+  bottom: 32%;
   right: 2%;
 }
 
 .dot7 {
-  bottom: 45%;
+  bottom: 66%;
   right: 13%;
+}
+
+.wrapper-username{
+  width: 100%;
+  position: relative;
+  top: 90%;
+}
+
+.username {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
 }
 
 .kotak {
@@ -137,8 +190,7 @@ input[type=number] {
   overflow: hidden;
 }
 
-
-.video-view2, .video-placeholder2{
+.video-view2, .video-placeholder2 {
   height: 100vh;
   width: 100vw;
   display: inline-block;

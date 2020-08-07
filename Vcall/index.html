@@ -14,8 +14,6 @@
   <link rel="stylesheet" href="./assets/common.css" />
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Parallax -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
 </head>
 
@@ -27,10 +25,6 @@
     <div class="modal-content">
       <h4 class="lang" key="welcome">settings</h4>
       <form id="form">
-        <!-- <div class="input-field">
-          <label for="UID">User ID</label>
-          <input type="number" name="uid" placeholder="">
-        </div> -->
         <div class="input-field">
           <label for="cameraId" class="active">CAMERA</label>
           <select class="" name="cameraId" id="cameraId"></select>
@@ -65,6 +59,9 @@
           </div>
         </div>
       </div>
+      <div class="wrapper-username">
+        <p class="username" id="username1"></p>
+      </div>
     </span>
     <span class="dot dot2">
       <div class="vidPosition row container col l12 s12">
@@ -79,6 +76,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="wrapper-username">
+        <p class="username" id="username2"></p>
       </div>
     </span>
     <span class="dot dot3">
@@ -95,6 +95,9 @@
           </div>
         </div>
       </div>
+      <div class="wrapper-username">
+        <p class="username" id="username3"></p>
+      </div>
     </span>
     <span class="dot dot4">
       <div class="vidPosition row container col l12 s12">
@@ -109,6 +112,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="wrapper-username">
+        <p class="username" id="username4"></p>
       </div>
     </span>
     <span class="dot dot5">
@@ -125,6 +131,9 @@
           </div>
         </div>
       </div>
+      <div class="wrapper-username">
+        <p class="username" id="username5"></p>
+      </div>
     </span>
     <span class="dot dot6">
       <div class="vidPosition row container col l12 s12">
@@ -140,6 +149,9 @@
           </div>
         </div>
       </div>
+      <div class="wrapper-username">
+        <p class="username" id="username6"></p>
+      </div>
     </span>
     <span class="dot dot7">
       <div class="vidPosition row container col l12 s12">
@@ -154,6 +166,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="wrapper-username">
+        <p class="username" id="username7"></p>
       </div>
     </span>
     <span class="kotak">
@@ -171,6 +186,15 @@
         </div>
       </div>
     </span>
+
+    <!-- Bye Vcall Modal -->
+    <div id="byeVcallModal" class="modal2">
+      <div class="modal-content2 content-karet">
+        <h6 class="lang" key="byeVcall">Waktu habis</h6>
+        <button type="button" class="btn-modal" id="btn-home" name="okay">Oke</button>
+      </div>
+    </div>
+
   </div>
 
 
@@ -182,41 +206,102 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
 
   <script type="text/javascript">
-  // TOKEN DATA
-  var name = null;
-  var vcallPos = null;
+    // TOKEN DATA
+    var name = null;
+    var vcallPos = null;
+    var usernameCall = null;
+    var startTime = null;
 
-  cookieToken = $.cookie("token");
-  console.log("token " + cookieToken);
+    cookieToken = $.cookie("token");
+    console.log("token " + cookieToken);
 
-  $.ajax({
-    url: "https://webnikahapi.arthatronic.com/api/user/",
-    async: false,
-    type: "GET",
-    global: false,
-    // Fetch the stored token from localStorage and set in the header
-    headers: {
-      "Authorization": "Token " + cookieToken
-    },
-    success: function(result) {
-      console.log(result);
-      vcallPos = result[0].id_room;
-      room = result[0].room;
-      console.log(vcallPos);
-      console.log(room);
+    $.ajax({
+      url: "https://webnikahapi.arthatronic.com/api/user/",
+      async: false,
+      type: "GET",
+      global: false,
+      // Fetch the stored token from localStorage and set in the header
+      headers: {
+        "Authorization": "Token " + cookieToken
+      },
+      success: function(result) {
+        console.log(result);
+        vcallPos = result[0].id_room;
+        room = result[0].room;
+        startTime = result[0].time;
+        console.log(vcallPos);
+        console.log(room);
+        console.log("waktu vcall " + startTime);
+        usernameCall = result[0].name;
+        console.log(usernameCall);
+      },
+      error: function(err) {
+        console.log(err);
+      }
+    });
 
-    },
-    error: function(err) {
-      console.log(err);
+    if (room == 1) {
+      var id_room = "room1";
+    } else {
+      var id_room = "room2";
     }
-  });
 
-  if (room == 1){
-    var id_room = "room1";
-  } else {
-    var id_room = "room2";
-  }
+    var dirPath = dirname(location.href);
+    var homePath = RemoveLastDirectoryPartOf(dirPath);
 
+    function dirname(path) {
+      return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+    }
+
+    function RemoveLastDirectoryPartOf(the_url) {
+      var the_arr = the_url.split('/');
+      the_arr.pop();
+      return (the_arr.join('/'));
+    }
+
+    console.log("yeuu " + startTime);
+    // var startTimeDate = new Date("7 August 2020 10:42:30 GMT+07:00")
+
+    var startTimeDate = new Date("7 August 2020 " + startTime + " GMT+07:00")
+    console.log("startTimeDate " + startTimeDate);
+    // nambah 10 menit ntar
+    var startTimeParse = (Date.parse(startTimeDate) / 1000);
+    var endTime = startTimeParse + 600;
+
+    function makeTimerCall() {
+
+      console.log("startTimeParse " + startTimeParse);
+      console.log("endTime " + endTime);
+
+      var now = new Date();
+      var timeNow = "7 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNowParse = (Date.parse(timeNow) / 1000);
+
+      console.log("timenow " + timeNow);
+      console.log("timeParse " + timeNowParse);
+
+      if (timeNowParse == endTime) {
+        console.log("sama");
+        // window.location = homePath;
+        $("#setAgora").css('display', 'none');
+        $("#byeVcallModal").css('display', 'block');
+        leave(rtc);
+
+      } else {
+        console.log("beda");
+      }
+    }
+
+    setInterval(function() {
+      makeTimerCall();
+    }, 1000);
+
+    $("#btn-home").click(function(){
+      window.location = homePath;
+    });
+
+
+    console.log("USERNAME " + usernameCall);
     $(document).ready(function() {
       $("#setAgora").css("display", "block");
     });
@@ -291,7 +376,13 @@
       }
 
       obj["uid"] = vcallPos
-      obj["appID"] = "48025a2877b744c4afee2182bb106981"
+
+      if (room == 1){
+        obj["appID"] = "48025a2877b744c4afee2182bb106981"
+      } else {
+        obj["appID"] = "10ca4e644db44fc9a24de6ccf393ebaa"
+      }
+
       obj["channel"] = id_room
       obj["cameraResolution"] = "720p"
       obj["mode"] = "live"
@@ -322,6 +413,10 @@
             id: "video_autoplay_" + id,
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
+
+          $("#username1").html(usernameCall);
+
+          console.log("masuuuuuk nih");
         }
         if (id == 2222) {
           $("<div/>", {
@@ -342,6 +437,8 @@
             id: "video_autoplay_" + id,
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
+
+          $("#username2").html(usernameCall);
         }
         if (id == 3333) {
           $("<div/>", {
@@ -362,6 +459,8 @@
             id: "video_autoplay_" + id,
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
+
+          $("#username3").html(usernameCall);
         }
         if (id == 4444) {
           $("<div/>", {
@@ -382,6 +481,8 @@
             id: "video_autoplay_" + id,
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
+
+          $("#username4").html(usernameCall);
         }
         if (id == 5555) {
           $("<div/>", {
@@ -402,6 +503,8 @@
             id: "video_autoplay_" + id,
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
+
+          $("#username5").html(usernameCall);
         }
         if (id == 6666) {
           $("<div/>", {
@@ -422,6 +525,8 @@
             id: "video_autoplay_" + id,
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
+
+          $("#username6").html(usernameCall);
         }
         if (id == 7777) {
           $("<div/>", {
@@ -442,6 +547,8 @@
             id: "video_autoplay_" + id,
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
+
+          $("#username7").html(usernameCall);
         }
         if (id == 8888) {
           $("<div/>", {
@@ -774,11 +881,11 @@
 
     function leave(rtc) {
       if (!rtc.client) {
-        Toast.error("Please Join First!")
+        // Toast.error("Please Join First!")
         return
       }
       if (!rtc.joined) {
-        Toast.error("You are not in channel")
+        // Toast.error("You are not in channel")
         return
       }
       /**

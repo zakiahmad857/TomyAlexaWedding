@@ -4,9 +4,16 @@ $(document).ready(function() {
   var tmp = null;
 
   var dirPath = dirname(location.href);
+  var homePath = RemoveLastDirectoryPartOf(dirPath);
 
   function dirname(path) {
     return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+  }
+
+  function RemoveLastDirectoryPartOf(the_url) {
+    var the_arr = the_url.split('/');
+    the_arr.pop();
+    return (the_arr.join('/'));
   }
 
   $("#btn-login").click(function() {
@@ -31,6 +38,7 @@ $(document).ready(function() {
       statusCode: {
         400: function() {
           statusError = true;
+          console.log(statusError);
         }
       }
     });
@@ -47,15 +55,12 @@ $(document).ready(function() {
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
     // alert(cookieToken);
-
+    
     if (statusError) {
       alert("salah");
     } else {
-      var fullPath = dirPath + "/homepage.html";
-
-      window.location = fullPath;
+      window.location = homePath;
       return false;
-
     }
 
     return false;

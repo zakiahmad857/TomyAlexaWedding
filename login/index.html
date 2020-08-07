@@ -7,7 +7,7 @@
   <meta property="og:description" content="Tomy & Alexa Virtual Wedding Reception">
 
   <title>Tomy & Lexa | Virtual Wedding Reception</title>
-  <link rel="icon" href="images/favicon-16.png">
+  <link rel="icon" href="../images/favicon-16.png">
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -15,39 +15,39 @@
 
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-  <div class="container-fluid souvenir-page">
+  <div class="mobile-content">
+    <h1>Please Access This Website from Desktop</h1>
+    <h2>Can't wait to see you!</h2>
+  </div>
 
-    <!-- Header -->
-    <div class="header header-gallery">
+  <div class="desktop-content">
+    <div class="login-form">
+      <form method="post">
+        <div class="form-group">
+          <label for="idNumber">User ID</label>
+          <input type="text" class="form-control" id="username" autofocus>
+        </div>
+        <button id="btn-login" type="" class="btn btn-primary btn-login">Login</button>
 
-      <div id="checkbox-container2" class="header-div">
-        <input type="checkbox" class="checkbox" id="toggleLang" />
-        <label class="label" for="toggleLang">
-          <img class="flag-circle uk" src="../images/lang/uk-circle.png" alt="">
-          <img class="flag-circle ind" src="../images/lang/ind-circle.png" alt="">
-          <div class="ball"></div>
-        </label>
-
-        <!-- <img id="info" class="header-icon info" src="../images/information.svg" alt=""> -->
-
-        <!-- <img id="faq" class="header-icon" src="../images/faq.svg" alt=""> -->
-
-        <img class="exit header-icon" src="../images/exit.svg" alt="">
-      </div>
+      </form>
     </div>
 
-      <h1>Souvenir Page</h1>
+
+
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
-  <script type="text/javascript" src="../index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
+
+  <script type="text/javascript" src="login.js"></script>
 
 </body>
 
