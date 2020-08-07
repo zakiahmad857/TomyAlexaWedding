@@ -341,7 +341,7 @@ body {
 }
 
 .homepage{
-  background-image: url("../images/background2.jpg") !important;
+  background-image: url("../images/background2.png") !important;
 }
 
 .gallery-page{
@@ -527,7 +527,7 @@ body {
   top: 70%;
   width: 13%;
   height: 30%;
-  background: url('../images/png-seq/animatedayam.png');
+  background: url('../images/png-seq/animatedayam2.png');
   background-size: 220% auto;
   background-repeat: no-repeat;
   background-position: 55% 65%;

@@ -313,9 +313,13 @@
     });
 
     var dirPath = dirname(location.href);
+    function dirname(path) {
+      return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+    }
 
     // TOKEN DATA
     var name = null;
+    var idAdmin = null;
 
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
@@ -339,6 +343,7 @@
         console.log(result);
         name = result[0].name;
         timeSet = result[0].time;
+        idAdmin = result[0].id_room;
         console.log(name);
         console.log(timeSet);
 
@@ -348,12 +353,18 @@
       }
     });
 
-    console.log("nama homepage " + name);
+    // console.log("nama homepage " + name);
     $("#welcomeName").html(name);
 
-    function dirname(path) {
-      return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+    console.log("id salah" + idAdmin);
+
+    if (idAdmin == "9999" || idAdmin == "9898" || idAdmin == "8888") {
+      var fullPath = dirPath + "/Vcall";
+      console.log(fullPath);
+      window.location = fullPath;
     }
+
+
 
     // cek manual
     // var now = new Date();
@@ -406,7 +417,8 @@
       console.log(hours + ":" + minutes + ":" + seconds);
 
       // Popup Vcall
-      if (hours == "00" && minutes == "00" && seconds == "00") {
+      // if (hours == "00" && minutes == "00" && seconds == "00")
+      if (timeLeft <= 0 && timeLeft >= 600) {
         $("#welcomeModal").css('display', 'none');
         $("#earlyBird").css('display', 'none');
         $("#vcallModal").css('display', 'block');
@@ -437,7 +449,7 @@
         }, 1000);
       }
 
-      if (hours < "3") {
+      if (timeLeft > 0) {
         // Select language @ modal
         $("#checkbox-ind").click(function() {
           $("#toggleLang").prop('checked', false);
@@ -460,7 +472,7 @@
       }
 
       // Jam Karet
-      if (hours > "20"){
+      if (timeLeft < -600){
         $("#checkbox-ind").click(function(){
           $("#earlyBird").css('display', 'none');
           $("#karetModal").css('display', 'block');

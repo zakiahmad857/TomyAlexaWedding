@@ -211,6 +211,7 @@
     var vcallPos = null;
     var usernameCall = null;
     var startTime = null;
+    var idSalah = null;
 
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
@@ -229,6 +230,7 @@
         vcallPos = result[0].id_room;
         room = result[0].room;
         startTime = result[0].time;
+        idAdmin = result[0].id_room;
         console.log(vcallPos);
         console.log(room);
         console.log("waktu vcall " + startTime);
@@ -280,20 +282,22 @@
       console.log("timenow " + timeNow);
       console.log("timeParse " + timeNowParse);
 
-      if (timeNowParse == endTime) {
-        console.log("sama");
-        // window.location = homePath;
-        $("#setAgora").css('display', 'none');
-        $("#byeVcallModal").css('display', 'block');
-        leave(rtc);
+        if (timeNowParse == endTime) {
+          console.log("sama");
+          // window.location = homePath;
+          $("#setAgora").css('display', 'none');
+          $("#byeVcallModal").css('display', 'block');
+          leave(rtc);
 
-      } else {
-        console.log("beda");
-      }
+        } else {
+          console.log("beda");
+        }
     }
 
     setInterval(function() {
-      makeTimerCall();
+      if((idAdmin != "9999") && (idAdmin != "9898") && (idAdmin != "8888")){
+        makeTimerCall();  
+      }
     }, 1000);
 
     $("#btn-home").click(function(){
