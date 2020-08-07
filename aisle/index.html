@@ -28,14 +28,13 @@
           <div class="marquee">
             <div class="inner">
               <p>
-                <span>Occhi |</span>
-                <span>Syifa Andini |</span>
-                <span>Rama Wardhana |</span>
-                <span>Billie Naldo |</span>
-                <span>Ahmad Zaki |</span>
-                <span>Ardiansyah Akum |</span>
-                <span>Ijal |</span>
-
+                <span id="tamu1"></span><span> | </span>
+                <span id="tamu2"></span><span> | </span>
+                <span id="tamu3"></span><span> | </span>
+                <span id="tamu4"></span><span> | </span>
+                <span id="tamu5"></span><span> | </span>
+                <span id="tamu6"></span><span> | </span>
+                <span id="tamu7"></span><span> | </span>
               </p>
             </div>
           </div>
@@ -47,13 +46,13 @@
           <div class="marquee">
             <div class="inner">
               <p>
-                <span id="tamu1"></span><span> | </span>
-                <span id="tamu2"></span><span> | </span>
-                <span id="tamu3"></span><span> | </span>
-                <span id="tamu4"></span><span> | </span>
-                <span id="tamu5"></span><span> | </span>
-                <span id="tamu6"></span><span> | </span>
-                <span id="tamu7"></span><span> | </span>
+                <span id="next1"></span><span> | </span>
+                <span id="next2"></span><span> | </span>
+                <span id="next3"></span><span> | </span>
+                <span id="next4"></span><span> | </span>
+                <span id="next5"></span><span> | </span>
+                <span id="next6"></span><span> | </span>
+                <span id="next7"></span><span> | </span>
               </p>
             </div>
           </div>
@@ -75,7 +74,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
 
-  <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript">
     var dirPath = dirname(location.href);
     var homePath = RemoveLastDirectoryPartOf(dirPath);
@@ -94,6 +92,7 @@
     var name = null;
     var timeSet = null;
     var groupVcall = [];
+    var groupVcall2 = [];
 
     console.log("array");
     console.log(groupVcall.length);
@@ -110,8 +109,10 @@
     // Time group
     var timeCheck = new Date();
     var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 5);
+    var minuteEdit2 = minuteEdit + 5;
 
     timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
+    timeGroup2 = timeCheck.getHours() + ":" + minuteEdit2.toString();
 
     $.ajax({
       url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
@@ -139,6 +140,33 @@
     $("#tamu5").html(groupVcall[4]);
     $("#tamu6").html(groupVcall[5]);
     $("#tamu7").html(groupVcall[6]);
+
+    $.ajax({
+      url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup2,
+      async: false,
+      type: "GET",
+      global: false,
+      success: function(result) {
+        console.log("get time group");
+        console.log(result);
+        for (var i = 0; i < result.length; i++) {
+          var item2 = result[i].name;
+          groupVcall2.push(item2);
+        }
+        console.log(groupVcall2);
+      },
+      error: function(err) {
+        console.log(err);
+      }
+    });
+
+    $("#next1").html(groupVcall2[0]);
+    $("#next2").html(groupVcall2[1]);
+    $("#next3").html(groupVcall2[2]);
+    $("#next4").html(groupVcall2[3]);
+    $("#next5").html(groupVcall2[4]);
+    $("#next6").html(groupVcall2[5]);
+    $("#next7").html(groupVcall2[6]);
 
     $.ajax({
       url: "https://webnikahapi.arthatronic.com/api/user/",
@@ -291,6 +319,49 @@
       $("#welcomeModal").css('display', 'none');
       $("#earlyBird").css('display', 'none');
     });
+
+    // Running text
+    function handleMarquee() {
+            const marquee = document.querySelectorAll('.marquee');
+            let speed = 1;
+            let lastScrollPos = 0;
+            let timer;
+            marquee.forEach(function(el) {
+              const container = el.querySelector('.inner');
+              const content = el.querySelector('.inner > *');
+              //Get total width
+              const elWidth = content.offsetWidth;
+              //Duplicate content
+              let clone = content.cloneNode(true);
+              container.appendChild(clone);
+              let progress = 1;
+              function loop() {
+                progress = progress - speed;
+                if(progress <= elWidth * -1) {
+                  progress = 0;
+                }
+                container.style.transform = 'translateX(' + progress + 'px)';
+                container.style.transform += 'skewX(' + speed * 0.4 + 'deg)';
+                window.requestAnimationFrame(loop);
+              }
+              loop();
+            });
+            window.addEventListener('scroll', function() {
+              const maxScrollValue = 12;
+              const newScrollPos = window.scrollY;
+              let scrollValue = newScrollPos - lastScrollPos;
+              if(scrollValue > maxScrollValue) scrollValue = maxScrollValue;
+              else if(scrollValue < -maxScrollValue) scrollValue = -maxScrollValue;
+              speed = scrollValue;
+              clearTimeout(timer);
+              timer = setTimeout(handleSpeedClear, 10);
+            });
+            function handleSpeedClear() {
+              speed = 1;
+            }
+          };
+          handleMarquee();
+
   </script>
 </body>
 
