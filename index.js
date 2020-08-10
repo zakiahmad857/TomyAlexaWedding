@@ -73,113 +73,6 @@ var arrLang = {
 };
 
 $(document).ready(function() {
-  // // WEB TOUR
-  // var tour = new Tour({
-  //   steps: [{
-  //       element: "#gallery",
-  //       title: "Gallery Foto & Video",
-  //       content: "Kamu bisa melihat foto dan video Pre-Wed, Lamaran, serta Akad Pernikahan dari Tomy & Lexa ",
-  //       placement: "right",
-  //     },
-  //     {
-  //       element: "#idPlanet",
-  //       title: "Pelaminan",
-  //       content: "Di sini kamu bisa melihat siapa yang sedang bertemu dengan mempelai dan siapa yang ada di antrian berikutnya",
-  //       placement: "top",
-  //     },
-  //     {
-  //       element: "#angpao",
-  //       title: "Donasi",
-  //       content: "Kamu bisa memberikan rasa sayangmu untuk masa depan Tomy & Lexa di sini",
-  //       placement: "right",
-  //     },
-  //     {
-  //       element: "#souvenir",
-  //       title: "Cinderamata",
-  //       content: "Sebagai tanda terima kasih dari Tomy & Lexa, ada cinderamata untukmu di sini",
-  //       placement: "top",
-  //     },
-  //     {
-  //       element: "#live-mc",
-  //       content: "MC (nama) akan menemanimu selama acara berlangsung",
-  //       placement: "top",
-  //     },
-  //     {
-  //       element: "#info",
-  //       title: "Instructions",
-  //       content: "Jika kamu ingin membaca ulang petunjuk sebelumnya, silakan klik tombol ini",
-  //       placement: "left",
-  //     }
-  //   ],
-  //   container: 'body',
-  //   backdrop: true,
-  //   smartPlacement: true,
-  //   keyboard: true,
-  //   storage: window.localStorage,
-  //   debug: false,
-  //   autoscroll: false,
-  //   backdropPadding: 0,
-  //   redirect: true,
-  //   template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
-  // });
-  //
-  // var tourEng = new Tour({
-  //   steps: [{
-  //       element: "#gallery",
-  //       title: "Video & Photo Gallery",
-  //       content: "Take a look of Lexa & Tomy’s Pre-Wedding, Engagement and Wedding Ceremony photos and videos here",
-  //       placement: "right",
-  //     },
-  //     {
-  //       element: "#idPlanet",
-  //       title: "The Aisle",
-  //       content: "Take a peak of who are currently meeting the bride & groom. You can also see who’s up in the line to meet them soon!",
-  //       placement: "top",
-  //     },
-  //     {
-  //       element: "#angpao",
-  //       title: "Show your support here",
-  //       content: "We have provided ways on how you can support Tomy & Lexa’s in their next season.",
-  //       placement: "right",
-  //     },
-  //     {
-  //       element: "#souvenir",
-  //       title: "Wedding Souvenir",
-  //       content: "As a thank you, Tomy & Lexa have a special little something for you to remember this precious moment with them",
-  //       placement: "top",
-  //     },
-  //     {
-  //       element: "#live-mc",
-  //       content: "MC (name) will accompany the guests during the event but we’re sorry he/she will only use Bahasa",
-  //       placement: "top",
-  //     },
-  //     {
-  //       element: "#info",
-  //       title: "Instructions",
-  //       content: "You can click this icon if you want to repeat the instructions",
-  //       placement: "left",
-  //     }
-  //   ],
-  //   container: 'body',
-  //   backdrop: true,
-  //   smartPlacement: true,
-  //   keyboard: true,
-  //   storage: window.localStorage,
-  //   debug: false,
-  //   autoscroll: false,
-  //   backdropPadding: 0,
-  //   redirect: true,
-  //   template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
-  // });
-  //
-  //
-  // $("#info").click(function() {
-  //   if (toggleLang.checked) {
-  //     tourEng.restart();
-  //   } else {
-  //     tour.restart();
-  //   }
-  // });
 
   // login localStorage
   var dirPath = dirname(location.href);
@@ -270,26 +163,26 @@ $(document).ready(function() {
   });
 
   // Select language @ modal
-  $("#checkbox-ind").click(function() {
-    $("#toggleLang").prop('checked', false);
-
-    // close modal, pop user modal
-    $("#welcomeModal").delay(1000).queue(function(next) {
-      $("#welcomeModal").css("display", "none");
-      $("#earlyBird").css("display", "block");
-    });
-  });
-
-  $("#checkbox-eng").click(function() {
-    console.log("masuk pertama");
-    $("#toggleLang").prop('checked', true);
-
-    $("#welcomeModal").delay(1000).queue(function(next) {
-      console.log("masuk kestate delay");
-      $("#welcomeModal").css("display", "none");
-      $("#earlyBird").css("display", "block");
-    });
-  });
+  // $("#checkbox-ind").click(function() {
+  //   $("#toggleLang").prop('checked', false);
+  //
+  //   // close modal, pop user modal
+  //   $("#welcomeModal").delay(1000).queue(function(next) {
+  //     $("#welcomeModal").css("display", "none");
+  //     $("#earlyBird").css("display", "block");
+  //   });
+  // });
+  //
+  // $("#checkbox-eng").click(function() {
+  //   console.log("masuk pertama");
+  //   $("#toggleLang").prop('checked', true);
+  // 
+  //   $("#welcomeModal").delay(1000).queue(function(next) {
+  //     console.log("masuk kestate delay");
+  //     $("#welcomeModal").css("display", "none");
+  //     $("#earlyBird").css("display", "block");
+  //   });
+  // });
 
   // When the user clicks anywhere outside of the modal, close it
   $(window).click(function(e) {
