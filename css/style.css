@@ -42,7 +42,7 @@ body {
 /* The Modal (background) */
 .modal {
   display: none;
-  z-index: 3;
+  z-index: 10;
   width: 100%;
   height: 100%;
   background-color: rgb(0, 0, 0);
@@ -331,17 +331,13 @@ body {
 .container-fluid {
   margin: 0 !important;
   padding: 0 !important;
-  min-width: 100% !important;
+  /* min-width: 100% !important; */
   height: 100vh !important;
-  background-attachment: fixed !important;
-  background-size: cover !important;
+  /* background-attachment: fixed !important; */
+  background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden !important;
   z-index: -100;
-}
-
-.homepage{
-  background-image: url("../images/background2.png") !important;
 }
 
 .gallery-page{
@@ -363,10 +359,6 @@ body {
   margin: 1% auto;
 }
 
-.header-gallery{
-  left: 80%;
-}
-
 /* Header icon */
 .header-icon {
   width: 5%;
@@ -380,210 +372,10 @@ body {
 .header-div {
   display: inline-block;
   width: 60%;
-  /* z-index: 10; */
 }
 
 .info{
   margin-left: 4%;
-}
-
-/* Scene Parallax */
-.planet {
-  position: absolute;
-  top: 30%;
-  left: 65%;
-}
-
-.layer {
-  pointer-events: auto;
-}
-
-/* LIVE MC */
-
-.mc{
-  position: absolute;
-  left: 60%;
-  bottom: 0;
-  width: 20%;
-  height: 40%;
-}
-
-.live-mc{
-  position: absolute;
-  left: 60%;
-  bottom: 0%;
-  width: 20%;
-  height: 50%;
-  background: url('../images/png-seq/tvmc.png');
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  z-index: 2;
-}
-
-.video-mc{
-  position: absolute;
-  left: 65%;
-  bottom: 8%;
-  width: 20%;
-  height: 50%;
-}
-
-.video-mc iframe{
-  width: 60%;
-  height: 40%;
-  pointer-events: none;
-  position: absolute;
-  top: 62%;
-  left: -4%;
-  /* display: inline-block; */
-  -webkit-mask-box-image: url(../images/circle.png);
-
-}
-
-/* SOUVENIR */
-.souvenir{
-  position: absolute;
-  left: 28%;
-  top: 60%;
-  width: 15%;
-  height: 25%;
-  background: url('../images/png-seq/statickaset.png');
-  background-size: 160% auto;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.souvenir:hover{
-  cursor: pointer;
-}
-
-/* GALLERY */
-.gallery{
-  width: 25%;
-  height: 40%;
-  position: absolute;
-  top: 17%;
-  left: 0;
-  perspective: 200px;
-}
-
-.gal{
-  position: relative;
-  width: 30%;
-  height: 40%;
-  background: url('../images/png-seq/tvtamu.png');
-  background-repeat: no-repeat;
-  background-position: 55% 65%;
-
-}
-
-.gallery1{
-  left: 58%;
-  top: 55%;
-  background-size: 125% auto;
-  transform: rotate3d(0, 1, 0, 15deg);
-}
-
-.gallery2{
-  left: 35%;
-  top: 18%;
-  background-size: 130% auto;
-  transform: rotate3d(0, 1, 0, 17deg);
-}
-
-.gallery3{
-  left: 7%;
-  top: -18%;
-  background-size: 140% auto;
-  transform: rotate3d(0, 1, 0, 19deg);
-}
-
-.gallery4{
-  left: 22%;
-  top: -86%;
-  background-size: 130% auto;
-  transform: rotate3d(0, 1, 0, 19deg);
-}
-
-.gallery5{
-  left: 46%;
-  top: -128%;
-  background-size: 122% auto;
-  transform: rotate3d(0, 1, 0, 19deg);
-}
-
-.gallery6{
-  left: 33%;
-  top: -193%;
-  background-size: 122% auto;
-  transform: rotate3d(0, 1, 0, 19deg);
-}
-
-/* ANGPAO */
-.angpao{
-  position: absolute;
-  left: 15%;
-  top: 70%;
-  width: 13%;
-  height: 30%;
-  background: url('../images/png-seq/animatedayam2.png');
-  background-size: 220% auto;
-  background-repeat: no-repeat;
-  background-position: 55% 65%;
-}
-
-.angpao img{
-  display: none;
-}
-
-.angpao:hover{
-  background: url('../images/png-seq/staticayam.png');
-  background-size: 220% auto;
-  background-repeat: no-repeat;
-  background-position: 55% 65%;
-  cursor: pointer;
-}
-
-/* Popup Angpao */
-/* Modal Content/Box */
-.modal-angpao {
-  width: 800px !important;
-  border-radius: 0 !important;
-  padding: 10px !important;
-  border-collapse: separate !important;
-  border-radius: 3rem !important;
-}
-
-#angpaoModal h5 {
-  font-weight: bold;
-  border-bottom: 0;
-  margin: 0 auto;
-}
-
-.qrcode-list {
-  display: flex;
-  margin: 5% 0;
-}
-
-.qrcode {
-  flex: auto;
-}
-
-.qrcode p {
-  margin-bottom: 0;
-}
-
-.ovo {
-  margin-left: 50px;
-}
-
-.gopay {
-  margin-right: 50px;
-}
-
-.bca {
-  width: 40%;
 }
 
 /* Language toggle */

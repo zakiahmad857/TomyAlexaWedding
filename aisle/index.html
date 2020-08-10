@@ -14,12 +14,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
 
   <!-- CSS Stylesheet  -->
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
-  <div class="wrap-aisle">
+  <div class="container-fluid wrap-aisle">
+    <!-- Header -->
+    <div class="header header-gallery">
+
+      <div id="checkbox-container2" class="header-div">
+        <input type="checkbox" class="checkbox" id="toggleLang" />
+        <label class="label" for="toggleLang">
+          <img class="flag-circle uk" src="../images/lang/uk-circle.png" alt="">
+          <img class="flag-circle ind" src="../images/lang/ind-circle.png" alt="">
+          <div class="ball"></div>
+        </label>
+
+        <img class="exit header-icon" src="../images/exit.svg" alt="">
+      </div>
+    </div>
+
     <div class="streaming-vcall">
       <iframe src="https://www.youtube.com/embed/E97RjpnrO7U?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
       <div class="wrap-running-text wrap-rt-1">
@@ -73,6 +89,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
+  <script src="../index.js" charset="utf-8"></script>
 
   <script type="text/javascript">
     var dirPath = dirname(location.href);

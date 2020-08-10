@@ -16,11 +16,11 @@
 
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
 
 </head>
 
 <body>
-
 
   <div class="mobile-content">
     <h1>Please Access This Website from Desktop</h1>
@@ -93,8 +93,8 @@
 
       <div class="modal-content content-karet">
         <h6 class="lang" key="sorry">Whoops you’re late, we’re sorry you’re not able to meet Tomy & Lexa. Here some message from them..</h6>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/1Sj-UdjqlFw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <button type="button" class="btn-modal" id="btn-next-2" name="okay">Next</button>
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/1Sj-UdjqlFw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button type="button" class="btn-modal btn-videokaret" id="btn-next-2" name="okay">Next</button>
       </div>
 
     </div>
@@ -156,7 +156,7 @@
       </div>
 
 
-      <div class="layer planet" data-depth="0.5">
+      <div class="layer planet">
         <div id="idPlanet" class="">
           <a href="aisle/index.html"><img src="images/planet.png" alt=""></a>
         </div>
@@ -169,8 +169,10 @@
         <iframe class="" src="https://www.youtube.com/embed/6ksnNqA302I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
+      <div class="angpao">
+        <div id="angpao" class="div-ayam">
 
-      <div id="angpao" class="angpao">
+        </div>
         <img src="images/png-seq/staticayam.png" alt="">
       </div>
 
@@ -179,13 +181,14 @@
       </a>
 
       <a href="gallery/index.html">
-        <div class="gallery" id="gallery">
-          <div class="gal gallery1"></div>
-          <div class="gal gallery2"></div>
-          <div class="gal gallery3"></div>
-          <div class="gal gallery4"></div>
-          <div class="gal gallery5"></div>
-          <div class="gal gallery6"></div>
+        <div class="gallery">
+          <div id="gallery" class="div-gal"></div>
+        </div>
+      </a>
+
+      <a href="jukebox/index.html">
+        <div class="jukebox">
+          <div id="jukebox" class="div-jukebox"></div>
         </div>
       </a>
 
@@ -217,7 +220,7 @@
           element: "#idPlanet",
           title: "Pelaminan",
           content: "Di sini kamu bisa melihat siapa yang sedang bertemu dengan mempelai dan siapa yang ada di antrian berikutnya",
-          placement: "top",
+          placement: "bottom",
         },
         {
           element: "#angpao",
@@ -230,6 +233,12 @@
           title: "Cinderamata",
           content: "Sebagai tanda terima kasih dari Tomy & Lexa, ada cinderamata untukmu di sini",
           placement: "top",
+        },
+        {
+          element: "#jukebox",
+          title: "Hiburan",
+          content: "Nikmati hiburan pernikahan Tomy & Lexa di sini! Akan ada special performance dari Norrrm Radio dan teman-teman mereka",
+          placement: "left",
         },
         {
           element: "#live-mc",
@@ -266,7 +275,7 @@
           element: "#idPlanet",
           title: "The Aisle",
           content: "Take a peak of who are currently meeting the bride & groom. You can also see who’s up in the line to meet them soon!",
-          placement: "top",
+          placement: "bottom",
         },
         {
           element: "#angpao",
@@ -279,6 +288,12 @@
           title: "Wedding Souvenir",
           content: "As a thank you, Tomy & Lexa have a special little something for you to remember this precious moment with them",
           placement: "top",
+        },
+        {
+          element: "#jukebox",
+          title: "Entertainment",
+          content: "Enjoy",
+          placement: "left",
         },
         {
           element: "#live-mc",
@@ -311,6 +326,7 @@
         tour.restart();
       }
     });
+
 
     var dirPath = dirname(location.href);
     function dirname(path) {
@@ -364,14 +380,6 @@
       window.location = fullPath;
     }
 
-
-
-    // cek manual
-    // var now = new Date();
-    // var timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-    // var endTime = new Date("5 August 2020 " + now.getHours().toString() + ":" + now.getMinutes().toString() + ":" + parseInt(now.getSeconds()).toString() + " GMT+07:00");
-
-
     var endTime = new Date("7 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
@@ -417,7 +425,6 @@
       console.log(hours + ":" + minutes + ":" + seconds);
 
       // Popup Vcall
-      // if (hours == "00" && minutes == "00" && seconds == "00")
       if (timeLeft <= 0 && timeLeft >= -600) {
         $("#welcomeModal").css('display', 'none');
         $("#earlyBird").css('display', 'none');
@@ -433,7 +440,6 @@
           // Display 'counter' wherever you want to display it.
           $("#redirectVcall").html(counterVcall);
           counterVcall--;
-
 
           console.log(counterVcall);
           if (counterVcall == 0) {

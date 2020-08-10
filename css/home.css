@@ -1,0 +1,222 @@
+.homepage{
+  background-image: url("../images/background2.png");
+}
+
+.planet {
+  position: absolute;
+  top: 10%;
+  left: 65%;
+}
+
+.layer {
+  pointer-events: auto;
+}
+
+/* LIVE MC */
+.mc{
+  position: absolute;
+  left: 60%;
+  bottom: 0;
+  width: 20%;
+  height: 40%;
+}
+
+.live-mc{
+  position: absolute;
+  left: 60%;
+  bottom: 0%;
+  width: 20%;
+  height: 50%;
+  background: url('../images/png-seq/tvmc.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  z-index: 5;
+}
+
+.video-mc{
+  position: absolute;
+  left: 65%;
+  bottom: 8%;
+  width: 20%;
+  height: 50%;
+}
+
+.video-mc iframe{
+  width: 60%;
+  height: 40%;
+  pointer-events: none;
+  position: absolute;
+  top: 62%;
+  left: -4%;
+  -webkit-mask-box-image: url(../images/circle.png);
+}
+
+
+/* SOUVENIR */
+.souvenir{
+  position: absolute;
+  left: 20%;
+  top: 34%;
+  width: 25%;
+  height: 45%;
+  background: url('../images/png-seq/animatedkaset.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border: 1px solid blue; */
+  z-index: 4;
+}
+
+.souvenir:hover{
+  cursor: pointer;
+  position: absolute;
+  left: 20%;
+  top: 34%;
+  width: 25%;
+  height: 45%;
+  background: url('../images/png-seq/statickaset.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* GALLERY */
+.gallery{
+  width: 42%;
+  height: 70%;
+  position: absolute;
+  top: 0%;
+  left: 2%;
+  background: url('../images/png-seq/galeri.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top;
+  /* border: 1px solid yellow; */
+  z-index: 3;
+}
+
+.div-gal{
+  position: relative;
+  left: 5%;
+  top: 20%;
+  width: 60%;
+  height: 65%;
+  /* border: 2px solid purple; */
+}
+
+/* SOUVENIR */
+.jukebox{
+  position: absolute;
+  right: 0;
+  top: 40%;
+  width: 35%;
+  height: 50%;
+  background: url('../images/png-seq/animatedjukebox.png');
+  background-size: 95% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border: 1px solid blue; */
+  z-index: 4;
+}
+
+.div-jukebox{
+  position: relative;
+  left: 40%;
+  top: 5%;
+  width: 60%;
+  height: 75%;
+  /* border: 2px solid purple; */
+}
+
+.jukebox:hover{
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 40%;
+  width: 35%;
+  height: 50%;
+  background: url('../images/png-seq/jukebox.png');
+  background-size: 95% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ANGPAO */
+.angpao{
+  position: absolute;
+  left: 3%;
+  bottom: 0;
+  width: 25%;
+  height: 45%;
+  background: url('../images/png-seq/animatedayam.png');
+  background-size: 120% auto;
+  background-repeat: no-repeat;
+  background-position: 55% 100%;
+  /* border: 1px solid red; */
+  z-index: 6;
+}
+
+.div-ayam{
+  position: relative;
+  left: 20%;
+  top: 8%;
+  width: 60%;
+  height: 80%;
+  /* border: 2px solid purple; */
+}
+
+.angpao img{
+  width: 28%;
+  height: 45%;
+  display: none;
+}
+
+.angpao:hover{
+  background: url('../images/png-seq/staticayam.png');
+  background-size: 120% auto;
+  background-repeat: no-repeat;
+  background-position: 55% 100%;
+  cursor: pointer;
+}
+
+/* Popup Angpao */
+/* Modal Content/Box */
+.modal-angpao {
+  width: 800px !important;
+  border-radius: 0 !important;
+  padding: 10px !important;
+  border-collapse: separate !important;
+  border-radius: 3rem !important;
+}
+
+#angpaoModal h5 {
+  font-weight: bold;
+  border-bottom: 0;
+  margin: 0 auto;
+}
+
+.qrcode-list {
+  display: flex;
+  margin: 5% 0;
+}
+
+.qrcode {
+  flex: auto;
+}
+
+.qrcode p {
+  margin-bottom: 0;
+}
+
+.ovo {
+  margin-left: 50px;
+}
+
+.gopay {
+  margin-right: 50px;
+}
+
+.bca {
+  width: 40%;
+}

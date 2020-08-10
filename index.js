@@ -1,6 +1,9 @@
-// PARALLAX
-var scene = document.getElementById("scene");
-// var parallax = new Parallax(scene);
+// youtube
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // // LANGUAGE
 var arrLang = {
@@ -231,7 +234,7 @@ $(document).ready(function() {
     $("#faqModal").css("display", "block");
   });
 
-  $(".exit").click(function(){
+  $(".exit").click(function() {
     window.location = homePath;
   });
 
@@ -242,25 +245,27 @@ $(document).ready(function() {
     $("#faqModal").css("display", "none");
   });
 
-  // // Select language @ modal
-  // $("#checkbox-ind").click(function() {
-  //   $("#toggleLang").prop('checked', false);
-  //
-  //   // close modal, pop user modal
-  //   $("#welcomeModal").delay(1000).queue(function(next) {
-  //     $("#welcomeModal").css("display", "none");
-  //     $("#earlyBird").css("display", "block");
-  //   });
-  // });
-  //
-  // $("#checkbox-eng").click(function() {
-  //   $("#toggleLang").prop('checked', true);
-  //
-  //   $("#welcomeModal").delay(1000).queue(function(next) {
-  //     $("#welcomeModal").css("display", "none");
-  //     $("#earlyBird").css("display", "block");
-  //   });
-  // });
+  // Select language @ modal
+  $("#checkbox-ind").click(function() {
+    $("#toggleLang").prop('checked', false);
+
+    // close modal, pop user modal
+    $("#welcomeModal").delay(1000).queue(function(next) {
+      $("#welcomeModal").css("display", "none");
+      $("#earlyBird").css("display", "block");
+    });
+  });
+
+  $("#checkbox-eng").click(function() {
+    console.log("masuk pertama");
+    $("#toggleLang").prop('checked', true);
+
+    $("#welcomeModal").delay(1000).queue(function(next) {
+      console.log("masuk kestate delay");
+      $("#welcomeModal").css("display", "none");
+      $("#earlyBird").css("display", "block");
+    });
+  });
 
   // When the user clicks anywhere outside of the modal, close it
   $(window).click(function(e) {
@@ -279,6 +284,20 @@ $(document).ready(function() {
     }
   });
 
+  var stopVideo = function ( element ) {
+
+    var iframe = element.querySelector( 'iframe');
+    var video = element.querySelector( '#video' );
+    if ( iframe !== null ) {
+        var iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
+    }
+    if ( video !== null ) {
+        video.pause();
+    }
+
+  };
+
   // When the user clicks next button, close it & init web tour
   $("#btn-next").click(function() {
     $("#earlyBird").css("display", "none");
@@ -289,15 +308,18 @@ $(document).ready(function() {
     }
   });
   $("#btn-next-2").click(function() {
+
     $("#karetModal").css("display", "none");
+    $("#earlyBird").css("display", "none");
     $("#welcomeModal").css("display", "none");
     if (toggleLang.checked) {
       tourEng.restart();
     } else {
       tour.restart();
     }
-  });
 
+    stopVideo(document);
+  });
 });
 
 // lANGUANGE FUNCTIONS

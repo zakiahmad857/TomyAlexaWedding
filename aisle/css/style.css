@@ -1,11 +1,4 @@
 
-      body {
-        /* font-family: sans-serif; */
-        /* font-weight: 700; */
-        /* height: 600vh; */
-        /* background: #d66d75;
-        background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 50%); */
-      }
 
       .wrap-aisle{
         background-color: lightgrey;
@@ -33,7 +26,7 @@
       }
 
       .wrap-running-text{
-        border: 1px solid red;
+        /* border: 1px solid red; */
         position: absolute;
         width: 90%;
         left: 50%;
@@ -51,16 +44,16 @@
       .static-text h5{
         display: inline-block;
         padding: 0 2%;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
       }
 
       .static-text h6{
         display: inline-block;
         width: 63%;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         float: right;
       }
-      
+
       .marquee {
         /* position: fixed; */
         position: relative;
@@ -68,7 +61,7 @@
         left: 0;
         width: 60%;
         /* height: 100vh; */
-        border: 1px solid red;
+        /* border: 1px solid red; */
         float: right;
         overflow: hidden;
       }
@@ -78,7 +71,7 @@
         width: 100%;
         display: flex;
         color: black;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
       }
 
       .marquee .inner > * {
