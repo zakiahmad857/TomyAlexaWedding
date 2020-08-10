@@ -28,6 +28,11 @@
   </div>
 
   <div class="desktop-content">
+    <!-- lOADER -->
+    <div id="loading" class="loader">
+      <img src="images/loading.svg" alt="loading" />
+    </div>
+
     <!-- MODALS -->
     <!-- WELCOMING MODAL -->
     <div id="welcomeModal" class="modal">
@@ -207,7 +212,6 @@
   <!-- <script type="text/javascript" src="gotoconcall.js"></script> -->
 
   <script type="text/javascript">
-
     // WEB TOUR
     var tour = new Tour({
       steps: [{
@@ -329,6 +333,7 @@
 
 
     var dirPath = dirname(location.href);
+
     function dirname(path) {
       return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
     }
@@ -340,7 +345,7 @@
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
 
-    if (cookieToken == null){
+    if (cookieToken == null) {
       var fullPath = dirPath + "/login";
       console.log(fullPath);
       window.location = fullPath;
@@ -478,13 +483,13 @@
       }
 
       // Jam Karet
-      if (timeLeft < -600){
-        $("#checkbox-ind").click(function(){
+      if (timeLeft < -600) {
+        $("#checkbox-ind").click(function() {
           $("#earlyBird").css('display', 'none');
           $("#karetModal").css('display', 'block');
 
         });
-        $("#checkbox-eng").click(function(){
+        $("#checkbox-eng").click(function() {
           $("#earlyBird").css('display', 'none');
           $("#karetModal").css('display', 'block');
 

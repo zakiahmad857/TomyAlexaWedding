@@ -1,3 +1,27 @@
+// lOADER
+
+$('html, body').css({
+  overflow: 'hidden',
+  height: '100%'
+});
+
+$(window).on('load', function() {
+
+  $('html, body').css({
+    overflow: 'hidden',
+    height: 'auto'
+  })
+
+  $("#loading").addClass("loader-hidden");
+
+  // LOGOGERAK
+  var link = $(this).attr('href');
+
+  $('#gerak').load(link+' #content', function(){
+    $('#gerak').fadeIn(2000);
+  });
+});
+
 // youtube
 var tag = document.createElement('script');
 
