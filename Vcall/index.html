@@ -10,8 +10,10 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
 
   <link rel="stylesheet" href="./assets/common.css" />
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="css/style.css">
 
 
@@ -25,24 +27,33 @@
     <div class="modal-content">
       <h4 class="lang" key="welcome">settings</h4>
       <form id="form">
-        <div class="input-field">
+        <div id="selectCam" class="input-field">
           <label for="cameraId" class="active">CAMERA</label>
           <select class="" name="cameraId" id="cameraId"></select>
         </div>
-        <div class="input-field">
+        <div id="selectMic" class="input-field">
           <label for="microphoneId" class="active">MICROPHONE</label>
           <select class="" name="microphoneId" id="microphoneId"></select>
         </div>
-        <button type="submit" id="join" class="btn btn-primary">JOIN</button>
+        <button type="submit" id="join" class="btn-join">JOIN</button>
       </form>
     </div>
   </div>
 
   <div class="pelaminan">
     <!-- Header -->
-    <div class="logout">
+    <!-- <div id="exitCall" class="logout">
       <a href="../index.html"><img class="header-icon" src="../images/exit.svg" alt=""></a>
+    </div> -->
+
+    <!-- <div class="countdown1"> -->
+    <div id="countdownCall" class="timer1">
+      <p id="countWaiting"></p>
+      <span id="hours1"></span>
+      <span id="minutes1"></span>
+      <span id="seconds1"></span>
     </div>
+    <!-- </div> -->
 
     <!-- Video -->
     <span class="dot dot1">
@@ -200,12 +211,107 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
+
   <script src="vendor/jquery.min.js"></script>
   <script src="vendor/materialize.min.js"></script>
   <script src="AgoraRTCSDK-3.1.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
 
+  <script type="text/javascript" src="index.js"></script>
   <script type="text/javascript">
+    // WEB TOUR
+    var vcallTour = new Tour({
+      steps: [{
+        element: "#countdownCall",
+        title: "Countdown",
+        content: "HItung mundur waktu concall",
+        placement: "bottom",
+      },
+      {
+        element: "#selectCam",
+        title: "Select Kamera",
+        content: "Pilih kamera yang akan digunakan ",
+        placement: "right",
+      },
+      {
+        element: "#selectMic",
+        title: "Select Microphone",
+        content: "Pilih microphone yang akan digunakan",
+        placement: "right",
+      },
+      {
+        element: "#join",
+        title: "Join ConCall",
+        content: "Lalala",
+        placement: "bottom",
+      }
+      ],
+      container: 'body',
+      // backdrop: true,
+      smartPlacement: true,
+      keyboard: true,
+      // storage: window.localStorage,
+      debug: false,
+      autoscroll: false,
+      backdropPadding: 0,
+      redirect: true,
+      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+    });
+
+    var vcallTourEng = new Tour({
+      steps: [{
+          element: "#countdownCall",
+          title: "Countdown",
+          content: "HItung mundur waktu concall",
+          placement: "bottom",
+        },
+        {
+          element: "#selectCam",
+          title: "Select Kamera",
+          content: "Pilih kamera yang akan digunakan ",
+          placement: "right",
+        },
+        {
+          element: "#selectMic",
+          title: "Select Microphone",
+          content: "Pilih microphone yang akan digunakan",
+          placement: "right",
+        },
+        {
+          element: "#join",
+          title: "Join ConCall",
+          content: "Lalala",
+          placement: "bottom",
+        }
+      ],
+      container: 'body',
+      // backdrop: true,
+      smartPlacement: true,
+      keyboard: true,
+      // storage: window.localStorage,
+      debug: false,
+      autoscroll: false,
+      backdropPadding: 0,
+      redirect: true,
+      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+    });
+
+    var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues")) || {};
+    console.log("toggle ");
+    console.log(checkboxValues.toggleLang);
+
+    var englishState = checkboxValues.toggleLang;
+    if (englishState) {
+      vcallTourEng.restart();
+      console.log("masuk tour 1");
+    } else {
+      vcallTour.restart();
+      console.log("masuk tour 2");
+    }
+
     // TOKEN DATA
     var name = null;
     var vcallPos = null;
@@ -242,6 +348,7 @@
       }
     });
 
+
     if (room == 1) {
       var id_room = "room1";
     } else {
@@ -264,10 +371,11 @@
     console.log("yeuu " + startTime);
     // var startTimeDate = new Date("7 August 2020 10:42:30 GMT+07:00")
 
-    var startTimeDate = new Date("7 August 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("13 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
-    // nambah 10 menit ntar
+
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
+    var halfTime = startTimeParse + 300;
     var endTime = startTimeParse + 600;
 
     function makeTimerCall() {
@@ -276,31 +384,70 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "7 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "13 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       console.log("timenow " + timeNow);
       console.log("timeParse " + timeNowParse);
 
-        if (timeNowParse == endTime) {
-          console.log("sama");
-          // window.location = homePath;
-          $("#setAgora").css('display', 'none');
-          $("#byeVcallModal").css('display', 'block');
-          leave(rtc);
+      if (timeNowParse == endTime) {
+        console.log("sama");
+        $("#setAgora").css('display', 'none');
+        $("#byeVcallModal").css('display', 'block');
+        leave(rtc);
 
-        } else {
-          console.log("beda");
-        }
+      } else {
+        console.log("beda");
+      }
+
+      // Countdown
+      var timeCount = endTime - timeNowParse;
+      console.log("timecount " + timeCount);
+
+      var days1 = Math.floor(timeCount / 86400);
+      var hours1 = Math.floor((timeCount - (days1 * 86400)) / 3600);
+      var minutes1 = Math.floor((timeCount - (days1 * 86400) - (hours1 * 3600)) / 60);
+      var seconds1 = Math.floor((timeCount - (days1 * 86400) - (hours1 * 3600) - (minutes1 * 60)));
+      if (minutes1 < "10") {
+        minutes1 = "0" + minutes1;
+      }
+      if (seconds1 < "10") {
+        seconds1 = "0" + seconds1;
+      }
+
+      if (timeCount >= "300") {
+        // Waiting room
+        console.log("waiting room");
+        $("#countWaiting").html("Waiting Room");
+        $("#minutes1").html(minutes1 - 5 + "<span> :</span>");
+        $("#seconds1").html(seconds1);
+
+      } else if (timeCount <= 0) {
+        // Done
+        console.log("beresnih");
+        $(".timer1").css('display', 'none');
+        $("#hours1").css('display', 'none');
+        $("#minutes1").css('display', 'none');
+        $("#seconds1").css('display', 'none');
+
+      } else if (timeCount < "300") {
+        // Ketemu pengantin
+        console.log("ketemu");
+        $("#countWaiting").css('display', 'none');
+        $("#minutes1").html(minutes1 + "<span> :</span>");
+        $("#seconds1").html(seconds1);
+
+      }
+
     }
 
     setInterval(function() {
-      if((idAdmin != "9999") && (idAdmin != "9898") && (idAdmin != "9797") && (idAdmin != "9696") && (idAdmin != "8888")){
+      if ((idAdmin != "9999") && (idAdmin != "9898") && (idAdmin != "9797") && (idAdmin != "9696") && (idAdmin != "8888")) {
         makeTimerCall();
       }
     }, 1000);
 
-    $("#btn-home").click(function(){
+    $("#btn-home").click(function() {
       window.location = homePath;
     });
 
@@ -381,7 +528,7 @@
 
       obj["uid"] = vcallPos
 
-      if (room == 1){
+      if (room == 1) {
         obj["appID"] = "48025a2877b744c4afee2182bb106981"
       } else {
         obj["appID"] = "10ca4e644db44fc9a24de6ccf393ebaa"

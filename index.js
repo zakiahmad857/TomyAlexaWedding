@@ -14,12 +14,6 @@ $(window).on('load', function() {
 
   $("#loading").addClass("loader-hidden");
 
-  // LOGOGERAK
-  var link = $(this).attr('href');
-
-  $('#gerak').load(link+' #content', function(){
-    $('#gerak').fadeIn(2000);
-  });
 });
 
 // youtube
@@ -176,7 +170,7 @@ $(document).ready(function() {
   // $("#checkbox-eng").click(function() {
   //   console.log("masuk pertama");
   //   $("#toggleLang").prop('checked', true);
-  // 
+  //
   //   $("#welcomeModal").delay(1000).queue(function(next) {
   //     console.log("masuk kestate delay");
   //     $("#welcomeModal").css("display", "none");
@@ -236,6 +230,8 @@ $(document).ready(function() {
     }
 
     stopVideo(document);
+
+
   });
 });
 

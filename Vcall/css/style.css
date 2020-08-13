@@ -5,6 +5,40 @@ body {
   height: 100%;
 }
 
+.btn-join{
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+
+  text-decoration: none;
+  color: #fff;
+  background-color: #26a69a;
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+  cursor: pointer;
+}
+
+.btn-join:focus {
+  background-color: #1d7d74;
+}
+
+.btn-join:hover {
+  background-color: #2bbbad;
+}
+
+.popover-content {
+  height: 30px !important;
+  margin-bottom: 30px !important;
+}
+
 .modal {
   display: none;
   z-index: 1;
@@ -95,6 +129,18 @@ input[type=number] {
 }
 
 /* Header */
+.timer1{
+  z-index: 10;
+  padding: 5px;
+  width: 10%;
+  margin: auto;
+  background-color: pink;
+  border-radius: 1rem;
+  position: absolute;
+  left: 2%;
+  top: 2%;
+}
+
 .header-icon {
   width: 50%;
   display: inline;

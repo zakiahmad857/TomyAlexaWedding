@@ -103,7 +103,7 @@ body {
   padding: 30px;
 }
 
-.content-earlyBird .timer {
+.content-earlyBird .timer{
   padding: 5px;
   width: 25%;
   margin: auto;
@@ -282,15 +282,15 @@ body {
 
 /* WEB TOUR */
 .popover-title {
-  border: 0;
-  background-color: white;
-  font-weight: bold;
-  margin-top: 5px;
+  border: 0 !important;
+  background-color: white !important;
+  font-weight: bold !important;
+  margin-top: 5px !important;
 }
 
 .popover-content {
-  height: 60px;
-  margin-bottom: 30px;
+  height: 60px !important;
+  margin-bottom: 30px !important;
 }
 
 .popover-navigation .btn-sm {
@@ -298,64 +298,64 @@ body {
 }
 
 .popover-navigation .btn-prev {
-  border: 1px solid lightgrey;
-  border-radius: 0.5rem;
-  margin-right: 10px;
+  border: 1px solid lightgrey !important;
+  border-radius: 0.5rem !important;
+  margin-right: 10px !important;
 }
 
 .popover-navigation .btn-next {
-  background-color: rgba(53, 78, 157, 0.8);
-  color: white;
-  border-radius: 0.5rem;
+  background-color: rgba(53, 78, 157, 0.8) !important;
+  color: white !important;
+  border-radius: 0.5rem !important;
 }
 
 .popover-navigation .btn-next:hover {
-  color: white;
-  background-color: rgb(53, 78, 157, 1);
+  color: white !important;
+  background-color: rgb(53, 78, 157, 1) !important;
 }
 
 .popover-navigation .btn-prev:hover {
-  color: #333;
-  border-color: #545b62;
+  color: #333 !important;
+  border-color: #545b62 !important;
 }
 
 .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-bottom-right-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem !important;
+  border-top-right-radius: 0.5rem !important;
 }
 
 .btn-group>.btn:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child) {
-  border-bottom-left-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem !important;
+  border-top-left-radius: 0.5rem !important;
 }
 
 .end {
-  margin-left: 10px;
-  border-radius: 0.5rem;
-  border: 1px solid lightgrey;
-  background-color: white;
-  color: black
+  margin-left: 10px !important;
+  border-radius: 0.5rem !important;
+  border: 1px solid lightgrey !important;
+  background-color: white !important;
+  color: black !important;
 }
 
 .end:hover {
-  background-color: white;
+  background-color: white !important;
 }
 
 .popover-navigation .btn:focus {
-  outline: none;
-  outline-offset: none;
-  box-shadow: none;
+  outline: none !important;
+  outline-offset: none !important;
+  box-shadow: none !important;
 }
 
 .popover-navigation .btn:active {
-  -webkit-box-shadow: none;
+  -webkit-box-shadow: none !important;
 }
 
 .end:not(:disabled):not(.disabled):active {
-  background-color: white;
-  border-color: #545b62;
-  color: black;
-  -webkit-box-shadow: none;
+  background-color: white !important;
+  border-color: #545b62 !important;
+  color: black !important;
+  -webkit-box-shadow: none !important;
 }
 
 /* Homepage */

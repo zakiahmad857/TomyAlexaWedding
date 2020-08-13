@@ -85,10 +85,9 @@
     <div id="vcallModal" class="modal">
 
       <div class="modal-content content-vcall">
-        <h4><span id="redirectVcall"></span></h4>
-        <h4 class="lang" key="vcall_1"> detik lagi Anda akan menuju halaman video call</h4>
+        <h4></h4>
+        <h4 class="lang" key="vcall_1"> <span id="redirectVcall"></span> detik lagi Anda akan menuju halaman video call</h4>
         <h6 class="lang" key="vcall_2">You will be seated in the waiting room, you can explore the website after the video call</h6>
-        <!-- <a href="Vcall/index.html"><button type="button" class="btn-modal" id="btn-okay" name="okay">Okay</button></a> -->
       </div>
 
     </div>
@@ -171,9 +170,8 @@
       <div id="live-mc" class="live-mc"></div>
 
       <div class="video-mc embed-responsive">
-        <iframe src="https://www.youtube.com/embed/Mqs0I8lEoKA?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="videoMC" src="https://www.youtube.com/embed/Mqs0I8lEoKA?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <!-- <iframe src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        <!-- <iframe class="" src="https://www.youtube.com/embed/6ksnNqA302I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       </div>
 
       <div class="angpao">
@@ -211,7 +209,6 @@
 
   <!-- js -->
   <script type="text/javascript" src="index.js"></script>
-  <!-- <script type="text/javascript" src="gotoconcall.js"></script> -->
 
   <script type="text/javascript">
     // WEB TOUR
@@ -377,15 +374,14 @@
 
     $("#welcomeName").html(name);
 
-    console.log("id salah" + idAdmin);
-
+    // Admin langsung masuk concall
     if (idAdmin == "9999" || idAdmin == "9898" || idAdmin == "9797" || idAdmin == "9696" || idAdmin == "8888") {
       var fullPath = dirPath + "/Vcall";
       console.log(fullPath);
       window.location = fullPath;
     }
 
-    var endTime = new Date("10 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("13 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
@@ -395,13 +391,8 @@
 
     function makeTimer() {
 
-      // var endTime = new Date("5 August 2020 " + timeSet + " GMT+07:00");
-
-      // manual
       now = new Date();
       timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-
-      // var endTime = new Date("6 August 2020 17:38:05 GMT+07:00");
 
       timeNow = (Date.parse(now) / 1000);
 
@@ -429,7 +420,10 @@
       console.log(hours + ":" + minutes + ":" + seconds);
 
       // Popup Vcall
+      var welcomeState = localStorage.getItem("welcomeState");
+
       if (timeLeft <= 0 && timeLeft >= -600) {
+
         $("#welcomeModal").css('display', 'none');
         $("#earlyBird").css('display', 'none');
         $("#vcallModal").css('display', 'block');
@@ -483,39 +477,68 @@
 
       // Jam Karet
       if (timeLeft < -600) {
-        // $("#checkbox-ind").click(function() {
-        //   $("#earlyBird").css('display', 'none');
-        //   $("#karetModal").css('display', 'block');
-        //
-        // });
-        // $("#checkbox-eng").click(function() {
-        //   $("#earlyBird").css('display', 'none');
-        //   $("#karetModal").css('display', 'block');
-        //
-        // });
 
-        $("#checkbox-ind").click(function() {
-          $("#toggleLang").prop('checked', false);
 
-          // close modal, pop user modal
-          $("#welcomeModal").delay(1000).queue(function(next) {
-            $("#welcomeModal").css("display", "none");
-            $("#earlyBird").css('display', 'none');
-            $("#karetModal").css('display', 'block');
+        // Tamu biasa
+        if(idAdmin == "0000"){
+
+          $("#checkbox-ind").click(function() {
+            $("#toggleLang").prop('checked', false);
+
+            // close modal, pop user modal
+            $("#welcomeModal").delay(1000).queue(function(next) {
+              console.log("MASUK SINI GA SI");
+              $("#welcomeModal").css("display", "none");
+              $("#earlyBird").css('display', 'none');
+              $("#karetModal").css('display', 'none');
+              $("#vcallModal").css('display', 'none');
+
+            });
           });
-        });
 
-        $("#checkbox-eng").click(function() {
-          console.log("masuk pertama");
-          $("#toggleLang").prop('checked', true);
+          $("#checkbox-eng").click(function() {
+            console.log("masuk pertama");
+            $("#toggleLang").prop('checked', true);
 
-          $("#welcomeModal").delay(1000).queue(function(next) {
-            console.log("masuk kestate delay");
-            $("#welcomeModal").css("display", "none");
-            $("#earlyBird").css('display', 'none');
-            $("#karetModal").css('display', 'block');
+            $("#welcomeModal").delay(1000).queue(function(next) {
+              console.log("masuk kestate delay");
+              $("#welcomeModal").css("display", "none");
+              $("#earlyBird").css('display', 'none');
+              $("#karetModal").css('display', 'none');
+              $("#vcallModal").css('display', 'none');
+
+            });
           });
-        });
+
+
+        } else {
+
+          $("#checkbox-ind").click(function() {
+            $("#toggleLang").prop('checked', false);
+
+            // close modal, pop user modal
+            $("#welcomeModal").delay(1000).queue(function(next) {
+              $("#welcomeModal").css("display", "none");
+              $("#earlyBird").css('display', 'none');
+              $("#karetModal").css('display', 'block');
+            });
+          });
+
+          $("#checkbox-eng").click(function() {
+            console.log("masuk pertama");
+            $("#toggleLang").prop('checked', true);
+
+            $("#welcomeModal").delay(1000).queue(function(next) {
+              console.log("masuk kestate delay");
+              $("#welcomeModal").css("display", "none");
+              $("#earlyBird").css('display', 'none');
+              $("#karetModal").css('display', 'block');
+            });
+          });
+
+        }
+
+
 
       }
     }
