@@ -45,13 +45,13 @@
           <div class="marquee">
             <div class="inner">
               <p>
-                <span id="tamu1"></span><span> | </span>
-                <span id="tamu2"></span><span> | </span>
-                <span id="tamu3"></span><span> | </span>
-                <span id="tamu4"></span><span> | </span>
-                <span id="tamu5"></span><span> | </span>
-                <span id="tamu6"></span><span> | </span>
-                <span id="tamu7"></span><span> | </span>
+                <span id="tamu1"></span>
+                <span id="tamu2"></span>
+                <span id="tamu3"></span>
+                <span id="tamu4"></span>
+                <span id="tamu5"></span>
+                <span id="tamu6"></span>
+                <span id="tamu7"></span>
               </p>
             </div>
           </div>
@@ -63,13 +63,13 @@
           <div class="marquee">
             <div class="inner">
               <p>
-                <span id="next1"></span><span> | </span>
-                <span id="next2"></span><span> | </span>
-                <span id="next3"></span><span> | </span>
-                <span id="next4"></span><span> | </span>
-                <span id="next5"></span><span> | </span>
-                <span id="next6"></span><span> | </span>
-                <span id="next7"></span><span> | </span>
+                <span id="next1"></span>
+                <span id="next2"></span>
+                <span id="next3"></span>
+                <span id="next4"></span>
+                <span id="next5"></span>
+                <span id="next6"></span>
+                <span id="next7"></span>
               </p>
             </div>
           </div>
@@ -151,13 +151,16 @@
       }
     });
 
-    $("#tamu1").html(groupVcall[0]);
-    $("#tamu2").html(groupVcall[1]);
-    $("#tamu3").html(groupVcall[2]);
-    $("#tamu4").html(groupVcall[3]);
-    $("#tamu5").html(groupVcall[4]);
-    $("#tamu6").html(groupVcall[5]);
-    $("#tamu7").html(groupVcall[6]);
+    // Show list tamu yg lagi concall
+    if (groupVcall.length > 0) {
+      $("#tamu1").html(groupVcall[0] + "<span> | </span>");
+      $("#tamu2").html(groupVcall[1] + "<span> | </span>");
+      $("#tamu3").html(groupVcall[2] + "<span> | </span>");
+      $("#tamu4").html(groupVcall[3] + "<span> | </span>");
+      $("#tamu5").html(groupVcall[4] + "<span> | </span>");
+      $("#tamu6").html(groupVcall[5] + "<span> | </span>");
+      $("#tamu7").html(groupVcall[6] + "<span> | </span>");
+    }
 
     $.ajax({
       url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup2,
@@ -178,14 +181,18 @@
       }
     });
 
-    $("#next1").html(groupVcall2[0]);
-    $("#next2").html(groupVcall2[1]);
-    $("#next3").html(groupVcall2[2]);
-    $("#next4").html(groupVcall2[3]);
-    $("#next5").html(groupVcall2[4]);
-    $("#next6").html(groupVcall2[5]);
-    $("#next7").html(groupVcall2[6]);
+    // Show list tamu next concall
+    if (groupVcall2.length > 0) {
+      $("#next1").html(groupVcall2[0] + "<span> | </span>");
+      $("#next2").html(groupVcall2[1] + "<span> | </span>");
+      $("#next3").html(groupVcall2[2] + "<span> | </span>");
+      $("#next4").html(groupVcall2[3] + "<span> | </span>");
+      $("#next5").html(groupVcall2[4] + "<span> | </span>");
+      $("#next6").html(groupVcall2[5] + "<span> | </span>");
+      $("#next7").html(groupVcall2[6] + "<span> | </span>");
+    }
 
+    // Token data
     $.ajax({
       url: "https://webnikahapi.arthatronic.com/api/user/",
       async: false,
@@ -202,7 +209,6 @@
         timeSet = result[0].time;
         console.log(name);
         console.log(timeSet);
-
       },
       error: function(err) {
         console.log(err);
@@ -212,13 +218,7 @@
     console.log("nama homepage " + name);
     $("#welcomeName").html(name);
 
-    // cek manual
-    // var now = new Date();
-    // var timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-    // var endTime = new Date("5 August 2020 " + now.getHours().toString() + ":" + now.getMinutes().toString() + ":" + parseInt(now.getSeconds()).toString() + " GMT+07:00");
-
-
-    var endTime = new Date("7 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("13 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
     // endTime = (Date.parse(endTime) / 1000) + 10;
@@ -340,46 +340,47 @@
 
     // Running text
     function handleMarquee() {
-            const marquee = document.querySelectorAll('.marquee');
-            let speed = 1;
-            let lastScrollPos = 0;
-            let timer;
-            marquee.forEach(function(el) {
-              const container = el.querySelector('.inner');
-              const content = el.querySelector('.inner > *');
-              //Get total width
-              const elWidth = content.offsetWidth;
-              //Duplicate content
-              let clone = content.cloneNode(true);
-              container.appendChild(clone);
-              let progress = 1;
-              function loop() {
-                progress = progress - speed;
-                if(progress <= elWidth * -1) {
-                  progress = 0;
-                }
-                container.style.transform = 'translateX(' + progress + 'px)';
-                container.style.transform += 'skewX(' + speed * 0.4 + 'deg)';
-                window.requestAnimationFrame(loop);
-              }
-              loop();
-            });
-            window.addEventListener('scroll', function() {
-              const maxScrollValue = 12;
-              const newScrollPos = window.scrollY;
-              let scrollValue = newScrollPos - lastScrollPos;
-              if(scrollValue > maxScrollValue) scrollValue = maxScrollValue;
-              else if(scrollValue < -maxScrollValue) scrollValue = -maxScrollValue;
-              speed = scrollValue;
-              clearTimeout(timer);
-              timer = setTimeout(handleSpeedClear, 10);
-            });
-            function handleSpeedClear() {
-              speed = 1;
-            }
-          };
-          handleMarquee();
+      const marquee = document.querySelectorAll('.marquee');
+      let speed = 1;
+      let lastScrollPos = 0;
+      let timer;
+      marquee.forEach(function(el) {
+        const container = el.querySelector('.inner');
+        const content = el.querySelector('.inner > *');
+        //Get total width
+        const elWidth = content.offsetWidth;
+        //Duplicate content
+        let clone = content.cloneNode(true);
+        container.appendChild(clone);
+        let progress = 1;
 
+        function loop() {
+          progress = progress - speed;
+          if (progress <= elWidth * -1) {
+            progress = 0;
+          }
+          container.style.transform = 'translateX(' + progress + 'px)';
+          container.style.transform += 'skewX(' + speed * 0.4 + 'deg)';
+          window.requestAnimationFrame(loop);
+        }
+        loop();
+      });
+      window.addEventListener('scroll', function() {
+        const maxScrollValue = 12;
+        const newScrollPos = window.scrollY;
+        let scrollValue = newScrollPos - lastScrollPos;
+        if (scrollValue > maxScrollValue) scrollValue = maxScrollValue;
+        else if (scrollValue < -maxScrollValue) scrollValue = -maxScrollValue;
+        speed = scrollValue;
+        clearTimeout(timer);
+        timer = setTimeout(handleSpeedClear, 10);
+      });
+
+      function handleSpeedClear() {
+        speed = 1;
+      }
+    };
+    handleMarquee();
   </script>
 </body>
 
