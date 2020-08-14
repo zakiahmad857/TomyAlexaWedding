@@ -102,6 +102,12 @@
   background-position: center;
 }
 
+.parent-souvenir img{
+  width: 28%;
+  height: 45%;
+  display: none;
+}
+
 /* GALLERY */
 .parent-gallery{
   width: 42%;
@@ -191,6 +197,12 @@
   background-size: 95% auto;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.parent-jukebox img{
+  width: 28%;
+  height: 45%;
+  display: none;
 }
 
 /* ANGPAO */
