@@ -41,19 +41,13 @@
   </div>
 
   <div class="pelaminan">
-    <!-- Header -->
-    <!-- <div id="exitCall" class="logout">
-      <a href="../index.html"><img class="header-icon" src="../images/exit.svg" alt=""></a>
-    </div> -->
 
-    <!-- <div class="countdown1"> -->
     <div id="countdownCall" class="timer1">
       <p id="countWaiting"></p>
       <span id="hours1"></span>
       <span id="minutes1"></span>
       <span id="seconds1"></span>
     </div>
-    <!-- </div> -->
 
     <!-- Video -->
     <span class="dot dot1">
@@ -220,40 +214,40 @@
   <script src="AgoraRTCSDK-3.1.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
 
-  <script type="text/javascript" src="index.js"></script>
+  <!-- <script type="text/javascript" src="../index.js"></script> -->
   <script type="text/javascript">
     // WEB TOUR
     var vcallTour = new Tour({
       steps: [{
-        element: "#countdownCall",
-        title: "Countdown",
-        content: "HItung mundur waktu concall",
-        placement: "bottom",
-      },
-      {
-        element: "#selectCam",
-        title: "Select Kamera",
-        content: "Pilih kamera yang akan digunakan ",
-        placement: "right",
-      },
-      {
-        element: "#selectMic",
-        title: "Select Microphone",
-        content: "Pilih microphone yang akan digunakan",
-        placement: "right",
-      },
-      {
-        element: "#join",
-        title: "Join ConCall",
-        content: "Lalala",
-        placement: "bottom",
-      }
+          element: "#countdownCall",
+          title: "Countdown",
+          content: "HItung mundur waktu concall",
+          placement: "bottom",
+        },
+        {
+          element: "#selectCam",
+          title: "Select Kamera",
+          content: "Pilih kamera yang akan digunakan ",
+          placement: "right",
+        },
+        {
+          element: "#selectMic",
+          title: "Select Microphone",
+          content: "Pilih microphone yang akan digunakan",
+          placement: "right",
+        },
+        {
+          element: "#join",
+          title: "Join ConCall",
+          content: "Lalala",
+          placement: "bottom",
+        }
       ],
       container: 'body',
       // backdrop: true,
       smartPlacement: true,
       keyboard: true,
-      // storage: window.localStorage,
+      storage: window.localStorage,
       debug: false,
       autoscroll: false,
       backdropPadding: 0,
@@ -291,7 +285,7 @@
       // backdrop: true,
       smartPlacement: true,
       keyboard: true,
-      // storage: window.localStorage,
+      storage: window.localStorage,
       debug: false,
       autoscroll: false,
       backdropPadding: 0,
@@ -299,18 +293,15 @@
       template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
     });
 
+    // Set localStorage
     var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues")) || {};
+    var tourState = localStorage.getItem("tourState");
+    var settingState = localStorage.getItem("settingState");
+
     console.log("toggle ");
     console.log(checkboxValues.toggleLang);
 
     var englishState = checkboxValues.toggleLang;
-    if (englishState) {
-      vcallTourEng.restart();
-      console.log("masuk tour 1");
-    } else {
-      vcallTour.restart();
-      console.log("masuk tour 2");
-    }
 
     // TOKEN DATA
     var name = null;
@@ -369,9 +360,8 @@
     }
 
     console.log("yeuu " + startTime);
-    // var startTimeDate = new Date("7 August 2020 10:42:30 GMT+07:00")
 
-    var startTimeDate = new Date("13 August 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("14 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -384,20 +374,38 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "13 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "14 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
-      console.log("timenow " + timeNow);
-      console.log("timeParse " + timeNowParse);
+      // console.log("timeParse " + timeNowParse);
+      // console.log("endtime " + endTime);
 
-      if (timeNowParse == endTime) {
-        console.log("sama");
+      if (timeNowParse >= endTime) {
+
         $("#setAgora").css('display', 'none');
         $("#byeVcallModal").css('display', 'block');
+        console.log("sama");
+        vcallTour.end();
+        vcallTourEng.end();
         leave(rtc);
 
-      } else {
-        console.log("beda");
+      } else if (timeNowParse < endTime) {
+        // State setting agora
+        if (settingState != 'done') {
+          $("#setAgora").css('display', 'block');
+          localStorage.setItem('settingState', 'done');
+        }
+
+        // State webtour
+        if (tourState != 'done') {
+          if (englishState) {
+            vcallTourEng.restart();
+            localStorage.setItem('tourState', 'done');
+          } else {
+            vcallTour.restart();
+            localStorage.setItem('tourState', 'done');
+          }
+        }
       }
 
       // Countdown
@@ -451,11 +459,10 @@
       window.location = homePath;
     });
 
-
     console.log("USERNAME " + usernameCall);
-    $(document).ready(function() {
-      $("#setAgora").css("display", "block");
-    });
+    // $(document).ready(function() {
+    // $("#setAgora").css("display", "block");
+    // });
 
     console.log("agora sdk version: " + AgoraRTC.VERSION + " compatible: " + AgoraRTC.checkSystemRequirements());
     var resolutions = [{

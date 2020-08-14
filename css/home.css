@@ -54,27 +54,48 @@
 
 
 /* SOUVENIR */
-.souvenir{
+.parent-souvenir{
   position: absolute;
   left: 20%;
   top: 34%;
   width: 25%;
   height: 45%;
+  border: 1px solid black;
+  z-index: 5;
+}
+
+.souvenir{
+  position: absolute;
+  /* left: 20%;
+  top: 34%; */
+  width: 100%;
+  height: 100%;
   background: url('../images/png-seq/animatedkaset.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
   /* border: 1px solid blue; */
-  z-index: 4;
+  z-index: 5;
+  cursor: default;
 }
 
-.souvenir:hover{
+.div-souvenir{
   cursor: pointer;
   position: absolute;
+  border: 1px solid orange;
+  left: 20%;
+  top: 10%;
+  width: 35%;
+  height: 65%;
+  z-index: 6;
+}
+
+.div-souvenir:hover ~ .souvenir{
+  /* position: absolute;
   left: 20%;
   top: 34%;
   width: 25%;
-  height: 45%;
+  height: 45%; */
   background: url('../images/png-seq/statickaset.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -82,60 +103,90 @@
 }
 
 /* GALLERY */
-.gallery{
+.parent-gallery{
   width: 42%;
   height: 70%;
   position: absolute;
   top: 0%;
   left: 2%;
+  z-index: 3;
+  border: 2px solid black;
+}
+
+.gallery{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* top: 0%; */
+  /* left: 2%; */
   background: url('../images/png-seq/galeri.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: top;
-  /* border: 1px solid yellow; */
+  border: 1px solid yellow;
   z-index: 3;
 }
 
-.div-gal{
-  position: relative;
-  left: 5%;
+.div-gallery{
+  position: absolute;
+  left: 15%;
   top: 20%;
-  width: 60%;
+  width: 40%;
   height: 65%;
-  /* border: 2px solid purple; */
+  z-index: 6;
+  border: 2px solid purple;
+  cursor: pointer;
 }
 
-/* SOUVENIR */
-.jukebox{
+.div-gallery:hover ~ .gallery{
+
+}
+
+/* JUKEBOX */
+.parent-jukebox{
   position: absolute;
   right: 0;
   top: 40%;
   width: 35%;
   height: 50%;
+  border: 1px solid black;
+}
+
+.parent-jukebox a, .parent-gallery a{
+  cursor: default;
+}
+
+.jukebox{
+  position: absolute;
+  /* right: 0;
+  top: 40%; */
+  width: 100%;
+  height: 100%;
   background: url('../images/png-seq/animatedjukebox.png');
   background-size: 95% auto;
   background-repeat: no-repeat;
   background-position: center;
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   z-index: 4;
 }
 
 .div-jukebox{
-  position: relative;
+  position: absolute;
   left: 40%;
   top: 5%;
   width: 60%;
   height: 75%;
-  /* border: 2px solid purple; */
+  border: 2px solid purple;
+  z-index: 6;
+  cursor: pointer;
 }
 
-.jukebox:hover{
-  cursor: pointer;
-  position: absolute;
+.div-jukebox:hover ~ .jukebox{
+  /* position: absolute;
   right: 0;
   top: 40%;
   width: 35%;
-  height: 50%;
+  height: 50%; */
   background: url('../images/png-seq/jukebox.png');
   background-size: 95% auto;
   background-repeat: no-repeat;
@@ -143,45 +194,55 @@
 }
 
 /* ANGPAO */
-.angpao{
+.parent-angpao{
   position: absolute;
   left: 3%;
   bottom: 0;
   width: 25%;
   height: 45%;
+  border: 1px solid pink;
+}
+
+.angpao{
+  position: absolute;
+  /* left: 3%; */
+  /* bottom: 0; */
+  width: 100%;
+  height: 100%;
   background: url('../images/png-seq/animatedayam.png');
   background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: 55% 100%;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   z-index: 6;
 }
 
 .div-ayam{
-  position: relative;
+  position: absolute;
   left: 20%;
   top: 8%;
   width: 60%;
   height: 80%;
-  /* border: 2px solid purple; */
+  border: 2px solid blue;
+  z-index: 7;
+  cursor: pointer;
 }
 
-.angpao img{
+.parent-angpao img{
   width: 28%;
   height: 45%;
   display: none;
 }
 
-.angpao:hover{
+.div-ayam:hover ~ .angpao{
   background: url('../images/png-seq/staticayam.png');
   background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: 55% 100%;
-  cursor: pointer;
+  cursor: auto;
 }
 
 /* Popup Angpao */
-/* Modal Content/Box */
 .modal-angpao {
   width: 800px !important;
   border-radius: 0 !important;

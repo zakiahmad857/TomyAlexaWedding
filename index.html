@@ -174,28 +174,35 @@
         <!-- <iframe src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
       </div>
 
-      <div class="angpao">
-        <div id="angpao" class="div-ayam">
-
-        </div>
+      <div class="parent-angpao">
+        <div id="angpao" class="div-ayam"></div>
+        <div class="angpao"></div>
         <img src="images/png-seq/staticayam.png" alt="">
       </div>
 
-      <a href="souvenir/index.html">
-        <div id="souvenir" class="souvenir"></div>
-      </a>
+      <div class="parent-souvenir">
+        <a href="souvenir/index.html">
+          <div id="souvenir" class="div-souvenir"></div>
+          <div class="souvenir"></div>
+        </a>
+      </div>
+      
 
-      <a href="gallery/index.html">
-        <div class="gallery">
-          <div id="gallery" class="div-gal"></div>
-        </div>
-      </a>
+      <div class="parent-gallery">
+        <a href="gallery/index.html">
+          <div id="gallery" class="div-gallery"></div>
+          <div class="gallery"></div>
+        </a>
+      </div>
 
-      <a href="jukebox/index.html">
-        <div class="jukebox">
+
+      <div class="parent-jukebox">
+        <a href="jukebox/index.html">
           <div id="jukebox" class="div-jukebox"></div>
-        </div>
-      </a>
+          <div class="jukebox"></div>
+        </a>
+      </div>
+
 
     </div>
   </div>
@@ -381,7 +388,7 @@
       window.location = fullPath;
     }
 
-    var endTime = new Date("13 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("14 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
@@ -479,7 +486,7 @@
 
 
         // Tamu biasa
-        if(idAdmin == "0000"){
+        if (idAdmin == "0000") {
 
           $("#checkbox-ind").click(function() {
             $("#toggleLang").prop('checked', false);
