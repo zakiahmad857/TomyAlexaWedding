@@ -204,9 +204,10 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
   <script src="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
 
   <script src="vendor/jquery.min.js"></script>
@@ -214,7 +215,6 @@
   <script src="AgoraRTCSDK-3.1.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
 
-  <!-- <script type="text/javascript" src="../index.js"></script> -->
   <script type="text/javascript">
     // WEB TOUR
     var vcallTour = new Tour({
@@ -247,7 +247,7 @@
       // backdrop: true,
       smartPlacement: true,
       keyboard: true,
-      storage: window.localStorage,
+      // storage: window.localStorage,
       debug: false,
       autoscroll: false,
       backdropPadding: 0,
@@ -285,7 +285,7 @@
       // backdrop: true,
       smartPlacement: true,
       keyboard: true,
-      storage: window.localStorage,
+      // storage: window.localStorage,
       debug: false,
       autoscroll: false,
       backdropPadding: 0,
@@ -302,6 +302,7 @@
     console.log(checkboxValues.toggleLang);
 
     var englishState = checkboxValues.toggleLang;
+
 
     // TOKEN DATA
     var name = null;
@@ -368,6 +369,17 @@
     var halfTime = startTimeParse + 300;
     var endTime = startTimeParse + 600;
 
+    if (tourState != 'done') {
+      if (englishState) {
+        vcallTourEng.restart();
+        localStorage.setItem('tourState', 'done');
+      } else {
+        vcallTour.restart();
+        localStorage.setItem('tourState', 'done');
+      }
+    }
+
+    // Countdown Concall
     function makeTimerCall() {
 
       console.log("startTimeParse " + startTimeParse);
@@ -377,9 +389,10 @@
       var timeNow = "14 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
-      // console.log("timeParse " + timeNowParse);
-      // console.log("endtime " + endTime);
+      console.log("timeParse " + timeNowParse);
+      console.log("endtime " + endTime);
 
+      // Kalo waktu skrg udah melebihi jatah vcall, exit
       if (timeNowParse >= endTime) {
 
         $("#setAgora").css('display', 'none');
@@ -396,16 +409,6 @@
           localStorage.setItem('settingState', 'done');
         }
 
-        // State webtour
-        if (tourState != 'done') {
-          if (englishState) {
-            vcallTourEng.restart();
-            localStorage.setItem('tourState', 'done');
-          } else {
-            vcallTour.restart();
-            localStorage.setItem('tourState', 'done');
-          }
-        }
       }
 
       // Countdown
@@ -460,9 +463,9 @@
     });
 
     console.log("USERNAME " + usernameCall);
-    // $(document).ready(function() {
-    // $("#setAgora").css("display", "block");
-    // });
+    $(document).ready(function() {
+      $("#setAgora").css("display", "block");
+    });
 
     console.log("agora sdk version: " + AgoraRTC.VERSION + " compatible: " + AgoraRTC.checkSystemRequirements());
     var resolutions = [{
@@ -1110,6 +1113,7 @@
 
       // This will start the join functions with all the configuration selected by the user.
       $("#join").on("click", function(e) {
+        localStorage.setItem('settingState', 'done');
         console.log("join")
         e.preventDefault();
         var params = serializeformData(); // Data is feteched and serilized from the form element.
