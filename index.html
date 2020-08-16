@@ -170,8 +170,10 @@
       <div id="live-mc" class="live-mc"></div>
 
       <div class="video-mc embed-responsive">
-        <iframe id="videoMC" src="https://www.youtube.com/embed/Mqs0I8lEoKA?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <!-- <iframe src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <div class="video-wrapper">
+          <iframe id="videoMC" src="https://www.youtube.com/embed/Mqs0I8lEoKA?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
       </div>
 
       <div class="parent-angpao">
@@ -438,6 +440,7 @@
 
       // Popup Vcall
       if (timeLeft <= 0 && timeLeft >= -600) {
+
 
         $("#welcomeModal").css('display', 'none');
         $("#earlyBird").css('display', 'none');

@@ -109,11 +109,7 @@
     // TOKEN DATA
     var name = null;
     var timeSet = null;
-    var groupVcall = [];
-    var groupVcall2 = [];
 
-    console.log("array");
-    console.log(groupVcall.length);
 
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
@@ -128,6 +124,12 @@
     var timeCheck = new Date();
     var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 5);
     var minuteEdit2 = minuteEdit + 5;
+
+    var groupVcall = [];
+    var groupVcall2 = [];
+
+    console.log("array");
+    console.log(groupVcall.length);
 
     timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
     timeGroup2 = timeCheck.getHours() + ":" + minuteEdit2.toString();

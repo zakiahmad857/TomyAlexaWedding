@@ -214,6 +214,7 @@ input[type=number] {
 }
 
 .wrapper-username{
+  border: 1px solid black;
   width: 100%;
   position: relative;
   top: 90%;
@@ -223,7 +224,10 @@ input[type=number] {
   position: absolute;
   width: 100%;
   left: 50%;
+  margin: auto;
   -webkit-transform: translate(-50%, 0);
+  border: 1px solid red;
+  text-align: center;
 }
 
 .kotak {

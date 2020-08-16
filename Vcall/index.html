@@ -64,9 +64,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="wrapper-username">
+      <div class="wrapper-username">
         <p class="username" id="username1"></p>
-      </div> -->
+      </div>
     </span>
     <span class="dot dot2">
       <div class="vidPosition row container col l12 s12">
@@ -82,9 +82,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="wrapper-username">
+      <div class="wrapper-username">
         <p class="username" id="username2"></p>
-      </div> -->
+      </div>
     </span>
     <span class="dot dot3">
       <div class="vidPosition row container col l12 s12">
@@ -100,9 +100,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="wrapper-username">
+      <div class="wrapper-username">
         <p class="username" id="username3"></p>
-      </div> -->
+      </div>
     </span>
     <span class="dot dot4">
       <div class="vidPosition row container col l12 s12">
@@ -118,9 +118,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="wrapper-username">
+      <div class="wrapper-username">
         <p class="username" id="username4"></p>
-      </div> -->
+      </div>
     </span>
     <span class="dot dot5">
       <div class="vidPosition row container col l12 s12">
@@ -136,9 +136,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="wrapper-username">
+      <div class="wrapper-username">
         <p class="username" id="username5"></p>
-      </div> -->
+      </div>
     </span>
     <span class="dot dot6">
       <div class="vidPosition row container col l12 s12">
@@ -154,9 +154,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="wrapper-username">
+      <div class="wrapper-username">
         <p class="username" id="username6"></p>
-      </div> -->
+      </div>
     </span>
     <span class="dot dot7">
       <div class="vidPosition row container col l12 s12">
@@ -172,9 +172,9 @@
           </div>
         </div>
       </div>
-      <!-- <div class="wrapper-username">
+      <div class="wrapper-username">
         <p class="username" id="username7"></p>
-      </div> -->
+      </div>
     </span>
     <span class="kotak">
       <div class="vidPosition row container col l12 s12">
@@ -328,7 +328,7 @@
         vcallPos = result[0].id_room;
         room = result[0].room;
         startTime = result[0].time;
-        idAdmin = result[0].id_room;
+        idPosisi = result[0].id_room;
         console.log(vcallPos);
         console.log(room);
         console.log("waktu vcall " + startTime);
@@ -339,6 +339,53 @@
         console.log(err);
       }
     });
+
+    if(idPosisi == '1111'){
+      $("#username1").html(usernameCall);
+    } else if(idPosisi == '2222'){
+      $("#username2").html(usernameCall);
+    } else if(idPosisi == '3333'){
+      $("#username3").html(usernameCall);
+    } else if(idPosisi == '4444'){
+      $("#username4").html(usernameCall);
+    } else if(idPosisi == '5555'){
+      $("#username5").html(usernameCall);
+    } else if(idPosisi == '6666'){
+      $("#username6").html(usernameCall);
+    } else if(idPosisi == '7777'){
+      $("#username7").html(usernameCall);
+    }
+
+    // Concall group
+    var groupVcall = [];
+
+    $.ajax({
+      url: "https://webnikahapi.arthatronic.com/api/user/" + startTime,
+      async: false,
+      type: "GET",
+      global: false,
+      success: function(result) {
+        console.log("get time group");
+        console.log(result);
+        for (var i = 0; i < result.length; i++) {
+          var item = result[i].name;
+          groupVcall.push(item);
+        }
+        console.log(groupVcall);
+      },
+      error: function(err) {
+        console.log(err);
+      }
+    });
+
+    // $("#username1").html(groupVcall[0]);
+    // $("#username2").html(groupVcall[1]);
+    // $("#username3").html(groupVcall[2]);
+    // $("#username4").html(groupVcall[3]);
+    // $("#username5").html(groupVcall[4]);
+    // $("#username6").html(groupVcall[5]);
+    // $("#username7").html(groupVcall[6]);
+
 
 
     if (room == 1) {
@@ -362,7 +409,7 @@
 
     console.log("yeuu " + startTime);
 
-    var startTimeDate = new Date("14 August 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("16 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -386,7 +433,7 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "14 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "16 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       console.log("timeParse " + timeNowParse);
@@ -401,13 +448,6 @@
         vcallTour.end();
         vcallTourEng.end();
         leave(rtc);
-
-      } else if (timeNowParse < endTime) {
-        // State setting agora
-        if (settingState != 'done') {
-          $("#setAgora").css('display', 'block');
-          localStorage.setItem('settingState', 'done');
-        }
 
       }
 
@@ -453,7 +493,8 @@
     }
 
     setInterval(function() {
-      if ((idAdmin != "9999") && (idAdmin != "9898") && (idAdmin != "9797") && (idAdmin != "9696") && (idAdmin != "8888")) {
+      // Admin
+      if ((idPosisi != "9999") && (idPosisi != "9898") && (idPosisi != "9797") && (idPosisi != "9696") && (idPosisi != "8888")) {
         makeTimerCall();
       }
     }, 1000);
@@ -575,9 +616,9 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username1").html(usernameCall);
+          $("#username1").html(groupVcall[0]);
 
-          console.log("masuuuuuk nih");
+          console.log("HADIIIRR");
         }
         if (id == 2222) {
           $("<div/>", {
@@ -599,7 +640,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username2").html(usernameCall);
+          $("#username2").html(groupVcall[1]);
         }
         if (id == 3333) {
           $("<div/>", {
@@ -621,7 +662,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username3").html(usernameCall);
+          $("#username3").html(groupVcall[2]);
         }
         if (id == 4444) {
           $("<div/>", {
@@ -643,7 +684,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username4").html(usernameCall);
+          $("#username1").html(groupVcall[3]);
         }
         if (id == 5555) {
           $("<div/>", {
@@ -665,7 +706,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username5").html(usernameCall);
+          $("#username1").html(groupVcall[4]);
         }
         if (id == 6666) {
           $("<div/>", {
@@ -687,7 +728,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username6").html(usernameCall);
+          $("#username1").html(groupVcall[5]);
         }
         if (id == 7777) {
           $("<div/>", {
@@ -709,7 +750,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username7").html(usernameCall);
+          $("#username1").html(groupVcall[6]);
         }
         if (id == 8888) {
           $("<div/>", {
@@ -1114,6 +1155,8 @@
       // This will start the join functions with all the configuration selected by the user.
       $("#join").on("click", function(e) {
         localStorage.setItem('settingState', 'done');
+        vcallTour.end();
+        vcallTourEng.end();
         console.log("join")
         e.preventDefault();
         var params = serializeformData(); // Data is feteched and serilized from the form element.
