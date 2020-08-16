@@ -60,7 +60,7 @@
   top: 34%;
   width: 25%;
   height: 45%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   z-index: 5;
 }
 
@@ -82,7 +82,7 @@
 .div-souvenir{
   cursor: pointer;
   position: absolute;
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   left: 20%;
   top: 10%;
   width: 35%;
@@ -116,7 +116,7 @@
   top: 0%;
   left: 2%;
   z-index: 3;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .gallery{
@@ -129,7 +129,7 @@
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: top;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   z-index: 3;
 }
 
@@ -140,7 +140,7 @@
   width: 40%;
   height: 65%;
   z-index: 6;
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   cursor: pointer;
 }
 
@@ -155,7 +155,7 @@
   top: 40%;
   width: 35%;
   height: 50%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .parent-jukebox a, .parent-gallery a{
@@ -172,7 +172,7 @@
   background-size: 95% auto;
   background-repeat: no-repeat;
   background-position: center;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   z-index: 4;
 }
 
@@ -182,7 +182,7 @@
   top: 5%;
   width: 60%;
   height: 75%;
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   z-index: 6;
   cursor: pointer;
 }
@@ -212,7 +212,7 @@
   bottom: 0;
   width: 25%;
   height: 45%;
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
 }
 
 .angpao{
@@ -225,7 +225,7 @@
   background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: 55% 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   z-index: 6;
 }
 
@@ -235,7 +235,7 @@
   top: 8%;
   width: 60%;
   height: 80%;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   z-index: 7;
   cursor: pointer;
 }

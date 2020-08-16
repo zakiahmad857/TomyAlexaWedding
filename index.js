@@ -17,11 +17,11 @@ $(window).on('load', function() {
 });
 
 // youtube
-var tag = document.createElement('script');
-
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// var tag = document.createElement('script');
+//
+// tag.src = "https://www.youtube.com/iframe_api";
+// var firstScriptTag = document.getElementsByTagName('script')[0];
+// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // // LANGUAGE
 var arrLang = {
@@ -117,16 +117,18 @@ $(document).ready(function() {
   if (welcomeState != 'shown') {
 
     $("#welcomeModal").css('display', 'block');
-    localStorage.setItem('welcomeState', 'shown');
+    // localStorage.setItem('welcomeState', 'shown');
 
     $("#checkbox-ind").click(function() {
       checkboxValues["toggleLang"] = false;
       localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+      localStorage.setItem('welcomeState', 'shown');
     });
 
     $("#checkbox-eng").click(function() {
       checkboxValues["toggleLang"] = true;
       localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+      localStorage.setItem('welcomeState', 'shown');
     });
   }
 
@@ -195,6 +197,7 @@ $(document).ready(function() {
     }
   });
 
+  // Video yang ngaret
   var stopVideo = function ( element ) {
 
     var iframe = element.querySelector( 'iframe');
@@ -209,6 +212,21 @@ $(document).ready(function() {
 
   };
 
+  // Video MC
+  // var stopVideo2 = function ( element ) {
+  //
+  //   var iframe = element.querySelector( 'iframe');
+  //   var video = element.querySelector( '#videoMC' );
+  //   if ( iframe !== null ) {
+  //       var iframeSrc = iframe.src;
+  //       iframe.src = iframeSrc;
+  //   }
+  //   if ( video !== null ) {
+  //       video.pause();
+  //   }
+  //
+  // };
+
   // When the user clicks next button, close it & init web tour
   $("#btn-next").click(function() {
     $("#earlyBird").css("display", "none");
@@ -218,6 +236,7 @@ $(document).ready(function() {
       tour.restart();
     }
   });
+
   $("#btn-next-2").click(function() {
 
     $("#karetModal").css("display", "none");
@@ -230,7 +249,6 @@ $(document).ready(function() {
     }
 
     stopVideo(document);
-
 
   });
 });
@@ -267,3 +285,20 @@ function toggleLanguange(tog) {
     });
   }
 }
+
+// youtube
+// function onYouTubePlayerAPIReady() {
+//   // create the global player from the specific iframe (#video)
+//   player = new YT.Player('videoMC', {
+//     events: {
+//       // call this function when player is ready to use
+//       'onReady': onPlayerReady
+//     }
+//   });
+// }
+//
+// function onPlayerReady(event) {
+//   // bind events
+//   player.mute();
+//
+// }
