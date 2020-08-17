@@ -371,6 +371,7 @@
           var item = result[i].name;
           groupVcall.push(item);
         }
+        console.log("Group Call ");
         console.log(groupVcall);
       },
       error: function(err) {
@@ -409,7 +410,7 @@
 
     console.log("yeuu " + startTime);
 
-    var startTimeDate = new Date("16 August 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("17 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -433,7 +434,7 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "16 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "17 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       console.log("timeParse " + timeNowParse);

@@ -167,14 +167,23 @@
       </div>
 
 
-      <div id="live-mc" class="live-mc"></div>
-
-      <div class="video-mc embed-responsive">
-        <div class="video-wrapper">
-          <iframe id="videoMC" src="https://www.youtube.com/embed/Mqs0I8lEoKA?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <!-- <div id="live-mc" class="live-mc">
+        <div class="video-mc">
+          <div class="video-wrapper">
+            <iframe id="videoMC" width="560" height="315" src="https://www.youtube.com/embed/Mqs0I8lEoKA?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
         </div>
+      </div> -->
 
+      <div id="live-mc" class="live-mc"></div>
+      <div class="video-mc">
+        <div class="video-wrapper">
+          <iframe id="videoMC"  src="https://www.youtube.com/embed/Mqs0I8lEoKA?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
+
+
+
 
       <div class="parent-angpao">
         <div id="angpao" class="div-ayam"></div>
@@ -392,7 +401,7 @@
       window.location = fullPath;
     }
 
-    var endTime = new Date("16 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("17 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
