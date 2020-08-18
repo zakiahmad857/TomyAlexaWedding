@@ -61,31 +61,40 @@ var arrLang = {
 console.log("window screen");
 console.log(window.screen.width);
 
-var browserSize = $(window).width();
-var screenSize = window.screen.width;
-var perfectSize = 0.95 * screenSize;
-console.log("screenSize awal " + screenSize);
-console.log("browserSize awal " + browserSize);
-console.log("perfectSize awal " + perfectSize);
+var browserWidth = $(window).width();
+var browserHeight = $(window).height();
+var screenWidth = window.screen.width;
+var screenHeight = window.screen.height;
+var perfectWidth = 0.95 * screenWidth;
+var perfectHeight = 0.95 * screenHeight;
 
-if (browserSize < perfectSize ) {
+console.log("screenWidth awal " + screenWidth);
+console.log("browserWidth awal " + browserWidth);
+console.log("perfectWidth awal " + perfectWidth);
+
+if ((browserWidth < perfectWidth ) || (browserHeight < perfectHeight)){
   $(".browser-resize").css('display', 'block');
   $(".mobile-content").css('display', 'none');
+  $(".desktop-content").css('display', 'none');
 } else {
   $(".browser-resize").css('display', 'none');
 }
 
+
 $(window).resize(function() {
   console.log('window was resized');
   console.log("size browser");
-  console.log("screenSize " + screenSize);
-  console.log("browserSize " + browserSize);
-  console.log("perfectSize " + perfectSize);
+  console.log("screenWidth " + screenWidth);
+  console.log("browserWidth " + browserWidth);
+  console.log("perfectWidth " + perfectWidth);
 
-  browserSize = $(window).width();
-  if (browserSize < perfectSize ) {
+  browserWidth = $(window).width();
+  browserHeight = $(window).height();
+
+  if ((browserWidth < perfectWidth ) || (browserHeight < perfectHeight)){
     $(".browser-resize").css('display', 'block');
     $(".mobile-content").css('display', 'none');
+    $(".desktop-content").css('display', 'none');
   } else {
     $(".browser-resize").css('display', 'none');
   }
