@@ -16,13 +16,6 @@ $(window).on('load', function() {
 
 });
 
-// youtube
-// var tag = document.createElement('script');
-//
-// tag.src = "https://www.youtube.com/iframe_api";
-// var firstScriptTag = document.getElementsByTagName('script')[0];
-// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 // // LANGUAGE
 var arrLang = {
   'eng': {
@@ -68,7 +61,7 @@ var arrLang = {
 
 $(document).ready(function() {
 
-  // login localStorage
+  // Path
   var dirPath = dirname(location.href);
   var homePath = RemoveLastDirectoryPartOf(dirPath);
 
@@ -98,7 +91,7 @@ $(document).ready(function() {
     selectLanguage(this);
   });
 
-  // On page load
+  // On page load - Language
   $.each(checkboxValues, function(key, value) {
     $("#toggleLang").prop('checked', value);
     selectLanguage(this);
@@ -113,24 +106,30 @@ $(document).ready(function() {
 
   // Welcoming modal once shown per user
   var welcomeState = localStorage.getItem("welcomeState");
+  var karetState = localStorage.getItem("karetState");
 
   if (welcomeState != 'shown') {
 
     $("#welcomeModal").css('display', 'block');
-    // localStorage.setItem('welcomeState', 'shown');
 
     $("#checkbox-ind").click(function() {
       checkboxValues["toggleLang"] = false;
       localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
-      localStorage.setItem('welcomeState', 'shown');
+
+      console.log("Welcome state external 2");
+      console.log(welcomeState);
     });
 
     $("#checkbox-eng").click(function() {
       checkboxValues["toggleLang"] = true;
       localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
-      localStorage.setItem('welcomeState', 'shown');
     });
   }
+
+  // Set localstorage welcomestate
+  $("#btn-welcome").click(function(){
+    localStorage.setItem('welcomeState', 'shown');
+  });
 
 
   $("#toggleLang").on('change', function() {
@@ -138,7 +137,7 @@ $(document).ready(function() {
     toggleLanguange(tog);
   });
 
-  // Angpao Modal, when the user clicks on the angpao-button, open the modal
+  // Angpao-Faq Modal, when the user clicks on the button, open the modal
   $("#angpao").click(function() {
     $("#angpaoModal").css("display", "block");
   });
@@ -147,6 +146,7 @@ $(document).ready(function() {
     $("#faqModal").css("display", "block");
   });
 
+  // Exit button, go to homepage
   $(".exit").click(function() {
     window.location = homePath;
   });
@@ -157,28 +157,6 @@ $(document).ready(function() {
     $("#angpaoModal").css("display", "none");
     $("#faqModal").css("display", "none");
   });
-
-  // Select language @ modal
-  // $("#checkbox-ind").click(function() {
-  //   $("#toggleLang").prop('checked', false);
-  //
-  //   // close modal, pop user modal
-  //   $("#welcomeModal").delay(1000).queue(function(next) {
-  //     $("#welcomeModal").css("display", "none");
-  //     $("#earlyBird").css("display", "block");
-  //   });
-  // });
-  //
-  // $("#checkbox-eng").click(function() {
-  //   console.log("masuk pertama");
-  //   $("#toggleLang").prop('checked', true);
-  //
-  //   $("#welcomeModal").delay(1000).queue(function(next) {
-  //     console.log("masuk kestate delay");
-  //     $("#welcomeModal").css("display", "none");
-  //     $("#earlyBird").css("display", "block");
-  //   });
-  // });
 
   // When the user clicks anywhere outside of the modal, close it
   $(window).click(function(e) {
@@ -212,36 +190,23 @@ $(document).ready(function() {
 
   };
 
-  // Video MC
-  // var stopVideo2 = function ( element ) {
-  //
-  //   var iframe = element.querySelector( 'iframe');
-  //   var video = element.querySelector( '#videoMC' );
-  //   if ( iframe !== null ) {
-  //       var iframeSrc = iframe.src;
-  //       iframe.src = iframeSrc;
-  //   }
-  //   if ( video !== null ) {
-  //       video.pause();
-  //   }
-  //
-  // };
-
   // When the user clicks next button, close it & init web tour
-  $("#btn-next").click(function() {
-    $("#earlyBird").css("display", "none");
-    if (toggleLang.checked) {
-      tourEng.restart();
-    } else {
-      tour.restart();
-    }
-  });
+  // $("#btn-next").click(function() {
+  //   $("#earlyBird").css("display", "none");
+  //   $("#welcomeModal").css("display", "none");
+  //   if (toggleLang.checked) {
+  //     tourEng.restart();
+  //   } else {
+  //     tour.restart();
+  //   }
+  // });
 
   $("#btn-next-2").click(function() {
 
     $("#karetModal").css("display", "none");
     $("#earlyBird").css("display", "none");
     $("#welcomeModal").css("display", "none");
+    localStorage.setItem('karetState', 'shown');
     if (toggleLang.checked) {
       tourEng.restart();
     } else {
