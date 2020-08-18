@@ -68,9 +68,11 @@ console.log("screenSize awal " + screenSize);
 console.log("browserSize awal " + browserSize);
 console.log("perfectSize awal " + perfectSize);
 
-if (browserSize < perfectSize ){
+if (browserSize < perfectSize ) {
   $(".browser-resize").css('display', 'block');
   $(".mobile-content").css('display', 'none');
+} else {
+  $(".browser-resize").css('display', 'none');
 }
 
 $(window).resize(function() {
@@ -79,11 +81,13 @@ $(window).resize(function() {
   console.log("screenSize " + screenSize);
   console.log("browserSize " + browserSize);
   console.log("perfectSize " + perfectSize);
-  
+
   browserSize = $(window).width();
-  if (browserSize < perfectSize ){
+  if (browserSize < perfectSize ) {
     $(".browser-resize").css('display', 'block');
     $(".mobile-content").css('display', 'none');
+  } else {
+    $(".browser-resize").css('display', 'none');
   }
 });
 
