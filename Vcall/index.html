@@ -343,6 +343,7 @@
       }
     });
 
+    // Nama sendiri
     if(idPosisi == 1111){
       $("#username1").html(usernameCall);
     } else if(idPosisi == 2222){
@@ -381,15 +382,6 @@
         console.log(err);
       }
     });
-
-    // $("#username1").html(groupVcall[0]);
-    // $("#username2").html(groupVcall[1]);
-    // $("#username3").html(groupVcall[2]);
-    // $("#username4").html(groupVcall[3]);
-    // $("#username5").html(groupVcall[4]);
-    // $("#username6").html(groupVcall[5]);
-    // $("#username7").html(groupVcall[6]);
-
 
 
     if (room == 1) {
@@ -497,7 +489,7 @@
     }
 
     setInterval(function() {
-      // Admin
+      // Guest
       if ((idPosisi != "9999") && (idPosisi != "9898") && (idPosisi != "9797") && (idPosisi != "9696") && (idPosisi != "8888")) {
         makeTimerCall();
       }

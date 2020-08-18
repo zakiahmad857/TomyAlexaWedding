@@ -104,7 +104,7 @@
       <div class="modal-content content-karet">
         <h6 class="lang" key="sorry">Whoops you’re late, we’re sorry you’re not able to meet Tomy & Lexa. Here some message from them..</h6>
         <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <button type="button" class="btn-modal btn-videokaret" id="btn-next-2" name="okay">Next</button>
+        <button type="button" class="btn-modal btn-videokaret" id="btn-karetModal" name="okay">Next</button>
       </div>
 
     </div>
@@ -172,24 +172,13 @@
         </div>
       </div>
 
-
-      <!-- <div id="live-mc" class="live-mc">
-        <div class="video-mc">
-          <div class="video-wrapper">
-            <iframe id="videoMC" width="560" height="315" src="https://www.youtube.com/embed/Mqs0I8lEoKA?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div> -->
-
       <div id="live-mc" class="live-mc"></div>
       <div class="video-mc">
         <div class="video-wrapper">
-          <iframe id="videoMC" src="https://www.youtube.com/embed/Mqs0I8lEoKA?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe id="videoMC" src="https://www.youtube.com/embed/MqePxS6iyvA?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <!-- <iframe id="videoMC" src="https://www.youtube.com/embed/Mqs0I8lEoKA?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         </div>
       </div>
-
-
-
 
       <div class="parent-angpao">
         <div id="angpao" class="div-ayam"></div>
@@ -205,14 +194,12 @@
         </a>
       </div>
 
-
       <div class="parent-gallery">
         <a href="gallery/index.html">
           <div id="gallery" class="div-gallery"></div>
           <div class="gallery"></div>
         </a>
       </div>
-
 
       <div class="parent-jukebox">
         <a href="jukebox/index.html">
@@ -357,6 +344,14 @@
       }
     });
 
+    // localStorage
+    var welcomeState = localStorage.getItem("welcomeState");
+    console.log("WELCOME STATE ");
+    console.log(welcomeState);
+
+    var karetState = localStorage.getItem("karetState");
+
+    // Path
     var dirPath = dirname(location.href);
 
     function dirname(path) {
@@ -418,10 +413,21 @@
 
     endTime = (Date.parse(endTime) / 1000);
 
-    var welcomeState = localStorage.getItem("welcomeState");
-    console.log("WELCOME STATE ");
-    console.log(welcomeState);
     var timeLeft;
+
+    var stopVideo = function ( element ) {
+
+      var iframe = element.querySelector( 'iframe');
+      var video = element.querySelector( '#video' );
+      if ( iframe !== null ) {
+          var iframeSrc = iframe.src;
+          iframe.src = iframeSrc;
+      }
+      if ( video !== null ) {
+          video.pause();
+      }
+
+    };
 
     function makeTimer() {
 
@@ -455,6 +461,8 @@
 
       // Popup Vcall
       if (timeLeft <= 0 && timeLeft >= -600) {
+
+        localStorage.setItem('karetState', 'shown');
 
         if (localStorage.welcomeState != 'shown') {
           $("#welcomeModal").css("display", "block");
@@ -502,6 +510,8 @@
       // Concall masih agak lama, Explore web
       if (timeLeft > 0) {
 
+        localStorage.setItem('karetState', 'shown');
+
         $("#btn-welcome").click(function() {
           $("#welcomeModal").css("display", "none");
           $("#earlyBird").css("display", "block");
@@ -525,6 +535,8 @@
         // Tamu biasa tanpa concall
         if (idPosition == "0000") {
 
+          localStorage.setItem('karetState', 'shown');
+
           $("#btn-welcome").click(function() {
             $("#welcomeModal").css("display", "none");
             $("#earlyBird").css('display', 'none');
@@ -546,22 +558,30 @@
             $("#welcomeModal").css("display", "none");
           });
 
-          $("#btn-next-2").click(function() {
-
-            $("#karetModal").css("display", "none");
-            $("#earlyBird").css("display", "none");
-            $("#welcomeModal").css("display", "none");
-
-            if (toggleLang.checked) {
-              tourEng.restart();
-            } else {
-              tour.restart();
-            }
-
-            // stop popup video
-            stopVideo(document);
-
-          });
+          // $("#btn-karetModal").click(function() {
+          //
+          //   $("#karetModal").css("display", "none");
+          //   $("#earlyBird").css("display", "none");
+          //   $("#welcomeModal").css("display", "none");
+          //   localStorage.setItem('karetState', 'shown');
+          //
+          //   console.log("karetState 2 " + localStorage.karetState);
+          //   // if (localStorage.karetState == 'shown'){
+          //   stopVideo(document);
+          //     player.unMute();
+          //     console.log("UNMUTE");
+          //   // }
+          //
+          //   if (toggleLang.checked) {
+          //     tourEng.restart();
+          //   } else {
+          //     tour.restart();
+          //   }
+          //
+          //   // stop popup video
+          //   stopVideo(document);
+          //
+          // });
         }
       }
     }
@@ -585,6 +605,66 @@
       }, 1000);
 
     }
+
+
+  /// Inject YouTube API script
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+
+  function onYouTubePlayerAPIReady() {
+    // create the global player from the specific iframe (#video)
+    player = new YT.Player('videoMC', {
+      events: {
+        // call this function when player is ready to use
+        'onReady': onPlayerReady
+      }
+    });
+  }
+
+  function onPlayerReady(event) {
+
+    console.log("event");
+    console.log(event);
+    // bind events
+    if (localStorage.karetState != 'shown'){
+      player.mute();
+      console.log("MUTE");
+      console.log("karetState " + localStorage.karetState);
+    }
+    $("#btn-karetModal").click(function(){
+
+      console.log("BUTTON CLICK UNMUTE");
+
+      $("#karetModal").css("display", "none");
+      $("#earlyBird").css("display", "none");
+      $("#welcomeModal").css("display", "none");
+      localStorage.setItem('karetState', 'shown');
+
+      console.log("karetState 2 " + localStorage.karetState);
+
+      // stopVideo(document);
+      console.log("UNMUTE");
+        player.unMute();
+
+
+      if (toggleLang.checked) {
+        tourEng.restart();
+      } else {
+        tour.restart();
+      }
+
+      // stop popup video
+      stopVideo(document);
+    });
+  }
+
+
+
+
 
   </script>
 

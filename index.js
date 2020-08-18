@@ -209,47 +209,6 @@ $(document).ready(function() {
     }
   });
 
-  // Video yang ngaret
-  var stopVideo = function ( element ) {
-
-    var iframe = element.querySelector( 'iframe');
-    var video = element.querySelector( '#video' );
-    if ( iframe !== null ) {
-        var iframeSrc = iframe.src;
-        iframe.src = iframeSrc;
-    }
-    if ( video !== null ) {
-        video.pause();
-    }
-
-  };
-
-  // When the user clicks next button, close it & init web tour
-  // $("#btn-next").click(function() {
-  //   $("#earlyBird").css("display", "none");
-  //   $("#welcomeModal").css("display", "none");
-  //   if (toggleLang.checked) {
-  //     tourEng.restart();
-  //   } else {
-  //     tour.restart();
-  //   }
-  // });
-
-  $("#btn-next-2").click(function() {
-
-    $("#karetModal").css("display", "none");
-    $("#earlyBird").css("display", "none");
-    $("#welcomeModal").css("display", "none");
-    localStorage.setItem('karetState', 'shown');
-    if (toggleLang.checked) {
-      tourEng.restart();
-    } else {
-      tour.restart();
-    }
-
-    stopVideo(document);
-
-  });
 });
 
 // lANGUANGE FUNCTIONS
