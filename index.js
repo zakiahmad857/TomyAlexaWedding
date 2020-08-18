@@ -69,8 +69,11 @@ var perfectWidth = 0.95 * screenWidth;
 var perfectHeight = 0.95 * screenHeight;
 
 console.log("screenWidth awal " + screenWidth);
+console.log("screenHeight awal " + screenHeight);
 console.log("browserWidth awal " + browserWidth);
+console.log("browserHeight awal " + browserHeight);
 console.log("perfectWidth awal " + perfectWidth);
+console.log("perfectHeight awal " + perfectHeight);
 
 if ((browserWidth < perfectWidth ) || (browserHeight < perfectHeight)){
   $(".browser-resize").css('display', 'block');
@@ -78,15 +81,19 @@ if ((browserWidth < perfectWidth ) || (browserHeight < perfectHeight)){
   $(".desktop-content").css('display', 'none');
 } else {
   $(".browser-resize").css('display', 'none');
+  $(".desktop-content").css('display', 'block');
 }
 
 
 $(window).resize(function() {
   console.log('window was resized');
-  console.log("size browser");
+
   console.log("screenWidth " + screenWidth);
+  console.log("screenHeight " + screenHeight);
   console.log("browserWidth " + browserWidth);
+  console.log("browserHeight " + browserHeight);
   console.log("perfectWidth " + perfectWidth);
+  console.log("perfectHeight " + perfectHeight);
 
   browserWidth = $(window).width();
   browserHeight = $(window).height();
@@ -97,6 +104,7 @@ $(window).resize(function() {
     $(".desktop-content").css('display', 'none');
   } else {
     $(".browser-resize").css('display', 'none');
+    $(".desktop-content").css('display', 'block');
   }
 });
 
