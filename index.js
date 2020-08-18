@@ -66,7 +66,7 @@ var browserHeight = $(window).height();
 var screenWidth = window.screen.width;
 var screenHeight = window.screen.height;
 var perfectWidth = 0.95 * screenWidth;
-var perfectHeight = 0.95 * screenHeight;
+var perfectHeight = 0.8 * screenHeight;
 
 console.log("screenWidth awal " + screenWidth);
 console.log("screenHeight awal " + screenHeight);
