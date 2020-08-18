@@ -58,8 +58,38 @@ var arrLang = {
     'norek': 'No rekening'
   }
 };
+console.log("window screen");
+console.log(window.screen.width);
+
+var browserSize = $(window).width();
+var screenSize = window.screen.width;
+var perfectSize = 0.95 * screenSize;
+console.log("screenSize awal " + screenSize);
+console.log("browserSize awal " + browserSize);
+console.log("perfectSize awal " + perfectSize);
+
+if (browserSize < perfectSize ){
+  $(".browser-resize").css('display', 'block');
+  $(".mobile-content").css('display', 'none');
+}
+
+$(window).resize(function() {
+  console.log('window was resized');
+  console.log("size browser");
+  console.log("screenSize " + screenSize);
+  console.log("browserSize " + browserSize);
+  console.log("perfectSize " + perfectSize);
+  
+  browserSize = $(window).width();
+  if (browserSize < perfectSize ){
+    $(".browser-resize").css('display', 'block');
+    $(".mobile-content").css('display', 'none');
+  }
+});
 
 $(document).ready(function() {
+
+
 
   // Path
   var dirPath = dirname(location.href);
