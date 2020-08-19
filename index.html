@@ -31,6 +31,10 @@
     <h1>Please maximize your browser for the full experience</h1>
   </div>
 
+  <div class="browser-resize-max">
+    <h1>Please minimize your browser for the full experience</h1>
+  </div>
+
   <div class="desktop-content">
     <!-- lOADER -->
     <div id="loading" class="loader">
@@ -51,13 +55,13 @@
             <label class="option_item">
               <input type="checkbox" id="checkbox-ind" class="checkbox">
               <div class="option_inner">
-                <div class="icon"><img src="images/lang/indonesia.png" class="flag" alt="indonesia"></div>
+                <img src="images/lang/indonesia.png" class="flag" alt="indonesia">
               </div>
             </label>
             <label class="option_item">
               <input type="checkbox" id="checkbox-eng" class="checkbox">
               <div class="option_inner">
-                <div class="icon"><img src="images/lang/united-kingdom.png" class="flag" alt="indonesia"></div>
+                <img src="images/lang/united-kingdom.png" class="flag" alt="indonesia">
               </div>
             </label>
           </div>
@@ -415,16 +419,16 @@
 
     var timeLeft;
 
-    var stopVideo = function ( element ) {
+    var stopVideo = function(element) {
 
-      var iframe = element.querySelector( 'iframe');
-      var video = element.querySelector( '#video' );
-      if ( iframe !== null ) {
-          var iframeSrc = iframe.src;
-          iframe.src = iframeSrc;
+      var iframe = element.querySelector('iframe');
+      var video = element.querySelector('#video');
+      if (iframe !== null) {
+        var iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
       }
-      if ( video !== null ) {
-          video.pause();
+      if (video !== null) {
+        video.pause();
       }
 
     };
@@ -583,65 +587,60 @@
     }
 
 
-  /// Inject YouTube API script
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    /// Inject YouTube API script
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  var player;
+    var player;
 
-  function onYouTubePlayerAPIReady() {
-    // create the global player from the specific iframe (#video)
-    player = new YT.Player('videoMC', {
-      events: {
-        // call this function when player is ready to use
-        'onReady': onPlayerReady
-      }
-    });
-  }
-
-  function onPlayerReady(event) {
-
-    console.log("event");
-    console.log(event);
-    // bind events
-    if (localStorage.karetState != 'shown'){
-      player.mute();
-      console.log("MUTE");
-      console.log("karetState " + localStorage.karetState);
+    function onYouTubePlayerAPIReady() {
+      // create the global player from the specific iframe (#video)
+      player = new YT.Player('videoMC', {
+        events: {
+          // call this function when player is ready to use
+          'onReady': onPlayerReady
+        }
+      });
     }
-    $("#btn-karetModal").click(function(){
 
-      console.log("BUTTON CLICK UNMUTE");
+    function onPlayerReady(event) {
 
-      $("#karetModal").css("display", "none");
-      $("#earlyBird").css("display", "none");
-      $("#welcomeModal").css("display", "none");
-      localStorage.setItem('karetState', 'shown');
+      console.log("event");
+      console.log(event);
+      // bind events
+      if (localStorage.karetState != 'shown') {
+        player.mute();
+        console.log("MUTE");
+        console.log("karetState " + localStorage.karetState);
+      }
+      $("#btn-karetModal").click(function() {
 
-      console.log("karetState 2 " + localStorage.karetState);
+        console.log("BUTTON CLICK UNMUTE");
 
-      // stopVideo(document);
-      console.log("UNMUTE");
+        $("#karetModal").css("display", "none");
+        $("#earlyBird").css("display", "none");
+        $("#welcomeModal").css("display", "none");
+        localStorage.setItem('karetState', 'shown');
+
+        console.log("karetState 2 " + localStorage.karetState);
+
+        // stopVideo(document);
+        console.log("UNMUTE");
         player.unMute();
 
 
-      if (toggleLang.checked) {
-        tourEng.restart();
-      } else {
-        tour.restart();
-      }
+        if (toggleLang.checked) {
+          tourEng.restart();
+        } else {
+          tour.restart();
+        }
 
-      // stop popup video
-      stopVideo(document);
-    });
-  }
-
-
-
-
-
+        // stop popup video
+        stopVideo(document);
+      });
+    }
   </script>
 
 </body>
