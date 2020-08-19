@@ -55,10 +55,7 @@
             <label class="option_item">
               <input type="checkbox" id="checkbox-ind" class="checkbox">
               <div class="option_inner">
-                <div class="test">
                   <img src="images/lang/indonesia.png" class="flag" alt="indonesia">
-                </div>
-
               </div>
             </label>
             <label class="option_item">
@@ -414,7 +411,7 @@
       window.location = fullPath;
     }
 
-    var endTime = new Date("18 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("19 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
@@ -515,7 +512,7 @@
       }
 
       // Concall masih agak lama, Explore web
-      if (timeLeft > 0) {
+      else if (timeLeft > 0) {
 
         localStorage.setItem('karetState', 'shown');
 
@@ -537,7 +534,7 @@
       }
 
       // Tamu tanpa concall dan Jam karet
-      if (timeLeft < -600) {
+      else if (timeLeft < -600) {
 
         // Tamu biasa tanpa concall
         if (idPosition == "0000") {
@@ -583,11 +580,11 @@
         $("#toggleLang").prop('checked', true);
       });
 
-      setInterval(function() {
-        makeTimer();
-      }, 1000);
-
     }
+
+    setInterval(function() {
+      makeTimer();
+    }, 1000);
 
 
     /// Inject YouTube API script

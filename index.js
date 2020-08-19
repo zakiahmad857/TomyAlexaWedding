@@ -36,6 +36,9 @@ var arrLang = {
     'gift': 'Send Gift with Ease :)',
     'bank': 'Via Bank Transfer',
     'norek': 'Account number',
+    // Pelaminan
+    'in-pelaminan': "Who's in:",
+    'next-pelaminan': "Up next:",
   },
 
   'ind': {
@@ -55,7 +58,10 @@ var arrLang = {
     // angpao
     'gift': 'Kirim hadiah dengan mudah :) wkwk',
     'bank': 'Via Transfer Bank',
-    'norek': 'No rekening'
+    'norek': 'No rekening',
+    // Pelaminan
+    'in-pelaminan': "Sedang di pelaminan:",
+    'next-pelaminan': "Selanjutnya:",
   }
 };
 
