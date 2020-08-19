@@ -477,12 +477,15 @@ if ((browserZoom > 1.1)){
   $(".desktop-content").css('display', 'none');
 } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
   $(".browser-resize").css('display', 'block');
+  $(".browser-resize-max").css('display', 'none');
   $(".mobile-content").css('display', 'none');
   $(".desktop-content").css('display', 'none');
   console.log("masuk kedua");
 } else {
   $(".browser-resize").css('display', 'none');
+  $(".browser-resize-max").css('display', 'none');
   $(".desktop-content").css('display', 'block');
+  $(".mobile-content").css('display', 'none');
 }
 
 
@@ -517,11 +520,14 @@ $(window).resize(function() {
     $(".desktop-content").css('display', 'none');
   } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
     $(".browser-resize").css('display', 'block');
+    $(".browser-resize-max").css('display', 'none');
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
     console.log("masuk kedua");
   } else {
+    $(".browser-resize-max").css('display', 'none');
     $(".browser-resize").css('display', 'none');
+    $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'block');
   }
 
