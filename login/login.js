@@ -51,11 +51,10 @@ $(document).ready(function() {
     $.cookie("token", token, {
       path: '/'
     });
-    // $.removeCookie("token");
+    
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
-    // alert(cookieToken);
-    
+
     if (statusError) {
       alert("salah");
     } else {

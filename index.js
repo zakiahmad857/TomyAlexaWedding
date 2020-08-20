@@ -472,25 +472,28 @@ console.log("perfectWidth awal " + perfectWidth);
 console.log("perfectHeight awal " + perfectHeight);
 
 if ((browserZoom > 1.1)){
-  $(".browser-resize-max").css('display', 'block');
+  $(".browserZoomOut").css('display', 'block');
+  $(".browserZoomIn").css('display', 'none');
+  $(".browser-resize").css('display', 'none');
   $(".mobile-content").css('display', 'none');
   $(".desktop-content").css('display', 'none');
-  console.log("masuk pertama");
 } else if ((browserZoom < 0.8)){
-  $(".browser-resize").css('display', 'block');
-  $(".browser-resize-max").css('display', 'none');
+  $(".browserZoomIn").css('display', 'block');
+  $(".browserZoomOut").css('display', 'none');
+  $(".browser-resize").css('display', 'none');
   $(".mobile-content").css('display', 'none');
   $(".desktop-content").css('display', 'none');
 } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
   $(".browser-resize").css('display', 'block');
-  $(".browser-resize-max").css('display', 'none');
+  $(".browserZoomOut").css('display', 'none');
+  $(".browserZoomIn").css('display', 'none');
   $(".mobile-content").css('display', 'none');
   $(".desktop-content").css('display', 'none');
-  console.log("masuk kedua");
 } else {
-  $(".browser-resize").css('display', 'none');
-  $(".browser-resize-max").css('display', 'none');
   $(".desktop-content").css('display', 'block');
+  $(".browser-resize").css('display', 'none');
+  $(".browserZoomOut").css('display', 'none');
+  $(".browserZoomIn").css('display', 'none');
   $(".mobile-content").css('display', 'none');
 }
 
@@ -515,26 +518,29 @@ $(window).resize(function() {
   console.log("browserZoom " + browserZoom);
 
   if ((browserZoom > 1.1)){
-    $(".browser-resize-max").css('display', 'block');
+    $(".browserZoomOut").css('display', 'block');
+    $(".browserZoomIn").css('display', 'none');
+    $(".browser-resize").css('display', 'none');
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
-    console.log("masuk pertama");
   } else if ((browserZoom < 0.8)){
-    $(".browser-resize").css('display', 'block');
-    $(".browser-resize-max").css('display', 'none');
+    $(".browserZoomIn").css('display', 'block');
+    $(".browserZoomOut").css('display', 'none');
+    $(".browser-resize").css('display', 'none');
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
   } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
     $(".browser-resize").css('display', 'block');
-    $(".browser-resize-max").css('display', 'none');
+    $(".browserZoomOut").css('display', 'none');
+    $(".browserZoomIn").css('display', 'none');
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
-    console.log("masuk kedua");
   } else {
-    $(".browser-resize-max").css('display', 'none');
-    $(".browser-resize").css('display', 'none');
-    $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'block');
+    $(".browser-resize").css('display', 'none');
+    $(".browserZoomOut").css('display', 'none');
+    $(".browserZoomIn").css('display', 'none');
+    $(".mobile-content").css('display', 'none');
   }
 
 
