@@ -14,199 +14,218 @@
 
   <link rel="stylesheet" href="./assets/common.css" />
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/vcall.css">
 
 
 </head>
 
 <body>
-  <!-- Modal -->
-  <div id="setAgora" class="modal modal-agora">
 
-    <!-- Welcoming Modal Content -->
-    <div class="modal-content">
-      <h4 class="lang" key="welcome">settings</h4>
-      <form id="form">
-        <div id="selectCam" class="input-field">
-          <label for="cameraId" class="active">CAMERA</label>
-          <select class="" name="cameraId" id="cameraId"></select>
-        </div>
-        <div id="selectMic" class="input-field">
-          <label for="microphoneId" class="active">MICROPHONE</label>
-          <select class="" name="microphoneId" id="microphoneId"></select>
-        </div>
-        <button type="submit" id="join" class="btn-join">JOIN</button>
-      </form>
-    </div>
+  <div class="mobile-content">
+    <h1>Please access this website from desktop</h1>
+    <h2>Can't wait to see you!</h2>
   </div>
 
-  <div class="pelaminan">
-
-    <div id="countdownCall" class="timer1">
-      <p id="countWaiting"></p>
-      <span id="hours1"></span>
-      <span id="minutes1"></span>
-      <span id="seconds1"></span>
-    </div>
-
-    <!-- Video -->
-    <span class="dot dot1">
-      <div class="vidPosition row container col l12 s12">
-        <div class="row">
-          <div class="col s7">
-            <div class="video-grid" id="video1">
-              <div class="video-view">
-                <div id="local_stream_1" class="video-placeholder"></div>
-                <div id="local_video_info_1" class="video-profile hide"></div>
-                <div id="video_autoplay_local_1" class="autoplay-fallback hide"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper-username">
-        <p class="username" id="username1"></p>
-      </div>
-    </span>
-    <span class="dot dot2">
-      <div class="vidPosition row container col l12 s12">
-        <div class="row">
-          <div class="col s7">
-            <div class="video-grid" id="video2">
-              <div class="video-view">
-                <div id="local_stream_2" class="video-placeholder"></div>
-                <div id="local_video_info_2" class="video-profile hide"></div>
-                <div id="video_autoplay_local_2" class="autoplay-fallback hide"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper-username">
-        <p class="username" id="username2"></p>
-      </div>
-    </span>
-    <span class="dot dot3">
-      <div class="vidPosition row container col l12 s12">
-        <div class="row">
-          <div class="col s7">
-            <div class="video-grid" id="video3">
-              <div class="video-view">
-                <div id="local_stream_3" class="video-placeholder"></div>
-                <div id="local_video_info_3" class="video-profile hide"></div>
-                <div id="video_autoplay_local_3" class="autoplay-fallback hide"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper-username">
-        <p class="username" id="username3"></p>
-      </div>
-    </span>
-    <span class="dot dot4">
-      <div class="vidPosition row container col l12 s12">
-        <div class="row">
-          <div class="col s7">
-            <div class="video-grid" id="video4">
-              <div class="video-view">
-                <div id="local_stream_4" class="video-placeholder"></div>
-                <div id="local_video_info_4" class="video-profile hide"></div>
-                <div id="video_autoplay_local_4" class="autoplay-fallback hide"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper-username">
-        <p class="username" id="username4"></p>
-      </div>
-    </span>
-    <span class="dot dot5">
-      <div class="vidPosition row container col l12 s12">
-        <div class="row">
-          <div class="col s7">
-            <div class="video-grid" id="video5">
-              <div class="video-view">
-                <div id="local_stream_5" class="video-placeholder"></div>
-                <div id="local_video_info_5" class="video-profile hide"></div>
-                <div id="video_autoplay_local_5" class="autoplay-fallback hide"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper-username">
-        <p class="username" id="username5"></p>
-      </div>
-    </span>
-    <span class="dot dot6">
-      <div class="vidPosition row container col l12 s12">
-        <div class="row">
-          <div class="col s7">
-            <div class="video-grid" id="video6">
-              <div class="video-view">
-                <div id="local_stream_6" class="video-placeholder"></div>
-                <div id="local_video_info_6" class="video-profile hide"></div>
-                <div id="video_autoplay_local_6" class="autoplay-fallback hide"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper-username">
-        <p class="username" id="username6"></p>
-      </div>
-    </span>
-    <span class="dot dot7">
-      <div class="vidPosition row container col l12 s12">
-        <div class="row">
-          <div class="col s7">
-            <div class="video-grid" id="video7">
-              <div class="video-view">
-                <div id="local_stream_7" class="video-placeholder"></div>
-                <div id="local_video_info_7" class="video-profile hide"></div>
-                <div id="video_autoplay_local_7" class="autoplay-fallback hide"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper-username">
-        <p class="username" id="username7"></p>
-      </div>
-    </span>
-    <span class="kotak">
-      <div class="vidPosition row container col l12 s12">
-        <div class="row">
-          <div class="col s7">
-            <div class="video-grid" id="video0">
-              <div class="video-view2">
-                <div id="local_stream_0" class="video-placeholder2"></div>
-                <div id="local_video_info_0" class="video-profile hide"></div>
-                <div id="video_autoplay_local_0" class="autoplay-fallback hide"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </span>
-
-    <!-- Bye Vcall Modal -->
-    <div id="byeVcallModal" class="modal2">
-      <div class="modal-content2 content-karet">
-        <h6 class="lang" key="byeVcall">Waktu habis</h6>
-        <button type="button" class="btn-modal" id="btn-home" name="okay">Oke</button>
-      </div>
-    </div>
-
+  <div class="browser-resize">
+    <h1>Please maximize your browser for the full experience</h1>
   </div>
+
+  <div class="browserZoomOut">
+    <h1>Please zoom out your browser for the full experience</h1>
+  </div>
+
+  <div class="browserZoomIn">
+    <h1>Please zoom in your browser for the full experience</h1>
+  </div>
+
+    <div class="desktop-content pelaminan">
+
+
+    <!-- Modal -->
+    <div id="setAgora" class="modal modal-agora">
+
+      <!-- Welcoming Modal Content -->
+      <div class="modal-content">
+        <h4>settings</h4>
+        <form id="form">
+          <div id="selectCam" class="input-field">
+            <label for="cameraId" class="active">CAMERA</label>
+            <select class="" name="cameraId" id="cameraId"></select>
+          </div>
+          <div id="selectMic" class="input-field">
+            <label for="microphoneId" class="active">MICROPHONE</label>
+            <select class="" name="microphoneId" id="microphoneId"></select>
+          </div>
+          <button type="submit" id="join" class="btn-join">JOIN</button>
+        </form>
+      </div>
+    </div>
+
+      <div id="countdownCall" class="timer1">
+        <p id="countWaiting"></p>
+        <span id="hours1"></span>
+        <span id="minutes1"></span>
+        <span id="seconds1"></span>
+      </div>
+
+      <!-- Video -->
+      <span class="dot dot1">
+        <div class="vidPosition row container col l12 s12">
+          <div class="row">
+            <div class="col s7">
+              <div class="video-grid" id="video1">
+                <div class="video-view">
+                  <div id="local_stream_1" class="video-placeholder"></div>
+                  <div id="local_video_info_1" class="video-profile hide"></div>
+                  <div id="video_autoplay_local_1" class="autoplay-fallback hide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper-username">
+          <p class="username" id="username1"></p>
+        </div>
+      </span>
+      <span class="dot dot2">
+        <div class="vidPosition row container col l12 s12">
+          <div class="row">
+            <div class="col s7">
+              <div class="video-grid" id="video2">
+                <div class="video-view">
+                  <div id="local_stream_2" class="video-placeholder"></div>
+                  <div id="local_video_info_2" class="video-profile hide"></div>
+                  <div id="video_autoplay_local_2" class="autoplay-fallback hide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper-username">
+          <p class="username" id="username2"></p>
+        </div>
+      </span>
+      <span class="dot dot3">
+        <div class="vidPosition row container col l12 s12">
+          <div class="row">
+            <div class="col s7">
+              <div class="video-grid" id="video3">
+                <div class="video-view">
+                  <div id="local_stream_3" class="video-placeholder"></div>
+                  <div id="local_video_info_3" class="video-profile hide"></div>
+                  <div id="video_autoplay_local_3" class="autoplay-fallback hide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper-username">
+          <p class="username" id="username3"></p>
+        </div>
+      </span>
+      <span class="dot dot4">
+        <div class="vidPosition row container col l12 s12">
+          <div class="row">
+            <div class="col s7">
+              <div class="video-grid" id="video4">
+                <div class="video-view">
+                  <div id="local_stream_4" class="video-placeholder"></div>
+                  <div id="local_video_info_4" class="video-profile hide"></div>
+                  <div id="video_autoplay_local_4" class="autoplay-fallback hide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper-username">
+          <p class="username" id="username4"></p>
+        </div>
+      </span>
+      <span class="dot dot5">
+        <div class="vidPosition row container col l12 s12">
+          <div class="row">
+            <div class="col s7">
+              <div class="video-grid" id="video5">
+                <div class="video-view">
+                  <div id="local_stream_5" class="video-placeholder"></div>
+                  <div id="local_video_info_5" class="video-profile hide"></div>
+                  <div id="video_autoplay_local_5" class="autoplay-fallback hide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper-username">
+          <p class="username" id="username5"></p>
+        </div>
+      </span>
+      <span class="dot dot6">
+        <div class="vidPosition row container col l12 s12">
+          <div class="row">
+            <div class="col s7">
+              <div class="video-grid" id="video6">
+                <div class="video-view">
+                  <div id="local_stream_6" class="video-placeholder"></div>
+                  <div id="local_video_info_6" class="video-profile hide"></div>
+                  <div id="video_autoplay_local_6" class="autoplay-fallback hide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper-username">
+          <p class="username" id="username6"></p>
+        </div>
+      </span>
+      <span class="dot dot7">
+        <div class="vidPosition row container col l12 s12">
+          <div class="row">
+            <div class="col s7">
+              <div class="video-grid" id="video7">
+                <div class="video-view">
+                  <div id="local_stream_7" class="video-placeholder"></div>
+                  <div id="local_video_info_7" class="video-profile hide"></div>
+                  <div id="video_autoplay_local_7" class="autoplay-fallback hide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper-username">
+          <p class="username" id="username7"></p>
+        </div>
+      </span>
+      <span class="kotak">
+        <div class="vidPosition row container col l12 s12">
+          <div class="row">
+            <div class="col s7">
+              <div class="video-grid" id="video0">
+                <div class="video-view2">
+                  <div id="local_stream_0" class="video-placeholder2"></div>
+                  <div id="local_video_info_0" class="video-profile hide"></div>
+                  <div id="video_autoplay_local_0" class="autoplay-fallback hide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+
+      <!-- Bye Vcall Modal -->
+      <div id="byeVcallModal" class="modal-bye">
+        <div class="modal-content2 content-karet">
+          <h6 class="lang" key="byeVcall">Waktu habis</h6>
+          <button type="button" class="btn-modal" id="btn-home" name="okay">Oke</button>
+        </div>
+      </div>
+
+
+    </div>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 
   <script src="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
 
@@ -215,7 +234,10 @@
   <script src="AgoraRTCSDK-3.1.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
 
+  <script type="text/javascript" src="../index.js"></script>
+
   <script type="text/javascript">
+  console.log("masuk js di html");
     // WEB TOUR
     var vcallTour = new Tour({
       steps: [{
@@ -405,7 +427,7 @@
 
     console.log("yeuu " + startTime);
 
-    var startTimeDate = new Date("19 August 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("20 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -429,7 +451,7 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "19 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "20 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       console.log("timeParse " + timeNowParse);
@@ -500,9 +522,10 @@
     });
 
     console.log("USERNAME " + usernameCall);
-    $(document).ready(function() {
+    // $(document).ready(function() {
       $("#setAgora").css("display", "block");
-    });
+    $(".desktop-content").css("display", "block");
+    // });
 
     console.log("agora sdk version: " + AgoraRTC.VERSION + " compatible: " + AgoraRTC.checkSystemRequirements());
     var resolutions = [{
@@ -1150,9 +1173,9 @@
 
       // This will start the join functions with all the configuration selected by the user.
       $("#join").on("click", function(e) {
-        localStorage.setItem('settingState', 'done');
+        // localStorage.setItem('settingState', 'done');
         console.log("setting state 2");
-        console.log(settingState);
+        // console.log(settingState);
         vcallTour.end();
         vcallTourEng.end();
         console.log("join")

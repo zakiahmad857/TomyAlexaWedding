@@ -14,6 +14,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo+2&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
+
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
@@ -50,22 +53,22 @@
     <div id="welcomeModal" class="modal">
 
       <div class="modal-content content-welcome">
-        <h4 class="lang" key="welcome">Selamat Datang</h4>
-        <h5 id="welcomeName"></h5>
-        <p class="lang lang-head" key="language">Pilih Bahasa</p>
+        <h3 class="lang heading" key="welcome">Selamat Datang</h3>
+        <h5 id="welcomeName" class="text"></h5>
+        <p class="lang lang-head text" key="language">Pilih Bahasa</p>
 
         <div id="checkbox-container" class="lang-wrapper">
           <div class="mx-auto">
             <label class="option_item">
               <input type="checkbox" id="checkbox-ind" class="checkbox">
               <div class="option_inner">
-                  <img src="images/lang/indonesia.png" class="flag" alt="indonesia">
+                  <img src="images/lang/indobox.svg" class="flag" alt="indonesia">
               </div>
             </label>
             <label class="option_item">
               <input type="checkbox" id="checkbox-eng" class="checkbox">
               <div class="option_inner">
-                <img src="images/lang/united-kingdom.png" class="flag" alt="indonesia">
+                <img src="images/lang/ukbox.svg" class="flag" alt="indonesia">
               </div>
             </label>
           </div>
@@ -232,6 +235,24 @@
   <script type="text/javascript" src="index.js"></script>
 
   <script type="text/javascript">
+  // lOADER
+
+    $('html, body').css({
+      overflow: 'hidden',
+      height: '100%'
+    });
+
+    $(window).on('load', function() {
+
+      $('html, body').css({
+        overflow: 'hidden',
+        height: 'auto'
+      })
+
+      $("#loading").addClass("loader-hidden");
+
+    });
+
     // WEB TOUR
     var tour = new Tour({
       steps: [{
@@ -380,9 +401,9 @@
     if (cookieToken == null) {
       localStorage.clear();
       console.log("clear localStorage");
-      var fullPath = dirPath + "/login";
+      var loginPath = dirPath + "/login";
       console.log(fullPath);
-      window.location = fullPath;
+      window.location = loginPath;
 
     }
 
@@ -418,7 +439,7 @@
       window.location = fullPath;
     }
 
-    var endTime = new Date("19 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("20 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 

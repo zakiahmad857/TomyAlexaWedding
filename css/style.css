@@ -1,7 +1,28 @@
+/* font-family: 'Cinzel', serif;
+font-family: 'Exo 2', sans-serif;
+font-family: 'Kodchasan', sans-serif;
+font-family: 'Questrial', sans-serif; */
+
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+.heading{
+  font-family: 'Cinzel', serif;
+}
+
+.title{
+  font-family: 'Questrial', sans-serif; 
+}
+
+.text{
+  font-family: 'Kodchasan', sans-serif;
+}
+
+.text2{
+  font-family: 'Exo 2', sans-serif;
 }
 
 .mobile-content {
@@ -98,7 +119,7 @@ body {
 
 /* Welcoming popup */
 /* The Modal (background) */
-.modal {
+/* .modal {
   display: none;
   z-index: 12;
   width: 100%;
@@ -107,7 +128,6 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content/Box */
 .modal-content {
   box-sizing: border-box;
   background-color: #fefefe;
@@ -159,7 +179,6 @@ body {
   background-color: #25d366;
   border-radius: 2rem;
   border: none;
-  /* float: left; */
 }
 
 .chat:focus {
@@ -227,10 +246,10 @@ body {
 
 .content-karet iframe {
   margin: 30px auto;
-}
+} */
 
 /* The Close Button */
-.close {
+/* .close {
   color: #aaa;
   float: right;
   text-align: right;
@@ -278,18 +297,18 @@ body {
   left: 0;
   z-index: 1;
   opacity: 0;
-}
+} */
 
-.option_item .option_inner {
+/* .option_item .option_inner { */
   /* background: #fff; */
   /* border-radius: 5px;
   cursor: pointer;
   color: #585c68;
   border: 5px solid transparent; */
   /* padding: 10px; */
-}
+/* } */
 
-.option_item .checkbox:checked ~ .option_inner .flag {
+/* .option_item .checkbox:checked ~ .option_inner .flag {
   border-color: #3b5999;
   color: #3b5999;
 }
@@ -305,7 +324,7 @@ body {
 .mx-auto {
   display: flex;
   margin: auto;
-}
+} */
 
 /* WEB TOUR */
 .popover-title {
@@ -396,14 +415,6 @@ body {
   background-repeat: no-repeat;
   overflow: hidden !important;
   z-index: -100;
-}
-
-.gallery-page {
-  background-color: lightblue;
-}
-
-.souvenir-page {
-  background-color: lightblue;
 }
 
 /* Header */

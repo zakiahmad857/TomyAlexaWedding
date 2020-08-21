@@ -53,7 +53,7 @@ body {
   z-index: 50;
 }
 
-.modal2 {
+.modal-bye {
   position: absolute;
   display: none;
   z-index: 100;

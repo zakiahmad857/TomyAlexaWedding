@@ -1,20 +1,20 @@
 // lOADER
 
-$('html, body').css({
-  overflow: 'hidden',
-  height: '100%'
-});
-
-$(window).on('load', function() {
-
-  $('html, body').css({
-    overflow: 'hidden',
-    height: 'auto'
-  })
-
-  $("#loading").addClass("loader-hidden");
-
-});
+// $('html, body').css({
+//   overflow: 'hidden',
+//   height: '100%'
+// });
+//
+// $(window).on('load', function() {
+//
+//   $('html, body').css({
+//     overflow: 'hidden',
+//     height: 'auto'
+//   })
+//
+//   $("#loading").addClass("loader-hidden");
+//
+// });
 
 // // LANGUAGE
 var arrLang = {
@@ -464,6 +464,7 @@ var screenHeight = window.screen.height;
 var perfectWidth = 0.85 * screenWidth;
 var perfectHeight = 0.7 * screenHeight;
 
+console.log("masuk js utama");
 console.log("screenWidth awal " + screenWidth);
 console.log("screenHeight awal " + screenHeight);
 console.log("browserWidth awal " + browserWidth);
@@ -477,20 +478,24 @@ if ((browserZoom > 1.1)){
   $(".browser-resize").css('display', 'none');
   $(".mobile-content").css('display', 'none');
   $(".desktop-content").css('display', 'none');
+  console.log("masuk 1");
 } else if ((browserZoom < 0.8)){
   $(".browserZoomIn").css('display', 'block');
   $(".browserZoomOut").css('display', 'none');
   $(".browser-resize").css('display', 'none');
   $(".mobile-content").css('display', 'none');
   $(".desktop-content").css('display', 'none');
+  console.log("masuk 2");
 } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
   $(".browser-resize").css('display', 'block');
   $(".browserZoomOut").css('display', 'none');
   $(".browserZoomIn").css('display', 'none');
   $(".mobile-content").css('display', 'none');
   $(".desktop-content").css('display', 'none');
+  console.log("masuk 3");
 } else {
   $(".desktop-content").css('display', 'block');
+  console.log("CONTENT MUNCUL");
   $(".browser-resize").css('display', 'none');
   $(".browserZoomOut").css('display', 'none');
   $(".browserZoomIn").css('display', 'none');
@@ -523,20 +528,24 @@ $(window).resize(function() {
     $(".browser-resize").css('display', 'none');
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
+    console.log("masuk 1");
   } else if ((browserZoom < 0.8)){
     $(".browserZoomIn").css('display', 'block');
     $(".browserZoomOut").css('display', 'none');
     $(".browser-resize").css('display', 'none');
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
+    console.log("masuk 2");
   } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
     $(".browser-resize").css('display', 'block');
     $(".browserZoomOut").css('display', 'none');
     $(".browserZoomIn").css('display', 'none');
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
+    console.log("masuk 3");
   } else {
     $(".desktop-content").css('display', 'block');
+    console.log("CONTENT MUNCUL");
     $(".browser-resize").css('display', 'none');
     $(".browserZoomOut").css('display', 'none');
     $(".browserZoomIn").css('display', 'none');
@@ -549,6 +558,9 @@ $(window).resize(function() {
 
 
 $(document).ready(function() {
+
+
+
   // getZoomValues();
   // Path
   var dirPath = dirname(location.href);
@@ -698,20 +710,3 @@ function toggleLanguange(tog) {
     });
   }
 }
-
-// youtube
-// function onYouTubePlayerAPIReady() {
-//   // create the global player from the specific iframe (#video)
-//   player = new YT.Player('videoMC', {
-//     events: {
-//       // call this function when player is ready to use
-//       'onReady': onPlayerReady
-//     }
-//   });
-// }
-//
-// function onPlayerReady(event) {
-//   // bind events
-//   player.mute();
-//
-// }

@@ -2,6 +2,216 @@
   background-image: url("../images/background2.png");
 }
 
+.modal {
+  display: none;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  box-sizing: border-box;
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 2%;
+  text-align: center;
+  border-radius: 3rem;
+}
+
+.content-welcome {
+  width: 30%;
+  padding: 3% 0;
+}
+
+.content-earlyBird {
+  width: 40%;
+  padding: 30px;
+}
+
+.content-earlyBird .timer{
+  padding: 5px;
+  width: 25%;
+  margin: auto;
+  background-color: lightgrey;
+  border-radius: 1rem;
+}
+
+.content-faq {
+  width: 40%;
+  padding: 20px;
+}
+
+.content-faq h4 {
+  margin-bottom: 20px;
+}
+
+.content-faq ol {
+  text-align: left;
+}
+
+.chat {
+  width: 40%;
+  margin: auto;
+  height: 45px;
+  line-height: 45px;
+  background-color: #25d366;
+  border-radius: 2rem;
+  border: none;
+  /* float: left; */
+}
+
+.chat:focus {
+  border: none;
+  outline: none;
+}
+
+.content-faq a {
+  text-decoration: none;
+  color: white;
+}
+
+.content-faq p {
+  display: inline;
+  font-weight: bold;
+}
+
+.fa-whatsapp {
+  vertical-align: middle;
+  margin: auto 10px 5px auto;
+}
+
+.content-earlyBird h6 {
+  font-weight: normal;
+  margin: 15px auto;
+}
+
+.btn-modal {
+  padding: 5px;
+  width: 25%;
+  margin: auto;
+  background-color: rgba(50, 130, 184, 0.9);
+  border-radius: 1rem;
+  border: none;
+}
+
+.btn-modal:hover {
+  background-color: #3282b8;
+}
+
+.btn-modal:focus {
+  outline: none;
+}
+
+.content-vcall {
+  width: 30%;
+  padding-top: 30px;
+}
+
+.content-vcall h4 {
+  width: 60%;
+  margin: auto;
+}
+
+.content-vcall h6 {
+  font-weight: normal;
+  margin: 35px auto;
+  width: 60%;
+}
+
+.content-karet {
+  width: 50%;
+  padding: 40px;
+}
+
+.content-karet iframe {
+  margin: 30px auto;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  text-align: right;
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+  margin: 5px 15px 0 0;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content-welcome h5 {
+  font-weight: normal;
+  border-bottom: 1px solid #000;
+  padding-bottom: 7px;
+  width: 60%;
+  margin: 20px auto;
+}
+
+.lang-head {
+  margin: 20px;
+}
+
+.lang-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.lang-wrapper .option_item {
+  display: block;
+  position: relative;
+  width: 175px;
+}
+
+.lang-wrapper .option_item .checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.option_item .option_inner {
+  /* background: #fff; */
+  /* border-radius: 5px;
+  cursor: pointer;
+  color: #585c68;
+  border: 5px solid transparent; */
+  /* padding: 10px; */
+}
+
+.option_item .checkbox:checked ~ .option_inner .flag {
+  border-color: #3b5999;
+  color: #3b5999;
+}
+
+.flag {
+  width: 60%;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #585c68;
+  border: 5px solid transparent;
+}
+
+.mx-auto {
+  display: flex;
+  margin: auto;
+}
+
+
 .planet {
   position: absolute;
   top: 10%;
@@ -13,13 +223,6 @@
 }
 
 /* LIVE MC */
-/* .mc{
-  position: absolute;
-  left: 60%;
-  bottom: 0;
-  width: 20%;
-  height: 40%;
-} */
 
 .live-mc{
   position: absolute;
@@ -57,13 +260,10 @@
 .video-wrapper iframe{
   -webkit-mask-image: url(../images/mask2.svg);
   -webkit-mask-repeat-x: round;
-
   width: 95%;
   height: 80%;
   margin: auto;
-
   z-index: 9;
-
 }
 
 
