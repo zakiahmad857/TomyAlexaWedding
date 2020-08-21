@@ -113,6 +113,10 @@ a, a:hover, a:focus{
 }
 
 @media screen and (min-width: 1900px){
+  .home-button img {
+    width: 100%;
+  }
+
   .judul{
     font-size: 2rem;
     width: 60%;
