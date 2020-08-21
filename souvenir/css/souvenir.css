@@ -1,7 +1,63 @@
-.header-gallery{
-  left: 80%;
+.souvenir-page {
+  background-image: url("../images/souvenir-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 90%;
+  overflow: hidden !important;
+  height: 100vh !important;
+  font-family: 'Kodchasan', sans-serif;
 }
 
-.souvenir-page {
-  background-color: lightblue;
+.home-button {
+  position: absolute;
+  margin: 1%;
+}
+
+.home-button:hover {
+  cursor: pointer;
+}
+
+.home-button img {
+  width: 70%;
+}
+
+.content-wrapper {
+  width: 55%;
+  height: 65%;
+  background: rgba(119, 118, 173, 0.8);
+  box-shadow: 3px 10px 15px rgba(0, 0, 0, 0.4), -4px -5px 15px rgba(255, 255, 255, 0.25);
+  border-radius: 34px;
+  position: relative;
+  top: 50%;
+  left: 55%;
+  transform: translateY(-50%);
+  color: #FFFFFF;
+  padding: 5% 5%;
+}
+
+.content-wrapper p {
+  width: 60%;
+  font-size: 16px;font-weight: lighter;
+}
+
+.btn-download {
+  background-color: #34337F;
+  color: white;
+  border: 1px solid #4F5989;
+  box-shadow: -2px -2px 5px 2px rgba(255, 255, 255, 0.12), 3px 3px 5px 3px rgba(8, 43, 96, 0.41);
+  border-radius: 7px;
+  margin-top: 2%;
+  font-size: 12px;
+  padding: 2% 5%;
+}
+
+.btn-download:hover{
+  color: white;
+}
+
+.btn-download:focus{
+  border: 0;
+  color: white;
+  outline: none !important;
+  box-shadow: -2px -2px 5px 2px rgba(255, 255, 255, 0.12), 3px 3px 5px 3px rgba(8, 43, 96, 0.41);
 }

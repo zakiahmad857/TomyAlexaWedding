@@ -1,0 +1,121 @@
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.angpao-page{
+  background-image: url("../images/background-angpao.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 90%;
+  overflow: hidden !important;
+  height: 100vh !important;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+.home-button{
+  position: absolute;
+  margin: 1%;
+}
+
+.home-button:hover{
+  cursor: pointer;
+}
+
+.home-button img{
+  width: 70%;
+}
+
+.content-wrapper{
+  width: 85%;
+  height: 70%;
+  background-color: rgba(221, 77, 244, 0.16);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 15px rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+
+  position: relative;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  color: #FFFFFF;
+  padding: 3% 5%;
+}
+
+.content-wrapper p{
+  font-size: 16px;
+}
+
+.content-left{
+  /* border: 1px solid black; */
+  width: 60%;
+  float: left;
+  padding-right: 10%;
+  margin-top: 2%;
+  font-style: normal;
+}
+
+.content-right{
+  /* border: 1px solid black; */
+  width: 40%;
+  float: right;
+  margin-top: 2%;
+  font-style: normal;
+}
+
+.vl {
+  border-left: 1px solid white;
+  height: 320px;
+  display: inline-block;
+  float: left;
+  margin-right: 20%;
+}
+
+.qrcode-list {
+  display: flex;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  margin: 5% 0;
+  /* border: 1px solid red; */
+}
+
+.qrcode {
+  flex: auto;
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid blue; */
+}
+
+.qrcode p {
+  margin: auto;
+  font-size: 12px;
+}
+
+.desc-angpao{
+  width: 75%;
+  margin: auto;
+}
+
+.qrcode img{
+  width: 100%;
+  margin: 7% 0;
+}
+
+.ovo {
+  margin-right: 10%;
+}
+
+.gopay {
+  margin-right: 10%;
+}
+
+.bca img{
+  width: 95%;
+}
+
+.alamat{
+  width: 80%;
+  font-weight: bolder;
+}

@@ -639,16 +639,16 @@ $(document).ready(function() {
   });
 
   // Angpao-Faq Modal, when the user clicks on the button, open the modal
-  $("#angpao").click(function() {
-    $("#angpaoModal").css("display", "block");
-  });
+  // $("#angpao").click(function() {
+  //   $("#angpaoModal").css("display", "block");
+  // });
 
   $("#faq").click(function() {
     $("#faqModal").css("display", "block");
   });
 
   // Exit button, go to homepage
-  $(".exit").click(function() {
+  $(".home-button").click(function() {
     window.location = homePath;
   });
 
