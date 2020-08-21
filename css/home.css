@@ -1,5 +1,18 @@
+
+
 .homepage{
-  background-image: url("../images/background2.png");
+  background-image: url("../images/background.png");
+
+  margin: 0;
+  padding: 0;
+  /* min-width: 100% !important; */
+  height: 100vh !important;
+  /* background-attachment: fixed !important; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 80%;
+  overflow: hidden !important;
+  z-index: -100;
 }
 
 .modal {
@@ -227,13 +240,13 @@
 .live-mc{
   position: absolute;
   left: 60%;
-  bottom: 0%;
+  bottom: -15%;
   width: 300px;
   height: 400px;
-  background: url('../images/png-seq/tvmc.png');
+  background: url('../images/button/tvmc.png');
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: 85% auto;
+  background-size: 150% auto;
   z-index: 10;
 
 }
@@ -266,13 +279,20 @@
   z-index: 9;
 }
 
+/* Hide Image (load) */
+.parent-jukebox img, .parent-gallery img, .parent-souvenir img, .parent-pelaminan img, .parent-angpao img{
+  width: 28%;
+  height: 45%;
+  display: none;
+}
+
 
 /* SOUVENIR */
 .parent-souvenir{
   position: absolute;
   left: 20%;
-  top: 34%;
-  width: 25%;
+  top: 30%;
+  width: 30%;
   height: 45%;
   /* border: 1px solid black; */
   z-index: 5;
@@ -280,11 +300,9 @@
 
 .souvenir{
   position: absolute;
-  /* left: 20%;
-  top: 34%; */
   width: 100%;
   height: 100%;
-  background: url('../images/png-seq/animatedkaset.png');
+  background: url('../images/button/souvenir-still.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -297,38 +315,27 @@
   cursor: pointer;
   position: absolute;
   /* border: 1px solid orange; */
-  left: 20%;
+  left: 22%;
   top: 10%;
-  width: 35%;
+  width: 43%;
   height: 65%;
   z-index: 6;
 }
 
 .div-souvenir:hover ~ .souvenir{
-  /* position: absolute;
-  left: 20%;
-  top: 34%;
-  width: 25%;
-  height: 45%; */
-  background: url('../images/png-seq/statickaset.png');
+  background: url('../images/button/souvenir-animated.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.parent-souvenir img{
-  width: 28%;
-  height: 45%;
-  display: none;
-}
-
 /* GALLERY */
 .parent-gallery{
-  width: 42%;
-  height: 70%;
+  width: 35%;
+  height: 50%;
   position: absolute;
-  top: 0%;
-  left: 2%;
+  top: 4%;
+  left: 1%;
   z-index: 3;
   /* border: 2px solid black; */
 }
@@ -337,21 +344,19 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  /* top: 0%; */
-  /* left: 2%; */
-  background: url('../images/png-seq/galeri.png');
+  background: url('../images/button/galeri-still.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   /* border: 1px solid yellow; */
   z-index: 3;
 }
 
 .div-gallery{
   position: absolute;
-  left: 15%;
+  left: 25%;
   top: 20%;
-  width: 40%;
+  width: 45%;
   height: 65%;
   z-index: 6;
   /* border: 2px solid purple; */
@@ -359,16 +364,60 @@
 }
 
 .div-gallery:hover ~ .gallery{
+  background: url('../images/button/galeri-animated.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
+/* PELAMINAN */
+.parent-pelaminan{
+  width: 30%;
+  height: 60%;
+  position: absolute;
+  top: 0;
+  left: 35.5%;
+  z-index: 3;
+  /* border: 2px solid red; */
+}
+
+.pelaminan{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url('../images/button/pelaminan-still.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border: 1px solid pink; */
+  z-index: 3;
+}
+
+.div-pelaminan{
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 70%;
+  z-index: 6;
+  /* border: 2px solid purple; */
+  cursor: pointer;
+}
+
+.div-pelaminan:hover ~ .pelaminan{
+  background: url('../images/button/pelaminan-animated.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* JUKEBOX */
 .parent-jukebox{
   position: absolute;
-  right: 0;
-  top: 40%;
-  width: 35%;
-  height: 50%;
+  right: 5%;
+  top: 22%;
+  width: 30%;
+  height: 60%;
   /* border: 1px solid black; */
 }
 
@@ -382,8 +431,8 @@
   top: 40%; */
   width: 100%;
   height: 100%;
-  background: url('../images/png-seq/animatedjukebox.png');
-  background-size: 95% auto;
+  background: url('../images/button/jukebox-still.png');
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
   /* border: 1px solid blue; */
@@ -402,21 +451,10 @@
 }
 
 .div-jukebox:hover ~ .jukebox{
-  /* position: absolute;
-  right: 0;
-  top: 40%;
-  width: 35%;
-  height: 50%; */
-  background: url('../images/png-seq/jukebox.png');
-  background-size: 95% auto;
+  background: url('../images/button/jukebox-animated.png');
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.parent-jukebox img{
-  width: 28%;
-  height: 45%;
-  display: none;
 }
 
 /* ANGPAO */
@@ -435,8 +473,8 @@
   /* bottom: 0; */
   width: 100%;
   height: 100%;
-  background: url('../images/png-seq/animatedayam.png');
-  background-size: 120% auto;
+  background: url('../images/button/ayam-still.png');
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: 55% 100%;
   /* border: 1px solid red; */
@@ -461,8 +499,8 @@
 }
 
 .div-ayam:hover ~ .angpao{
-  background: url('../images/png-seq/staticayam.png');
-  background-size: 120% auto;
+  background: url('../images/button/ayam-animated.png');
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: 55% 100%;
   cursor: auto;
