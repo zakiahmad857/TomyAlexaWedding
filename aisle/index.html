@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:image" itemprop="image" content="/images/bride.png">
   <meta property="og:description" content="Tomy & Alexa Virtual Wedding Reception">
 
@@ -13,35 +14,25 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo+2&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
+
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/aisle.css">
 
 </head>
 
 <body>
-  <div class="container-fluid wrap-aisle">
-    <!-- Header -->
-    <div class="header header-gallery">
-
-      <div id="checkbox-container2" class="header-div">
-        <input type="checkbox" class="checkbox" id="toggleLang" />
-        <label class="label" for="toggleLang">
-          <img class="flag-circle uk" src="../images/lang/uk-circle.png" alt="">
-          <img class="flag-circle ind" src="../images/lang/ind-circle.png" alt="">
-          <div class="ball"></div>
-        </label>
-
-        <img class="exit header-icon" src="../images/exit.svg" alt="">
-      </div>
+  <div class="aisle-page">
+    <div class="home-button">
+      <img src="images/home-button.png" alt="">
     </div>
 
     <div class="streaming-vcall">
-      <iframe src="https://www.youtube.com/embed/rfiBgrs47iI?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-      <!-- <iframe src="https://www.youtube.com/embed/E97RjpnrO7U?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
-      <div class="wrap-running-text wrap-rt-1">
+      <div class="wrap-running-text">
         <div class="static-text">
-          <h5 class="lang" key="in-pelaminan">Sedang di pelaminan:</h5>
+          <h5 class="lang" key="in-pelaminan">Di pelaminan:</h5>
           <div class="marquee">
             <div class="inner">
               <p>
@@ -57,24 +48,9 @@
           </div>
         </div>
       </div>
-      <div class="wrap-running-text wrap-rt-2">
-        <div class="static-text">
-          <h5 class="lang" key="next-pelaminan">Selanjutnya:</h5>
-          <div class="marquee">
-            <div class="inner">
-              <p>
-                <span id="next1"></span>
-                <span id="next2"></span>
-                <span id="next3"></span>
-                <span id="next4"></span>
-                <span id="next5"></span>
-                <span id="next6"></span>
-                <span id="next7"></span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- <iframe src="https://www.youtube.com/embed/rfiBgrs47iI?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
+      <!-- <iframe src="https://www.youtube.com/embed/E97RjpnrO7U?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
+
     </div>
 
     <div id="live-mc" class="live-mc"></div>

@@ -111,3 +111,57 @@ a, a:hover, a:focus{
 .foto-wrapper-4 img{
   width: 78%;
 }
+
+@media screen and (min-width: 1900px){
+  .judul{
+    font-size: 2rem;
+    width: 60%;
+  }
+
+  .content-wrapper-1{
+    top: 23%;
+    height: 21%;
+  }
+
+  .content-wrapper-1 .judul{
+    left: 40%;
+    transform: translateX(-40%) translateY(-40%);
+  }
+
+  .content-wrapper-2{
+    top: 23%;
+    height: 20%;
+  }
+
+  .content-wrapper-3{
+    top: 45.5%;
+    height: 21.5%;
+  }
+
+  .img-home{
+    width: 105%;
+  }
+
+  .foto-wrapper-1{
+    top: 22.4%;
+    left: 41.2%;
+  }
+
+  .foto-wrapper-2{
+    top: 46%;
+  }
+
+  .foto-wrapper-3{
+    top: 45.7%;
+    left: 55%;
+  }
+
+  .foto-wrapper-4{
+    top: 69.8%;
+    left: 40.9%;
+  }
+
+  .foto-wrapper-4 img{
+    width: 108%;
+  }
+}
