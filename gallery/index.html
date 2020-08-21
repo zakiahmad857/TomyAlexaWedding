@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:image" itemprop="image" content="/images/bride.png">
   <meta property="og:description" content="Tomy & Alexa Virtual Wedding Reception">
 
@@ -13,47 +14,55 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo+2&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
+
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="../css/style.css">
-
+  <link rel="stylesheet" href="css/gallery.css">
 
 </head>
 
 <body>
-  <div class="container-fluid gallery-page">
-
-    <!-- Video Call Modal -->
-    <div id="vcallModal" class="modal">
-
-      <div class="modal-content content-vcall">
-        <h4><span id="redirectVcall2"></span></h4>
-        <h4 class="lang" key="vcall_1"> detik lagi Anda akan menuju halaman video call</h4>
-        <h6 class="lang" key="vcall_2">You will be seated in the waiting room, you can explore the website after the video call</h6>
-        <!-- <a href="Vcall/index.html"><button type="button" class="btn-modal" id="btn-okay" name="okay">Okay</button></a> -->
-      </div>
-
+  <div class="gallery-page">
+    <div class="home-button">
+      <img src="images/home-button.png" alt="">
+    </div>
+    <div class="content-wrapper-1">
+      <a href=""><h4 class="judul">Pre Wedding</h4></a>
     </div>
 
-    <!-- Header -->
-    <div class="header header-gallery">
-
-      <div id="checkbox-container2" class="header-div">
-        <input type="checkbox" class="checkbox" id="toggleLang" />
-        <label class="label" for="toggleLang">
-          <img class="flag-circle uk" src="../images/lang/uk-circle.png" alt="">
-          <img class="flag-circle ind" src="../images/lang/ind-circle.png" alt="">
-          <div class="ball"></div>
-        </label>
-
-        <!-- <img id="info" class="header-icon info" src="../images/information.svg" alt=""> -->
-
-        <!-- <img id="faq" class="header-icon" src="../images/faq.svg" alt=""> -->
-
-        <img class="exit header-icon" src="../images/exit.svg" alt="">
-      </div>
+    <div class="content-wrapper-2">
+      <a href=""><h4 class="judul">Lamaran</h4></a>
     </div>
 
-      <h1>Gallery</h1>
+    <div class="content-wrapper-3">
+      <a href=""><h4 class="judul">Akad Nikah</h4></a>
+    </div>
+
+    <div class="foto-wrapper-1">
+      <img src="images/foto1.png" class="img-home" alt="foto">
+    </div>
+
+
+    <div class="foto-wrapper-2">
+      <img src="images/foto1.png" class="img-home" alt="foto">
+    </div>
+
+    <div class="foto-wrapper-3">
+      <img src="images/foto1.png" class="img-home" alt="foto">
+    </div>
+
+    <div class="foto-wrapper-4">
+      <img src="images/foto1.png" class="img-home" alt="foto">
+    </div>
+
+    <div id="live-mc" class="live-mc"></div>
+
+    <div class="video-mc embed-responsive">
+      <iframe class="" src="https://www.youtube.com/embed/6ksnNqA302I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

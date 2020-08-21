@@ -1,7 +1,113 @@
-.header-gallery{
-  left: 80%;
+.gallery-page {
+  background-image: url("../images/gallery-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 80%;
+  overflow: hidden !important;
+  height: 100vh !important;
+  font-family: 'Kodchasan', sans-serif;
 }
 
-.gallery-page {
-  background-color: lightblue;
+.home-button {
+  position: absolute;
+  margin: 1%;
+}
+
+.home-button:hover {
+  cursor: pointer;
+}
+
+.home-button img {
+  width: 70%;
+}
+
+.judul{
+  width: 80%;
+  font-weight: bold;
+  height: 23%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-40%);
+}
+
+a, a:hover, a:focus{
+  text-decoration: none;
+  color: black;
+}
+
+.content-wrapper-1{
+  position: relative;
+  top: 15%;
+  left: 26.5%;
+  width: 11.5%;
+  height: 23%;
+  line-height: 23%;
+  background-color: #C4C4C4;
+  transform: skew(-0.006turn, 0.5deg);
+  text-align: center;
+}
+
+.content-wrapper-2{
+  position: absolute;
+  top: 14.5%;
+  left: 54.8%;
+  width: 11.5%;
+  height: 23%;
+  line-height: 23%;
+  background-color: #C4C4C4;
+  transform: skew(0.001turn, 0.5deg);
+  text-align: center;
+}
+
+.content-wrapper-2 .judul{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.content-wrapper-3{
+  position: absolute;
+  top: 40.3%;
+  left: 41%;
+  width: 12%;
+  height: 24.5%;
+  line-height: 23%;
+  background-color: #C4C4C4;
+  transform: skew(0.001turn, 0.5deg);
+  text-align: center;
+}
+
+.img-home{
+  width: 74.5%;
+}
+
+.foto-wrapper-1{
+  position: absolute;
+  top: 13.5%;
+  left: 41.2%;
+}
+
+.foto-wrapper-2{
+  position: absolute;
+  top: 41%;
+  left: 26%;
+  transform: skew(-0.006turn, 0.5deg);
+}
+
+.foto-wrapper-3{
+  position: absolute;
+  top: 40.7%;
+  left: 55%;
+}
+
+.foto-wrapper-4{
+  position: absolute;
+  top: 68%;
+  left: 40.8%;
+}
+
+.foto-wrapper-4 img{
+  width: 78%;
 }
