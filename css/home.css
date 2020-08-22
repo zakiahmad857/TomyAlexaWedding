@@ -1,8 +1,5 @@
-
-
-.homepage{
+.homepage {
   background-image: url("../images/background.png");
-
   margin: 0;
   padding: 0;
   /* min-width: 100% !important; */
@@ -47,7 +44,7 @@
   padding: 30px;
 }
 
-.content-earlyBird .timer{
+.content-earlyBird .timer {
   padding: 5px;
   width: 25%;
   margin: auto;
@@ -206,7 +203,7 @@
   /* padding: 10px; */
 }
 
-.option_item .checkbox:checked ~ .option_inner .flag {
+.option_item .checkbox:checked~.option_inner .flag {
   border-color: #3b5999;
   color: #3b5999;
 }
@@ -224,7 +221,6 @@
   margin: auto;
 }
 
-
 .planet {
   position: absolute;
   top: 10%;
@@ -236,8 +232,7 @@
 }
 
 /* LIVE MC */
-
-.live-mc{
+.live-mc {
   position: absolute;
   left: 55%;
   bottom: -15%;
@@ -251,7 +246,7 @@
   /*border: 1px solid red;*/
 }
 
-.video-mc{
+.video-mc {
   position: absolute;
   left: 55%;
   bottom: 0%;
@@ -260,7 +255,7 @@
   /*border: 1px solid black;*/
 }
 
-.video-wrapper{
+.video-wrapper {
   position: relative;
   top: 57.5%;
   align-items: center;
@@ -271,7 +266,7 @@
   /*border: 1px solid blue;*/
 }
 
-.video-wrapper iframe{
+.video-wrapper iframe {
   -webkit-mask-image: url(../images/mask2.svg);
   -webkit-mask-repeat-x: round;
   width: 95%;
@@ -280,36 +275,35 @@
   z-index: 9;
 }
 
-@media screen and (min-width: 1900px){
-  .live-mc{
+@media screen and (min-width: 1900px) {
+  .live-mc {
     bottom: -9%;
     width: 400px;
     height: 500px;
   }
 
-  .video-mc{
+  .video-mc {
     bottom: -9%;
     width: 400px;
     height: 500px;
   }
 
-  .video-wrapper{
-  top: 28.5%;
-  width: 55.5%;
-  height: 41%;
-}
+  .video-wrapper {
+    top: 28.5%;
+    width: 55.5%;
+    height: 41%;
+  }
 }
 
 /* Hide Image (load) */
-.parent-jukebox img, .parent-gallery img, .parent-souvenir img, .parent-pelaminan img, .parent-angpao img{
+.parent-jukebox img, .parent-gallery img, .parent-souvenir img, .parent-pelaminan img, .parent-angpao img {
   width: 28%;
   height: 45%;
   display: none;
 }
 
-
 /* SOUVENIR */
-.parent-souvenir{
+.parent-souvenir {
   position: absolute;
   left: 20%;
   top: 30%;
@@ -319,7 +313,7 @@
   z-index: 5;
 }
 
-.souvenir{
+.souvenir {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -332,7 +326,7 @@
   cursor: default;
 }
 
-.div-souvenir{
+.div-souvenir {
   cursor: pointer;
   position: absolute;
   /* border: 1px solid orange; */
@@ -343,7 +337,7 @@
   z-index: 6;
 }
 
-.div-souvenir:hover ~ .souvenir{
+.div-souvenir:hover~.souvenir {
   background: url('../images/button/souvenir-animated.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -351,7 +345,7 @@
 }
 
 /* GALLERY */
-.parent-gallery{
+.parent-gallery {
   width: 35%;
   height: 50%;
   position: absolute;
@@ -361,7 +355,7 @@
   /* border: 2px solid black; */
 }
 
-.gallery{
+.gallery {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -373,7 +367,7 @@
   z-index: 3;
 }
 
-.div-gallery{
+.div-gallery {
   position: absolute;
   left: 25%;
   top: 20%;
@@ -384,7 +378,7 @@
   cursor: pointer;
 }
 
-.div-gallery:hover ~ .gallery{
+.div-gallery:hover~.gallery {
   background: url('../images/button/galeri-animated.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -392,7 +386,7 @@
 }
 
 /* PELAMINAN */
-.parent-pelaminan{
+.parent-pelaminan {
   width: 30%;
   height: 60%;
   position: absolute;
@@ -402,7 +396,7 @@
   /* border: 2px solid red; */
 }
 
-.pelaminan{
+.pelaminan {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -414,7 +408,7 @@
   z-index: 3;
 }
 
-.div-pelaminan{
+.div-pelaminan {
   position: absolute;
   left: 20%;
   top: 20%;
@@ -425,7 +419,7 @@
   cursor: pointer;
 }
 
-.div-pelaminan:hover ~ .pelaminan{
+.div-pelaminan:hover~.pelaminan {
   background: url('../images/button/pelaminan-animated.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -433,7 +427,7 @@
 }
 
 /* JUKEBOX */
-.parent-jukebox{
+.parent-jukebox {
   position: absolute;
   right: 5%;
   top: 22%;
@@ -442,11 +436,11 @@
   /* border: 1px solid black; */
 }
 
-.parent-jukebox a, .parent-gallery a{
+.parent-jukebox a, .parent-gallery a {
   cursor: default;
 }
 
-.jukebox{
+.jukebox {
   position: absolute;
   /* right: 0;
   top: 40%; */
@@ -460,7 +454,7 @@
   z-index: 3;
 }
 
-.div-jukebox{
+.div-jukebox {
   position: absolute;
   left: 40%;
   top: 5%;
@@ -471,7 +465,7 @@
   cursor: pointer;
 }
 
-.div-jukebox:hover ~ .jukebox{
+.div-jukebox:hover~.jukebox {
   background: url('../images/button/jukebox-animated.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -479,7 +473,7 @@
 }
 
 /* ANGPAO */
-.parent-angpao{
+.parent-angpao {
   position: absolute;
   left: 3%;
   bottom: 0;
@@ -488,7 +482,7 @@
   /* border: 1px solid pink; */
 }
 
-.angpao{
+.angpao {
   position: absolute;
   /* left: 3%; */
   /* bottom: 0; */
@@ -502,7 +496,7 @@
   z-index: 6;
 }
 
-.div-ayam{
+.div-ayam {
   position: absolute;
   left: 20%;
   top: 8%;
@@ -513,13 +507,13 @@
   cursor: pointer;
 }
 
-.parent-angpao img{
+.parent-angpao img {
   width: 28%;
   height: 45%;
   display: none;
 }
 
-.div-ayam:hover ~ .angpao{
+.div-ayam:hover~.angpao {
   background: url('../images/button/ayam-animated.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
