@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" itemprop="image" content="/images/bride.png">
+  <!-- <meta property="og:image" itemprop="image" content="/images/bride.png"> -->
   <meta property="og:description" content="Tomy & Alexa Virtual Wedding Reception">
 
   <title>Tomy & Lexa | Virtual Wedding Reception</title>
-  <link rel="icon" href="images/favicon-16.png">
+  <!-- <link rel="icon" href="images/favicon-16.png"> -->
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -27,6 +27,17 @@
   <div class="aisle-page">
     <div class="home-button">
       <img src="images/home-button.png" alt="">
+    </div>
+
+    <!-- Video Call Modal -->
+    <div id="vcallModal" class="modal">
+
+      <div class="modal-content content-vcall">
+        <h4> <span id="redirectVcall"></span></h4>
+        <h4 class="lang">Sebentar lagi kamu bertemu dengan mempelai. Silakan masuk antrian.</h4>
+        <!-- <h6 class="lang" key="vcall_2">You will be seated in the waiting room, you can explore the website after the video call</h6> -->
+      </div>
+
     </div>
 
     <div class="streaming-vcall">
@@ -91,7 +102,7 @@
     console.log("token " + cookieToken);
 
     if (cookieToken == null) {
-      var fullPath = dirPath + "/login";
+      var fullPath = homePath + "/login";
       console.log(fullPath);
       window.location = fullPath;
     }
@@ -106,6 +117,8 @@
 
     console.log("array");
     console.log(groupVcall.length);
+    console.log("dirpath " + dirPath);
+    console.log("homePath " + homePath);
 
     timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
     timeGroup2 = timeCheck.getHours() + ":" + minuteEdit2.toString();
@@ -131,6 +144,15 @@
 
     // Show list tamu yg lagi concall
     if (groupVcall.length > 0) {
+      // console.log("masuk if");
+      // for (var i = 0; i<groupVcall.length; i++){
+      //   console.log("masuk for");
+      //   console.log("#tamu" + i);
+      //   console.log(groupVcall[i]);
+      //   var id = i++;
+      //   console.log("id" + id);
+      //   $("#tamu" + id).html(groupVcall[i] + "<span> | </span>");
+      // }
       $("#tamu1").html(groupVcall[0] + "<span> | </span>");
       $("#tamu2").html(groupVcall[1] + "<span> | </span>");
       $("#tamu3").html(groupVcall[2] + "<span> | </span>");
@@ -140,37 +162,25 @@
       $("#tamu7").html(groupVcall[6] + "<span> | </span>");
     }
 
-    $.ajax({
-      url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup2,
-      async: false,
-      type: "GET",
-      global: false,
-      success: function(result) {
-        console.log("get time group");
-        console.log(result);
-        for (var i = 0; i < result.length; i++) {
-          var item2 = result[i].name;
-          groupVcall2.push(item2);
-        }
-        console.log(groupVcall2);
-      },
-      error: function(err) {
-        console.log(err);
-      }
-    });
+    // TOKEN DATA
+    var name = null;
+    var idPosition = null;
 
-    // Show list tamu next concall
-    if (groupVcall2.length > 0) {
-      $("#next1").html(groupVcall2[0] + "<span> | </span>");
-      $("#next2").html(groupVcall2[1] + "<span> | </span>");
-      $("#next3").html(groupVcall2[2] + "<span> | </span>");
-      $("#next4").html(groupVcall2[3] + "<span> | </span>");
-      $("#next5").html(groupVcall2[4] + "<span> | </span>");
-      $("#next6").html(groupVcall2[5] + "<span> | </span>");
-      $("#next7").html(groupVcall2[6] + "<span> | </span>");
+    cookieToken = $.cookie("token");
+    console.log("token " + cookieToken);
+
+    console.log("localStorageeeeeee ");
+    console.log(localStorage);
+
+    if (cookieToken == null) {
+      localStorage.clear();
+      console.log("clear localStorage");
+      var loginPath = homePath + "/login";
+      console.log(fullPath);
+      window.location = loginPath;
+
     }
 
-    // Token data
     $.ajax({
       url: "https://webnikahapi.arthatronic.com/api/user/",
       async: false,
@@ -181,39 +191,31 @@
         "Authorization": "Token " + cookieToken
       },
       success: function(result) {
-        console.log("get data user");
         console.log(result);
         name = result[0].name;
         timeSet = result[0].time;
+        idPosition = result[0].id_room;
         console.log(name);
         console.log(timeSet);
+
       },
       error: function(err) {
         console.log(err);
       }
     });
 
-    console.log("nama homepage " + name);
-    $("#welcomeName").html(name);
-
-    var endTime = new Date("13 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("22 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
-    // endTime = (Date.parse(endTime) / 1000) + 10;
 
     endTime = (Date.parse(endTime) / 1000);
 
-    var welcomeState = localStorage.getItem("welcomeState");
+    var timeLeft;
 
     function makeTimer() {
 
-      // var endTime = new Date("5 August 2020 " + timeSet + " GMT+07:00");
-
-      // manual
       now = new Date();
       timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-
-      // var endTime = new Date("6 August 2020 17:38:05 GMT+07:00");
 
       timeNow = (Date.parse(now) / 1000);
 
@@ -241,19 +243,15 @@
       console.log(hours + ":" + minutes + ":" + seconds);
 
       // Popup Vcall
-      if (parseInt(hours) <= 0 && parseInt(minutes) <= 0 && parseInt(seconds) <= 0) {
-        $("#welcomeModal").css('display', 'none');
-        $("#earlyBird").css('display', 'none');
+      if (timeLeft <= 0 && timeLeft >= -600) {
+
         $("#vcallModal").css('display', 'block');
 
-        console.log("nol");
-
-        var counterVcall = 5;
+        var counterVcall = 6;
         var interval = setInterval(function() {
-          // Display 'counter' wherever you want to display it.
-          $("#redirectVcall2").html(counterVcall);
+
           counterVcall--;
-          console.log("masuk counter");
+
           console.log(counterVcall);
           if (counterVcall == 0) {
             // Display a login box
@@ -266,55 +264,16 @@
             // return false;
           }
         }, 1000);
+
       }
 
-      // Jam Karet
-      // if (hours < "3") {
-      //   // Select language @ modal
-      //   $("#checkbox-ind").click(function() {
-      //     $("#toggleLang").prop('checked', false);
-      //
-      //     // close modal, pop user modal
-      //     $("#welcomeModal").delay(1000).queue(function(next) {
-      //       $("#welcomeModal").css("display", "none");
-      //       $("#earlyBird").css("display", "block");
-      //     });
-      //   });
-      //
-      //   $("#checkbox-eng").click(function() {
-      //     $("#toggleLang").prop('checked', true);
-      //
-      //     $("#welcomeModal").delay(1000).queue(function(next) {
-      //       $("#welcomeModal").css("display", "none");
-      //       $("#earlyBird").css("display", "block");
-      //     });
-      //   });
-      // }
-
-      // if (hours > "20") {
-      //   $("#checkbox-ind").click(function() {
-      //     $("#welcomeModal").delay(1000).queue(function(next) {
-      //       $("#earlyBird").css('display', 'none');
-      //       $("#karetModal").css('display', 'block');
-      //     });
-      //   });
-      //   $("#checkbox-eng").click(function() {
-      //     $("#welcomeModal").delay(1000).queue(function(next) {
-      //       $("#earlyBird").css('display', 'none');
-      //       $("#karetModal").css('display', 'block');
-      //     });
-      //   });
-      // }
     }
+    // end of function maketimercall
 
     setInterval(function() {
       makeTimer();
     }, 1000);
 
-    $("#btn-next-2").click(function() {
-      $("#welcomeModal").css('display', 'none');
-      $("#earlyBird").css('display', 'none');
-    });
 
     // Running text
     function handleMarquee() {

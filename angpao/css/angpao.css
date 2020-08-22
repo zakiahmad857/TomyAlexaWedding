@@ -28,6 +28,37 @@ body{
   width: 70%;
 }
 
+.modal {
+  display: none;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  box-sizing: border-box;
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 2%;
+  text-align: center;
+  border-radius: 3rem;
+}
+
+.content-vcall {
+  width: 30%;
+  padding-top: 30px;
+}
+
+.content-vcall h4 {
+  width: 60%;
+  margin: auto;
+}
+
 .content-wrapper{
   width: 85%;
   height: 70%;

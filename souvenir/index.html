@@ -28,6 +28,17 @@
     <div class="home-button">
       <img src="images/home-button.png" alt="">
     </div>
+
+    <!-- Video Call Modal -->
+    <div id="vcallModal" class="modal">
+
+      <div class="modal-content content-vcall">
+        <h4> <span id="redirectVcall"></span></h4>
+        <h4 class="lang">Sebentar lagi kamu bertemu dengan mempelai. Silakan masuk antrian.</h4>
+      </div>
+
+    </div>
+
     <div class="content-wrapper">
       <p>Cinderamata digital ini dibuat sendiri oleh Alexa & Tomy spesial untuk kamu.</p>
       <p>Yang merupakan sebuah album musik yang telah dikerjakan oleh Alexa & Tomy sejak tahun 2019. Mereka menggunakan nama Antadoux untuk projek musik ini.</p>
@@ -54,7 +65,131 @@
   <script src="../index.js" charset="utf-8"></script>
 
   <script type="text/javascript">
+    // Path
+    var dirPath = dirname(location.href);
+    var homePath = RemoveLastDirectoryPartOf(dirPath);
 
+    function dirname(path) {
+      return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+    }
+
+    function RemoveLastDirectoryPartOf(the_url) {
+      var the_arr = the_url.split('/');
+      the_arr.pop();
+      return (the_arr.join('/'));
+    }
+
+    // TOKEN DATA
+    var name = null;
+    var idPosition = null;
+
+    cookieToken = $.cookie("token");
+    console.log("token " + cookieToken);
+
+    console.log("localStorageeeeeee ");
+    console.log(localStorage);
+
+    if (cookieToken == null) {
+      localStorage.clear();
+      console.log("clear localStorage");
+      var loginPath = homePath + "/login";
+      console.log(fullPath);
+      window.location = loginPath;
+
+    }
+
+    $.ajax({
+      url: "https://webnikahapi.arthatronic.com/api/user/",
+      async: false,
+      type: "GET",
+      global: false,
+      // Fetch the stored token from localStorage and set in the header
+      headers: {
+        "Authorization": "Token " + cookieToken
+      },
+      success: function(result) {
+        console.log(result);
+        name = result[0].name;
+        timeSet = result[0].time;
+        idPosition = result[0].id_room;
+        console.log(name);
+        console.log(timeSet);
+
+      },
+      error: function(err) {
+        console.log(err);
+      }
+    });
+
+    var endTime = new Date("22 August 2020 " + timeSet + " GMT+07:00");
+
+    console.log("endtimeeeee" + endTime);
+
+    endTime = (Date.parse(endTime) / 1000);
+
+    var timeLeft;
+
+    function makeTimer() {
+
+      now = new Date();
+      timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+      timeNow = (Date.parse(now) / 1000);
+
+      var timeLeft = endTime - timeNow;
+      console.log("timeleft " + timeLeft);
+      var days = Math.floor(timeLeft / 86400);
+      var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+      var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
+      var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+      if (hours < "10") {
+        hours = "0" + hours;
+      }
+      if (minutes < "10") {
+        minutes = "0" + minutes;
+      }
+      if (seconds < "10") {
+        seconds = "0" + seconds;
+      }
+
+      $("#hours").html(hours + "<span> :</span>");
+      $("#minutes").html(minutes + "<span> :</span>");
+      $("#seconds").html(seconds);
+
+      console.log(hours + ":" + minutes + ":" + seconds);
+
+      // Popup Vcall
+      if (timeLeft <= 0 && timeLeft >= -600) {
+
+        $("#vcallModal").css('display', 'block');
+
+        var counterVcall = 6;
+        var interval = setInterval(function() {
+
+          counterVcall--;
+
+          console.log(counterVcall);
+          if (counterVcall == 0) {
+            // Display a login box
+            clearInterval(interval);
+            $("#vcallModal").css('display', 'block');
+            console.log(dirPath);
+            var fullPath = homePath + "/Vcall";
+            console.log(fullPath);
+            window.location = fullPath;
+            // return false;
+          }
+        }, 1000);
+
+      }
+
+    }
+    // end of function maketimercall
+
+    setInterval(function() {
+      makeTimer();
+    }, 1000);
   </script>
 </body>
 

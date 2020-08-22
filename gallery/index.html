@@ -28,6 +28,17 @@
     <div class="home-button">
       <img src="images/home-button.png" alt="">
     </div>
+
+    <!-- Video Call Modal -->
+    <div id="vcallModal" class="modal">
+
+      <div class="modal-content content-vcall">
+        <h4> <span id="redirectVcall"></span></h4>
+        <h4 class="lang">Sebentar lagi kamu bertemu dengan mempelai. Silakan masuk antrian.</h4>
+      </div>
+
+    </div>
+    
     <div class="content-wrapper-1">
       <a href=""><h4 class="judul">Pre Wedding</h4></a>
     </div>
@@ -73,214 +84,131 @@
   <script type="text/javascript" src="../index.js"></script>
   <!-- <script type="text/javascript" src="../gotoconcall.js"></script> -->
   <script type="text/javascript">
+    // Path
+    var dirPath = dirname(location.href);
+    var homePath = RemoveLastDirectoryPartOf(dirPath);
 
-  var dirPath = dirname(location.href);
-  var homePath = RemoveLastDirectoryPartOf(dirPath);
+    function dirname(path) {
+      return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+    }
 
-  function dirname(path) {
-    return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
-  }
+    function RemoveLastDirectoryPartOf(the_url) {
+      var the_arr = the_url.split('/');
+      the_arr.pop();
+      return (the_arr.join('/'));
+    }
 
-  function RemoveLastDirectoryPartOf(the_url) {
-    var the_arr = the_url.split('/');
-    the_arr.pop();
-    return (the_arr.join('/'));
-  }
+    // TOKEN DATA
+    var name = null;
+    var idPosition = null;
 
-  // TOKEN DATA
-  var name = null;
-  var timeSet = null;
-  var groupVcall = [];
+    cookieToken = $.cookie("token");
+    console.log("token " + cookieToken);
 
-  console.log("array");
-  console.log(groupVcall.length);
+    console.log("localStorageeeeeee ");
+    console.log(localStorage);
 
-  cookieToken = $.cookie("token");
-  console.log("token " + cookieToken);
+    if (cookieToken == null) {
+      localStorage.clear();
+      console.log("clear localStorage");
+      var loginPath = homePath + "/login";
+      console.log(fullPath);
+      window.location = loginPath;
 
-  if (cookieToken == null) {
-    var fullPath = dirPath + "/login";
-    console.log(fullPath);
-    window.location = fullPath;
-  }
+    }
 
-  // Time group
-  var cekWaktu = new Date();
-  var minuteBulat = parseInt(cekWaktu.getMinutes()) - (parseInt(cekWaktu.getMinutes())%5);
+    $.ajax({
+      url: "https://webnikahapi.arthatronic.com/api/user/",
+      async: false,
+      type: "GET",
+      global: false,
+      // Fetch the stored token from localStorage and set in the header
+      headers: {
+        "Authorization": "Token " + cookieToken
+      },
+      success: function(result) {
+        console.log(result);
+        name = result[0].name;
+        timeSet = result[0].time;
+        idPosition = result[0].id_room;
+        console.log(name);
+        console.log(timeSet);
 
-  timeGroup = cekWaktu.getHours() + ":" + minuteBulat.toString();
-
-  $.ajax({
-    url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
-    async: false,
-    type: "GET",
-    global: false,
-    success: function(result) {
-      console.log("get time group");
-      console.log(result);
-      for(var i=0; i<result.length; i++){
-        var item = result[i].username;
-        groupVcall.push(item);
+      },
+      error: function(err) {
+        console.log(err);
       }
-      console.log(groupVcall);
-    },
-    error: function(err) {
-      console.log(err);
+    });
+
+    var endTime = new Date("22 August 2020 " + timeSet + " GMT+07:00");
+
+    console.log("endtimeeeee" + endTime);
+
+    endTime = (Date.parse(endTime) / 1000);
+
+    var timeLeft;
+
+    function makeTimer() {
+
+      now = new Date();
+      timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+
+      timeNow = (Date.parse(now) / 1000);
+
+      var timeLeft = endTime - timeNow;
+      console.log("timeleft " + timeLeft);
+      var days = Math.floor(timeLeft / 86400);
+      var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+      var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
+      var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+      if (hours < "10") {
+        hours = "0" + hours;
+      }
+      if (minutes < "10") {
+        minutes = "0" + minutes;
+      }
+      if (seconds < "10") {
+        seconds = "0" + seconds;
+      }
+
+      $("#hours").html(hours + "<span> :</span>");
+      $("#minutes").html(minutes + "<span> :</span>");
+      $("#seconds").html(seconds);
+
+      console.log(hours + ":" + minutes + ":" + seconds);
+
+      // Popup Vcall
+      if (timeLeft <= 0 && timeLeft >= -600) {
+
+        $("#vcallModal").css('display', 'block');
+
+        var counterVcall = 6;
+        var interval = setInterval(function() {
+
+          counterVcall--;
+
+          console.log(counterVcall);
+          if (counterVcall == 0) {
+            // Display a login box
+            clearInterval(interval);
+            $("#vcallModal").css('display', 'block');
+            console.log(dirPath);
+            var fullPath = homePath + "/Vcall";
+            console.log(fullPath);
+            window.location = fullPath;
+            // return false;
+          }
+        }, 1000);
+
+      }
+
     }
-  });
+    // end of function maketimercall
 
-  $.ajax({
-    url: "https://webnikahapi.arthatronic.com/api/user/",
-    async: false,
-    type: "GET",
-    global: false,
-    // Fetch the stored token from localStorage and set in the header
-    headers: {
-      "Authorization": "Token " + cookieToken
-    },
-    success: function(result) {
-      console.log("get data user");
-      console.log(result);
-      name = result[0].name;
-      timeSet = result[0].time;
-      console.log(name);
-      console.log(timeSet);
-
-    },
-    error: function(err) {
-      console.log(err);
-    }
-  });
-
-  console.log("nama homepage " + name);
-  $("#welcomeName").html(name);
-
-  // cek manual
-  // var now = new Date();
-  // var timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-  // var endTime = new Date("5 August 2020 " + now.getHours().toString() + ":" + now.getMinutes().toString() + ":" + parseInt(now.getSeconds()).toString() + " GMT+07:00");
-
-
-  var endTime = new Date("7 August 2020 " + timeSet + " GMT+07:00");
-
-  console.log("endtimeeeee" + endTime);
-  // endTime = (Date.parse(endTime) / 1000) + 10;
-
-  endTime = (Date.parse(endTime) / 1000);
-
-  var welcomeState = localStorage.getItem("welcomeState");
-
-  function makeTimer() {
-
-    // var endTime = new Date("5 August 2020 " + timeSet + " GMT+07:00");
-
-    // manual
-    now = new Date();
-    timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-
-    // var endTime = new Date("6 August 2020 17:38:05 GMT+07:00");
-
-    timeNow = (Date.parse(now) / 1000);
-
-    var timeLeft = endTime - timeNow;
-    console.log("timeleft " + timeLeft);
-    var days = Math.floor(timeLeft / 86400);
-    var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
-    var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
-    var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
-
-    if (hours < "10") {
-      hours = "0" + hours;
-    }
-    if (minutes < "10") {
-      minutes = "0" + minutes;
-    }
-    if (seconds < "10") {
-      seconds = "0" + seconds;
-    }
-
-    $("#hours").html(hours + "<span> :</span>");
-    $("#minutes").html(minutes + "<span> :</span>");
-    $("#seconds").html(seconds);
-
-    console.log(hours + ":" + minutes + ":" + seconds);
-
-    // Popup Vcall
-    if (timeLeft <= 0 && timeLeft >= -600) {
-      $("#welcomeModal").css('display', 'none');
-      $("#earlyBird").css('display', 'none');
-      $("#vcallModal").css('display', 'block');
-
-      console.log("nol");
-
-      var counterVcall = 5;
-      var interval = setInterval(function() {
-        // Display 'counter' wherever you want to display it.
-        $("#redirectVcall2").html(counterVcall);
-        counterVcall--;
-        console.log("masuk counter");
-        console.log(counterVcall);
-        if (counterVcall == 0) {
-          // Display a login box
-          clearInterval(interval);
-          $("#vcallModal").css('display', 'block');
-          console.log(dirPath);
-          var fullPath = homePath + "/Vcall";
-          console.log(fullPath);
-          window.location = fullPath;
-          // return false;
-        }
-      }, 1000);
-    }
-
-    // Jam Karet
-    if (timeLeft > 0) {
-      // Select language @ modal
-      $("#checkbox-ind").click(function() {
-        $("#toggleLang").prop('checked', false);
-
-        // close modal, pop user modal
-        $("#welcomeModal").delay(1000).queue(function(next) {
-          $("#welcomeModal").css("display", "none");
-          $("#earlyBird").css("display", "block");
-        });
-      });
-
-      $("#checkbox-eng").click(function() {
-        $("#toggleLang").prop('checked', true);
-
-        $("#welcomeModal").delay(1000).queue(function(next) {
-          $("#welcomeModal").css("display", "none");
-          $("#earlyBird").css("display", "block");
-        });
-      });
-    }
-
-    if (timeLeft < -600) {
-      $("#checkbox-ind").click(function() {
-        $("#welcomeModal").delay(1000).queue(function(next) {
-          $("#earlyBird").css('display', 'none');
-          $("#karetModal").css('display', 'block');
-        });
-      });
-      $("#checkbox-eng").click(function() {
-        $("#welcomeModal").delay(1000).queue(function(next) {
-          $("#earlyBird").css('display', 'none');
-          $("#karetModal").css('display', 'block');
-        });
-      });
-    }
-  }
-
-  setInterval(function() {
-    makeTimer();
-  }, 1000);
-
-  $("#btn-next-2").click(function() {
-    $("#welcomeModal").css('display', 'none');
-    $("#earlyBird").css('display', 'none');
-  });
-
+    setInterval(function() {
+      makeTimer();
+    }, 1000);
   </script>
 
 </body>
