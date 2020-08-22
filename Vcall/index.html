@@ -423,12 +423,28 @@
       $("#username7").html(usernameCall);
     }
 
+    // Time group
+    var timeCheck = new Date();
+    var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 10);
+
+    if(room == 2){
+      var minuteEdit = minuteEdit + 5;
+    }
+
+
+    console.log("array");
+    console.log(groupVcall.length);
+    console.log("dirpath " + dirPath);
+    console.log("homePath " + homePath);
+
+    timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
+    // timeGroup2 = timeCheck.getHours() + ":" + minuteEdit2.toString();
 
     // Concall group
     var groupVcall = [];
-
+    // startTime
       $.ajax({
-        url: "https://webnikahapi.arthatronic.com/api/user/" + startTime,
+        url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
         async: false,
         type: "GET",
         global: false,
