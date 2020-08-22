@@ -426,9 +426,12 @@
     // Time group
     var timeCheck = new Date();
     var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 10);
+    console.log("minute room 1 " + minuteEdit);
 
     if(room == 2){
-      var minuteEdit = minuteEdit + 5;
+      var menitMinLima = parseInt(timeCheck.getMinutes()) - 5
+      var minuteEdit = menitMinLima - (menitMinLima % 10) + 5;
+      console.log("minute room 2 " + minuteEdit);
     }
 
 
@@ -439,7 +442,7 @@
 
     timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
     // timeGroup2 = timeCheck.getHours() + ":" + minuteEdit2.toString();
-
+    console.log("timeGroup " + timeGroup);
     // Concall group
     var groupVcall = [];
     // startTime
@@ -469,8 +472,6 @@
     } else {
       var id_room = "room2";
     }
-
-    console.log("yeuu " + startTime);
 
     var startTimeDate = new Date("22 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
