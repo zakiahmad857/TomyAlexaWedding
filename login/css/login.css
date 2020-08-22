@@ -2,7 +2,13 @@ body{
   margin: 0;
   padding: 0;
   overflow: hidden;
+  /* background-color: #5704AA; */
+}
+
+.desktop-content{
   background-color: #5704AA;
+  width: 100vw;
+  height: 100vh;
 }
 
 .login-page{

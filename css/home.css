@@ -239,15 +239,16 @@
 
 .live-mc{
   position: absolute;
-  left: 60%;
+  left: 55%;
   bottom: -15%;
   width: 300px;
-  height: 400px;
+  height: 410px;
   background: url('../images/button/tvmc.png');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 150% auto;
   z-index: 10;
+  /* border: 1px solid red; */
 }
 
 @media screen and (min-width: 1900px){
@@ -258,10 +259,10 @@
 
 .video-mc{
   position: absolute;
-  left: 60%;
+  left: 55%;
   bottom: 0%;
   width: 300px;
-  height: 400px;
+  height: 410px;
 }
 
 .video-wrapper{

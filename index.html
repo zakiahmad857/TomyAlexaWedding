@@ -522,23 +522,29 @@
         tour.end();
         tourEng.end();
 
-        var counterVcall = 6;
-        var interval = setInterval(function() {
-          // Display 'counter' wherever you want to display it.
-          counterVcall--;
+        console.log("LOCALSTORAGE WELCOME " + welcomeState);
+        if (localStorage.welcomeState == 'shown'){
+          console.log("LOCALSTORAGE WELCOME DALEM IF" + welcomeState);
+          $("#welcomeModal").css("display", "none");
+          var counterVcall = 6;
+          var interval = setInterval(function() {
+            // Display 'counter' wherever you want to display it.
+            counterVcall--;
 
-          console.log(counterVcall);
-          if (counterVcall == 0) {
-            // Display a login box
-            clearInterval(interval);
-            $("#vcallModal").css('display', 'block');
-            console.log(dirPath);
-            var fullPath = dirPath + "/Vcall";
-            console.log(fullPath);
-            window.location = fullPath;
-            // return false;
-          }
-        }, 1000);
+            console.log("countervcall " + counterVcall);
+            if (counterVcall == 0) {
+              // Display a login box
+              clearInterval(interval);
+              $("#vcallModal").css('display', 'block');
+              console.log(dirPath);
+              var fullPath = dirPath + "/Vcall";
+              console.log(fullPath);
+              window.location = fullPath;
+              // return false;
+            }
+          }, 1000);
+        }
+
 
       }
 
