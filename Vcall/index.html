@@ -68,7 +68,24 @@
         <span id="seconds1"></span>
       </div>
 
-      <!-- Video -->
+      <!-- MC -->
+      <span class="dot-mc">
+        <div class="vidPosition row container col l12 s12">
+          <div class="row">
+            <div class="col s7">
+              <div class="video-grid" id="video8">
+                <div class="video-view">
+                  <div id="local_stream_8" class="video-placeholder"></div>
+                  <div id="local_video_info_8" class="video-profile hide"></div>
+                  <div id="video_autoplay_local_8" class="autoplay-fallback hide"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+
+      <!-- Video Tamu-->
       <span class="dot dot1">
         <div class="vidPosition row container col l12 s12">
           <div class="row">
@@ -335,6 +352,9 @@
     var usernameCall = null;
     var startTime = null;
     var idSalah = null;
+    var idPosisi = null;
+    var room = null;
+
 
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
@@ -352,8 +372,9 @@
         console.log(result);
         vcallPos = result[0].id_room;
         room = result[0].room;
-        startTime = result[0].time;
         idPosisi = result[0].id_room;
+
+        startTime = result[0].time;
         console.log(vcallPos);
         console.log(room);
         console.log("waktu vcall " + startTime);
@@ -385,25 +406,25 @@
     // Concall group
     var groupVcall = [];
 
-    $.ajax({
-      url: "https://webnikahapi.arthatronic.com/api/user/" + startTime,
-      async: false,
-      type: "GET",
-      global: false,
-      success: function(result) {
-        console.log("get time group");
-        console.log(result);
-        for (var i = 0; i < result.length; i++) {
-          var item = result[i].name;
-          groupVcall.push(item);
+      $.ajax({
+        url: "https://webnikahapi.arthatronic.com/api/user/" + startTime,
+        async: false,
+        type: "GET",
+        global: false,
+        success: function(result) {
+          console.log("get time group");
+          console.log(result);
+          for (var i = 0; i < result.length; i++) {
+            var item = result[i].name;
+            groupVcall.push(item);
+          }
+          console.log("Group Call ");
+          console.log(groupVcall);
+        },
+        error: function(err) {
+          console.log(err);
         }
-        console.log("Group Call ");
-        console.log(groupVcall);
-      },
-      error: function(err) {
-        console.log(err);
-      }
-    });
+      });
 
 
     if (room == 1) {
@@ -427,7 +448,7 @@
 
     console.log("yeuu " + startTime);
 
-    var startTimeDate = new Date("20 August 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("22 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -451,7 +472,7 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "20 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "22 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       console.log("timeParse " + timeNowParse);
@@ -512,6 +533,9 @@
 
     setInterval(function() {
       // Guest
+      // 9999 dan 9898 : mc
+      // 9797 dan 99696 : screenrecord
+      // lainnya tamu
       if ((idPosisi != "9999") && (idPosisi != "9898") && (idPosisi != "9797") && (idPosisi != "9696") && (idPosisi != "8888")) {
         makeTimerCall();
       }
@@ -776,6 +800,26 @@
             id: "remote_video_panel_" + id,
             class: "video-view2",
           }).appendTo("#video0")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder2",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+        }
+        if (id == 9999) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view2",
+          }).appendTo("#video8")
           $("<div/>", {
             id: "remote_video_" + id,
             class: "video-placeholder2",

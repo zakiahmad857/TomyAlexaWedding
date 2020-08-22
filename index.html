@@ -436,13 +436,15 @@
     $("#welcomeName").html(name);
 
     // Admin langsung masuk concall
+    // 9999 dan 9898 : mc
+    // 9797 dan 99696 : screenrecord
     if (idPosition == "9999" || idPosition == "9898" || idPosition == "9797" || idPosition == "9696" || idPosition == "8888") {
       var fullPath = dirPath + "/Vcall";
       console.log(fullPath);
       window.location = fullPath;
     }
 
-    var endTime = new Date("20 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("22 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
