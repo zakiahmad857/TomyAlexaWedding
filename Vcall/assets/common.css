@@ -9148,6 +9148,14 @@ html, body {
   -webkit-mask-image: url(../images/circle.svg);
  }
 
+ .video-view-mc, .video-placeholder-mc{
+   height: 100px;
+   width: 100px;
+   background-color: #bbb;
+   display: inline-block;
+   position: absolute;
+ }
+
 .agora-theme .video-profile {
   position: absolute;
   top: 0;

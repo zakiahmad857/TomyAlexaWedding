@@ -101,12 +101,6 @@
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
 
-    if (cookieToken == null) {
-      var fullPath = homePath + "/login";
-      console.log(fullPath);
-      window.location = fullPath;
-    }
-
     // Time group
     var timeCheck = new Date();
     var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 5);
@@ -176,7 +170,6 @@
       localStorage.clear();
       console.log("clear localStorage");
       var loginPath = homePath + "/login";
-      console.log(fullPath);
       window.location = loginPath;
 
     }

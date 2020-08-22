@@ -74,8 +74,8 @@
           <div class="row">
             <div class="col s7">
               <div class="video-grid" id="video8">
-                <div class="video-view">
-                  <div id="local_stream_8" class="video-placeholder"></div>
+                <div class="video-view view-mc">
+                  <div id="local_stream_8" class="video-placeholder placeholder-mc"></div>
                   <div id="local_video_info_8" class="video-profile hide"></div>
                   <div id="video_autoplay_local_8" class="autoplay-fallback hide"></div>
                 </div>
@@ -345,6 +345,19 @@
 
     var englishState = checkboxValues.toggleLang;
 
+    // path
+    var dirPath = dirname(location.href);
+    var homePath = RemoveLastDirectoryPartOf(dirPath);
+
+    function dirname(path) {
+      return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+    }
+
+    function RemoveLastDirectoryPartOf(the_url) {
+      var the_arr = the_url.split('/');
+      the_arr.pop();
+      return (the_arr.join('/'));
+    }
 
     // TOKEN DATA
     var name = null;
@@ -358,6 +371,13 @@
 
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
+
+    if (cookieToken == null) {
+      localStorage.clear();
+      console.log("clear localStorage");
+      var loginPath = homePath + "/login";
+      window.location = loginPath;
+    }
 
     $.ajax({
       url: "https://webnikahapi.arthatronic.com/api/user/",
@@ -403,7 +423,7 @@
       $("#username7").html(usernameCall);
     }
 
-    
+
     // Concall group
     var groupVcall = [];
 
@@ -432,19 +452,6 @@
       var id_room = "room1";
     } else {
       var id_room = "room2";
-    }
-
-    var dirPath = dirname(location.href);
-    var homePath = RemoveLastDirectoryPartOf(dirPath);
-
-    function dirname(path) {
-      return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
-    }
-
-    function RemoveLastDirectoryPartOf(the_url) {
-      var the_arr = the_url.split('/');
-      the_arr.pop();
-      return (the_arr.join('/'));
     }
 
     console.log("yeuu " + startTime);
@@ -819,11 +826,11 @@
         if (id == 9999) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
-            class: "video-view2",
+            class: "video-view-mc",
           }).appendTo("#video8")
           $("<div/>", {
             id: "remote_video_" + id,
-            class: "video-placeholder2",
+            class: "video-placeholder-mc",
           }).appendTo("#remote_video_panel_" + id)
 
           $("<div/>", {
