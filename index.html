@@ -87,8 +87,7 @@
         <h6 class="lang text" key="earlyBird_2">Kamu akan bertemu dengan mempelai dalam waktu:</h6>
         <div class="timer">
           <span>- </span>
-          <span id="hours"></span><span id="minutes"></span><span id="seconds"></span>
-
+          <span class="hours"></span><span class="minutes"></span><span class="seconds"></span>
         </div>
         <h6 class="lang text" key="earlyBird_3">Jika sudah waktunya Kamu akan dapat informasi untuk bertemu dengan mempelai dan keluarga</h6>
         <p class="lang text" key="earlyBird_4">Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa</p>
@@ -170,6 +169,16 @@
           <img id="info" class="header-icon info" src="images/information.svg" alt="">
 
           <img id="faq" class="header-icon" src="images/faq.svg" alt="">
+        </div>
+
+      </div>
+
+      <div class="countdown">
+        <div class="inner-countdown">
+          <span class="vl"></span>
+          <span>- </span>
+          <span class="hours"></span><span class="minutes"></span><span class="seconds"></span><span> menit</span>
+          <p>bertemu pengantin</p>
         </div>
 
       </div>
@@ -442,7 +451,7 @@
       window.location = fullPath;
     }
 
-    var endTime = new Date("22 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("23 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
@@ -488,9 +497,9 @@
         seconds = "0" + seconds;
       }
 
-      $("#hours").html(hours + "<span>:</span>");
-      $("#minutes").html(minutes + "<span>:</span>");
-      $("#seconds").html(seconds);
+      $(".hours").html(hours + "<span>:</span>");
+      $(".minutes").html(minutes + "<span>:</span>");
+      $(".seconds").html(seconds);
 
       console.log(hours + ":" + minutes + ":" + seconds);
 
