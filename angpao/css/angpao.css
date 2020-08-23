@@ -49,13 +49,14 @@ body{
   border-radius: 3rem;
 }
 
+/* Modal Vcall */
 .content-vcall {
-  width: 30%;
-  padding-top: 30px;
+  width: 32%;
+  padding: 5% 2%;
 }
 
 .content-vcall h4 {
-  width: 60%;
+  width: 85%;
   margin: auto;
 }
 
