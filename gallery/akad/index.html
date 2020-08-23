@@ -18,15 +18,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo:wght@200&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheet  -->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../css/akad-lamaran.css">
 
 </head>
 
 <body>
-  <div class="gallery-page">
+  <div class="gallery-pages">
     <div class="home-button">
-      <img src="images/home-button.png" alt="">
+      <img src="../images/home-button.png" alt="">
     </div>
 
     <!-- Video Call Modal -->
@@ -39,40 +39,30 @@
 
     </div>
 
-    <div class="content-wrapper-1">
-      <a href="prewed"><h4 class="judul">Pre Wedding</h4></a>
+    <div class="content-wrapper">
+      <div class="left-wrapper">
+
+        <div class="back-button">
+          <a href="javascript:history.back()"><img src="../images/back.png" class="btn-back" id="btn-back" alt="back"></a>
+          <p>Kembali ke Galeri</p>
+        </div>
+
+        <div class="text-content">
+          <h4>Akad Nikah</h4>
+
+          <p class="custom-p">berlangsung 5 September 2020</p>
+          <p>jam 15:00-17:00,</p>
+          <p> di Pendopo Kemang, Jakarta Selatan.</p>
+          <p class="custom-p">Alexa dan Tomy mengenakan pakaian adat Lampung, Sumatera dari keluarga nenek dari Bundanya Alexa</p>
+        </div>
+
+      </div>
+
+      <div class="video-wrapper">
+        <iframe id="video" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
 
-    <div class="content-wrapper-2">
-      <a href="lamaran"><h4 class="judul">Lamaran</h4></a>
-    </div>
-
-    <div class="content-wrapper-3">
-      <a href="akad"><h4 class="judul">Akad Nikah</h4></a>
-    </div>
-
-    <div class="foto-wrapper-1">
-      <img src="images/foto1.png" class="img-home" alt="foto">
-    </div>
-
-
-    <div class="foto-wrapper-2">
-      <img src="images/foto1.png" class="img-home" alt="foto">
-    </div>
-
-    <div class="foto-wrapper-3">
-      <img src="images/foto1.png" class="img-home" alt="foto">
-    </div>
-
-    <div class="foto-wrapper-4">
-      <img src="images/foto1.png" class="img-home" alt="foto">
-    </div>
-
-    <div id="live-mc" class="live-mc"></div>
-
-    <div class="video-mc embed-responsive">
-      <iframe class="" src="https://www.youtube.com/embed/6ksnNqA302I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
 
   </div>
 
@@ -86,7 +76,9 @@
   <script type="text/javascript">
     // Path
     var dirPath = dirname(location.href);
-    var homePath = RemoveLastDirectoryPartOf(dirPath);
+    var galleryPath = RemoveLastDirectoryPartOf(dirPath);
+    console.log("galleryPath " + galleryPath);
+    var homePath = RemoveLastDirectoryPartOf(galleryPath);
 
     function dirname(path) {
       return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
@@ -97,6 +89,15 @@
       the_arr.pop();
       return (the_arr.join('/'));
     }
+
+    // Exit button, go to homepage
+    $(".home-button").click(function() {
+      window.location = homePath;
+    });
+
+    $("#btn-back").click(function(){
+      window.location = galleryPath;
+    });
 
     // TOKEN DATA
     var name = null;

@@ -648,10 +648,10 @@ $(document).ready(function() {
     $("#faqModal").css("display", "block");
   });
 
-  // Exit button, go to homepage
-  $(".home-button").click(function() {
-    window.location = homePath;
-  });
+  // // Exit button, go to homepage
+  // $(".home-button").click(function() {
+  //   window.location = homePath;
+  // });
 
 
   // When the user clicks on (x), close the modal
