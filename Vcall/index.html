@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo:wght@200&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./assets/common.css" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="css/vcall.css">
@@ -45,18 +48,18 @@
     <div id="setAgora" class="modal modal-agora">
 
       <!-- Welcoming Modal Content -->
-      <div class="modal-content">
-        <h6>Silakan pilih dan pastikan kamera dan mikrofon yang akan digunakan menyala</h6>
+      <div class="modal-content modal-setting">
+        <h5 class="lang text">Silakan pilih dan pastikan kamera dan mikrofon yang akan digunakan menyala</h5>
         <form id="form">
           <div id="selectCam" class="input-field">
-            <label for="cameraId" class="active">Kamera</label>
+            <label for="cameraId" class="active text">Kamera</label>
             <select class="" name="cameraId" id="cameraId"></select>
           </div>
           <div id="selectMic" class="input-field">
-            <label for="microphoneId" class="active">Mikrofon</label>
+            <label for="microphoneId" class="active text">Mikrofon</label>
             <select class="" name="microphoneId" id="microphoneId"></select>
           </div>
-          <button type="submit" id="join" class="btn-join">Mulai Video Call</button>
+          <button type="submit" id="join" class="btn btn-modal">Mulai Video Call</button>
         </form>
       </div>
     </div>
@@ -229,10 +232,10 @@
       </span>
 
       <!-- Bye Vcall Modal -->
-      <div id="byeVcallModal" class="modal-bye">
-        <div class="modal-content2 content-karet">
-          <h6 class="lang" key="byeVcall">Waktu habis</h6>
-          <button type="button" class="btn-modal" id="btn-home" name="okay">Oke</button>
+      <div id="byeVcallModal" class="modal modal-agora">
+        <div class="modal-content modal-bye">
+          <h6 class="lang text" key="">Foto akan dikirim ke Whatsapp yang telah terdaftar setelah acara selesai.</h6>
+          <button type="button" class="btn btn-modal" id="btn-home">Kembali ke Resepsi</button>
         </div>
       </div>
 

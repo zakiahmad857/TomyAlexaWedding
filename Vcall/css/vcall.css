@@ -5,35 +5,6 @@ body {
   height: 100%;
 }
 
-.btn-join{
-  border: none;
-  border-radius: 2px;
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 16px;
-  text-transform: uppercase;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
-
-  text-decoration: none;
-  color: #fff;
-  background-color: #26a69a;
-  text-align: center;
-  letter-spacing: .5px;
-  -webkit-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out;
-  cursor: pointer;
-}
-
-.btn-join:focus {
-  background-color: #1d7d74;
-}
-
-.btn-join:hover {
-  background-color: #2bbbad;
-}
-
 .popover-content {
   height: 30px !important;
   margin-bottom: 30px !important;
@@ -53,18 +24,8 @@ body {
   z-index: 50;
 }
 
-.modal-bye {
-  position: absolute;
-  display: none;
-  z-index: 100;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 /* Modal Content/Box */
-.modal-content {
+.modal-setting {
   box-sizing: border-box;
   background-color: #fefefe;
   position: absolute;
@@ -72,51 +33,65 @@ body {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   padding: 30px;
-  width: 30%;
+  width: 40%;
   text-align: center;
   border-radius: 3rem;
   z-index: 101;
 }
 
-.modal-content h6{
-  font-size: 1.5rem;
+.modal-setting h5{
+  margin-bottom: 5%;
 }
 
-.modal-content2 {
-  box-sizing: border-box;
+.modal-setting .input-field{
+  margin-bottom: 5%;
+}
+
+.btn:focus, .btn:active:focus {
+  outline: none;
+}
+
+.btn:hover{
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.btn-modal{
+  font-family: 'Kodchasan', sans-serif;
+  color: #6F02D5;
+  background-color: #F4F5F7;
+  box-shadow: 0px 1px 4px rgba(109, 109, 109, 0.15), -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 10px 15px 20px 10px rgba(4, 61, 170, 0.11);
+  border-radius: 58px;
+  width: 60%;
+  margin: 2% auto;
+}
+
+.btn-modal:hover {
+  color: #6F02D5;
+  box-shadow: 0px 1px 4px rgba(109, 109, 109, 0.15), -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 10px 15px 20px 10px rgba(4, 61, 170, 0.11);
+}
+
+.btn-modal:focus {
+  outline: none;
+  box-shadow: 0px 1px 4px rgba(109, 109, 109, 0.15), -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 10px 15px 20px 10px rgba(4, 61, 170, 0.11);
+  border-radius: 58px;
+}
+
+.modal-bye {
   background-color: #fefefe;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  padding: 20px;
+  padding: 30px;
+  width: 25%;
   text-align: center;
   border-radius: 3rem;
+  z-index: 103;
 }
 
-.modal-content2 h5 {
-  font-weight: normal;
-  border-bottom: 1px solid #000;
-  padding-bottom: 7px;
-  width: 60%;
-  margin: 20px auto;
-}
-
-.content-karet {
-  width: 50%;
-  padding: 40px;
-}
-
-.content-karet iframe {
-  margin: 30px auto;
-}
-
-.modal-content h5 {
-  font-weight: normal;
-  border-bottom: 1px solid #000;
-  padding-bottom: 7px;
-  width: 60%;
-  margin: 20px auto;
+.modal-bye .btn-modal{
+  width: 80%;
 }
 
 /* Hide arrow UID input */
