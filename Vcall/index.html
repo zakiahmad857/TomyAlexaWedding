@@ -1087,6 +1087,7 @@
           rtc.localStream.init(function() {
             console.log("init local stream success")
             // play stream with html element id "local_stream"
+
             var params2 = serializeformData();
             console.log("luar" + params2["uid"]);
             if (params2["uid"] == 1111) {
@@ -1107,6 +1108,8 @@
             } else if (params2["uid"] == 9999) {
               rtc.localStream.play("local_stream_8")
             } else if (params2["uid"] == 8888) {
+              rtc.localStream.setVideoProfile("720p_1");
+              console.log("cobagantiresolusi");
               rtc.localStream.play("local_stream_0", {
                 fit: "cover"
               })
