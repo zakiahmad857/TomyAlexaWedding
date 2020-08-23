@@ -1,17 +1,30 @@
+.body{
+  overflow: hidden;
+}
+
 .homepage {
   background-image: url("../images/background.png");
   margin: 0;
   padding: 0;
-  /* min-width: 100% !important; */
   height: 100vh !important;
-  /* background-attachment: fixed !important; */
-  background-size: cover;
+
   background-repeat: no-repeat;
   background-position: 0% 80%;
   overflow: hidden !important;
-  z-index: -100;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  /* -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px); */
+
+  /* z-index: -100; */
 }
 
+/* MODALS */
 .modal {
   display: none;
   z-index: 12;
@@ -21,37 +34,195 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Content/Box */
 .modal-content {
   box-sizing: border-box;
-  background-color: #fefefe;
+  background-color: #F6F5F5;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  padding: 2%;
   text-align: center;
-  border-radius: 3rem;
+  border-radius: 2.5rem;
 }
 
+/* Modal Welcome */
 .content-welcome {
   width: 30%;
   padding: 3% 0;
 }
 
+.lang-head {
+  margin: 0;
+}
+
+.content-welcome h5 {
+  font-weight: normal;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 7px;
+  width: 70%;
+  margin: 20px auto;
+}
+
+.lang-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 4%;
+}
+
+.lang-wrapper .option_item {
+  display: block;
+  position: relative;
+  width: 170px;
+}
+
+.option1{
+  margin-right: 4%;
+}
+
+.option2{
+  margin-left: 4%;
+}
+
+.lang-wrapper .option_item .checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.flag {
+  width: 50%;
+  cursor: pointer;
+  color: #585c68;
+}
+
+.flag-indo{
+  float: right;
+  box-shadow: -2px -2px 5px 5px #F6F5F5, 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 7px;
+}
+
+.flag-uk{
+  float: left;
+  box-shadow: -2px -2px 5px 5px #F6F5F5, 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 7px;
+}
+
+.option_item .checkbox:checked~.option_inner .flag {
+  border: 2px solid #FEFEFE;
+  box-shadow: -2px -2px 5px 5px #F6F5F5, 2px 2px 5px 5px rgba(0, 0, 0, 0.15), inset 8px 8px 20px 10px rgba(79, 79, 79, 0.9);
+  filter: drop-shadow(0px 8px 20px rgba(255, 255, 255, 0.5));
+  border-radius: 10px;
+}
+
+.mx-auto {
+  display: flex;
+  margin: auto;
+}
+
+#btn-welcome{
+  display: none;
+}
+
+.btn-modal{
+  font-family: 'Kodchasan', sans-serif;
+  color: #6F02D5;
+  background-color: #F4F5F7;
+  box-shadow: 0px 1px 4px rgba(109, 109, 109, 0.15), -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 10px 15px 20px 10px rgba(4, 61, 170, 0.11);
+  border-radius: 58px;
+  width: 60%;
+  margin: 2% auto;
+}
+
+.btn-modal:hover {
+  color: #6F02D5;
+}
+
+.btn-modal:focus {
+  outline: none;
+  box-shadow: 0px 1px 4px rgba(109, 109, 109, 0.15), -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 10px 15px 20px 10px rgba(4, 61, 170, 0.11);
+  border-radius: 58px;
+}
+
+.btn:focus, .btn:active:focus {
+  outline: none;
+}
+
+/* Modal Early Bird */
 .content-earlyBird {
-  width: 40%;
-  padding: 30px;
+  width: 37%;
+  padding: 2% 0;
+}
+
+.content-earlyBird .heading{
+  display: inline;
+  margin: 4% auto 2%;
+}
+
+.content-earlyBird h6 {
+  font-weight: normal;
+  margin: 15px auto;
+  width: 90%;
+}
+
+.content-earlyBird p{
+  width: 70%;
+  margin: 3% auto;
+  font-size: 13px;
 }
 
 .content-earlyBird .timer {
-  padding: 5px;
+  padding: 1%;
   width: 25%;
-  margin: auto;
-  background-color: lightgrey;
-  border-radius: 1rem;
+  margin: 1% auto;
+  background-color: #2D2D2D;
+  border-radius: 3px;
+  font-family: 'Exo', sans-serif;
+  color: white;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
 }
 
+.content-earlyBird .btn-modal{
+  width: 42%;
+  margin-bottom: 4%;
+}
+
+/* Modal Karet */
+.content-karet {
+  width: 45%;
+  padding: 40px;
+}
+
+.content-karet h6{
+  width: 80%;
+  margin: 2% auto;
+}
+
+.content-karet iframe {
+  margin: 2% auto;
+}
+
+.content-karet .btn-modal{
+  width: 45%;
+}
+
+/* Modal Vcall */
+.content-vcall {
+  width: 32%;
+  padding: 5% 2%;
+}
+
+.content-vcall h4 {
+  width: 85%;
+  margin: auto;
+}
+
+
+/* Modal FAQ */
 .content-faq {
   width: 40%;
   padding: 20px;
@@ -96,52 +267,15 @@
   margin: auto 10px 5px auto;
 }
 
-.content-earlyBird h6 {
-  font-weight: normal;
-  margin: 15px auto;
-}
-
-.btn-modal {
+/* .btn-modal {
   padding: 5px;
   width: 25%;
   margin: auto;
   background-color: rgba(50, 130, 184, 0.9);
   border-radius: 1rem;
   border: none;
-}
+} */
 
-.btn-modal:hover {
-  background-color: #3282b8;
-}
-
-.btn-modal:focus {
-  outline: none;
-}
-
-.content-vcall {
-  width: 30%;
-  padding-top: 30px;
-}
-
-.content-vcall h4 {
-  width: 60%;
-  margin: auto;
-}
-
-.content-vcall h6 {
-  font-weight: normal;
-  margin: 35px auto;
-  width: 60%;
-}
-
-.content-karet {
-  width: 50%;
-  padding: 40px;
-}
-
-.content-karet iframe {
-  margin: 30px auto;
-}
 
 /* The Close Button */
 .close {
@@ -159,66 +293,6 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
-
-.content-welcome h5 {
-  font-weight: normal;
-  border-bottom: 1px solid #000;
-  padding-bottom: 7px;
-  width: 60%;
-  margin: 20px auto;
-}
-
-.lang-head {
-  margin: 20px;
-}
-
-.lang-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.lang-wrapper .option_item {
-  display: block;
-  position: relative;
-  width: 175px;
-}
-
-.lang-wrapper .option_item .checkbox {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opacity: 0;
-}
-
-.option_item .option_inner {
-  /* background: #fff; */
-  /* border-radius: 5px;
-  cursor: pointer;
-  color: #585c68;
-  border: 5px solid transparent; */
-  /* padding: 10px; */
-}
-
-.option_item .checkbox:checked~.option_inner .flag {
-  border-color: #3b5999;
-  color: #3b5999;
-}
-
-.flag {
-  width: 60%;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #585c68;
-  border: 5px solid transparent;
-}
-
-.mx-auto {
-  display: flex;
-  margin: auto;
 }
 
 .planet {

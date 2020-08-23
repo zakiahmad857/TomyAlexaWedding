@@ -46,10 +46,10 @@ var arrLang = {
     'welcome': 'Selamat Datang',
     'language': 'Pilih Bahasa',
     // welcoming modal - early bird
-    'earlyBird_1': 'Akses Video Call',
-    'earlyBird_2': 'Akses video call akan kami berikan dalam waktu',
-    'earlyBird_3': 'Akses video call akan muncul otomatis ketika hitungan mundur selesai',
-    'earlyBird_4': 'Sambil menunggu, ayo kita berkeliling venue!',
+    'earlyBird_1': 'Pertemuan Dengan Mempelai',
+    'earlyBird_2': 'Kamu akan bertemu dengan mempelai dalam waktu:',
+    'earlyBird_3': 'Jika sudah waktunya Kamu akan dapat informasi untuk bertemu dengan mempelai dan keluarga',
+    'earlyBird_4': 'Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa',
     // welcoming modal - jam Karet
     'sorry': 'Ups Anda telat, mohon maaf Anda tidak dapat bertemu dengan Tomy & Lexa. Berikut pesan dari Tomy & Lexa..',
     // video call pop-up
@@ -602,6 +602,7 @@ $(document).ready(function() {
   var $checkbox = $('input[type=checkbox]');
   $checkbox.change(function() {
     var checked = $(this).prop('checked');
+    $("#btn-welcome").css("display", "block");
     selectLanguage(this);
   });
 

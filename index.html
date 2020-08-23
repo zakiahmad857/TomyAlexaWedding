@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo+2&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo:wght@200&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="css/style.css">
@@ -50,7 +50,7 @@
 
     <!-- MODALS -->
     <!-- WELCOMING MODAL -->
-    <div id="welcomeModal" class="modal">
+    <!-- <div id="welcomeModal" class="modal">
 
       <div class="modal-content content-welcome">
         <h3 class="lang heading" key="welcome">Selamat Datang</h3>
@@ -59,79 +59,78 @@
 
         <div id="checkbox-container" class="lang-wrapper">
           <div class="mx-auto">
-            <label class="option_item">
+            <label class="option_item option1">
               <input type="checkbox" id="checkbox-ind" class="checkbox">
               <div class="option_inner">
-                  <img src="images/lang/indobox.svg" class="flag" alt="indonesia">
+                  <img src="images/lang/indo.png" class="flag flag-indo" alt="indonesia">
               </div>
             </label>
-            <label class="option_item">
+            <label class="option_item option2">
               <input type="checkbox" id="checkbox-eng" class="checkbox">
               <div class="option_inner">
-                <img src="images/lang/ukbox.svg" class="flag" alt="indonesia">
+                <img src="images/lang/uk.png" class="flag flag-uk" alt="indonesia">
               </div>
             </label>
           </div>
         </div>
 
-        <button type="button" class="btn-modal" id="btn-welcome" name="okay">Next</button>
+        <button type="button" class="lang btn btn-modal" key="" id="btn-welcome">Lanjut</button>
       </div>
 
-    </div>
+    </div> -->
 
     <!-- WELCOMING MODAL - EARLY BIRD -->
-    <div id="earlyBird" class="modal">
+    <!-- <div id="earlyBird" class="modal">
 
       <div class="modal-content content-earlyBird">
-        <h4 class="lang" key="earlyBird_1">Video Call Access</h4>
-        <h6 class="lang" key="earlyBird_2">We will give you the video call access in</h6>
+        <h5 class="lang heading" key="earlyBird_1">Pertemuan Dengan Mempelai</h5>
+        <h6 class="lang text" key="earlyBird_2">Kamu akan bertemu dengan mempelai dalam waktu:</h6>
         <div class="timer">
-          <span id="hours"></span>
-          <span id="minutes"></span>
-          <span id="seconds"></span>
+          <span>- </span>
+          <span id="hours"></span><span id="minutes"></span><span id="seconds"></span>
+
         </div>
-        <h6 class="lang" key="earlyBird_3">The video call access will show up automatically when the countdown is done.</h6>
-        <p>(screenshot popupnya nanti)</p>
-        <h6 class="lang" key="earlyBird_4">While waiting, let us show you around the "Reception Venue"</h6>
-        <button type="button" class="btn-modal" id="btn-next" name="next">Next</button>
+        <h6 class="lang text" key="earlyBird_3">Jika sudah waktunya Kamu akan dapat informasi untuk bertemu dengan mempelai dan keluarga</h6>
+        <p class="lang text" key="earlyBird_4">Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa</p>
+        <button type="button" class="lang btn btn-modal" id="btn-next" name="next">Lanjut</button>
       </div>
 
-    </div>
+    </div> -->
 
     <!-- Video Call Modal -->
-    <div id="vcallModal" class="modal">
+    <!-- <div id="vcallModal" class="modal">
 
       <div class="modal-content content-vcall">
-        <h4> <span id="redirectVcall"></span></h4>
-        <h4 class="lang">Sebentar lagi kamu bertemu dengan mempelai. Silakan masuk antrian.</h4>
+        <h4 class="lang text">Sebentar lagi kamu bertemu dengan mempelai.</h4>
+        <h4 class="lang text">Silakan masuk antrian.</h4>
       </div>
 
-    </div>
+    </div> -->
 
     <!-- Jam Karet Modal -->
     <div id="karetModal" class="modal">
 
       <div class="modal-content content-karet">
-        <h6 class="lang" key="sorry">Whoops you’re late, we’re sorry you’re not able to meet Tomy & Lexa. Here some message from them..</h6>
-        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <button type="button" class="btn-modal btn-videokaret" id="btn-karetModal" name="okay">Next</button>
+        <h4 class="lang heading">Pesan dari tomy & lexa</h4>
+        <h6 class="lang text" key="">Kamu tidak bisa bertemu mempelai karena melewat waktu yang ditentukan. Play video di bawah ini untuk melihat pesan dari Tomy dan Lexa</h6>
+        <iframe id="video" width="448" height="252" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button type="button" class="btn btn-modal" id="btn-karetModal">Lihat Resepsi</button>
       </div>
 
     </div>
 
     <!-- FAQ Modal -->
-    <div id="faqModal" class="modal">
+    <!-- <div id="faqModal" class="modal">
       <div class="modal-content content-faq">
         <span class="close">&times;</span>
         <h4 class="lang" key="">Frequently Asked Questions</h4>
       </div>
-    </div>
+    </div> -->
 
     <!-- Angpao Modal -->
-    <div id="angpaoModal" class="modal">
+    <!-- <div id="angpaoModal" class="modal">
 
-      <!-- Angpao Modal Content -->
-      <!-- <div class="modal-content modal-angpao">
+      <div class="modal-content modal-angpao">
         <span class="close">&times;</span>
         <h5 class="lang" key="gift">Kirim hadiah dengan mudah :) wkwk</h5>
         <div class="qrcode-list">
@@ -150,9 +149,9 @@
             <img src="images/angpao/gopay.png" alt="ovo">
           </div>
         </div>
-      </div> -->
+      </div>
 
-    </div>
+    </div> -->
 
     <!-- WEB CONTENT -->
     <div class="homepage">
@@ -489,8 +488,8 @@
         seconds = "0" + seconds;
       }
 
-      $("#hours").html(hours + "<span> :</span>");
-      $("#minutes").html(minutes + "<span> :</span>");
+      $("#hours").html(hours + "<span>:</span>");
+      $("#minutes").html(minutes + "<span>:</span>");
       $("#seconds").html(seconds);
 
       console.log(hours + ":" + minutes + ":" + seconds);
