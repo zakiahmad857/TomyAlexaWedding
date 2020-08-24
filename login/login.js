@@ -52,7 +52,7 @@ $("#btn-login").click(function() {
       statusCode = e.status;
       console.log(statusCode);
 
-      if (statusCode === 400) {
+      if (statusCode !== 200) {
         $("#login-form").submit(function(e) {
           e.preventDefault();
         });
@@ -81,15 +81,8 @@ $("#btn-login").click(function() {
     path: '/'
   });
 
-
   console.log("token " + cookieToken);
 
-  // if (statusError) {
-  //   console.log("salah");
-  // } else {
-  //   window.location = homePath;
-  //   return false;
-  // }
   if (statusCode === 200) {
     window.location = homePath;
     return false;
@@ -108,6 +101,18 @@ $(".close").click(function(){
   // $(".login-page").removeClass("blur-background");
 });
 
+$(window).click(function(e) {
+  if (e.target.id == "forgetIdModal") {
+    $("#forgetIdModal").css("display", "none");
+  }
+});
+
+// When the user press escape button, close it
+$("body").keydown(function(e) {
+  if (e.key == "Escape") {
+    $("#forgetIdModal").css("display", "none");
+  }
+});
 
 
 // return false;

@@ -9137,7 +9137,7 @@ html, body {
 .agora-theme .video-view {
   position: relative; }
 
-.video-view,
+/* .video-view,
 .video-placeholder{
   height: 200px;
   width: 200px;
@@ -9154,7 +9154,7 @@ html, body {
    background-color: #bbb;
    display: inline-block;
    position: absolute;
- }
+ } */
 
 .agora-theme .video-profile {
   position: absolute;

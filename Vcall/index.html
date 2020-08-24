@@ -45,9 +45,7 @@
 
 
     <!-- Modal -->
-    <div id="setAgora" class="modal modal-agora">
-
-      <!-- Welcoming Modal Content -->
+    <!-- <div id="setAgora" class="modal modal-agora">
       <div class="modal-content modal-setting">
         <h5 class="lang text">Silakan pilih dan pastikan kamera dan mikrofon yang akan digunakan menyala</h5>
         <form id="form">
@@ -62,17 +60,17 @@
           <button type="submit" id="join" class="btn btn-modal">Mulai Video Call</button>
         </form>
       </div>
-    </div>
+    </div> -->
 
-      <div id="countdownCall" class="timer1">
+      <!-- <div id="countdownCall" class="timer1">
         <p id="countWaiting"></p>
         <span id="hours1"></span>
         <span id="minutes1"></span>
         <span id="seconds1"></span>
-      </div>
+      </div> -->
 
       <!-- MC -->
-      <span class="dot-mc">
+      <!-- <span class="dot-mc">
         <div class="vidPosition row container col l12 s12">
           <div class="row">
             <div class="col s7">
@@ -86,28 +84,33 @@
             </div>
           </div>
         </div>
-      </span>
+      </span> -->
+
+      <!-- <div class="tvFrame1"></div> -->
 
       <!-- Video Tamu-->
-      <span class="dot dot1">
-        <div class="vidPosition row container col l12 s12">
-          <div class="row">
-            <div class="col s7">
-              <div class="video-grid" id="video1">
-                <div class="video-view">
-                  <div id="local_stream_1" class="video-placeholder"></div>
-                  <div id="local_video_info_1" class="video-profile hide"></div>
-                  <div id="video_autoplay_local_1" class="autoplay-fallback hide"></div>
+      <div class="tvFrame1"></div>
+        <span class="dot dot1">
+          <!-- <div class="vidPosition row container col l12 s12"> -->
+            <!-- <div class="row"> -->
+              <!-- <div class="col s7"> -->
+                <div class="video-grid" id="video1">
+                  <div class="video-view">
+                    <div id="local_stream_1" class="video-placeholder"></div>
+                    <div id="local_video_info_1" class="video-profile hide"></div>
+                    <div id="video_autoplay_local_1" class="autoplay-fallback hide"></div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              <!-- </div> -->
+            <!-- </div> -->
+          <!-- </div> -->
+          <div class="wrapper-username">
+            <p class="username" id="username1"></p>
           </div>
-        </div>
-        <div class="wrapper-username">
-          <p class="username" id="username1"></p>
-        </div>
-      </span>
-      <span class="dot dot2">
+        </span>
+
+      <div class="tvFrame2"></div>
+      <!-- <span class="dot dot2">
         <div class="vidPosition row container col l12 s12">
           <div class="row">
             <div class="col s7">
@@ -124,8 +127,8 @@
         <div class="wrapper-username">
           <p class="username" id="username2"></p>
         </div>
-      </span>
-      <span class="dot dot3">
+      </span> -->
+      <!-- <span class="dot dot3">
         <div class="vidPosition row container col l12 s12">
           <div class="row">
             <div class="col s7">
@@ -142,8 +145,8 @@
         <div class="wrapper-username">
           <p class="username" id="username3"></p>
         </div>
-      </span>
-      <span class="dot dot4">
+      </span> -->
+      <!-- <span class="dot dot4">
         <div class="vidPosition row container col l12 s12">
           <div class="row">
             <div class="col s7">
@@ -160,8 +163,8 @@
         <div class="wrapper-username">
           <p class="username" id="username4"></p>
         </div>
-      </span>
-      <span class="dot dot5">
+      </span> -->
+      <!-- <span class="dot dot5">
         <div class="vidPosition row container col l12 s12">
           <div class="row">
             <div class="col s7">
@@ -178,8 +181,8 @@
         <div class="wrapper-username">
           <p class="username" id="username5"></p>
         </div>
-      </span>
-      <span class="dot dot6">
+      </span> -->
+      <!-- <span class="dot dot6">
         <div class="vidPosition row container col l12 s12">
           <div class="row">
             <div class="col s7">
@@ -196,8 +199,8 @@
         <div class="wrapper-username">
           <p class="username" id="username6"></p>
         </div>
-      </span>
-      <span class="dot dot7">
+      </span> -->
+      <!-- <span class="dot dot7">
         <div class="vidPosition row container col l12 s12">
           <div class="row">
             <div class="col s7">
@@ -214,8 +217,8 @@
         <div class="wrapper-username">
           <p class="username" id="username7"></p>
         </div>
-      </span>
-      <span class="kotak">
+      </span> -->
+      <!-- <span class="kotak">
         <div class="vidPosition row container col l12 s12">
           <div class="row">
             <div class="col s7">
@@ -229,15 +232,15 @@
             </div>
           </div>
         </div>
-      </span>
+      </span> -->
 
       <!-- Bye Vcall Modal -->
-      <div id="byeVcallModal" class="modal modal-agora">
+      <!-- <div id="byeVcallModal" class="modal modal-agora">
         <div class="modal-content modal-bye">
           <h6 class="lang text" key="">Foto akan dikirim ke Whatsapp yang telah terdaftar setelah acara selesai.</h6>
           <button type="button" class="btn btn-modal" id="btn-home">Kembali ke Resepsi</button>
         </div>
-      </div>
+      </div> -->
 
 
     </div>
@@ -476,7 +479,7 @@
       var id_room = "room2";
     }
 
-    var startTimeDate = new Date("23 August 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("24 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -500,7 +503,7 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "23 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "24 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       console.log("timeParse " + timeNowParse);
