@@ -471,6 +471,7 @@ console.log("browserWidth awal " + browserWidth);
 console.log("browserHeight awal " + browserHeight);
 console.log("perfectWidth awal " + perfectWidth);
 console.log("perfectHeight awal " + perfectHeight);
+console.log("browserZoom awal " + browserZoom);
 
 if ((browserZoom > 1.1)){
   $(".browserZoomOut").css('display', 'block');
@@ -479,6 +480,17 @@ if ((browserZoom > 1.1)){
   $(".mobile-content").css('display', 'none');
   $(".desktop-content").css('display', 'none');
   console.log("masuk 1");
+} else if (browserZoom == 1){
+  $(".frameResize").removeClass("transformZoomOut");
+  console.log("ADD CLASS");
+} else if (browserZoom == 0.9){
+  $(".frameResize").addClass("transformZoomOut");
+  $(".frameResize").removeClass("transformZoomOut80");
+  console.log("ADD CLASS");
+} else if (browserZoom == 0.8){
+  $(".frameResize").addClass("transformZoomOut80");
+  $(".frameResize").removeClass("transformZoomOut");
+  console.log("ADD CLASS 80");
 } else if ((browserZoom < 0.8)){
   $(".browserZoomIn").css('display', 'block');
   $(".browserZoomOut").css('display', 'none');
@@ -519,7 +531,6 @@ $(window).resize(function() {
   console.log("browserHeight " + browserHeight);
   console.log("perfectWidth " + perfectWidth);
   console.log("perfectHeight " + perfectHeight);
-
   console.log("browserZoom " + browserZoom);
 
   if ((browserZoom > 1.1)){
@@ -529,6 +540,23 @@ $(window).resize(function() {
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
     console.log("masuk 1");
+  } else if (browserZoom == 1){
+    $(".frameResize").removeClass("transformZoomOut");
+    $(".frameResize2").removeClass("transformZoomOut2");
+    $(".desktop-content").css('display', 'block');
+    console.log("ADD CLASS 100");
+  } else if (browserZoom == 0.9){
+    $(".frameResize").addClass("transformZoomOut");
+    $(".frameResize2").addClass("transformZoomOut2");
+    $(".frameResize").removeClass("transformZoomOut80");
+    $(".desktop-content").css('display', 'block');
+    console.log("ADD CLASS 90");
+  } else if (browserZoom == 0.8){
+    $(".frameResize").addClass("transformZoomOut80");
+    $(".frameResize").removeClass("transformZoomOut")
+    $(".frameResize2").removeClass("transformZoomOut2");
+    $(".desktop-content").css('display', 'block');
+    console.log("ADD CLASS 80");
   } else if ((browserZoom < 0.8)){
     $(".browserZoomIn").css('display', 'block');
     $(".browserZoomOut").css('display', 'none');

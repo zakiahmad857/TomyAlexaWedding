@@ -407,13 +407,13 @@
     console.log(localStorage);
     // console.log(welcomeState);
 
-    // if (cookieToken == null) {
-    //   localStorage.clear();
-    //   console.log("clear localStorage");
-    //   var loginPath = dirPath + "/login";
-    //   console.log(fullPath);
-    //   window.location = loginPath;
-    // }
+    if (cookieToken == null) {
+      localStorage.clear();
+      console.log("clear localStorage");
+      var loginPath = dirPath + "/login";
+      console.log(fullPath);
+      window.location = loginPath;
+    }
 
     $.ajax({
       url: "https://webnikahapi.arthatronic.com/api/user/",
@@ -532,7 +532,7 @@
         if (localStorage.welcomeState == 'shown'){
           console.log("LOCALSTORAGE WELCOME DALEM IF" + welcomeState);
           $("#welcomeModal").css("display", "none");
-          var counterVcall = 6;
+          var counterVcall = 5;
           var interval = setInterval(function() {
             // Display 'counter' wherever you want to display it.
             counterVcall--;

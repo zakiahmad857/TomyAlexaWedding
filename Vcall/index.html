@@ -41,11 +41,11 @@
     <h1>Please zoom in your browser for the full experience</h1>
   </div>
 
-    <div class="desktop-content pelaminan">
+  <div class="desktop-content pelaminan">
 
 
     <!-- Modal -->
-    <!-- <div id="setAgora" class="modal modal-agora">
+    <div id="setAgora" class="modal modal-agora">
       <div class="modal-content modal-setting">
         <h5 class="lang text">Silakan pilih dan pastikan kamera dan mikrofon yang akan digunakan menyala</h5>
         <form id="form">
@@ -60,182 +60,160 @@
           <button type="submit" id="join" class="btn btn-modal">Mulai Video Call</button>
         </form>
       </div>
-    </div> -->
+    </div>
 
-      <!-- <div id="countdownCall" class="timer1">
-        <p id="countWaiting"></p>
-        <span id="hours1"></span>
-        <span id="minutes1"></span>
-        <span id="seconds1"></span>
-      </div> -->
+    <div class="countdown countdownVC">
+      <div class="inner-countdown">
+        <!-- <p id="countWaiting"></p> -->
+        <span class="vl"></span>
+        <span>- </span>
+        <span id="hours1"></span><span id="minutes1"></span><span id="seconds1"></span>
+        <p>Waktu Video Call</p>
+      </div>
 
-      <!-- MC -->
-      <!-- <span class="dot-mc">
-        <div class="vidPosition row container col l12 s12">
-          <div class="row">
-            <div class="col s7">
-              <div class="video-grid" id="video8">
-                <div class="video-view-mc">
-                  <div id="local_stream_8" class="video-placeholder-mc"></div>
-                  <div id="local_video_info_8" class="video-profile hide"></div>
-                  <div id="video_autoplay_local_8" class="autoplay-fallback hide"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </span> -->
+    </div>
 
-      <!-- <div class="tvFrame1"></div> -->
+    <!-- MC -->
+    <span class="dot-mc">
 
-      <!-- Video Tamu-->
-      <div class="tvFrame1"></div>
-        <span class="dot dot1">
-          <!-- <div class="vidPosition row container col l12 s12"> -->
-            <!-- <div class="row"> -->
-              <!-- <div class="col s7"> -->
-                <div class="video-grid" id="video1">
-                  <div class="video-view">
-                    <div id="local_stream_1" class="video-placeholder"></div>
-                    <div id="local_video_info_1" class="video-profile hide"></div>
-                    <div id="video_autoplay_local_1" class="autoplay-fallback hide"></div>
-                  </div>
-                </div>
-              <!-- </div> -->
-            <!-- </div> -->
-          <!-- </div> -->
-          <div class="wrapper-username">
-            <p class="username" id="username1"></p>
-          </div>
-        </span>
+      <div class="video-grid" id="video8">
+        <div class="video-view-mc">
+          <div id="local_stream_8" class="video-placeholder-mc"></div>
+          <div id="local_video_info_8" class="video-profile hide"></div>
+          <div id="video_autoplay_local_8" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
 
-      <div class="tvFrame2"></div>
-      <!-- <span class="dot dot2">
-        <div class="vidPosition row container col l12 s12">
-          <div class="row">
-            <div class="col s7">
-              <div class="video-grid" id="video2">
-                <div class="video-view">
-                  <div id="local_stream_2" class="video-placeholder"></div>
-                  <div id="local_video_info_2" class="video-profile hide"></div>
-                  <div id="video_autoplay_local_2" class="autoplay-fallback hide"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper-username">
-          <p class="username" id="username2"></p>
-        </div>
-      </span> -->
-      <!-- <span class="dot dot3">
-        <div class="vidPosition row container col l12 s12">
-          <div class="row">
-            <div class="col s7">
-              <div class="video-grid" id="video3">
-                <div class="video-view">
-                  <div id="local_stream_3" class="video-placeholder"></div>
-                  <div id="local_video_info_3" class="video-profile hide"></div>
-                  <div id="video_autoplay_local_3" class="autoplay-fallback hide"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper-username">
-          <p class="username" id="username3"></p>
-        </div>
-      </span> -->
-      <!-- <span class="dot dot4">
-        <div class="vidPosition row container col l12 s12">
-          <div class="row">
-            <div class="col s7">
-              <div class="video-grid" id="video4">
-                <div class="video-view">
-                  <div id="local_stream_4" class="video-placeholder"></div>
-                  <div id="local_video_info_4" class="video-profile hide"></div>
-                  <div id="video_autoplay_local_4" class="autoplay-fallback hide"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper-username">
-          <p class="username" id="username4"></p>
-        </div>
-      </span> -->
-      <!-- <span class="dot dot5">
-        <div class="vidPosition row container col l12 s12">
-          <div class="row">
-            <div class="col s7">
-              <div class="video-grid" id="video5">
-                <div class="video-view">
-                  <div id="local_stream_5" class="video-placeholder"></div>
-                  <div id="local_video_info_5" class="video-profile hide"></div>
-                  <div id="video_autoplay_local_5" class="autoplay-fallback hide"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper-username">
-          <p class="username" id="username5"></p>
-        </div>
-      </span> -->
-      <!-- <span class="dot dot6">
-        <div class="vidPosition row container col l12 s12">
-          <div class="row">
-            <div class="col s7">
-              <div class="video-grid" id="video6">
-                <div class="video-view">
-                  <div id="local_stream_6" class="video-placeholder"></div>
-                  <div id="local_video_info_6" class="video-profile hide"></div>
-                  <div id="video_autoplay_local_6" class="autoplay-fallback hide"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper-username">
-          <p class="username" id="username6"></p>
-        </div>
-      </span> -->
-      <!-- <span class="dot dot7">
-        <div class="vidPosition row container col l12 s12">
-          <div class="row">
-            <div class="col s7">
-              <div class="video-grid" id="video7">
-                <div class="video-view">
-                  <div id="local_stream_7" class="video-placeholder"></div>
-                  <div id="local_video_info_7" class="video-profile hide"></div>
-                  <div id="video_autoplay_local_7" class="autoplay-fallback hide"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="wrapper-username">
-          <p class="username" id="username7"></p>
-        </div>
-      </span> -->
-      <!-- <span class="kotak">
-        <div class="vidPosition row container col l12 s12">
-          <div class="row">
-            <div class="col s7">
-              <div class="video-grid" id="video0">
-                <div class="video-view2">
-                  <div id="local_stream_0" class="video-placeholder2"></div>
-                  <div id="local_video_info_0" class="video-profile hide"></div>
-                  <div id="video_autoplay_local_0" class="autoplay-fallback hide"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </span> -->
+      <div class="wrapper-usernameMC">
+        <p class="username" id="usernameMC"></p>
+      </div>
+    </span>
 
-      <!-- Bye Vcall Modal -->
-      <!-- <div id="byeVcallModal" class="modal modal-agora">
+
+    <!-- Video Tamu-->
+    <div class="tvFrame1 frameResize"></div>
+    <span class="dot dot1">
+
+      <div class="video-grid" id="video1">
+        <div class="video-view">
+          <div id="local_stream_1" class="video-placeholder"></div>
+          <div id="local_video_info_1" class="video-profile hide"></div>
+          <div id="video_autoplay_local_1" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <p class="username" id="username1"></p>
+      </div>
+    </span>
+
+    <div class="tvFrame2 frameResize"></div>
+    <span class="dot dot2">
+
+      <div class="video-grid" id="video2">
+        <div class="video-view">
+          <div id="local_stream_2" class="video-placeholder"></div>
+          <div id="local_video_info_2" class="video-profile hide"></div>
+          <div id="video_autoplay_local_2" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <p class="username" id="username2"></p>
+      </div>
+    </span>
+
+    <div class="tvFrame3 frameResize"></div>
+    <span class="dot dot3">
+
+      <div class="video-grid" id="video3">
+        <div class="video-view">
+          <div id="local_stream_3" class="video-placeholder"></div>
+          <div id="local_video_info_3" class="video-profile hide"></div>
+          <div id="video_autoplay_local_3" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <p class="username" id="username3"></p>
+      </div>
+    </span>
+
+    <div class="tvFrame4 frameResize"></div>
+    <span class="dot dot4">
+
+      <div class="video-grid" id="video4">
+        <div class="video-view">
+          <div id="local_stream_4" class="video-placeholder"></div>
+          <div id="local_video_info_4" class="video-profile hide"></div>
+          <div id="video_autoplay_local_4" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <p class="username" id="username4"></p>
+      </div>
+    </span>
+
+    <div class="tvFrame5 frameResize"></div>
+    <span class="dot dot5">
+
+      <div class="video-grid" id="video5">
+        <div class="video-view">
+          <div id="local_stream_5" class="video-placeholder"></div>
+          <div id="local_video_info_5" class="video-profile hide"></div>
+          <div id="video_autoplay_local_5" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <p class="username" id="username5"></p>
+      </div>
+    </span>
+
+    <div class="tvFrame6 frameResize"></div>
+    <span class="dot dot6">
+
+      <div class="video-grid" id="video6">
+        <div class="video-view">
+          <div id="local_stream_6" class="video-placeholder"></div>
+          <div id="local_video_info_6" class="video-profile hide"></div>
+          <div id="video_autoplay_local_6" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <p class="username" id="username6"></p>
+      </div>
+    </span>
+
+    <div class="tvFrame7 frameResize"></div>
+    <span class="dot dot7">
+      <div class="video-grid" id="video7">
+        <div class="video-view">
+          <div id="local_stream_7" class="video-placeholder"></div>
+          <div id="local_video_info_7" class="video-profile hide"></div>
+          <div id="video_autoplay_local_7" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+      <div class="wrapper-username">
+        <p class="username" id="username7"></p>
+      </div>
+    </span>
+
+
+    <!-- <span class="kotak">
+      <div class="video-grid" id="video0">
+        <div class="video-view2">
+          <div id="local_stream_0" class="video-placeholder2"></div>
+          <div id="local_video_info_0" class="video-profile hide"></div>
+          <div id="video_autoplay_local_0" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+    </span> -->
+
+    <!-- Bye Vcall Modal -->
+    <!-- <div id="byeVcallModal" class="modal modal-agora">
         <div class="modal-content modal-bye">
           <h6 class="lang text" key="">Foto akan dikirim ke Whatsapp yang telah terdaftar setelah acara selesai.</h6>
           <button type="button" class="btn btn-modal" id="btn-home">Kembali ke Resepsi</button>
@@ -243,7 +221,7 @@
       </div> -->
 
 
-    </div>
+  </div>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -260,7 +238,7 @@
   <script type="text/javascript" src="../index.js"></script>
 
   <script type="text/javascript">
-  console.log("masuk js di html");
+    console.log("masuk js di html");
     // WEB TOUR
     var vcallTour = new Tour({
       steps: [{
@@ -413,19 +391,19 @@
     });
 
     // Nama sendiri
-    if(idPosisi == 1111){
+    if (idPosisi == 1111) {
       $("#username1").html(usernameCall);
-    } else if(idPosisi == 2222){
+    } else if (idPosisi == 2222) {
       $("#username2").html(usernameCall);
-    } else if(idPosisi == 3333){
+    } else if (idPosisi == 3333) {
       $("#username3").html(usernameCall);
-    } else if(idPosisi == 4444){
+    } else if (idPosisi == 4444) {
       $("#username4").html(usernameCall);
-    } else if(idPosisi == 5555){
+    } else if (idPosisi == 5555) {
       $("#username5").html(usernameCall);
-    } else if(idPosisi == 6666){
+    } else if (idPosisi == 6666) {
       $("#username6").html(usernameCall);
-    } else if(idPosisi == 7777){
+    } else if (idPosisi == 7777) {
       $("#username7").html(usernameCall);
     }
 
@@ -434,43 +412,44 @@
     var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 10);
     console.log("minute room 1 " + minuteEdit);
 
-    if(room == 2){
+    if (room == 2) {
       var menitMinLima = parseInt(timeCheck.getMinutes()) - 5
       var minuteEdit = menitMinLima - (menitMinLima % 10) + 5;
       console.log("minute room 2 " + minuteEdit);
+      $("#usernameMC").html("Room 2");
+    } else if (room == 1) {
+      $("#usernameMC").html("Room 1");
     }
 
-
-    console.log("array");
-    // console.log(groupVcall.length);
-    console.log("dirpath " + dirPath);
-    console.log("homePath " + homePath);
 
     timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
     // timeGroup2 = timeCheck.getHours() + ":" + minuteEdit2.toString();
     console.log("timeGroup " + timeGroup);
+
+
     // Concall group
     var groupVcall = [];
-    // startTime
-      $.ajax({
-        url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
-        async: false,
-        type: "GET",
-        global: false,
-        success: function(result) {
-          console.log("get time group");
-          console.log(result);
-          for (var i = 0; i < result.length; i++) {
-            var item = result[i].name;
-            groupVcall.push(item);
-          }
-          console.log("Group Call ");
-          console.log(groupVcall);
-        },
-        error: function(err) {
-          console.log(err);
+
+
+    $.ajax({
+      url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
+      async: false,
+      type: "GET",
+      global: false,
+      success: function(result) {
+        console.log("get time group");
+        console.log(result);
+        for (var i = 0; i < result.length; i++) {
+          var item = result[i].name;
+          groupVcall.push(item);
         }
-      });
+        console.log("Group Call ");
+        console.log(groupVcall);
+      },
+      error: function(err) {
+        console.log(err);
+      }
+    });
 
 
     if (room == 1) {
@@ -521,14 +500,18 @@
 
       }
 
-      // Countdown
+      // Countdown untuk tamu
       var timeCount = endTime - timeNowParse;
       console.log("timecount " + timeCount);
+
 
       var days1 = Math.floor(timeCount / 86400);
       var hours1 = Math.floor((timeCount - (days1 * 86400)) / 3600);
       var minutes1 = Math.floor((timeCount - (days1 * 86400) - (hours1 * 3600)) / 60);
       var seconds1 = Math.floor((timeCount - (days1 * 86400) - (hours1 * 3600) - (minutes1 * 60)));
+
+
+
       if (minutes1 < "10") {
         minutes1 = "0" + minutes1;
       }
@@ -561,6 +544,60 @@
       }
 
     }
+    // end of functioin makeTimerCall
+
+    // countdown untuk host
+    function countdownAdmin() {
+
+      // Time group
+      var timeCheck = new Date();
+      var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 10);
+      console.log("minute room 1 " + minuteEdit);
+
+      if (room == 2) {
+        var menitMinLima = parseInt(timeCheck.getMinutes()) - 5
+        var minuteEdit = menitMinLima - (menitMinLima % 10) + 5;
+        // console.log("minute room 2 " + minuteEdit);
+        $("#usernameMC").html("Room 2");
+      } else if (room == 1) {
+        // $("#usernameMC").html("Room 1");
+      }
+
+      timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
+
+
+      var timeGroupPlusDate = new Date("24 August 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
+      var endTimeGroup = timeGroupParse + 599;
+
+      console.log("time group dalem function " + timeGroup);
+      console.log("timeGroupParse " + timeGroupParse);
+
+      // Time now
+      var now = new Date();
+      // var timeNow = "24 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNowParse = (Date.parse(now) / 1000);
+
+      var countTime = endTimeGroup - timeNowParse;
+
+
+      var days1 = Math.floor(countTime / 86400);
+      var hours1 = Math.floor((countTime - (days1 * 86400)) / 3600);
+      var minutes1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600)) / 60);
+      var seconds1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600) - (minutes1 * 60)));
+      console.log("masuk countdown admin");
+
+      if (minutes1 < "10") {
+        minutes1 = "0" + minutes1;
+      }
+      if (seconds1 < "10") {
+        seconds1 = "0" + seconds1;
+      }
+
+      $("#minutes1").html(minutes1 + "<span> :</span>");
+      $("#seconds1").html(seconds1);
+
+    }
 
     setInterval(function() {
       // Guest
@@ -569,6 +606,8 @@
       // lainnya tamu
       if ((idPosisi != "9999") && (idPosisi != "9898") && (idPosisi != "9797") && (idPosisi != "9696") && (idPosisi != "8888")) {
         makeTimerCall();
+      } else {
+        countdownAdmin();
       }
     }, 1000);
 
@@ -578,7 +617,7 @@
 
     console.log("USERNAME " + usernameCall);
     // $(document).ready(function() {
-      $("#setAgora").css("display", "block");
+    $("#setAgora").css("display", "block");
     $(".desktop-content").css("display", "block");
     // });
 

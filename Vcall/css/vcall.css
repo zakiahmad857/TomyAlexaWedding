@@ -108,16 +108,15 @@ input[type=number] {
 }
 
 /* Header */
-.timer1{
+.countdownVC{
   z-index: 10;
-  padding: 5px;
-  width: 10%;
+  /* padding: 5px; */
+  /* width: 10%; */
   margin: auto;
-  background-color: pink;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
   position: absolute;
-  left: 2%;
-  top: 2%;
+  left: 1%;
+  bottom: -2%;
 }
 
 .header-icon {
@@ -127,18 +126,11 @@ input[type=number] {
   color: black;
 }
 
-/* .logout {
-  display: inline;
-  position: absolute;
-  left: 95%;
-  z-index: 30;
-} */
-
 .pelaminan {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  position: relative;
+  position: absolute;
   /* z-index: 100; */
   border: 2px solid blue;
   background-image: url("../images/bg.png");
@@ -154,32 +146,38 @@ input[type=number] {
 
 .video-view,
 .video-placeholder{
-  /* height: 200px;
-  width: 245px; */
   width: 100%;
   height: 100%;
   background-color: #bbb;
-  /* border-radius: 50%; */
   display: inline-block;
   position: absolute;
   z-index: 7;
-  -webkit-mask-image: url("../images/mask2.png");
+  -webkit-mask-image: url("../images/mask6.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transform: scale(0.9);
+ }
+
+ .video-placeholder{
+   transform: scale(1);
  }
 
  .video-view-mc, .video-placeholder-mc{
-   height: 100px;
-   width: 100px;
+   height: 100%;
+   width: 100%;
    background-color: #bbb;
    display: inline-block;
    position: absolute;
+   z-index: 7;
+   -webkit-mask-image: url("../images/maskmc.png");
+   -webkit-mask-repeat: no-repeat;
+   -webkit-mask-position: center;
  }
 
 .dot {
-  width: 15%;
-  height: 25.5%;
-  /* background-color: lightblue; */
-  /* border-radius: 50%; */
-  border: 2px solid lightblue;
+  width: 13.3%;
+  height: 23%;
+  /* border: 2px solid lightblue; */
   display: inline-block;
   position: absolute;
   z-index: 9 !important;
@@ -188,22 +186,30 @@ input[type=number] {
 .dot-mc{
   display: inline-block;
   position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 6%;
-  right: 3%;
+  width: 10%;
+  height: 15%;
+  bottom: 2%;
+  right: 1%;
   z-index: 10 !important;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+}
+
+.transformZoomOut{
+  transform: scale(0.9);
+}
+
+.transformZoomOut2{
+  transform: translateX(-50%) scale(0.9);
 }
 
 .tvFrame1{
   position: absolute;
-  top: 40%;
-  left: 5%;
+  top: 37%;
+  left: 8%;
   z-index: 10;
   width: 15%;
-  height: 25.5%;
-  border: 2px solid black;
+  height: 26%;
+  /* border: 2px solid black; */
   background-image: url("../images/tvframe1.png");
   background-size: 100%;
   background-repeat: no-repeat;
@@ -211,69 +217,137 @@ input[type=number] {
 }
 
 .dot1{
-  top: 40%;
-  left: 5%;
+  top: 39%;
+  left: 9%;
 }
 
 .tvFrame2{
   position: absolute;
-  top: 10%;
-  left: 10%;
+  top: 8%;
+  left: 12%;
   z-index: 10;
   width: 15%;
-  height: 25.5%;
-  border: 2px solid black;
-  background-image: url("../images/tvframe1.png");
+  height: 26%;
+  /* border: 2px solid black; */
+  background-image: url("../images/tvframe2.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.dot1{
-  top: 40%;
-  left: 5%;
-}
-
-/* .dot1 {
-  bottom: 4%;
-  left: 15%;
-}
-
-.dot2 {
-  bottom: 32%;
-  left: 2%;
-}
-
-.dot3 {
-  bottom: 66%;
+.dot2{
+  top: 9.5%;
   left: 13%;
 }
 
-.dot4 {
-  bottom: 67%;
-  left: 42%;
+.tvFrame3{
+  position: absolute;
+  top: 12%;
+  left: 27%;
+  z-index: 10;
+  width: 15%;
+  height: 26%;
+  /* border: 2px solid black; */
+  background-image: url("../images/tvframe3.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.dot5 {
-  bottom: 4%;
-  right: 15%;
+.dot3{
+  top: 14%;
+  left: 28%;
 }
 
-.dot6 {
-  bottom: 32%;
-  right: 2%;
+.tvFrame4{
+  position: absolute;
+  top: 0%;
+  left: 42.5%;
+  /* transform: translateX(-50%); */
+  z-index: 10;
+  width: 15%;
+  height: 26%;
+  /* border: 2px solid black; */
+  background-image: url("../images/tvframe4.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.dot7 {
-  bottom: 66%;
+.dot4{
+  top: 1.3%;
+  left: 43.4%;
+}
+
+.tvFrame5{
+  position: absolute;
+  top: 12%;
+  right: 27%;
+  z-index: 10;
+  width: 15%;
+  height: 26%;
+  /* border: 2px solid black; */
+  background-image: url("../images/tvframe5.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dot5{
+  top: 14%;
+  right: 28%;
+}
+
+.tvFrame6{
+  position: absolute;
+  top: 8%;
+  right: 12%;
+  z-index: 10;
+  width: 15%;
+  height: 26%;
+  /* border: 2px solid black; */
+  background-image: url("../images/tvframe6.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dot6{
+  top: 9.5%;
   right: 13%;
-} */
+}
+
+.tvFrame7{
+  position: absolute;
+  top: 37%;
+  right: 8%;
+  z-index: 10;
+  width: 15%;
+  height: 26%;
+  /* border: 2px solid black; */
+  background-image: url("../images/tvframe7.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dot7{
+  top: 39%;
+  right: 9%;
+}
 
 .wrapper-username{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   position: relative;
-  top: 90%;
+  top: 105%;
+}
+
+.wrapper-usernameMC{
+  /* border: 1px solid black; */
+  width: 100%;
+  position: relative;
+  top: -25%;
 }
 
 .username {
@@ -287,8 +361,8 @@ input[type=number] {
 }
 
 .kotak {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #bbb;
   display: inline-block;
   position: absolute;
@@ -297,11 +371,30 @@ input[type=number] {
 
 }
 
-.video-view2, .video-placeholder2 {
-  width: 100vw;
-  height: 100vh;
+/* .video-view2, .video-placeholder2 { */
+  /* width: 100vw; */
+  /* height: 100vh; */
+  /* padding-bottom: 56.25%; */
 
-  display: inline-block;
+  /* display: inline-block; */
+  /* position: absolute; */
+  /* background-image: url("../images/bg.png"); */
+  /* overflow: hidden; */
+/* } */
+
+.video-view2{
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.video-placeholder2 {
+  width: 100%;
+  height: 100%;
+  /* padding-bottom: 56.25%; */
+
+  /* display: inline-block; */
   position: absolute;
+  /* background-image: url("../images/bg.png"); */
   /* overflow: hidden; */
 }
