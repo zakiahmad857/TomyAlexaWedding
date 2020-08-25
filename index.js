@@ -543,6 +543,7 @@ $(window).resize(function() {
   } else if (browserZoom > 1){
     $(".video-view").addClass("maskResize");
     $(".video-placeholder").addClass("maskResize");
+    $(".browserZoomOut").css('display', 'none');
   } else if (browserZoom == 1){
     $(".frameResize").removeClass("transformZoomOut");
     $(".video-view").removeClass("maskResize");
@@ -560,6 +561,8 @@ $(window).resize(function() {
     $(".frameResize").removeClass("transformZoomOut")
     $(".frameResize2").removeClass("transformZoomOut2");
     $(".desktop-content").css('display', 'block');
+    $(".browserZoomIn").css('display', 'none');
+    $(".browserZoomOut").css('display', 'none');
     console.log("ADD CLASS 80");
   } else if ((browserZoom < 0.8)){
     $(".browserZoomIn").css('display', 'block');
