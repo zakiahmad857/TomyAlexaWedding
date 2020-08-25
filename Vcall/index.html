@@ -204,7 +204,7 @@
 
     <span class="kotak">
       <div class="video-grid" id="video0">
-        <div class="video-view2" id="videox">
+        <div class="video-view2" >
           <div id="local_stream_0" class="video-placeholder2"></div>
           <div id="local_video_info_0" class="video-profile hide"></div>
           <div id="video_autoplay_local_0" class="autoplay-fallback hide"></div>
@@ -890,24 +890,34 @@
           $("#username7").html(groupVcall[6]);
         }
         if (id == 8888) {
-          $("<div/>", {
-            id: "remote_video_panel_" + id,
-            class: "video-view2",
-          }).appendTo("#videox")
-          $("<div/>", {
-            id: "remote_video_" + id,
-            class: "video-placeholder2",
-          }).appendTo("#remote_video_panel_" + id)
+        //   //$("<div/>", {
+        //   //  id: "remote_video_panel_" + id,
+        //   //  class: "video-view2",
+        //  // }).appendTo("#videox")
+        //  // $("<div/>", {
+        //     id: "remote_video_" + id,
+        //     class: "video-placeholder2",
+        //   }).appendTo("#remote_video_panel_" + id)
 
+        //   $("<div/>", {
+        //     id: "remote_video_info_" + id,
+        //     class: "video-profile " + (show ? "" : "hide"),
+        //   }).appendTo("#remote_video_panel_" + id)
+
+        //   $("<div/>", {
+        //     id: "video_autoplay_" + id,
+        //     class: "autoplay-fallback hide",
+        //   }).appendTo("#remote_video_panel_" + id)
+        // }
           $("<div/>", {
             id: "remote_video_info_" + id,
             class: "video-profile " + (show ? "" : "hide"),
-          }).appendTo("#remote_video_panel_" + id)
+          }).appendTo("local_stream_0")
 
           $("<div/>", {
             id: "video_autoplay_" + id,
             class: "autoplay-fallback hide",
-          }).appendTo("#remote_video_panel_" + id)
+          }).appendTo("local_stream_0")
         }
         if (id == 9999) {
           $("<div/>", {
