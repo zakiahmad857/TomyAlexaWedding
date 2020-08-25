@@ -101,6 +101,10 @@ body {
   transform: scale(0.8);
 }
 
+.textZoomIn{
+  transform: scale(0.9);
+}
+
 /* LOADER */
 .loader {
   position: fixed;

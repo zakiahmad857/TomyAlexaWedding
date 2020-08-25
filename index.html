@@ -177,8 +177,8 @@
         <div class="inner-countdown">
           <span class="vl"></span>
           <span>- </span>
-          <span class="hours"></span><span class="minutes"></span><span class="seconds"></span><span> menit</span>
-          <p>bertemu pengantin</p>
+          <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span><span class="textResize"> menit</span>
+          <p class="textResize">bertemu pengantin</p>
         </div>
       </div>
 
@@ -449,7 +449,7 @@
       window.location = fullPath;
     }
 
-    var endTime = new Date("24 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("25 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
@@ -493,6 +493,12 @@
       }
       if (seconds < "10") {
         seconds = "0" + seconds;
+      }
+
+      if(hours == "23"){
+        hours = "00";
+        minutes = "00";
+        seconds = "00";
       }
 
       $(".hours").html(hours + "<span>:</span>");

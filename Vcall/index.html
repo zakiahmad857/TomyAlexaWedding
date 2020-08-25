@@ -45,7 +45,7 @@
 
 
     <!-- Modal -->
-    <div id="setAgora" class="modal modal-agora">
+    <!-- <div id="setAgora" class="modal modal-agora">
       <div class="modal-content modal-setting">
         <h5 class="lang text">Silakan pilih dan pastikan kamera dan mikrofon yang akan digunakan menyala</h5>
         <form id="form">
@@ -60,7 +60,7 @@
           <button type="submit" id="join" class="btn btn-modal">Mulai Video Call</button>
         </form>
       </div>
-    </div>
+    </div> -->
 
     <div class="countdown countdownVC">
       <div class="inner-countdown">
@@ -458,7 +458,7 @@
       var id_room = "room2";
     }
 
-    var startTimeDate = new Date("24 August 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("25 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -482,7 +482,7 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "24 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "25 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       console.log("timeParse " + timeNowParse);
@@ -566,7 +566,7 @@
       timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
 
 
-      var timeGroupPlusDate = new Date("24 August 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("25 August 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
       var endTimeGroup = timeGroupParse + 599;
 
@@ -575,7 +575,7 @@
 
       // Time now
       var now = new Date();
-      // var timeNow = "24 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      // var timeNow = "25 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(now) / 1000);
 
       var countTime = endTimeGroup - timeNowParse;
