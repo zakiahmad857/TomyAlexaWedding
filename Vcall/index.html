@@ -890,35 +890,26 @@
           $("#username7").html(groupVcall[6]);
         }
         if (id == 8888) {
-        //   //$("<div/>", {
-        //   //  id: "remote_video_panel_" + id,
-        //   //  class: "video-view2",
-        //  // }).appendTo("#videox")
-        //  // $("<div/>", {
-        //     id: "remote_video_" + id,
-        //     class: "video-placeholder2",
-        //   }).appendTo("#remote_video_panel_" + id)
+         $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view2",
+          }).prependTo("#video0")
+         $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder2",
+          }).appendTo("#remote_video_panel_" + id)
 
-        //   $("<div/>", {
-        //     id: "remote_video_info_" + id,
-        //     class: "video-profile " + (show ? "" : "hide"),
-        //   }).appendTo("#remote_video_panel_" + id)
-
-        //   $("<div/>", {
-        //     id: "video_autoplay_" + id,
-        //     class: "autoplay-fallback hide",
-        //   }).appendTo("#remote_video_panel_" + id)
-        // }
           $("<div/>", {
             id: "remote_video_info_" + id,
             class: "video-profile " + (show ? "" : "hide"),
-          }).appendTo("#local_stream_0")
+          }).appendTo("#remote_video_panel_" + id)
 
           $("<div/>", {
             id: "video_autoplay_" + id,
             class: "autoplay-fallback hide",
-          }).appendTo("#local_stream_0")
+          }).appendTo("#remote_video_panel_" + id)
         }
+          
         if (id == 9999) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
