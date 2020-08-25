@@ -540,9 +540,13 @@ $(window).resize(function() {
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
     console.log("masuk 1");
+  } else if (browserZoom > 1){
+    $(".video-view").addClass("maskResize");
+    $(".video-placeholder").addClass("maskResize");
   } else if (browserZoom == 1){
     $(".frameResize").removeClass("transformZoomOut");
-    $(".frameResize2").removeClass("transformZoomOut2");
+    $(".video-view").removeClass("maskResize");
+    $(".video-placeholder").removeClass("maskResize");
     $(".desktop-content").css('display', 'block');
     console.log("ADD CLASS 100");
   } else if (browserZoom == 0.9){
