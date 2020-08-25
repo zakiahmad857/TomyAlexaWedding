@@ -473,46 +473,58 @@ console.log("perfectWidth awal " + perfectWidth);
 console.log("perfectHeight awal " + perfectHeight);
 console.log("browserZoom awal " + browserZoom);
 
-if ((browserZoom > 1.1)){
+// if ((browserZoom > 1.1)){
+//   $(".browserZoomOut").css('display', 'block');
+//   $(".browserZoomIn").css('display', 'none');
+//   $(".browser-resize").css('display', 'none');
+//   $(".mobile-content").css('display', 'none');
+//   $(".desktop-content").css('display', 'none');
+//   console.log("masuk 1");
+// } else if (browserZoom == 1){
+//   $(".frameResize").removeClass("transformZoomOut");
+//   console.log("ADD CLASS");
+// } else if (browserZoom == 0.9){
+//   $(".frameResize").addClass("transformZoomOut");
+//   $(".frameResize").removeClass("transformZoomOut80");
+//   console.log("ADD CLASS");
+// } else if (browserZoom == 0.8){
+//   $(".frameResize").addClass("transformZoomOut80");
+//   $(".frameResize").removeClass("transformZoomOut");
+//   console.log("ADD CLASS 80");
+// } else if ((browserZoom < 0.8)){
+//   $(".browserZoomIn").css('display', 'block');
+//   $(".browserZoomOut").css('display', 'none');
+//   $(".browser-resize").css('display', 'none');
+//   $(".mobile-content").css('display', 'none');
+//   $(".desktop-content").css('display', 'none');
+//   console.log("masuk 2");
+// } else
+console.log("cek angka " + screenWidth*1.3);
+if (browserWidth >= 1.3*screenWidth){
+  // $(".mobile-content").css('display', 'none');
+  // $(".desktop-content").css('display', 'none');
+  // $(".browser-resize").css('display', 'none');
+  // $(".browserZoomOut").css('display', 'none');
+  // $(".browserZoomIn").css('display', 'block');
+  // console.log("cek hp");
+} else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
+  // pasload, screen zoom >110%
+  $(".mobile-content").css('display', 'none');
+  $(".browser-resize").css('display', 'none');
   $(".browserZoomOut").css('display', 'block');
   $(".browserZoomIn").css('display', 'none');
-  $(".browser-resize").css('display', 'none');
-  $(".mobile-content").css('display', 'none');
-  $(".desktop-content").css('display', 'none');
-  console.log("masuk 1");
-} else if (browserZoom == 1){
-  $(".frameResize").removeClass("transformZoomOut");
-  console.log("ADD CLASS");
-} else if (browserZoom == 0.9){
-  $(".frameResize").addClass("transformZoomOut");
-  $(".frameResize").removeClass("transformZoomOut80");
-  console.log("ADD CLASS");
-} else if (browserZoom == 0.8){
-  $(".frameResize").addClass("transformZoomOut80");
-  $(".frameResize").removeClass("transformZoomOut");
-  console.log("ADD CLASS 80");
-} else if ((browserZoom < 0.8)){
-  $(".browserZoomIn").css('display', 'block');
-  $(".browserZoomOut").css('display', 'none');
-  $(".browser-resize").css('display', 'none');
-  $(".mobile-content").css('display', 'none');
-  $(".desktop-content").css('display', 'none');
-  console.log("masuk 2");
-} else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
-  $(".browser-resize").css('display', 'block');
-  $(".browserZoomOut").css('display', 'none');
-  $(".browserZoomIn").css('display', 'none');
-  $(".mobile-content").css('display', 'none');
   $(".desktop-content").css('display', 'none');
   console.log("masuk 3");
-} else {
-  $(".desktop-content").css('display', 'block');
-  console.log("CONTENT MUNCUL");
-  $(".browser-resize").css('display', 'none');
-  $(".browserZoomOut").css('display', 'none');
-  $(".browserZoomIn").css('display', 'none');
-  $(".mobile-content").css('display', 'none');
 }
+
+// {
+//   $(".desktop-content").css('display', 'block');
+//   console.log("CONTENT MUNCUL");
+//   $(".browser-resize").css('display', 'none');
+//   $(".browserZoomOut").css('display', 'none');
+//   $(".browserZoomIn").css('display', 'none');
+//   $(".mobile-content").css('display', 'none');
+// }
 
 
 
@@ -540,22 +552,35 @@ $(window).resize(function() {
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
     console.log("masuk 1");
+  } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
+    $(".browser-resize").css('display', 'block');
+    $(".browserZoomOut").css('display', 'none');
+    $(".browserZoomIn").css('display', 'none');
+    $(".mobile-content").css('display', 'none');
+    $(".desktop-content").css('display', 'none');
+    console.log("masuk 7");
   } else if (browserZoom > 1){
     $(".video-view").addClass("maskResize");
     $(".video-placeholder").addClass("maskResize");
     $(".browserZoomOut").css('display', 'none');
+    $(".desktop-content").css('display', 'block');
+    console.log("masuk 2");
   } else if (browserZoom == 1){
     $(".frameResize").removeClass("transformZoomOut");
     $(".video-view").removeClass("maskResize");
     $(".video-placeholder").removeClass("maskResize");
     $(".desktop-content").css('display', 'block');
-    console.log("ADD CLASS 100");
+    $(".browserZoomIn").css('display', 'none');
+    $(".browserZoomOut").css('display', 'none');
+    $(".browser-resize").css('display', 'none');
+    $(".mobile-content").css('display', 'none');
+    console.log("masuk 3");
   } else if (browserZoom == 0.9){
     $(".frameResize").addClass("transformZoomOut");
     $(".frameResize2").addClass("transformZoomOut2");
     $(".frameResize").removeClass("transformZoomOut80");
     $(".desktop-content").css('display', 'block');
-    console.log("ADD CLASS 90");
+    console.log("masuk 4");
   } else if (browserZoom == 0.8){
     $(".frameResize").addClass("transformZoomOut80");
     $(".frameResize").removeClass("transformZoomOut")
@@ -563,21 +588,14 @@ $(window).resize(function() {
     $(".desktop-content").css('display', 'block');
     $(".browserZoomIn").css('display', 'none');
     $(".browserZoomOut").css('display', 'none');
-    console.log("ADD CLASS 80");
+    console.log("Masuk 5");
   } else if ((browserZoom < 0.8)){
     $(".browserZoomIn").css('display', 'block');
     $(".browserZoomOut").css('display', 'none');
     $(".browser-resize").css('display', 'none');
     $(".mobile-content").css('display', 'none');
     $(".desktop-content").css('display', 'none');
-    console.log("masuk 2");
-  } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
-    $(".browser-resize").css('display', 'block');
-    $(".browserZoomOut").css('display', 'none');
-    $(".browserZoomIn").css('display', 'none');
-    $(".mobile-content").css('display', 'none');
-    $(".desktop-content").css('display', 'none');
-    console.log("masuk 3");
+    console.log("masuk 6");
   } else {
     $(".desktop-content").css('display', 'block');
     console.log("CONTENT MUNCUL");
@@ -586,7 +604,6 @@ $(window).resize(function() {
     $(".browserZoomIn").css('display', 'none');
     $(".mobile-content").css('display', 'none');
   }
-
 
 });
 
@@ -739,10 +756,24 @@ function toggleLanguange(tog) {
     $(".lang").each(function(index, element) {
       $(this).text(arrLang[lang][$(this).attr('key')]);
     });
+    $(".ball").delay(100).queue(function(next){
+      $(this).css("background-image", "url(images/uk.png)");
+      $(".flag-left").addClass("flag-left-off");
+      $(".flag-right").removeClass("flag-right-off");
+      next();
+    });
+
   } else {
     var lang = "ind";
     $(".lang").each(function(index, element) {
       $(this).text(arrLang[lang][$(this).attr('key')]);
+    });
+
+    $(".ball").delay(100).queue(function(next){
+      $(this).css("background-image", "url(images/indo.png)");
+      $(".flag-right").addClass("flag-right-off");
+      $(".flag-left").removeClass("flag-left-off");
+      next();
     });
   }
 }
