@@ -133,7 +133,7 @@ input[type=number] {
   position: absolute;
   /* z-index: 100; */
   /* border: 2px solid blue;   */
-  background-image: url("../images/bg.png");
+  /* background-image: url("../images/bg.png"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -397,6 +397,6 @@ input[type=number] {
 
   /* display: inline-block; */
   position: absolute;
-  /* background-image: url("../images/bg.png"); */
+  background-image: url("../images/bg.png");
   /* overflow: hidden; */
 }
