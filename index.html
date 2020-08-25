@@ -159,12 +159,12 @@
       <div class="header">
 
         <div id="checkbox-container2" class="header-div">
-          <input type="checkbox" class="checkbox" id="toggleLang" />
+          <!-- <input type="checkbox" class="checkbox" id="toggleLang" />
           <label class="label" for="toggleLang">
             <img class="flag-circle uk" src="images/lang/uk-circle.png" alt="">
             <img class="flag-circle ind" src="images/lang/ind-circle.png" alt="">
             <div class="ball"></div>
-          </label>
+          </label> -->
 
           <img id="info" class="header-icon info" src="images/information.svg" alt="">
 
@@ -495,8 +495,11 @@
         seconds = "0" + seconds;
       }
 
-      if(hours <= "23" && hours >= "4"){
+
+      if(hours <= "23" && hours >= "7"){
         $(".countdown").css("display", "none");
+      } else {
+        $(".countdown").css("display", "block");
       }
 
       $(".hours").html(hours + "<span>:</span>");

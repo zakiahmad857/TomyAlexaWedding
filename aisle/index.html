@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo+2&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo:wght@200&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="../css/style.css">
@@ -24,52 +24,82 @@
 </head>
 
 <body>
-  <div class="aisle-page">
-    <div class="home-button">
-      <img src="images/home-button.png" alt="">
-    </div>
+  <div class="mobile-content">
+    <h1>Please access this website from desktop</h1>
+    <h2>Can't wait to see you!</h2>
+  </div>
 
-    <!-- Video Call Modal -->
-    <div id="vcallModal" class="modal">
+  <div class="browser-resize">
+    <h1>Please maximize your browser for the full experience</h1>
+  </div>
 
-      <div class="modal-content content-vcall">
-        <h4 class="lang text">Sebentar lagi kamu bertemu dengan mempelai.</h4>
-        <h4 class="lang text">Silakan masuk antrian.</h4>
+  <div class="browserZoomOut">
+    <h1>Please zoom out your browser for the full experience</h1>
+  </div>
+
+  <div class="browserZoomIn">
+    <h1>Please zoom in your browser for the full experience</h1>
+  </div>
+
+  <div class="desktop-content">
+    <div class="aisle-page">
+      <div class="home-button">
+        <img src="images/home-button.png" alt="">
       </div>
 
-    </div>
+      <!-- Video Call Modal -->
+      <div id="vcallModal" class="modal">
 
-    <div class="streaming-vcall">
-      <div class="wrap-running-text">
-        <div class="static-text">
-          <h5 class="lang" key="in-pelaminan">Di pelaminan:</h5>
-          <div class="marquee">
-            <div class="inner">
-              <p>
-                <span id="tamu1"></span>
-                <span id="tamu2"></span>
-                <span id="tamu3"></span>
-                <span id="tamu4"></span>
-                <span id="tamu5"></span>
-                <span id="tamu6"></span>
-                <span id="tamu7"></span>
-              </p>
+        <div class="modal-content content-vcall">
+          <h4 class="lang text">Sebentar lagi kamu bertemu dengan mempelai.</h4>
+          <h4 class="lang text">Silakan masuk antrian.</h4>
+        </div>
+
+      </div>
+
+      <div class="countdown countdown-page">
+        <div class="inner-countdown">
+          <span class="vl"></span>
+          <span>- </span>
+          <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span><span class="textResize"> menit</span>
+          <p class="textResize">bertemu pengantin</p>
+        </div>
+      </div>
+
+      <div class="streaming-vcall">
+        <div class="wrap-running-text">
+          <div class="static-text">
+            <h5 class="lang" key="in-pelaminan">Di pelaminan:</h5>
+            <div class="marquee">
+              <div class="inner">
+                <p>
+                  <span id="tamu1"></span>
+                  <span id="tamu2"></span>
+                  <span id="tamu3"></span>
+                  <span id="tamu4"></span>
+                  <span id="tamu5"></span>
+                  <span id="tamu6"></span>
+                  <span id="tamu7"></span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/c_cHqadHmAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <iframe src="https://www.youtube.com/embed/c_cHqadHmAU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        <!-- <iframe src="https://www.youtube.com/embed/E97RjpnrO7U?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
+
       </div>
-      <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/c_cHqadHmAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-      <iframe src="https://www.youtube.com/embed/c_cHqadHmAU?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-      <!-- <iframe src="https://www.youtube.com/embed/E97RjpnrO7U?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> -->
 
-    </div>
+      <!-- <div id="live-mc" class="live-mc"></div>
 
-    <div id="live-mc" class="live-mc"></div>
-
-    <div class="video-mc embed-responsive">
-      <iframe class="" src="https://www.youtube.com/embed/6ksnNqA302I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="video-mc embed-responsive">
+        <iframe class="" src="https://www.youtube.com/embed/6ksnNqA302I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div> -->
     </div>
   </div>
+
+
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -233,9 +263,15 @@
         seconds = "0" + seconds;
       }
 
-      $("#hours").html(hours + "<span> :</span>");
-      $("#minutes").html(minutes + "<span> :</span>");
-      $("#seconds").html(seconds);
+      if(hours <= "23" && hours >= "7"){
+        $(".countdown").css("display", "none");
+      } else {
+        $(".countdown").css("display", "block");
+      }
+
+      $(".hours").html(hours + "<span> :</span>");
+      $(".minutes").html(minutes + "<span> :</span>");
+      $(".seconds").html(seconds);
 
       console.log(hours + ":" + minutes + ":" + seconds);
 
