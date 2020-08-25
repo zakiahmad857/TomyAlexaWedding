@@ -395,9 +395,9 @@ input[type=number] {
 
   /* display: inline-block; */
   position: absolute;
-  background-image: url("../images/bg.png");
+  /* background-image: url("../images/bg.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   /* overflow: hidden; */
 }
 
