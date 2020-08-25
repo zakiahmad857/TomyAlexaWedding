@@ -993,6 +993,26 @@
         }
         Toast.notice("peer leave")
         console.log("peer-leave", id)
+
+        // Delete username yang leave
+        if (id == 1111) {
+          $("#username1").html("");
+        } else if (id == 2222) {
+          $("#username2").html("");
+        } else if (id == 3333) {
+          $("#username3").html("");
+        } else if (id == 4444) {
+          $("#username4").html("");
+        } else if (id == 5555) {
+          $("#username5").html("");
+        } else if (id == 6666) {
+          $("#username6").html("");
+        } else if (id == 7777) {
+          $("#username7").html("");
+        }
+
+
+
       })
       // Occurs when the local stream is published.
       rtc.client.on("stream-published", function(evt) {
@@ -1034,6 +1054,7 @@
         })
         removeView(id)
         console.log("stream-removed remote-uid: ", id)
+        console.log("INI ID YANG DICARI " + id);
       })
       rtc.client.on("onTokenPrivilegeWillExpire", function() {
         // After requesting a new token

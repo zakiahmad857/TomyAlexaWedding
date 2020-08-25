@@ -495,10 +495,8 @@
         seconds = "0" + seconds;
       }
 
-      if(hours <= "23"){
-        hours = "00";
-        minutes = "00";
-        seconds = "00";
+      if(hours <= "23" && hours >= "4"){
+        $(".countdown").css("display", "none");
       }
 
       $(".hours").html(hours + "<span>:</span>");

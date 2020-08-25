@@ -356,7 +356,7 @@ input[type=number] {
   left: 50%;
   margin: auto;
   -webkit-transform: translate(-50%, 0);
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
   text-align: center;
 }
 
