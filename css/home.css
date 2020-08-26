@@ -468,6 +468,7 @@
   left: 35.5%;
   z-index: 3;
   /* border: 2px solid red; */
+  cursor: default;
 }
 
 .pelaminan {
@@ -480,6 +481,7 @@
   background-position: center;
   /* border: 1px solid pink; */
   z-index: 3;
+  cursor: default;
 }
 
 .div-pelaminan {
@@ -554,6 +556,7 @@
   width: 25%;
   height: 45%;
   /* border: 1px solid pink; */
+  cursor: default;
 }
 
 .angpao {
@@ -568,6 +571,7 @@
   background-position: 55% 100%;
   /* border: 1px solid red; */
   z-index: 6;
+  cursor: default;
 }
 
 .div-ayam {
