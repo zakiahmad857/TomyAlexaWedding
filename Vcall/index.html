@@ -204,7 +204,7 @@
 
     <span class="kotak">
       <div class="video-grid" id="video0">
-        <div class="video-view2" >
+        <div class="video-view2">
           <div id="local_stream_0" class="video-placeholder2"></div>
           <div id="local_video_info_0" class="video-profile hide"></div>
           <div id="video_autoplay_local_0" class="autoplay-fallback hide"></div>
@@ -217,6 +217,14 @@
       <div class="modal-content modal-bye">
         <h6 class="lang text" key="">Foto akan dikirim ke Whatsapp yang telah terdaftar setelah acara selesai.</h6>
         <button type="button" class="btn btn-modal" id="btn-home">Kembali ke Resepsi</button>
+      </div>
+    </div>
+
+    <!-- Pengantin Pindah Room -->
+    <div id="pindahRoomModal" class="modal modal-agora">
+      <div class="modal-content modal-bye">
+        <h6 class="lang text" key="">Pindah Room</h6>
+        <button type="button" class="btn btn-modal" id="btn-pindah">Lanjut</button>
       </div>
     </div>
 
@@ -318,10 +326,12 @@
 
     // showcountdown
     $(".countdown").css("display", "block");
+
     // Set localStorage
     var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues")) || {};
     var tourState = localStorage.getItem("tourState");
     var settingState = localStorage.getItem("settingState");
+    var pindahState = localStorage.getItem("pindahState");
 
     console.log("toggle ");
     console.log(checkboxValues.toggleLang);
@@ -411,12 +421,12 @@
 
     // Time group
     var timeCheck = new Date();
-    var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 10);
+    var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 6);
     console.log("minute room 1 " + minuteEdit);
 
     if (room == 2) {
-      var menitMinLima = parseInt(timeCheck.getMinutes()) - 5
-      var minuteEdit = menitMinLima - (menitMinLima % 10) + 5;
+      var menitMinLima = parseInt(timeCheck.getMinutes()) - 3;
+      var minuteEdit = menitMinLima - (menitMinLima % 6) + 3;
       console.log("minute room 2 " + minuteEdit);
       $("#usernameMC").html("Room 2");
     } else if (room == 1) {
@@ -456,16 +466,17 @@
 
     if (room == 1) {
       var id_room = "room1";
-    } else {
+    } else if (room == 2){
       var id_room = "room2";
     }
 
-    var startTimeDate = new Date("25 August 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("26 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
-    var halfTime = startTimeParse + 300;
-    var endTime = startTimeParse + 600;
+
+    // endtime 6 minutes
+    var endTime = startTimeParse + 360;
 
     if (tourState != 'done') {
       if (englishState) {
@@ -484,7 +495,7 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "25 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "26 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       console.log("timeParse " + timeNowParse);
@@ -521,11 +532,11 @@
         seconds1 = "0" + seconds1;
       }
 
-      if (timeCount >= "300") {
+      if (timeCount >= "180") {
         // Waiting room
         console.log("waiting room");
         $("#countdownTitle").html("Waiting Room");
-        $("#minutes1").html(minutes1 - 5 + "<span> :</span>");
+        $("#minutes1").html(minutes1 - 3 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
       } else if (timeCount <= 0) {
@@ -536,7 +547,7 @@
         $("#minutes1").css('display', 'none');
         $("#seconds1").css('display', 'none');
 
-      } else if (timeCount < "300") {
+      } else if (timeCount < "180") {
         // Ketemu pengantin
         console.log("ketemu");
         $("#countdownTitle").html("Waktu Video Call");
@@ -553,12 +564,12 @@
 
       // Time group
       var timeCheck = new Date();
-      var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 10);
+      var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 6);
       console.log("minute room 1 " + minuteEdit);
 
       if (room == 2) {
-        var menitMinLima = parseInt(timeCheck.getMinutes()) - 5
-        var minuteEdit = menitMinLima - (menitMinLima % 10) + 5;
+        var menitMinLima = parseInt(timeCheck.getMinutes()) - 3
+        var minuteEdit = menitMinLima - (menitMinLima % 6) + 3;
         // console.log("minute room 2 " + minuteEdit);
         $("#usernameMC").html("Room 2");
       } else if (room == 1) {
@@ -568,9 +579,9 @@
       timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
 
 
-      var timeGroupPlusDate = new Date("25 August 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("26 August 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
-      var endTimeGroup = timeGroupParse + 599;
+      var endTimeGroup = timeGroupParse + 359;
 
       console.log("time group dalem function " + timeGroup);
       console.log("timeGroupParse " + timeGroupParse);
@@ -596,23 +607,22 @@
         seconds1 = "0" + seconds1;
       }
 
-      if (countTime >= "300") {
+      if (countTime >= "180") {
         // Waiting room
         console.log("waiting room");
         $("#countdownTitle").html("Waiting Room");
         $("#minutes1").html(minutes1 - 5 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
-      // } else if (timeCount <= 0) {
-      //   // Done
-      //   console.log("beresnih");
-      //   $(".timer1").css('display', 'none');
-      //   $("#hours1").css('display', 'none');
-      //   $("#minutes1").css('display', 'none');
-      //   $("#seconds1").css('display', 'none');
+        // } else if (timeCount <= 0) {
+        //   // Done
+        //   console.log("beresnih");
+        //   $(".timer1").css('display', 'none');
+        //   $("#hours1").css('display', 'none');
+        //   $("#minutes1").css('display', 'none');
+        //   $("#seconds1").css('display', 'none');
 
-      }
-       else if (countTime < "300") {
+      } else if (countTime < "180") {
         // Ketemu pengantin
         console.log("ketemu");
         $("#countdownTitle").html("Waktu Video Call");
@@ -623,13 +633,46 @@
 
     }
 
+    function pindahRoom() {
+      var time = new Date();
+      var checkMod = parseInt(time.getMinutes());
+      console.log("checkMod " + checkMod % 3);
+
+      if ((checkMod % 3 == 0) && (localStorage.pindahState != 'pindah')) {
+        $("#pindahRoomModal").css("display", "block");
+        localStorage.setItem('pindahState', 'pindah');
+      } else if (checkMod % 3 > 0){
+        localStorage.setItem('pindahState', 'x');
+      }
+
+      // Pengantin pindah room
+
+      if (idPosisi == 8888) {
+        console.log("MASUK ID POSISI");
+        if ((checkMod % 3 == 0) && (checkMod % 2 == 0)) {
+          // room 2
+          console.log("pengantin masuk room 2");
+          id_room = "room2";
+          room = 2;
+        } else if ((checkMod % 3 == 0) && (checkMod % 2 == 1)) {
+          // room 1
+          console.log("pengantin masuk room 1");
+          id_room = "room1";
+          room = 1;
+        }
+      }
+    }
+
     setInterval(function() {
       // Guest
       // 9999 dan 9898 : mc
-      // 9797 dan 99696 : screenrecord
+      // 9797 dan 9696 : screenrecord
+      // 8888 pengantin
       // lainnya tamu
       if ((idPosisi != "9999") && (idPosisi != "9898") && (idPosisi != "9797") && (idPosisi != "9696") && (idPosisi != "8888")) {
         makeTimerCall();
+      } else if (idPosisi == "8888") {
+        pindahRoom();
       } else {
         countdownAdmin();
       }
@@ -637,6 +680,11 @@
 
     $("#btn-home").click(function() {
       window.location = homePath;
+    });
+
+    $("#btn-pindah").click(function() {
+      $("#pindahRoomModal").css("display", "none");
+      location.reload();
     });
 
     console.log("USERNAME " + usernameCall);
@@ -718,9 +766,16 @@
 
       if (room == 1) {
         obj["appID"] = "48025a2877b744c4afee2182bb106981"
-      } else {
+      } else if (room == 2) {
         obj["appID"] = "10ca4e644db44fc9a24de6ccf393ebaa"
       }
+
+
+
+
+      console.log("ROOM " + room);
+
+      console.log("ID ROOM  " + id_room);
 
       obj["channel"] = id_room
       obj["cameraResolution"] = "720p"
@@ -890,11 +945,11 @@
           $("#username7").html(groupVcall[6]);
         }
         if (id == 8888) {
-         $("<div/>", {
+          $("<div/>", {
             id: "remote_video_panel_" + id,
             class: "video-view2",
           }).prependTo("#video0")
-         $("<div/>", {
+          $("<div/>", {
             id: "remote_video_" + id,
             class: "video-placeholder2",
           }).appendTo("#remote_video_panel_" + id)
@@ -909,7 +964,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
         }
-          
+
         if (id == 9999) {
           $("<div/>", {
             id: "remote_video_panel_" + id,
