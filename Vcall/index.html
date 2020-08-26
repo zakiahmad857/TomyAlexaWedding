@@ -363,7 +363,7 @@
     var startTime = null;
     var idSalah = null;
     var idPosisi = null;
-    var room = null;
+    var room;
 
 
     cookieToken = $.cookie("token");
@@ -464,6 +464,7 @@
       }
     });
 
+    var id_room;
 
     if (room == 1) {
       var id_room = "room1";
@@ -634,12 +635,21 @@
 
     }
 
-    $(document).ready(function(){
+    var storageIdRoom = localStorage.getItem("storageIdRoom");
+    var storageRoom = localStorage.getItem("storageRoom");
 
+    $(document).ready(function(){
+      console.log("doc ready id_room " + localStorage.storageIdRoom);
+      console.log("doc ready room " + localStorage.storageRoom);
       if(idPosisi == 8888){
-        pindahRoom();
+        setInterval(function() {
+          pindahRoom();
+        }, 1000);
         if(localStorage.settingState == 'done'){
+          var fields = ["appID", "channel"];
           var params = serializeformData(); // Data is feteched and serilized from the form element.
+          console.log("PARAMS");
+          console.log(params);
           if (validator(params, fields)) {
             join(rtc, params)
           }
@@ -655,21 +665,22 @@
       var menitMod = menit - menit%3;
 
       if ((menit%3 == 0) && (localStorage.pindahState != 'pindah')) {
+        console.log("muncul pindah room modal");
         $("#pindahRoomModal").css("display", "block");
-        var counterVcall = 3;
-        var interval = setInterval(function() {
-          // Display 'counter' wherever you want to display it.
-          counterVcall--;
-
-          console.log("countervcall " + counterVcall);
-          if (counterVcall == 0) {
-            // Display a login box
-            clearInterval(interval);
-            $("#pindahRoomModal").css("display", "none");
-            localStorage.setItem('pindahState', 'pindah');
-            location.reload();
-          }
-        }, 1000);
+        // var counterVcall = 3;
+        // var interval = setInterval(function() {
+        //   // Display 'counter' wherever you want to display it.
+        //   counterVcall--;
+        //
+        //   console.log("countervcall " + counterVcall);
+        //   if (counterVcall == 0) {
+        //     // Display a login box
+        //     clearInterval(interval);
+        //     $("#pindahRoomModal").css("display", "none");
+        //     localStorage.setItem('pindahState', 'pindah');
+        //     location.reload();
+        //   }
+        // }, 1000);
       } else if (menit%3 > 0){
         localStorage.setItem('pindahState', 'x');
       }
@@ -683,13 +694,21 @@
           console.log("pengantin masuk room 2");
           id_room = "room2";
           room = 2;
+          localStorage.setItem("storageIdRoom", "room2");
+          localStorage.setItem("storageRoom", 2);
         } else if (menitMod%2==1) {
           // room 1
           console.log("pengantin masuk room 1");
           id_room = "room1";
           room = 1;
+          localStorage.setItem("storageIdRoom", "room1");
+          localStorage.setItem("storageRoom", 1);
         }
+        console.log("locstorage idRoom " + localStorage.storageIdRoom);
+        console.log("locstorage room " + localStorage.storageRoom);
       }
+      console.log("pindahRoom function. id_room " + id_room);
+      console.log("pindahRoom function. room " + room);
     }
 
     setInterval(function() {
@@ -711,16 +730,17 @@
       window.location = homePath;
     });
 
-    // $("#btn-pindah").click(function() {
-    //   $("#pindahRoomModal").css("display", "none");
-    //
-    //   location.reload();
-    //
-    //   var params = serializeformData(); // Data is feteched and serilized from the form element.
-    //   if (validator(params, fields)) {
-    //     join(rtc, params)
-    //   }
-    // });
+    $("#btn-pindah").click(function() {
+      $("#pindahRoomModal").css("display", "none");
+
+      localStorage.setItem('pindahState', 'pindah');
+      location.reload();
+
+      // var params = serializeformData(); // Data is feteched and serilized from the form element.
+      // if (validator(params, fields)) {
+      //   join(rtc, params)
+      // }
+    });
 
     console.log("USERNAME " + usernameCall);
     // $(document).ready(function() {
@@ -792,6 +812,7 @@
     }
 
     function serializeformData() {
+      console.log("MASUK SERIALIZE");
       var formData = $("#form").serializeArray()
       var obj = {}
       for (var item of formData) {
@@ -808,7 +829,10 @@
         obj["appID"] = "10ca4e644db44fc9a24de6ccf393ebaa"
       }
 
-
+      if (idPosisi == 8888){
+        room = localStorage.storageRoom;
+        id_room = localStorage.storageIdRoom;
+      }
 
 
       console.log("ROOM " + room);
@@ -1261,11 +1285,14 @@
           var micId = localStorage.getItem("micId");
           var camId = localStorage.getItem("camId");
 
+          console.log("MASUK YEY");
           if(localStorage.micId == null){
+            console.log("MASUK KE NULL");
             var microphoneId = option.microphoneId;
             localStorage.setItem("micId", option.microphoneId);
           } else {
             var microphoneId = localStorage.micId;
+            console.log("microphoneId dalem join lala" + microphoneId);
           }
 
           if(localStorage.camId == null){
