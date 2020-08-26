@@ -822,17 +822,18 @@
       }
 
       obj["uid"] = vcallPos
-
+      if (idPosisi == 8888){
+        room = localStorage.storageRoom;
+        id_room = localStorage.storageIdRoom;
+      }
+      
       if (room == 1) {
         obj["appID"] = "48025a2877b744c4afee2182bb106981"
       } else if (room == 2) {
         obj["appID"] = "10ca4e644db44fc9a24de6ccf393ebaa"
       }
 
-      if (idPosisi == 8888){
-        room = localStorage.storageRoom;
-        id_room = localStorage.storageIdRoom;
-      }
+
 
 
       console.log("ROOM " + room);
