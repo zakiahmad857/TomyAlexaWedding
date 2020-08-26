@@ -635,7 +635,9 @@
     }
 
     $(document).ready(function(){
+
       if(idPosisi == 8888){
+        pindahRoom();
         if(localStorage.settingState == 'done'){
           var params = serializeformData(); // Data is feteched and serilized from the form element.
           if (validator(params, fields)) {
@@ -649,10 +651,10 @@
 
     function pindahRoom() {
       var time = new Date();
-      var checkMod = parseInt(time.getMinutes());
-      console.log("checkMod " + checkMod % 3);
+      var menit = parseInt(time.getMinutes());
+      var menitMod = menit - menit%3;
 
-      if ((checkMod % 3 == 0) && (localStorage.pindahState != 'pindah')) {
+      if ((menit%3 == 0) && (localStorage.pindahState != 'pindah')) {
         $("#pindahRoomModal").css("display", "block");
         var counterVcall = 3;
         var interval = setInterval(function() {
@@ -664,11 +666,11 @@
             // Display a login box
             clearInterval(interval);
             $("#pindahRoomModal").css("display", "none");
+            localStorage.setItem('pindahState', 'pindah');
             location.reload();
           }
         }, 1000);
-        localStorage.setItem('pindahState', 'pindah');
-      } else if (checkMod % 3 > 0){
+      } else if (menit%3 > 0){
         localStorage.setItem('pindahState', 'x');
       }
 
@@ -676,12 +678,12 @@
 
       if (idPosisi == 8888) {
         console.log("MASUK ID POSISI");
-        if ((checkMod % 3 == 0) && (checkMod % 2 == 1)) {
+        if (menitMod%2==0) {
           // room 2
           console.log("pengantin masuk room 2");
           id_room = "room2";
           room = 2;
-        } else if ((checkMod % 3 == 0) && (checkMod % 2 == 0)) {
+        } else if (menitMod%2==1) {
           // room 1
           console.log("pengantin masuk room 1");
           id_room = "room1";
@@ -699,7 +701,7 @@
       if ((idPosisi != "9999") && (idPosisi != "9898") && (idPosisi != "9797") && (idPosisi != "9696") && (idPosisi != "8888")) {
         makeTimerCall();
       } else if (idPosisi == "8888") {
-        pindahRoom();
+        // pindahRoom();
       } else {
         countdownAdmin();
       }
