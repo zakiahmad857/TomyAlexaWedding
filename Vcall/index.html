@@ -324,6 +324,7 @@
       template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
     });
 
+
     // showcountdown
     $(".countdown").css("display", "block");
 
@@ -633,6 +634,19 @@
 
     }
 
+    $(document).ready(function(){
+      if(idPosisi == 8888){
+        if(localStorage.settingState == 'done'){
+          var params = serializeformData(); // Data is feteched and serilized from the form element.
+          if (validator(params, fields)) {
+            join(rtc, params)
+          }
+          $("#setAgora").css("display", "block");
+        }
+
+      }
+    });
+
     function pindahRoom() {
       var time = new Date();
       var checkMod = parseInt(time.getMinutes());
@@ -640,6 +654,19 @@
 
       if ((checkMod % 3 == 0) && (localStorage.pindahState != 'pindah')) {
         $("#pindahRoomModal").css("display", "block");
+        var counterVcall = 3;
+        var interval = setInterval(function() {
+          // Display 'counter' wherever you want to display it.
+          counterVcall--;
+
+          console.log("countervcall " + counterVcall);
+          if (counterVcall == 0) {
+            // Display a login box
+            clearInterval(interval);
+            $("#pindahRoomModal").css("display", "none");
+            location.reload();
+          }
+        }, 1000);
         localStorage.setItem('pindahState', 'pindah');
       } else if (checkMod % 3 > 0){
         localStorage.setItem('pindahState', 'x');
@@ -649,12 +676,12 @@
 
       if (idPosisi == 8888) {
         console.log("MASUK ID POSISI");
-        if ((checkMod % 3 == 0) && (checkMod % 2 == 0)) {
+        if ((checkMod % 3 == 0) && (checkMod % 2 == 1)) {
           // room 2
           console.log("pengantin masuk room 2");
           id_room = "room2";
           room = 2;
-        } else if ((checkMod % 3 == 0) && (checkMod % 2 == 1)) {
+        } else if ((checkMod % 3 == 0) && (checkMod % 2 == 0)) {
           // room 1
           console.log("pengantin masuk room 1");
           id_room = "room1";
@@ -682,14 +709,23 @@
       window.location = homePath;
     });
 
-    $("#btn-pindah").click(function() {
-      $("#pindahRoomModal").css("display", "none");
-      location.reload();
-    });
+    // $("#btn-pindah").click(function() {
+    //   $("#pindahRoomModal").css("display", "none");
+    //
+    //   location.reload();
+    //
+    //   var params = serializeformData(); // Data is feteched and serilized from the form element.
+    //   if (validator(params, fields)) {
+    //     join(rtc, params)
+    //   }
+    // });
 
     console.log("USERNAME " + usernameCall);
     // $(document).ready(function() {
-    $("#setAgora").css("display", "block");
+    if (localStorage.settingState != 'done'){
+      $("#setAgora").css("display", "block");
+    }
+
     $(".desktop-content").css("display", "block");
     // });
 
@@ -1219,14 +1255,33 @@
 
           rtc.params.uid = uid
 
+          //localstorage camera dan microphone
+          var micId = localStorage.getItem("micId");
+          var camId = localStorage.getItem("camId");
+
+          if(localStorage.micId == null){
+            var microphoneId = option.microphoneId;
+            localStorage.setItem("micId", option.microphoneId);
+          } else {
+            var microphoneId = localStorage.micId;
+          }
+
+          if(localStorage.camId == null){
+            var cameraId = option.cameraId;
+            localStorage.setItem("camId", option.cameraId);
+          } else {
+            var cameraId = localStorage.camId;
+          }
+
           // create local stream
           rtc.localStream = AgoraRTC.createStream({
             streamID: rtc.params.uid,
             audio: true,
             video: true,
             screen: false,
-            microphoneId: option.microphoneId,
-            cameraId: option.cameraId
+            microphoneId: microphoneId,
+            cameraId: cameraId
+
           })
 
           // initialize local stream. Callback function executed after intitialization is done
@@ -1393,7 +1448,7 @@
 
       // This will start the join functions with all the configuration selected by the user.
       $("#join").on("click", function(e) {
-        // localStorage.setItem('settingState', 'done');
+
         console.log("setting state 2");
         // console.log(settingState);
         vcallTour.end();
@@ -1406,6 +1461,10 @@
         }
 
         $("#setAgora").css("display", "none");
+
+        if(idPosisi == 8888){
+          localStorage.setItem('settingState', 'done');
+        }
       })
       // This publishes the video feed to Agora
       $("#publish").on("click", function(e) {
