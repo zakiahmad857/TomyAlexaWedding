@@ -499,15 +499,15 @@
     // Countdown Concall
     function makeTimerCall() {
 
-      console.log("startTimeParse " + startTimeParse);
-      console.log("endTime " + endTime);
+      // console.log("startTimeParse " + startTimeParse);
+      // console.log("endTime " + endTime);
 
       var now = new Date();
       var timeNow = "27 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
-      console.log("timeParse " + timeNowParse);
-      console.log("endtime " + endTime);
+      // console.log("timeParse " + timeNowParse);
+      // console.log("endtime " + endTime);
 
       // Kalo waktu skrg udah melebihi jatah vcall, exit
       if (timeNowParse >= endTime) {
@@ -523,7 +523,7 @@
 
       // Countdown untuk tamu
       var timeCount = endTime - timeNowParse;
-      console.log("timecount " + timeCount);
+      // console.log("timecount " + timeCount);
 
 
       var days1 = Math.floor(timeCount / 86400);
@@ -557,7 +557,7 @@
 
       } else if (timeCount < "180") {
         // Ketemu pengantin
-        console.log("ketemu");
+        // console.log("ketemu");
         $("#countdownTitle").html("Waktu Video Call");
         $("#minutes1").html(minutes1 + "<span> :</span>");
         $("#seconds1").html(seconds1);
