@@ -1334,6 +1334,12 @@
           }
         }
 
+        console.log("GAK KETENDANG");
+        if (id == idPosisi){
+          console.log("KETENDANG!!!!!!");
+          leave(rtc)
+        }
+
       })
       // Occurs when the remote stream is removed; for example, a peer user calls Client.unpublish.
       rtc.client.on("stream-removed", function(evt) {
