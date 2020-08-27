@@ -568,6 +568,8 @@
     // end of function makeTimerCall
 
     // countdown untuk host
+    var get = false;
+    var sama = false;
     function countdownAdmin() {
 
       // Time group
@@ -589,34 +591,42 @@
 
       // get group
       var minuteNow = parseInt(timeCheck.getMinutes());
-      var get=false;
-      console.log("cek menit admin " + minuteNow);
-      if(((minuteEdit == minuteNow) && (minuteEdit%2 == 0)) || ((minuteEdit == minuteNow) && (minuteEdit%2 == 1))){
 
+      console.log("cek menit admin " + minuteNow);
+      if(minuteEdit == minuteNow){
+        sama = true;
         // if (get == false){
-          groupVcall = [];
-          console.log("GET DATA BUAT ADMIN");
-          $.ajax({
-            url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
-            async: false,
-            type: "GET",
-            global: false,
-            success: function(result) {
-              console.log("get time group");
-              console.log(result);
-              for (var i = 0; i < result.length; i++) {
-                var item = result[i].name;
-                groupVcall.push(item);
-              }
-              console.log("Group Call ");
-              console.log(groupVcall);
-            },
-            error: function(err) {
-              console.log(err);
-            }
-          });
+
         // }
 
+      } else {
+        sama = false;
+        get = false;
+      }
+
+      if((sama == true) && (get== false)){
+        groupVcall = [];
+        console.log("GET DATA BUAT ADMIN");
+        $.ajax({
+          url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
+          async: false,
+          type: "GET",
+          global: false,
+          success: function(result) {
+            console.log("get time group");
+            console.log(result);
+            for (var i = 0; i < result.length; i++) {
+              var item = result[i].name;
+              groupVcall.push(item);
+            }
+            console.log("Group Call ");
+            console.log(groupVcall);
+          },
+          error: function(err) {
+            console.log(err);
+          }
+        });
+        get = true;
       }
 
       $("#username1").html(groupVcall[0]);
