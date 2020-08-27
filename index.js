@@ -468,7 +468,7 @@ var divider = screenWidth/16;
 var screenRatio = screenHeight/divider;
 
 if(screenRatio > 9){
-  var widthEdit = screenHeight*16/screenRatio;
+  var widthEdit = screenHeight*16/9;
   $(".kotak").css("width", widthEdit);
   $(".kotak").css("height", screenHeight);
 }
