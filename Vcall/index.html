@@ -224,7 +224,7 @@
     <div id="pindahRoomModal" class="modal modal-agora">
       <div class="modal-content modal-bye">
         <h6 class="lang text" key="">Pindah Room</h6>
-        <button type="button" class="btn btn-modal" id="btn-pindah">Lanjut</button>
+        <!-- <button type="button" class="btn btn-modal" id="btn-pindah">Lanjut</button> -->
       </div>
     </div>
 
@@ -425,6 +425,11 @@
     var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 6);
     console.log("minute room 1 " + minuteEdit);
 
+    if(idPosisi == 8888){
+      room = localStorage.storageRoom;
+    }
+
+    console.log("ROOM CHECK" + room);
     if (room == 2) {
       var menitMinLima = parseInt(timeCheck.getMinutes()) - 3;
       var minuteEdit = menitMinLima - (menitMinLima % 6) + 3;
@@ -436,7 +441,6 @@
 
 
     timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
-    // timeGroup2 = timeCheck.getHours() + ":" + minuteEdit2.toString();
     console.log("timeGroup " + timeGroup);
 
 
@@ -472,12 +476,14 @@
       var id_room = "room2";
     }
 
-    var startTimeDate = new Date("26 August 2020 " + startTime + " GMT+07:00")
+
+    // Jam video call
+    var startTimeDate = new Date("27 August 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
 
-    // endtime 6 minutes
+    // endtime vcall 6 minutes
     var endTime = startTimeParse + 360;
 
     if (tourState != 'done') {
@@ -497,7 +503,7 @@
       console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "26 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "27 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       console.log("timeParse " + timeNowParse);
@@ -559,7 +565,7 @@
       }
 
     }
-    // end of functioin makeTimerCall
+    // end of function makeTimerCall
 
     // countdown untuk host
     function countdownAdmin() {
@@ -576,21 +582,55 @@
         $("#usernameMC").html("Room 2");
       } else if (room == 1) {
         // $("#usernameMC").html("Room 1");
+
       }
 
       timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
 
+      // get group
+      var minuteNow = parseInt(timeCheck.getMinutes());
+      var get=false;
+      console.log("cek menit admin " + minuteNow);
+      if(((minuteEdit == minuteNow) && (minuteEdit%2 == 0)) || ((minuteEdit == minuteNow) && (minuteEdit%2 == 1))){
 
-      var timeGroupPlusDate = new Date("26 August 2020 " + timeGroup + " GMT+07:00");
+        // if (get == false){
+          groupVcall = [];
+          console.log("GET DATA BUAT ADMIN");
+          $.ajax({
+            url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
+            async: false,
+            type: "GET",
+            global: false,
+            success: function(result) {
+              console.log("get time group");
+              console.log(result);
+              for (var i = 0; i < result.length; i++) {
+                var item = result[i].name;
+                groupVcall.push(item);
+              }
+              console.log("Group Call ");
+              console.log(groupVcall);
+            },
+            error: function(err) {
+              console.log(err);
+            }
+          });
+        // }
+
+      }
+
+
+      var timeGroupPlusDate = new Date("27 August 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
       var endTimeGroup = timeGroupParse + 359;
 
       console.log("time group dalem function " + timeGroup);
       console.log("timeGroupParse " + timeGroupParse);
 
+
+      // Countdown host
       // Time now
       var now = new Date();
-      // var timeNow = "25 August 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(now) / 1000);
 
       var countTime = endTimeGroup - timeNowParse;
@@ -609,20 +649,13 @@
         seconds1 = "0" + seconds1;
       }
 
+      console.log("countTime " + countTime);
       if (countTime >= "180") {
         // Waiting room
         console.log("waiting room");
         $("#countdownTitle").html("Waiting Room");
-        $("#minutes1").html(minutes1 - 5 + "<span> :</span>");
+        $("#minutes1").html(minutes1 - 3 + "<span> :</span>");
         $("#seconds1").html(seconds1);
-
-        // } else if (timeCount <= 0) {
-        //   // Done
-        //   console.log("beresnih");
-        //   $(".timer1").css('display', 'none');
-        //   $("#hours1").css('display', 'none');
-        //   $("#minutes1").css('display', 'none');
-        //   $("#seconds1").css('display', 'none');
 
       } else if (countTime < "180") {
         // Ketemu pengantin
@@ -655,11 +688,11 @@
           }
 
         }
-          //$("#setAgora").css("display", "block");
       }
     });
 
     function pindahRoom() {
+      // Pindah room
       var time = new Date();
       var menit = parseInt(time.getMinutes());
       var menitMod = menit - menit%3;
@@ -667,20 +700,20 @@
       if ((menit%3 == 0) && (localStorage.pindahState != 'pindah')) {
         console.log("muncul pindah room modal");
         $("#pindahRoomModal").css("display", "block");
-        // var counterVcall = 3;
-        // var interval = setInterval(function() {
-        //   // Display 'counter' wherever you want to display it.
-        //   counterVcall--;
-        //
-        //   console.log("countervcall " + counterVcall);
-        //   if (counterVcall == 0) {
-        //     // Display a login box
-        //     clearInterval(interval);
-        //     $("#pindahRoomModal").css("display", "none");
-        //     localStorage.setItem('pindahState', 'pindah');
-        //     location.reload();
-        //   }
-        // }, 1000);
+        var counterVcall = 3;
+        var interval = setInterval(function() {
+          // Display 'counter' wherever you want to display it.
+          counterVcall--;
+
+          console.log("countervcall " + counterVcall);
+          if (counterVcall == 0) {
+            // Display a login box
+            clearInterval(interval);
+            $("#pindahRoomModal").css("display", "none");
+            localStorage.setItem('pindahState', 'pindah');
+            location.reload();
+          }
+        }, 1000);
       } else if (menit%3 > 0){
         localStorage.setItem('pindahState', 'x');
       }
@@ -709,6 +742,59 @@
       }
       console.log("pindahRoom function. id_room " + id_room);
       console.log("pindahRoom function. room " + room);
+
+
+      // countdown
+      // Time group
+      var timeCheck = new Date();
+      var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 3);
+      console.log("minute room 1 " + minuteEdit);
+
+      // if (room == 2) {
+      //   var menitMinLima = parseInt(timeCheck.getMinutes()) - 3
+      //   // var minuteEdit = menitMinLima - (menitMinLima % 6) + 3;
+      //   console.log("minute room 2 " + minuteEdit);
+      //   $("#usernameMC").html("Room 2");
+      // } else if (room == 1) {
+      //   console.log("minute room 1 " + minuteEdit);
+      //   // $("#usernameMC").html("Room 1");
+      // }
+
+      timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
+
+
+      var timeGroupPlusDate = new Date("27 August 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
+      var endTimeGroup = timeGroupParse + 179;
+
+      console.log("time group dalem function " + timeGroup);
+      console.log("timeGroupParse " + timeGroupParse);
+
+
+      // Countdown
+      // Time now
+      var now = new Date();
+      var timeNowParse = (Date.parse(now) / 1000);
+
+      var countTime = endTimeGroup - timeNowParse;
+
+
+      var days1 = Math.floor(countTime / 86400);
+      var hours1 = Math.floor((countTime - (days1 * 86400)) / 3600);
+      var minutes1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600)) / 60);
+      var seconds1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600) - (minutes1 * 60)));
+      console.log("masuk countdown admin");
+
+      if (minutes1 < "10") {
+        minutes1 = "0" + minutes1;
+      }
+      if (seconds1 < "10") {
+        seconds1 = "0" + seconds1;
+      }
+
+      $("#countdownTitle").html("Waktu Video Call");
+      $("#minutes1").html(minutes1 + "<span> :</span>");
+      $("#seconds1").html(seconds1);
     }
 
     setInterval(function() {
@@ -730,17 +816,13 @@
       window.location = homePath;
     });
 
-    $("#btn-pindah").click(function() {
-      $("#pindahRoomModal").css("display", "none");
-
-      localStorage.setItem('pindahState', 'pindah');
-      location.reload();
-
-      // var params = serializeformData(); // Data is feteched and serilized from the form element.
-      // if (validator(params, fields)) {
-      //   join(rtc, params)
-      // }
-    });
+    // $("#btn-pindah").click(function() {
+    //   $("#pindahRoomModal").css("display", "none");
+    //
+    //   localStorage.setItem('pindahState', 'pindah');
+    //   location.reload();
+    //
+    // });
 
     console.log("USERNAME " + usernameCall);
     // $(document).ready(function() {

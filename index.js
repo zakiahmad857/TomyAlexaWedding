@@ -464,6 +464,17 @@ var screenHeight = window.screen.height;
 var perfectWidth = 0.85 * screenWidth;
 var perfectHeight = 0.7 * screenHeight;
 
+var divider = screenWidth/16;
+var screenRatio = screenHeight/divider;
+
+if(screenRatio > 9){
+  var widthEdit = screenHeight*16/screenRatio;
+  $(".kotak").css("width", widthEdit);
+  $(".kotak").css("height", screenHeight);
+}
+
+console.log("screenRatio " + screenRatio);
+
 console.log("masuk js utama");
 console.log("screenWidth awal " + screenWidth);
 console.log("screenHeight awal " + screenHeight);
