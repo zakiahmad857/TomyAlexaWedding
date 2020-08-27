@@ -1238,18 +1238,40 @@
         // Delete username yang leave
         if (id == 1111) {
           $("#username1").html("");
+          if(idPosisi == 9999){
+            $("#username1").css("display", "none");
+          }
+
         } else if (id == 2222) {
           $("#username2").html("");
+          if(idPosisi == 9999){
+            $("#username2").css("display", "none");
+          }
         } else if (id == 3333) {
           $("#username3").html("");
+          if(idPosisi == 9999){
+            $("#username3").css("display", "none");
+          }
         } else if (id == 4444) {
           $("#username4").html("");
+          if(idPosisi == 9999){
+            $("#username4").css("display", "none");
+          }
         } else if (id == 5555) {
           $("#username5").html("");
+          if(idPosisi == 9999){
+            $("#username5").css("display", "none");
+          }
         } else if (id == 6666) {
           $("#username6").html("");
+          if(idPosisi == 9999){
+            $("#username6").css("display", "none");
+          }
         } else if (id == 7777) {
           $("#username7").html("");
+          if(idPosisi == 9999){
+            $("#username7").css("display", "none");
+          }
         }
 
 
@@ -1259,6 +1281,17 @@
       rtc.client.on("stream-published", function(evt) {
         Toast.notice("stream published success")
         console.log("stream-published")
+        console.log("MASUK KESATU");
+        if(idPosisi == 9999){
+          $("#username1").css("display", "none");
+          $("#username2").css("display", "none");
+          $("#username3").css("display", "none");
+          $("#username4").css("display", "none");
+          $("#username5").css("display", "none");
+          $("#username6").css("display", "none");
+          $("#username7").css("display", "none");
+        }
+
       })
       // Occurs when the remote stream is added.
       rtc.client.on("stream-added", function(evt) {
@@ -1271,6 +1304,7 @@
           })
         }
         console.log("stream-added remote-uid: ", id)
+
       })
       // Occurs when a user subscribes to a remote stream.
       rtc.client.on("stream-subscribed", function(evt) {
@@ -1281,6 +1315,25 @@
         remoteStream.play("remote_video_" + id)
         Toast.info("stream-subscribed remote-uid: " + id)
         console.log("stream-subscribed remote-uid: ", id)
+        console.log("MASUK KEDUA");
+        if(idPosisi == 9999){
+          if (id == 1111) {
+            $("#username1").css("display", "block");
+          } else if (id == 2222) {
+            $("#username2").css("display", "block");
+          } else if (id == 3333) {
+            $("#username3").css("display", "block");
+          } else if (id == 4444) {
+            $("#username4").css("display", "block");
+          } else if (id == 5555) {
+            $("#username5").css("display", "block");
+          } else if (id == 6666) {
+            $("#username6").css("display", "block");
+          } else if (id == 7777) {
+            $("#username7").css("display", "block");
+          }
+        }
+
       })
       // Occurs when the remote stream is removed; for example, a peer user calls Client.unpublish.
       rtc.client.on("stream-removed", function(evt) {
