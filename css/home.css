@@ -241,6 +241,10 @@
 
 
 /* Modal FAQ */
+#faqModal{
+  display: block;
+}
+
 .modal-faq{
   width: 50% !important;
   position: absolute !important;
@@ -256,7 +260,7 @@
   }
 }
 
-.modal-content{
+.content-faq{
   overflow-y: initial !important;
 }
 
