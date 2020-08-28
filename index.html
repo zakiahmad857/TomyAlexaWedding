@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"> -->
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo:wght@200&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
@@ -50,7 +50,7 @@
 
     <!-- MODALS -->
     <!-- WELCOMING MODAL -->
-    <div id="welcomeModal" class="modal">
+    <div id="welcomeModal" class="modal modal-baru">
 
       <div class="modal-content content-welcome">
         <h3 class="lang heading" key="welcome">Selamat Datang</h3>
@@ -80,7 +80,7 @@
     </div>
 
     <!-- WELCOMING MODAL - EARLY BIRD -->
-    <div id="earlyBird" class="modal">
+    <div id="earlyBird" class="modal modal-baru">
 
       <div class="modal-content content-earlyBird">
         <h5 class="lang heading" key="earlyBird_1">Pertemuan Dengan Mempelai</h5>
@@ -97,7 +97,7 @@
     </div>
 
     <!-- Video Call Modal -->
-    <div id="vcallModal" class="modal">
+    <div id="vcallModal" class="modal modal-baru">
 
       <div class="modal-content content-vcall">
         <h4 class="lang text">Sebentar lagi kamu bertemu dengan mempelai.</h4>
@@ -107,7 +107,7 @@
     </div>
 
     <!-- Jam Karet Modal -->
-    <div id="karetModal" class="modal">
+    <div id="karetModal" class="modal modal-baru">
 
       <div class="modal-content content-karet">
         <h4 class="lang heading">Pesan dari tomy & lexa</h4>
@@ -119,12 +119,47 @@
     </div>
 
     <!-- FAQ Modal -->
-    <!-- <div id="faqModal" class="modal">
-      <div class="modal-content content-faq">
-        <span class="close">&times;</span>
-        <h4 class="lang" key="">Frequently Asked Questions</h4>
+    <div id="faqModal" class="modal">
+      <div class="modal-dialog modal-faq">
+        <div class="modal-content content-faq">
+          <div class="modal-header">
+            <h4 class="lang heading" key="">Frequently Asked Questions</h4>
+            <span class="close">&times;</span>
+
+          </div>
+          <div class="modal-body text">
+              <h6>Video call di Pelaminan</h6>
+              <p class="question">Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi</p>
+              <p>Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang</p>
+              <p class="question">Apakah bisa mengubah jam video call?</p>
+              <p>Karena keterbatasan waktu, jam untuk bertemu mempelai sudah ditentukan</p>
+              <p class="question">Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi</p>
+              <p>Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang</p>
+              <p class="question">Apakah bisa mengubah jam video call?</p>
+              <p>Karena keterbatasan waktu, jam untuk bertemu mempelai sudah ditentukan</p>
+              <p class="question">Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi</p>
+              <p>Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang</p>
+              <p class="question">Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi</p>
+              <p>Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang</p>
+              <p class="question">Apakah bisa mengubah jam video call?</p>
+              <p>Karena keterbatasan waktu, jam untuk bertemu mempelai sudah ditentukan</p>
+              <p class="question">Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi</p>
+              <p>Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang</p>
+              <p class="question">Apakah bisa mengubah jam video call?</p>
+              <p>Karena keterbatasan waktu, jam untuk bertemu mempelai sudah ditentukan</p>
+              <p class="question">Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi</p>
+              <p>Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang</p>
+          </div>
+          <div class="modal-footer modal-footer-faq text">
+            <h6>Pertanyaan menyangkut teknis?</h6>
+            <a href="https://wa.me/6281386626186" target="_blank"><img src="images/whatsapp.png" class="whatsapp" alt=""></a>
+            <p>+62 81316660643</p>
+          </div>
+
+        </div>
       </div>
-    </div> -->
+
+    </div>
 
     <!-- Angpao Modal -->
     <!-- <div id="angpaoModal" class="modal">
@@ -158,7 +193,7 @@
       <!-- Header -->
       <div class="header">
 
-        <div id="checkbox-container2" class="header-div toggleLangCircle">
+        <div id="checkbox-container2" class="toggleLangCircle">
           <input type="checkbox" class="checkbox" id="toggleLang" />
           <label class="label" for="toggleLang">
             <img class="flag-circle uk" src="images/lang/uk-circle.png" alt="">
@@ -166,12 +201,18 @@
             <div class="ball"></div>
           </label>
 
-          <img id="info" class="header-icon info" src="images/information.svg" alt="">
 
-          <img id="faq" class="header-icon" src="images/faq.svg" alt="">
+        </div>
+        <div class="header-div">
+          <img id="faq" class="header-icon faq" src="images/faq.png" alt="">
+          <img id="info" class="header-icon info" src="images/info.png" alt="">
+
+
         </div>
 
+
       </div>
+
 
       <div class="countdown">
         <div class="inner-countdown">
@@ -265,21 +306,15 @@
     // WEB TOUR
     var tour = new Tour({
       steps: [{
-          element: "#gallery",
-          title: "Gallery Foto & Video",
-          content: "Kamu bisa melihat foto dan video Pre-Wed, Lamaran, serta Akad Pernikahan dari Tomy & Lexa ",
-          placement: "right",
-        },
-        {
-          element: "#idPlanet",
-          title: "Pelaminan",
-          content: "Di sini kamu bisa melihat siapa yang sedang bertemu dengan mempelai dan siapa yang ada di antrian berikutnya",
+          element: ".countdown",
+          title: "Hitungan Mundur",
+          content: "Ini adalah waktu yang tersisa untuk bertemu dengan pengantin agar kamu tidak lupa",
           placement: "bottom",
         },
         {
-          element: "#angpao",
-          title: "Donasi",
-          content: "Kamu bisa memberikan rasa sayangmu untuk masa depan Tomy & Lexa di sini",
+          element: "#gallery",
+          title: "Gallery Foto & Video",
+          content: "Kamu bisa melihat foto dan video Pre-Wed, Lamaran, serta Akad Pernikahan dari Tomy & Lexa ",
           placement: "right",
         },
         {
@@ -289,21 +324,34 @@
           placement: "top",
         },
         {
-          element: "#jukebox",
-          title: "Hiburan",
-          content: "Nikmati hiburan pernikahan Tomy & Lexa di sini! Akan ada special performance dari Norrrm Radio dan teman-teman mereka",
-          placement: "left",
+          element: "#angpao",
+          title: "Amplop Digital",
+          content: "Kamu juga bisa memberikan amplop pernikahan secara virtual di sini",
+          placement: "right",
         },
         {
           element: "#live-mc",
-          content: "MC (nama) akan menemanimu selama acara berlangsung",
-          placement: "top",
+          title: "Pembawa Acara",
+          content: "MC Chandra akan menemanimu selama acara berlangsung",
+          placement: "left",
+        },
+        {
+          element: "#jukebox",
+          title: "Hiburan",
+          content: "Nikmati special performance dari Norrrm Radio disini",
+          placement: "left",
+        },
+        {
+          element: "#pelaminan",
+          title: "Pelaminan",
+          content: "Di sini kamu bisa melihat siapa yang sedang bertemu dengan mempelai",
+          placement: "bottom",
         },
         {
           element: "#info",
-          title: "Instructions",
-          content: "Jika kamu ingin membaca ulang petunjuk sebelumnya, silakan klik tombol ini",
-          placement: "left",
+          title: "Petunjuk Penggunaan",
+          content: "Jika kamu ingin membaca ulang petunjuk penggunaan website, silakan klik tombol ini",
+          placement: "bottom",
         }
       ],
       container: 'body',
@@ -320,6 +368,12 @@
 
     var tourEng = new Tour({
       steps: [{
+          element: ".countdown",
+          title: "Video & Photo Gallery",
+          content: "Take a look of Lexa & Tomy’s Pre-Wedding, Engagement and Wedding Ceremony photos and videos here",
+          placement: "right",
+        },
+        {
           element: "#gallery",
           title: "Video & Photo Gallery",
           content: "Take a look of Lexa & Tomy’s Pre-Wedding, Engagement and Wedding Ceremony photos and videos here",
@@ -496,11 +550,11 @@
       }
 
 
-      if(hours <= "23" && hours >= "7"){
-        $(".countdown").css("display", "none");
-      } else {
-        $(".countdown").css("display", "block");
-      }
+      // if(hours <= "23" && hours >= "7"){
+      //   $(".countdown").css("display", "none");
+      // } else {
+      //   $(".countdown").css("display", "block");
+      // }
 
       $(".hours").html(hours + "<span>:</span>");
       $(".minutes").html(minutes + "<span>:</span>");
