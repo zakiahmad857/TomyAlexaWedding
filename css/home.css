@@ -241,10 +241,6 @@
 
 
 /* Modal FAQ */
-#faqModal{
-  display: block;
-}
-
 .modal-faq{
   width: 50% !important;
   position: absolute !important;
