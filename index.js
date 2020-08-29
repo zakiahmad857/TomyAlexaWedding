@@ -463,6 +463,7 @@ var screenWidth = window.screen.width;
 var screenHeight = window.screen.height;
 var perfectWidth = 0.85 * screenWidth;
 var perfectHeight = 0.7 * screenHeight;
+var defaultBrowser = 0.86 * screenHeight;
 
 var divider = screenWidth/16;
 var screenRatio = screenHeight/divider;
@@ -483,63 +484,19 @@ console.log("browserHeight awal " + browserHeight);
 console.log("perfectWidth awal " + perfectWidth);
 console.log("perfectHeight awal " + perfectHeight);
 console.log("browserZoom awal " + browserZoom);
+console.log("defaultBrowser " + defaultBrowser);
 
-// if ((browserZoom > 1.1)){
-//   $(".browserZoomOut").css('display', 'block');
-//   $(".browserZoomIn").css('display', 'none');
-//   $(".browser-resize").css('display', 'none');
-//   $(".mobile-content").css('display', 'none');
-//   $(".desktop-content").css('display', 'none');
-//   console.log("masuk 1");
-// } else if (browserZoom == 1){
-//   $(".frameResize").removeClass("transformZoomOut");
-//   console.log("ADD CLASS");
-// } else if (browserZoom == 0.9){
-//   $(".frameResize").addClass("transformZoomOut");
-//   $(".frameResize").removeClass("transformZoomOut80");
-//   console.log("ADD CLASS");
-// } else if (browserZoom == 0.8){
-//   $(".frameResize").addClass("transformZoomOut80");
-//   $(".frameResize").removeClass("transformZoomOut");
-//   console.log("ADD CLASS 80");
-// } else if ((browserZoom < 0.8)){
-//   $(".browserZoomIn").css('display', 'block');
-//   $(".browserZoomOut").css('display', 'none');
-//   $(".browser-resize").css('display', 'none');
-//   $(".mobile-content").css('display', 'none');
-//   $(".desktop-content").css('display', 'none');
-//   console.log("masuk 2");
-// } else
-console.log("cek angka " + screenWidth*1.3);
-if (browserWidth >= 1.3*screenWidth){
-  // $(".mobile-content").css('display', 'none');
-  // $(".desktop-content").css('display', 'none');
-  // $(".browser-resize").css('display', 'none');
-  // $(".browserZoomOut").css('display', 'none');
-  // $(".browserZoomIn").css('display', 'block');
-  // console.log("cek hp");
-
-} else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
-  // pasload, screen zoom >110%
-  // $(".mobile-content").css('display', 'none');
-  // $(".browser-resize").css('display', 'none');
-  // $(".browserZoomOut").css('display', 'block');
-  // $(".browserZoomIn").css('display', 'none');
-  // $(".desktop-content").css('display', 'none');
-  // console.log("masuk 3");
+if(browserHeight > 1.3*defaultBrowser){
+  $(".browserZoomOut").css('display', 'none');
+  $(".browser-resize").css('display', 'none');
+  $(".browserZoomIn").css('display', 'block');
+  $(".desktop-content").css('display', 'none');
+} else if(browserHeight < 0.9*defaultBrowser){
+  $(".browserZoomOut").css('display', 'block');
+  $(".browser-resize").css('display', 'none');
+  $(".browserZoomIn").css('display', 'none');
+  $(".desktop-content").css('display', 'none');
 }
-
-// {
-//   $(".desktop-content").css('display', 'block');
-//   console.log("CONTENT MUNCUL");
-//   $(".browser-resize").css('display', 'none');
-//   $(".browserZoomOut").css('display', 'none');
-//   $(".browserZoomIn").css('display', 'none');
-//   $(".mobile-content").css('display', 'none');
-// }
-
-
-
 
 $(window).resize(function() {
   getZoomValues();
@@ -576,6 +533,7 @@ $(window).resize(function() {
     $(".video-placeholder").addClass("maskResize");
     $(".browserZoomOut").css('display', 'none');
     $(".desktop-content").css('display', 'block');
+    $(".browser-resize").css('display', 'none');
     console.log("masuk 2");
   } else if (browserZoom == 1){
     $(".frameResize").removeClass("transformZoomOut");
