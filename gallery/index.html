@@ -49,19 +49,38 @@
 
       <!-- Video Call Modal -->
       <div id="vcallModal" class="modal">
-
         <div class="modal-content content-vcall">
           <h4 class="lang text">Sebentar lagi kamu bertemu dengan mempelai.</h4>
           <h4 class="lang text">Silakan masuk antrian.</h4>
         </div>
+      </div>
 
+      <!-- Pop Up Akad -->
+      <div class="content-wrapper akad">
+        <div class="left-wrapper">
+          <div class="back-button">
+            <a href="javascript:history.back()"><img src="../images/back.png" class="btn-back" id="btn-back" alt="back"></a>
+            <p>Kembali ke Galeri</p>
+          </div>
+          <div class="text-content">
+            <h4>Akad Nikah</h4>
+            <p class="custom-p">berlangsung 5 September 2020</p>
+            <p>jam 15:00-17:00,</p>
+            <p> di Pendopo Kemang, Jakarta Selatan.</p>
+            <p class="custom-p">Alexa dan Tomy mengenakan pakaian adat Lampung, Sumatera dari keluarga nenek dari Bundanya Alexa</p>
+          </div>
+        </div>
+
+        <div class="video-wrapper">
+          <iframe id="video" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
 
       <div class="countdown countdown-page">
         <div class="inner-countdown">
           <span class="vl"></span>
           <span>- </span>
-          <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span><span class="textResize"> menit</span>
+          <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span>
           <p class="textResize">bertemu pengantin</p>
         </div>
       </div>
@@ -172,7 +191,7 @@
       }
     });
 
-    var endTime = new Date("25 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("30 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 

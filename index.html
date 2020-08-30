@@ -98,12 +98,10 @@
 
     <!-- Video Call Modal -->
     <div id="vcallModal" class="modal modal-baru">
-
       <div class="modal-content-baru content-vcall">
         <h4 class="lang text">Sebentar lagi kamu bertemu dengan mempelai.</h4>
         <h4 class="lang text">Silakan masuk antrian.</h4>
       </div>
-
     </div>
 
     <!-- Jam Karet Modal -->
@@ -218,7 +216,7 @@
         <div class="inner-countdown">
           <span class="vl"></span>
           <span>- </span>
-          <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span><span class="textResize"> menit</span>
+          <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span>
           <p class="textResize">bertemu pengantin</p>
         </div>
       </div>
@@ -503,7 +501,7 @@
       window.location = fullPath;
     }
 
-    var endTime = new Date("27 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("30 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
@@ -550,11 +548,11 @@
       }
 
 
-      // if(hours <= "23" && hours >= "7"){
-      //   $(".countdown").css("display", "none");
-      // } else {
-      //   $(".countdown").css("display", "block");
-      // }
+      if(hours <= "23" && hours >= "7"){
+        $(".countdown").css("display", "none");
+      } else {
+        $(".countdown").css("display", "block");
+      }
 
       $(".hours").html(hours + "<span>:</span>");
       $(".minutes").html(minutes + "<span>:</span>");
