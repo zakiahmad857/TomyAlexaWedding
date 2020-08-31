@@ -372,6 +372,9 @@ input[type=number] {
   background-repeat:none;
   background-position: center;
   background-size: cover;
+
+  left: 50%;
+  transform: translateX(-50%) ;
 }
 
 /* .video-view2, .video-placeholder2 { */
