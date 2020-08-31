@@ -59,7 +59,7 @@
       <div class="content-wrapper akad">
         <div class="left-wrapper">
           <div class="back-button">
-            <a href="javascript:history.back()"><img src="../images/back.png" class="btn-back" id="btn-back" alt="back"></a>
+            <img src="images/back.png" class="btn-back" alt="back">
             <p>Kembali ke Galeri</p>
           </div>
           <div class="text-content">
@@ -76,6 +76,30 @@
         </div>
       </div>
 
+      <!-- Pop Up Lamaran -->
+      <div class="content-wrapper lamaran">
+        <div class="left-wrapper">
+
+          <div class="back-button">
+            <img src="images/back.png" class="btn-back"  alt="back">
+            <p>Kembali ke Galeri</p>
+          </div>
+
+          <div class="text-content">
+            <h4>Lamaran</h4>
+
+            <p class="custom-p">Merupakan salah satu rangkaian acara dalam sebuah pernikahan. Dalam acara ini Tomy dan keluarga datang ke rumah Alexa </p>
+            <p class="custom-p">untuk bertemu keluarga Alexa dan melamarnya, dengan membawa seserahan. Acara ini berlangsung satu hari sebelum pernikahan.</p>
+          </div>
+
+        </div>
+
+        <div class="video-wrapper">
+          <iframe id="video" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Countdown -->
       <div class="countdown countdown-page">
         <div class="inner-countdown">
           <span class="vl"></span>
@@ -85,34 +109,13 @@
         </div>
       </div>
 
-      <div class="content-wrapper-1">
-        <a href="prewed"><h4 class="judul">Pre Wedding</h4></a>
-      </div>
 
-      <div class="content-wrapper-2">
-        <a href="lamaran"><h4 class="judul">Lamaran</h4></a>
-      </div>
+      <a href="prewed">
+        <div class="wrapper-prewed"></div>
+      </a>
+      <div class="wrapper-lamaran"></div>
+      <div class="wrapper-akad"></div>
 
-      <div class="content-wrapper-3">
-        <a href="akad"><h4 class="judul">Akad Nikah</h4></a>
-      </div>
-
-      <div class="foto-wrapper-1">
-        <img src="images/foto1.png" class="img-home" alt="foto">
-      </div>
-
-
-      <div class="foto-wrapper-2">
-        <img src="images/foto1.png" class="img-home" alt="foto">
-      </div>
-
-      <div class="foto-wrapper-3">
-        <img src="images/foto1.png" class="img-home" alt="foto">
-      </div>
-
-      <div class="foto-wrapper-4">
-        <img src="images/foto1.png" class="img-home" alt="foto">
-      </div>
 
       <div id="live-mc" class="live-mc"></div>
 
@@ -148,6 +151,20 @@
 
     $(".home-button").click(function() {
       window.location = homePath;
+    });
+
+    // Menu click
+    $(".wrapper-akad").click(function() {
+      $(".akad").css("display", "block");
+    });
+
+    $(".wrapper-lamaran").click(function() {
+      $(".lamaran").css("display", "block");
+    });
+
+    $(".btn-back").click(function() {
+      $(".akad").css("display", "none");
+      $(".lamaran").css("display", "none");
     });
 
     // TOKEN DATA
@@ -223,7 +240,7 @@
         seconds = "0" + seconds;
       }
 
-      if(hours <= "23" && hours >= "7"){
+      if (hours <= "23" && hours >= "7") {
         $(".countdown").css("display", "none");
       } else {
         $(".countdown").css("display", "block");
