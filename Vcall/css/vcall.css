@@ -368,6 +368,10 @@ input[type=number] {
   position: absolute;
   z-index: 5 !important;
   overflow: hidden;
+  background-image: url("../images/waiting.png");
+  background-repeat:none;
+  background-position: center;
+  background-size: cover;
 }
 
 /* .video-view2, .video-placeholder2 { */
