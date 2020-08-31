@@ -15,59 +15,6 @@
   height: 100%;
 }
 
-/* .fade-out {
-  animation: fadeOut ease 4s;
-  -webkit-animation: fadeOut ease 4s;
-  -moz-animation: fadeOut ease 4s;
-  -o-animation: fadeOut ease 4s;
-  -ms-animation: fadeOut ease 4s;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
-}
-
-@-moz-keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
-}
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
-}
-
-@-o-keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
-}
-
-@-ms-keyframes fadeOut {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity:0;
-  }
-} */
-
 .homepage {
   background-image: url("../images/background.png");
   margin: 0;
@@ -75,11 +22,12 @@
   height: 100vh !important;
 
   background-repeat: no-repeat;
-  background-position: 0% 80%;
+  background-position: 0% 90%;
   overflow: hidden !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-size: cover;
 
   /* -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
@@ -88,6 +36,41 @@
   filter: blur(5px); */
 
   /* z-index: -100; */
+}
+
+/* Header */
+.header {
+  position: absolute;
+  overflow: hidden;
+  float: right;
+  right: 0;
+  margin-top: 2%;
+}
+
+/* Header icon */
+.header-icon {
+  width: 40%;
+  display: inline;
+  /* border: 1px solid blue; */
+}
+
+.header-icon:hover {
+  cursor: pointer;
+}
+
+.header-div {
+  float: inherit;
+}
+
+.info {
+  width: 25%;
+  float: right;
+}
+
+.faq{
+  right: 0;
+  float: right;
+  margin: 0;
 }
 
 /* MODALS */
@@ -378,24 +361,30 @@
 .live-mc {
   position: absolute;
   left: 55%;
-  bottom: -15%;
-  width: 300px;
-  height: 410px;
+  /* bottom: -15%; */
+  /* width: 300px;
+  height: 420px; */
+  width: 20%;
+  height: 60%;
+  bottom: -10%;
   background: url('../images/button/tvmc.png');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 150% auto;
   z-index: 10;
-  /*border: 1px solid red;*/
+  /* border: 1px solid red; */
 }
 
 .video-mc {
   position: absolute;
   left: 55%;
-  bottom: 0%;
-  width: 300px;
-  height: 400px;
-  /*border: 1px solid black;*/
+  /* bottom: 0%; */
+  /* width: 300px; */
+  /* height: 400px; */
+  width: 20%;
+  height: 60%;
+  bottom: 2%;
+  /* border: 1px solid black; */
 }
 
 .video-wrapper {
@@ -406,36 +395,17 @@
   width: 60%;
   height: 40%;
   z-index: 9;
-  /*border: 1px solid blue;*/
+  /* border: 1px solid blue; */
 }
 
 .video-wrapper iframe {
   -webkit-mask-image: url(../images/mask2.svg);
-  -webkit-mask-repeat-x: round;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
   width: 95%;
   height: 80%;
   margin: auto;
   z-index: 9;
-}
-
-@media screen and (min-width: 1900px) {
-  .live-mc {
-    bottom: -9%;
-    width: 400px;
-    height: 500px;
-  }
-
-  .video-mc {
-    bottom: -9%;
-    width: 400px;
-    height: 500px;
-  }
-
-  .video-wrapper {
-    top: 28.5%;
-    width: 55.5%;
-    height: 41%;
-  }
 }
 
 /* Hide Image (load) */
@@ -448,8 +418,8 @@
 /* SOUVENIR */
 .parent-souvenir {
   position: absolute;
-  left: 20%;
-  top: 30%;
+  left: 14%;
+  top: 45%;
   width: 30%;
   height: 45%;
   /* border: 1px solid black; */
@@ -460,8 +430,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../images/button/souvenir-still.png');
-  background-size: 100% auto;
+  background: url('../images/button/cinderamata-still.png');
+  background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: center;
   /* border: 1px solid blue; */
@@ -473,27 +443,27 @@
   cursor: pointer;
   position: absolute;
   /* border: 1px solid orange; */
-  left: 23%;
-  top: 12%;
-  width: 45%;
-  height: 65%;
+  left: 20%;
+  top: 9%;
+  width: 58%;
+  height: 74%;
   z-index: 6;
 }
 
 .div-souvenir:hover~.souvenir {
-  background: url('../images/button/souvenir-animated.png');
-  background-size: 100% auto;
+  background: url('../images/button/cinderamata-animated.png');
+  background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 /* GALLERY */
 .parent-gallery {
-  width: 35%;
-  height: 50%;
+  width: 38%;
+  height: 60%;
   position: absolute;
-  top: 4%;
-  left: 1%;
+  top: 5%;
+  left: -5%;
   z-index: 3;
   /* border: 2px solid black; */
 }
@@ -503,7 +473,7 @@
   height: 100%;
   position: absolute;
   background: url('../images/button/galeri-still.png');
-  background-size: 100% auto;
+  background-size: 90% auto;
   background-repeat: no-repeat;
   background-position: center;
   /* border: 1px solid yellow; */
@@ -523,7 +493,7 @@
 
 .div-gallery:hover~.gallery {
   background: url('../images/button/galeri-animated.png');
-  background-size: 100% auto;
+  background-size: 90% auto;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -533,8 +503,8 @@
   width: 30%;
   height: 60%;
   position: absolute;
-  top: 0;
-  left: 35.5%;
+  top: 7%;
+  left: 35%;
   z-index: 3;
   /* border: 2px solid red; */
   cursor: default;
@@ -545,7 +515,7 @@
   height: 100%;
   position: absolute;
   background: url('../images/button/pelaminan-still.png');
-  background-size: 100% auto;
+  background-size: 110% auto;
   background-repeat: no-repeat;
   background-position: center;
   /* border: 1px solid pink; */
@@ -566,7 +536,7 @@
 
 .div-pelaminan:hover~.pelaminan {
   background: url('../images/button/pelaminan-animated.png');
-  background-size: 100% auto;
+  background-size: 110% auto;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -574,9 +544,9 @@
 /* JUKEBOX */
 .parent-jukebox {
   position: absolute;
-  right: 5%;
-  top: 22%;
-  width: 30%;
+  right: 0;
+  top: 26%;
+  width: 35%;
   height: 60%;
   /* border: 1px solid black; */
 }
@@ -587,11 +557,9 @@
 
 .jukebox {
   position: absolute;
-  /* right: 0;
-  top: 40%; */
   width: 100%;
   height: 100%;
-  background: url('../images/button/jukebox-still.png');
+  background: url('../images/button/hiburan-still.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -601,17 +569,17 @@
 
 .div-jukebox {
   position: absolute;
-  left: 40%;
+  left: 27%;
   top: 5%;
   width: 60%;
-  height: 75%;
+  height: 80%;
   /* border: 2px solid purple; */
   z-index: 4;
   cursor: pointer;
 }
 
 .div-jukebox:hover~.jukebox {
-  background: url('../images/button/jukebox-animated.png');
+  background: url('../images/button/hiburan-animated.png');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -620,8 +588,8 @@
 /* ANGPAO */
 .parent-angpao {
   position: absolute;
-  left: 3%;
-  bottom: 0;
+  left: -5%;
+  bottom: -2%;
   width: 25%;
   height: 45%;
   /* border: 1px solid pink; */
@@ -630,12 +598,10 @@
 
 .angpao {
   position: absolute;
-  /* left: 3%; */
-  /* bottom: 0; */
   width: 100%;
   height: 100%;
   background: url('../images/button/ayam-still.png');
-  background-size: 100% auto;
+  background-size: 105% auto;
   background-repeat: no-repeat;
   background-position: 55% 100%;
   /* border: 1px solid red; */
@@ -647,22 +613,16 @@
   position: absolute;
   left: 20%;
   top: 8%;
-  width: 60%;
+  width: 65%;
   height: 80%;
   /* border: 2px solid blue; */
   z-index: 7;
   cursor: pointer;
 }
 
-.parent-angpao img {
-  width: 28%;
-  height: 45%;
-  display: none;
-}
-
 .div-ayam:hover~.angpao {
   background: url('../images/button/ayam-animated.png');
-  background-size: 100% auto;
+  background-size: 105% auto;
   background-repeat: no-repeat;
   background-position: 55% 100%;
   cursor: auto;
@@ -759,4 +719,39 @@
   right: 2px;
   height: 16px;
   width: 16px;
+}
+
+/* Responsive */
+@media screen and (min-width: 1900px) {
+  .header-icon{
+    width: 60%;
+  }
+
+  .info{
+    width: 40%;
+  }
+
+  .video-mc {
+    bottom: -9%;
+    width: 400px;
+    height: 500px;
+  }
+
+  .video-wrapper {
+    top: 32%;
+    width: 55.5%;
+    height: 41%;
+  }
+
+  .parent-pelaminan{
+    top: 13%;
+  }
+
+  .parent-jukebox{
+    top: 31%;
+  }
+
+  .parent-gallery{
+    top: 12%;
+  }
 }

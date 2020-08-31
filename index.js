@@ -51,7 +51,7 @@ var arrLang = {
     'earlyBird_3': 'Jika sudah waktunya Kamu akan dapat informasi untuk bertemu dengan mempelai dan keluarga',
     'earlyBird_4': 'Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa',
     // welcoming modal - jam Karet
-    'sorry': 'Ups Anda telat, mohon maaf Anda tidak dapat bertemu dengan Tomy & Lexa. Berikut pesan dari Tomy & Lexa..',
+    'sorry': 'Kamu tidak bisa bertemu mempelai karena melewat waktu yang ditentukan. Play video di bawah ini untuk melihat pesan dari Tomy dan Lexa',
     // video call pop-up
     'vcall_1': ' detik lagi Anda akan menuju halaman video call',
     'vcall_2': 'Anda akan menunggu di ruang tunggu dan dapat kembali mengexplore website setelah video call',
@@ -676,20 +676,9 @@ $(document).ready(function() {
     toggleLanguange(tog);
   });
 
-  // Angpao-Faq Modal, when the user clicks on the button, open the modal
-  // $("#angpao").click(function() {
-  //   $("#angpaoModal").css("display", "block");
-  // });
-
   $("#faq").click(function() {
     $("#faqModal").css("display", "block");
   });
-
-  // // Exit button, go to homepage
-  // $(".home-button").click(function() {
-  //   window.location = homePath;
-  // });
-
 
   // When the user clicks on (x), close the modal
   $("span").click(function() {
@@ -724,6 +713,7 @@ function selectLanguage(check) {
     $(".lang").each(function(index, element) {
       $(this).text(arrLang[lang][$(this).attr('key')]);
     });
+    buttonNamingInd();
   }
 
   if (check.id === "checkbox-eng" && check.checked) {
@@ -732,6 +722,7 @@ function selectLanguage(check) {
     $(".lang").each(function(index, element) {
       $(this).text(arrLang[lang][$(this).attr('key')]);
     });
+    buttonNamingEng();
   }
 }
 
@@ -747,6 +738,7 @@ function toggleLanguange(tog) {
       $(".flag-right").removeClass("flag-right-off");
       next();
     });
+    buttonNamingEng();
 
   } else {
     var lang = "ind";
@@ -760,5 +752,54 @@ function toggleLanguange(tog) {
       $(".flag-left").removeClass("flag-left-off");
       next();
     });
+    buttonNamingInd();
   }
+}
+
+function buttonNamingInd(){
+  $(".angpao").css("background-image", "url('images/button/ayam-still.png')");
+  $(".souvenir").css("background-image", "url('images/button/cinderamata-still.png')");
+  $(".pelaminan").css("background-image", "url('images/button/pelaminan-still.png')");
+  $(".gallery").css("background-image", "url('images/button/galeri-still.png')");
+  $(".jukebox").css("background-image", "url('images/button/hiburan-still.png')");
+
+  $(".div-ayam").hover(function(){
+    $(".angpao").css("background-image", "url('images/button/ayam-animated.png')");
+  });
+  $(".div-souvenir").hover(function(){
+    $(".souvenir").css("background-image", "url('images/button/cinderamata-animated.png')");
+  });
+  $(".div-pelaminan").hover(function(){
+    $(".pelaminan").css("background-image", "url('images/button/pelaminan-animated.png')");
+  });
+  $(".div-gallery").hover(function(){
+    $(".gallery").css("background-image", "url('images/button/galeri-animated.png')");
+  });
+  $(".div-jukebox").hover(function(){
+    $(".jukebox").css("background-image", "url('images/button/hiburan-animated.png')");
+  });
+}
+
+function buttonNamingEng(){
+  $(".angpao").css("background-image", "url('images/button/gift-still.png')");
+  $(".souvenir").css("background-image", "url('images/button/souvenir-still.png')");
+  $(".pelaminan").css("background-image", "url('images/button/aisle-still.png')");
+  $(".gallery").css("background-image", "url('images/button/gallery-still.png')");
+  $(".jukebox").css("background-image", "url('images/button/entertainment-still.png')");
+
+  $(".div-ayam").hover(function(){
+    $(".angpao").css("background-image", "url('images/button/gift-animated.png')");
+  });
+  $(".div-souvenir").hover(function(){
+    $(".souvenir").css("background-image", "url('images/button/souvenir-animated.png')");
+  });
+  $(".div-pelaminan").hover(function(){
+    $(".pelaminan").css("background-image", "url('images/button/aisle-animated.png')");
+  });
+  $(".div-gallery").hover(function(){
+    $(".gallery").css("background-image", "url('images/button/gallery-animated.png')");
+  });
+  $(".div-jukebox").hover(function(){
+    $(".jukebox").css("background-image", "url('images/button/entertainment-animated.png')");
+  });
 }

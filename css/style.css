@@ -289,45 +289,11 @@ body {
   margin: 0;
 }
 
-/* Header */
-.header {
-  position: absolute;
-  overflow: hidden;
-  float: right;
-  right: 0;
-  margin-top: 2%;
-}
 
 .toggleLangCircle{
-  display: none;
+  opacity: 0;
 }
 
-/* Header icon */
-.header-icon {
-  width: 40%;
-  display: inline;
-  /* border: 1px solid blue; */
-}
-
-.header-icon:hover {
-  cursor: pointer;
-}
-
-.header-div {
-  float: inherit;
-  /* display: inline; */
-}
-
-.info {
-  width: 25%;
-  float: right;
-}
-
-.faq{
-  right: 0;
-  float: right;
-  margin: 0;
-}
 
 @media screen and (min-device-width: 1900px){
   .countdown span{

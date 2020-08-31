@@ -66,7 +66,6 @@
 
 /* box */
 .wrapper-prewed{
-  /* border: 1px solid red; */
   width: 12%;
   height: 23%;
   position: absolute;
@@ -77,7 +76,6 @@
 }
 
 .wrapper-lamaran{
-  /* border: 1px solid blue; */
   width: 12%;
   height: 23%;
   position: absolute;
@@ -87,7 +85,6 @@
 }
 
 .wrapper-akad{
-  /* border: 1px solid pink; */
   width: 13%;
   height: 23%;
   position: absolute;
@@ -131,7 +128,7 @@
   display: inline-block;
   vertical-align: middle;
   width: 15%;
-  font-size: 12px;
+  font-size: 1vw;
   margin: 0;
 }
 
@@ -147,10 +144,12 @@
 .text-content p {
   width: 80%;
   margin-bottom: 0;
+  font-size: 1.3vw;
 }
 
 .text-content h4 {
   margin-bottom: 4%;
+  font-size: 2vw;
 }
 
 .custom-p {

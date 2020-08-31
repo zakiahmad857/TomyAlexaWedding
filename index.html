@@ -113,7 +113,7 @@
 
       <div class="modal-content-baru content-karet">
         <h4 class="lang heading">Pesan dari tomy & lexa</h4>
-        <h6 class="lang text" key="">Kamu tidak bisa bertemu mempelai karena melewat waktu yang ditentukan. Play video di bawah ini untuk melihat pesan dari Tomy dan Lexa</h6>
+        <h6 class="lang text" key="sorry">Kamu tidak bisa bertemu mempelai karena melewat waktu yang ditentukan. Play video di bawah ini untuk melihat pesan dari Tomy dan Lexa</h6>
         <iframe id="video" width="448" height="252" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <button type="button" class="btn btn-modal" id="btn-karetModal">Lihat Resepsi</button>
       </div>
@@ -154,8 +154,8 @@
           </div>
           <div class="modal-footer modal-footer-faq text">
             <h6>Pertanyaan menyangkut teknis?</h6>
-            <a href="https://wa.me/6281386626186" target="_blank"><img src="images/whatsapp.png" class="whatsapp" alt=""></a>
-            <p>+62 81316660643</p>
+            <a href="https://wa.me/628111605090" target="_blank"><img src="images/whatsapp.png" class="whatsapp" alt=""></a>
+            <p>+62 811-1605-090</p>
           </div>
 
         </div>
@@ -241,6 +241,7 @@
           <div id="angpao" class="div-ayam"></div>
           <div class="angpao"></div>
           <img src="images/button/ayam-animated.png" alt="">
+          <img src="images/button/gift-animated.png" alt="">
         </a>
       </div>
 
@@ -249,6 +250,7 @@
           <div id="souvenir" class="div-souvenir"></div>
           <div class="souvenir"></div>
           <img src="images/button/souvenir-animated.png" alt="">
+          <img src="images/button/cinderamata-animated.png" alt="">
         </a>
       </div>
 
@@ -257,6 +259,7 @@
           <div id="pelaminan" class="div-pelaminan"></div>
           <div class="pelaminan"></div>
           <img src="images/button/pelaminan-animated.png" alt="">
+          <img src="images/button/aisle-animated.png" alt="">
         </a>
       </div>
 
@@ -265,6 +268,7 @@
           <div id="gallery" class="div-gallery"></div>
           <div class="gallery"></div>
           <img src="images/button/galeri-animated.png" alt="">
+          <img src="images/button/gallery-animated.png" alt="">
         </a>
       </div>
 
@@ -272,7 +276,8 @@
         <a href="entertainment">
           <div id="jukebox" class="div-jukebox"></div>
           <div class="jukebox"></div>
-          <img src="images/button/jukebox-animated.png" alt="">
+          <img src="images/button/hiburan-animated.png" alt="">
+          <img src="images/button/entertainment-animated.png" alt="">
         </a>
       </div>
 
@@ -462,6 +467,13 @@
       return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
     }
 
+    // BUtton naming
+    if (toggleLang.checked) {
+      $(".angpao").css("background-image", "url('images/button/gift-still.png')");
+    } else {
+
+    }
+
     // TOKEN DATA
     var name = null;
     var idPosition = null;
@@ -471,7 +483,6 @@
 
     console.log("localStorageeeeeee ");
     console.log(localStorage);
-    // console.log(welcomeState);
 
     if (cookieToken == null) {
       localStorage.clear();
@@ -690,10 +701,12 @@
 
       $("#checkbox-ind").click(function() {
         $("#toggleLang").prop('checked', false);
+        // $(".angpao").css("background-image", "url('images/button/ayam-still.png')");
       });
 
       $("#checkbox-eng").click(function() {
         $("#toggleLang").prop('checked', true);
+        // $(".angpao").css("background-image", "url('images/button/gift-still.png')");
       });
 
     }
