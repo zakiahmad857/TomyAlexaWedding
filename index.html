@@ -45,7 +45,11 @@
   <div class="desktop-content">
     <!-- lOADER -->
     <div id="loading" class="loader">
-      <img src="images/loading.svg" alt="loading" />
+      <div class="load-content">
+        <img src="images/loadtext.png" alt="text" class="loadtext">
+        <img src="images/loading.svg" alt="loading" class="loader-icon"/>
+      </div>
+
     </div>
 
     <!-- MODALS -->
@@ -186,6 +190,10 @@
     </div> -->
 
     <!-- WEB CONTENT -->
+    <div class="firstScreen">
+      <img src="images/motiongraphic.png" alt="">
+    </div>
+
     <div class="homepage">
 
       <!-- Header -->
@@ -284,7 +292,7 @@
 
   <script type="text/javascript">
   // lOADER
-
+  var fadeOutScreen = localStorage.getItem('fadeOutScreen');
     $('html, body').css({
       overflow: 'hidden',
       height: '100%'
@@ -298,6 +306,12 @@
       })
 
       $("#loading").addClass("loader-hidden");
+      if(localStorage.fadeOutScreen != 'true') {
+        $(".firstScreen").fadeOut(2000);
+        localStorage.setItem('fadeOutScreen', 'true');
+      } else {
+        $(".firstScreen").css("display", "none");
+      }
 
     });
 
@@ -501,7 +515,7 @@
       window.location = fullPath;
     }
 
-    var endTime = new Date("30 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("31 August 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
@@ -531,7 +545,7 @@
       timeNow = (Date.parse(now) / 1000);
 
       var timeLeft = endTime - timeNow;
-      console.log("timeleft " + timeLeft);
+      // console.log("timeleft " + timeLeft);
       var days = Math.floor(timeLeft / 86400);
       var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
       var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
@@ -558,7 +572,7 @@
       $(".minutes").html(minutes + "<span>:</span>");
       $(".seconds").html(seconds);
 
-      console.log(hours + ":" + minutes + ":" + seconds);
+      // console.log(hours + ":" + minutes + ":" + seconds);
 
       // Popup Vcall
       if (timeLeft <= 0 && timeLeft >= -360) {

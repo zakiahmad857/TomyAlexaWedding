@@ -18,8 +18,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo:wght@200&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheet  -->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="css/entertainment.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../css/entertainment.css">
 
 </head>
 
@@ -44,7 +44,7 @@
   <div class="desktop-content">
     <div class="entertainment-page">
       <div class="home-button">
-        <img src="images/home-button.png" alt="">
+        <img src="../images/home-button.png" alt="">
       </div>
 
       <!-- Video Call Modal -->
@@ -66,19 +66,20 @@
         </div>
       </div>
 
-      <div class="box-wrapper">
-        <div class="box box1">
-        <a href="musicstream">
-            <img src="images/play.png" alt="play">
-            <p>Norrm Radio Music Stream</p>
-        </a>
+      <div class="content-wrapper">
+        <div class="left-wrapper">
+          <div class="back-button">
+            <a href="javascript:history.back()"><img src="../images/back.png" class="btn-back" id="btn-back" alt="back"></a>
+            <p>Kembali ke Hiburan</p>
+          </div>
         </div>
-        <div class="box box2">
-        <a href="musicvideo">
-            <img src="images/play.png" alt="play">
-            <p>Antadoux Music Video</p>
-        </a>
+        <div class="video-wrapper">
+          <!-- width="1088" height="612" -->
+          <iframe id="video" class="video-besar" width="1088" height="612" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe id="video2" class="video-kecil" width="608" height="342" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p>This is Antadoux 1st video clip</p>
         </div>
+
 
       </div>
 
@@ -103,7 +104,9 @@
   <script type="text/javascript">
     // Path
     var dirPath = dirname(location.href);
-    var homePath = RemoveLastDirectoryPartOf(dirPath);
+    var entertainmentPath = RemoveLastDirectoryPartOf(dirPath);
+    console.log("galleryPath " + entertainmentPath);
+    var homePath = RemoveLastDirectoryPartOf(entertainmentPath);
 
     function dirname(path) {
       return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
@@ -115,8 +118,13 @@
       return (the_arr.join('/'));
     }
 
+    // Exit button, go to homepage
     $(".home-button").click(function() {
       window.location = homePath;
+    });
+
+    $("#btn-back").click(function() {
+      window.location = entertainmentPath;
     });
 
     // TOKEN DATA
