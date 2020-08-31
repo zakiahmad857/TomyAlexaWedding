@@ -312,6 +312,9 @@
 
 .content-faq{
   overflow-y: initial !important;
+  padding: 5%;
+  border-radius: 2.5rem;
+  background-color: #F6F5F5;
 }
 
 .modal-body{
@@ -328,12 +331,6 @@
   display: inline;
 }
 
-.content-faq{
-  padding: 5%;
-  border-radius: 2.5rem;
-  background-color: #F6F5F5;
-}
-
 .content-faq h6{
   font-weight: bold;
 }
@@ -341,6 +338,10 @@
 .modal-body p{
   font-size: 12px;
   display: block;
+}
+
+.listFaq{
+  margin-bottom: 0;
 }
 
 .question{
@@ -351,6 +352,10 @@
 .whatsapp{
   width: 25%;
   margin: 0;
+}
+
+.nohp{
+  color: #6E12CB;
 }
 
 .modal-faq .close{
