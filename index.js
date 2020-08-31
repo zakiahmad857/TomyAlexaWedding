@@ -763,21 +763,48 @@ function buttonNamingInd(){
   $(".gallery").css("background-image", "url('images/button/galeri-still.png')");
   $(".jukebox").css("background-image", "url('images/button/hiburan-still.png')");
 
-  $(".div-ayam").hover(function(){
+  $(".div-ayam").hover(
+    function(){
     $(".angpao").css("background-image", "url('images/button/ayam-animated.png')");
-  });
-  $(".div-souvenir").hover(function(){
-    $(".souvenir").css("background-image", "url('images/button/cinderamata-animated.png')");
-  });
-  $(".div-pelaminan").hover(function(){
-    $(".pelaminan").css("background-image", "url('images/button/pelaminan-animated.png')");
-  });
-  $(".div-gallery").hover(function(){
-    $(".gallery").css("background-image", "url('images/button/galeri-animated.png')");
-  });
-  $(".div-jukebox").hover(function(){
+    },
+    function(){
+      $(".angpao").css("background-image", "url('images/button/ayam-still.png')");
+    }
+  );
+  $(".div-souvenir").hover(
+    function(){
+      $(".souvenir").css("background-image", "url('images/button/cinderamata-animated.png')");
+    },
+    function(){
+        $(".souvenir").css("background-image", "url('images/button/cinderamata-still.png')");
+    }
+  );
+  $(".div-pelaminan").hover(
+
+    function(){
+      $(".pelaminan").css("background-image", "url('images/button/pelaminan-animated.png')");
+    },
+    function(){
+      $(".pelaminan").css("background-image", "url('images/button/pelaminan-still.png')");
+    }
+  );
+  $(".div-gallery").hover(
+    function(){
+      $(".gallery").css("background-image", "url('images/button/galeri-animated.png')");
+    },
+    function(){
+      $(".gallery").css("background-image", "url('images/button/galeri-still.png')");
+    }
+  );
+  $(".div-jukebox").hover(
+
+    function(){
     $(".jukebox").css("background-image", "url('images/button/hiburan-animated.png')");
-  });
+    },
+    function(){
+      $(".jukebox").css("background-image", "url('images/button/hiburan-still.png')");
+    }
+  );
 }
 
 function buttonNamingEng(){
@@ -787,19 +814,46 @@ function buttonNamingEng(){
   $(".gallery").css("background-image", "url('images/button/gallery-still.png')");
   $(".jukebox").css("background-image", "url('images/button/entertainment-still.png')");
 
-  $(".div-ayam").hover(function(){
+  $(".div-ayam").hover(
+    function(){
     $(".angpao").css("background-image", "url('images/button/gift-animated.png')");
-  });
-  $(".div-souvenir").hover(function(){
-    $(".souvenir").css("background-image", "url('images/button/souvenir-animated.png')");
-  });
-  $(".div-pelaminan").hover(function(){
-    $(".pelaminan").css("background-image", "url('images/button/aisle-animated.png')");
-  });
-  $(".div-gallery").hover(function(){
-    $(".gallery").css("background-image", "url('images/button/gallery-animated.png')");
-  });
-  $(".div-jukebox").hover(function(){
+    },
+    function(){
+      $(".angpao").css("background-image", "url('images/button/gift-still.png')");
+    }
+  );
+  $(".div-souvenir").hover(
+    function(){
+      $(".souvenir").css("background-image", "url('images/button/souvenir-animated.png')");
+    },
+    function(){
+        $(".souvenir").css("background-image", "url('images/button/souvenir-still.png')");
+    }
+  );
+  $(".div-pelaminan").hover(
+
+    function(){
+      $(".pelaminan").css("background-image", "url('images/button/aisle-animated.png')");
+    },
+    function(){
+      $(".pelaminan").css("background-image", "url('images/button/aisle-still.png')");
+    }
+  );
+  $(".div-gallery").hover(
+    function(){
+      $(".gallery").css("background-image", "url('images/button/gallery-animated.png')");
+    },
+    function(){
+      $(".gallery").css("background-image", "url('images/button/gallery-still.png')");
+    }
+  );
+  $(".div-jukebox").hover(
+
+    function(){
     $(".jukebox").css("background-image", "url('images/button/entertainment-animated.png')");
-  });
+    },
+    function(){
+      $(".jukebox").css("background-image", "url('images/button/entertainment-still.png')");
+    }
+  );
 }
