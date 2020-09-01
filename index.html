@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
   <title>Tomy & Lexa | Virtual Wedding Reception</title>
   <link rel="icon" href="images/favicon-16.png">
@@ -65,20 +66,20 @@
           <div class="mx-auto">
             <label class="option_item option1">
               <input type="checkbox" id="checkbox-ind" class="checkbox">
-              <div class="option_inner">
-                  <img src="images/lang/indo.png" class="flag flag-indo" alt="indonesia">
+              <div class="option_inner flag-indo">
+                <div class="inner inner-indo"></div>
               </div>
             </label>
             <label class="option_item option2">
               <input type="checkbox" id="checkbox-eng" class="checkbox">
-              <div class="option_inner">
-                <img src="images/lang/uk.png" class="flag flag-uk" alt="indonesia">
+              <div class="option_inner flag-uk">
+                <div class="inner inner-uk"></div>
               </div>
             </label>
           </div>
         </div>
 
-        <button type="button" class="lang btn btn-modal" key="" id="btn-welcome">Lanjut</button>
+        <button type="button" class="lang btn btn-modal btn-welcome" key="" id="btn-welcome">Lanjut</button>
       </div>
 
     </div>
@@ -308,7 +309,7 @@
 
       $("#loading").addClass("loader-hidden");
       if(localStorage.fadeOutScreen != 'true') {
-        $(".firstScreen").fadeOut(2000);
+        $(".firstScreen").fadeOut(2500);
         localStorage.setItem('fadeOutScreen', 'true');
       } else {
         $(".firstScreen").css("display", "none");

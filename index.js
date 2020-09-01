@@ -498,84 +498,84 @@ if(browserHeight > 1.3*defaultBrowser){
   $(".desktop-content").css('display', 'none');
 }
 
-$(window).resize(function() {
-  getZoomValues();
-
-  browserWidth = $(window).width();
-  browserHeight = $(window).height();
-
-  console.log('window was resized');
-
-  console.log("screenWidth " + screenWidth);
-  console.log("screenHeight " + screenHeight);
-  console.log("browserWidth " + browserWidth);
-  console.log("browserHeight " + browserHeight);
-  console.log("perfectWidth " + perfectWidth);
-  console.log("perfectHeight " + perfectHeight);
-  console.log("browserZoom " + browserZoom);
-
-  if ((browserZoom > 1.1)){
-    $(".browserZoomOut").css('display', 'block');
-    $(".browserZoomIn").css('display', 'none');
-    $(".browser-resize").css('display', 'none');
-    $(".mobile-content").css('display', 'none');
-    $(".desktop-content").css('display', 'none');
-    console.log("masuk 1");
-  } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
-    $(".browser-resize").css('display', 'block');
-    $(".browserZoomOut").css('display', 'none');
-    $(".browserZoomIn").css('display', 'none');
-    $(".mobile-content").css('display', 'none');
-    $(".desktop-content").css('display', 'none');
-    console.log("masuk 7");
-  } else if (browserZoom > 1){
-    $(".video-view").addClass("maskResize");
-    $(".video-placeholder").addClass("maskResize");
-    $(".browserZoomOut").css('display', 'none');
-    $(".desktop-content").css('display', 'block');
-    $(".browser-resize").css('display', 'none');
-    console.log("masuk 2");
-  } else if (browserZoom == 1){
-    $(".frameResize").removeClass("transformZoomOut");
-    $(".video-view").removeClass("maskResize");
-    $(".video-placeholder").removeClass("maskResize");
-    $(".desktop-content").css('display', 'block');
-    $(".browserZoomIn").css('display', 'none');
-    $(".browserZoomOut").css('display', 'none');
-    $(".browser-resize").css('display', 'none');
-    $(".mobile-content").css('display', 'none');
-    console.log("masuk 3");
-  } else if (browserZoom == 0.9){
-    $(".frameResize").addClass("transformZoomOut");
-    $(".frameResize2").addClass("transformZoomOut2");
-    $(".frameResize").removeClass("transformZoomOut80");
-    $(".desktop-content").css('display', 'block');
-    console.log("masuk 4");
-  } else if (browserZoom == 0.8){
-    $(".frameResize").addClass("transformZoomOut80");
-    $(".frameResize").removeClass("transformZoomOut")
-    $(".frameResize2").removeClass("transformZoomOut2");
-    $(".desktop-content").css('display', 'block');
-    $(".browserZoomIn").css('display', 'none');
-    $(".browserZoomOut").css('display', 'none');
-    console.log("Masuk 5");
-  } else if ((browserZoom < 0.8)){
-    $(".browserZoomIn").css('display', 'block');
-    $(".browserZoomOut").css('display', 'none');
-    $(".browser-resize").css('display', 'none');
-    $(".mobile-content").css('display', 'none');
-    $(".desktop-content").css('display', 'none');
-    console.log("masuk 6");
-  } else {
-    $(".desktop-content").css('display', 'block');
-    console.log("CONTENT MUNCUL");
-    $(".browser-resize").css('display', 'none');
-    $(".browserZoomOut").css('display', 'none');
-    $(".browserZoomIn").css('display', 'none');
-    $(".mobile-content").css('display', 'none');
-  }
-
-});
+// $(window).resize(function() {
+//   getZoomValues();
+//
+//   browserWidth = $(window).width();
+//   browserHeight = $(window).height();
+//
+//   console.log('window was resized');
+//
+//   console.log("screenWidth " + screenWidth);
+//   console.log("screenHeight " + screenHeight);
+//   console.log("browserWidth " + browserWidth);
+//   console.log("browserHeight " + browserHeight);
+//   console.log("perfectWidth " + perfectWidth);
+//   console.log("perfectHeight " + perfectHeight);
+//   console.log("browserZoom " + browserZoom);
+//
+//   if ((browserZoom > 1.1)){
+//     $(".browserZoomOut").css('display', 'block');
+//     $(".browserZoomIn").css('display', 'none');
+//     $(".browser-resize").css('display', 'none');
+//     $(".mobile-content").css('display', 'none');
+//     $(".desktop-content").css('display', 'none');
+//     console.log("masuk 1");
+//   } else if ((browserWidth < perfectWidth) || (browserHeight < perfectHeight)) {
+//     $(".browser-resize").css('display', 'block');
+//     $(".browserZoomOut").css('display', 'none');
+//     $(".browserZoomIn").css('display', 'none');
+//     $(".mobile-content").css('display', 'none');
+//     $(".desktop-content").css('display', 'none');
+//     console.log("masuk 7");
+//   } else if (browserZoom > 1){
+//     $(".video-view").addClass("maskResize");
+//     $(".video-placeholder").addClass("maskResize");
+//     $(".browserZoomOut").css('display', 'none');
+//     $(".desktop-content").css('display', 'block');
+//     $(".browser-resize").css('display', 'none');
+//     console.log("masuk 2");
+//   } else if (browserZoom == 1){
+//     $(".frameResize").removeClass("transformZoomOut");
+//     $(".video-view").removeClass("maskResize");
+//     $(".video-placeholder").removeClass("maskResize");
+//     $(".desktop-content").css('display', 'block');
+//     $(".browserZoomIn").css('display', 'none');
+//     $(".browserZoomOut").css('display', 'none');
+//     $(".browser-resize").css('display', 'none');
+//     $(".mobile-content").css('display', 'none');
+//     console.log("masuk 3");
+//   } else if (browserZoom == 0.9){
+//     $(".frameResize").addClass("transformZoomOut");
+//     $(".frameResize2").addClass("transformZoomOut2");
+//     $(".frameResize").removeClass("transformZoomOut80");
+//     $(".desktop-content").css('display', 'block');
+//     console.log("masuk 4");
+//   } else if (browserZoom == 0.8){
+//     $(".frameResize").addClass("transformZoomOut80");
+//     $(".frameResize").removeClass("transformZoomOut")
+//     $(".frameResize2").removeClass("transformZoomOut2");
+//     $(".desktop-content").css('display', 'block');
+//     $(".browserZoomIn").css('display', 'none');
+//     $(".browserZoomOut").css('display', 'none');
+//     console.log("Masuk 5");
+//   } else if ((browserZoom < 0.8)){
+//     $(".browserZoomIn").css('display', 'block');
+//     $(".browserZoomOut").css('display', 'none');
+//     $(".browser-resize").css('display', 'none');
+//     $(".mobile-content").css('display', 'none');
+//     $(".desktop-content").css('display', 'none');
+//     console.log("masuk 6");
+//   } else {
+//     $(".desktop-content").css('display', 'block');
+//     console.log("CONTENT MUNCUL");
+//     $(".browser-resize").css('display', 'none');
+//     $(".browserZoomOut").css('display', 'none');
+//     $(".browserZoomIn").css('display', 'none');
+//     $(".mobile-content").css('display', 'none');
+//   }
+//
+// });
 
 
 // Detect Mobile Device
