@@ -23,22 +23,66 @@ var arrLang = {
     'welcome': 'Welcome',
     'language': 'Choose Language',
     // welcoming modal - early bird
-    'earlyBird_1': 'Video Call Access',
-    'earlyBird_2': 'We will give you the video call access in',
-    'earlyBird_3': 'The video call access will show up automatically when the countdown is done.',
-    'earlyBird_4': 'While waiting, let us show you around the "Reception Venue"',
+    'earlyBird_1': 'Meeting the Bride & Groom ',
+    'earlyBird_2': 'You will meet the lovebirds in:',
+    'earlyBird_3': 'There will be a pop-up information to notify you when it’s time to see the bride & groom',
+    'earlyBird_4': 'While waiting, let us show you around what can be seen at Tomy & Lexa’s Reception',
     // welcoming modal - jam Karet
-    'sorry': 'Whoops you’re late, we’re sorry you’re not able to meet Tomy & Lexa. Here some message from them..',
+    'sorry_1': 'A MESSAGE FROM tomy & lexa',
+    'sorry_2': 'Whoops! You’re late, we’re sorry you won’t be able to meet Tomy & Lexa. Don’t worry they have prepared you a message below:',
     // video call pop-up
-    'vcall_1': ' detik lagi Anda akan menuju halaman video call',
-    'vcall_2': 'You will be seated in the waiting room, you can explore the website after the video call',
+    'vcall_1': 'Get Ready! 3 minutes to meet the bride & groom',
+    'vcall_2': 'You will be seated in the waiting room, If you have any question you can ask the host',
     // angpao
     'gift': 'Send Gift with Ease :)',
     'bank': 'Via Bank Transfer',
     'norek': 'Account number',
     // Pelaminan
     'in-pelaminan': "Who's in:",
-    'next-pelaminan': "Up next:",
+    // button Next
+    'next': 'Next',
+    'next-karet': 'Back to Reception',
+    // Countdown
+    'countdown': 'to meet the couple',
+    // faq
+    'que1': 'If I’m late to a video call, can I still meet with the bride and groom?',
+    'ans1': 'We’re sorry due to limited time, the video call cannot be allocated to another time.',
+    'que2': 'Can I change the time of my video call session?',
+    'ans2': 'Due to limited time, the time to meet the bride and groom has already been scheduled and cannot be changed',
+    'que3': 'If I don’t get the chance to meet the bride and groom, can I still take a picture with them?',
+    'ans3': 'Too bad you can’t since the photo session can only be taken place during the video call',
+    'que4': 'Siapa saja yang ada di balik pembuatan kondangan virtual Tomy & Lexa?',
+    'footerfaq': 'Do you have any technical difficulties?',
+    // angpao
+    'amplopTitle': 'Show your love!',
+    'amplopText1': 'Don’t mind the hassle, you can still send your love for Tomy and Lexa ',
+    'amplopHp': 'Phone Number 081316660643',
+    'amplopRek': 'Account Number 6790050809',
+    'amplopText2': 'You can also send your gift to the address below:',
+    // souvenir
+    'souvenir1': 'This digital souvenir is self-made by Alexa and Tomy, special for you.',
+    'souvenir2': 'It is a music album that Alexa and Tomy had worked on since 2019 and they named it Antadoux.',
+    'souvenir3': 'Happy listening!',
+    'download': 'Download Souvenir',
+    // entertainment
+    'backHiburan': 'Back to Entertainment',
+    'musicVideo': 'This is the first music video from Antadoux, taken from their first single “Emotion in Motion”.',
+    'musicStream': 'RAYKA & OFRI from OFFSET.TV will keep the reception vibes with some tunes and melodies',
+    'lokasi': 'Location: Bandung, West Java',
+    // Gallery - akad
+    'backGallery': 'Back to Gallery',
+    'akad_1': 'is a wedding ceremony that was hosted on 5th of September 2020,',
+    'akad_2': '14.00-15.30, at Pendopo Kemang, ',
+    'akad_3': 'Jakarta Selatan.',
+    'akad_4': 'Alexa dan Tomy were in national traditional costume of Lampung, Sumatera -- the hometown of Alexa’s grandma from her mother side.',
+    // Gallery - lamaran
+    'lamaran_1': 'Lamaran is an Indonesian engagement tradition that’s usually happen before the wedding. ',
+    'lamaran_2': 'In this event, Tomy and his family came to Alexa’s house to meet Alexa and her family for the proposal.',
+    // vcall
+    'kamera': 'Camera',
+    'mic': 'Microphone',
+    'vcall': 'Please choose the camera and mic  you’re using because it can’t be changed afterwards.',
+    'mulaiVcall': 'Start Video Call',
   },
 
   'ind': {
@@ -51,17 +95,57 @@ var arrLang = {
     'earlyBird_3': 'Jika sudah waktunya Kamu akan dapat informasi untuk bertemu dengan mempelai dan keluarga',
     'earlyBird_4': 'Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa',
     // welcoming modal - jam Karet
-    'sorry': 'Kamu tidak bisa bertemu mempelai karena melewat waktu yang ditentukan. Play video di bawah ini untuk melihat pesan dari Tomy dan Lexa',
+    'sorry_1': 'Pesan dari tomy & lexa',
+    'sorry_2': 'Kamu tidak bisa bertemu mempelai karena melewat waktu yang ditentukan. Play video di bawah ini untuk melihat pesan dari Tomy dan Lexa',
     // video call pop-up
-    'vcall_1': ' detik lagi Anda akan menuju halaman video call',
-    'vcall_2': 'Anda akan menunggu di ruang tunggu dan dapat kembali mengexplore website setelah video call',
-    // angpao
-    'gift': 'Kirim hadiah dengan mudah :) wkwk',
-    'bank': 'Via Transfer Bank',
-    'norek': 'No rekening',
+    'vcall_1': 'Sebentar lagi kamu akan bertemu dengan mempelai.',
+    'vcall_2': 'Sambil mengantri di ruang tunggu jika kamu punya pertanyaan dapat bertanya kepada host.',
     // Pelaminan
     'in-pelaminan': "Sedang di pelaminan:",
-    'next-pelaminan': "Selanjutnya:",
+    // button
+    'next': 'Lanjut',
+    'next-karet': 'Lihat Resepsi',
+    // Countdown
+    'countdown': 'bertemu pengantin',
+    // faq
+    'que1': 'Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi?',
+    'ans1': 'Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang',
+    'que2': 'Apakah bisa mengubah jam video call?',
+    'ans2': 'Karena keterbatasan waktu, jam untuk bertemu mempelai sudah ditentukan',
+    'que3': 'Jika saya tidak sempat foto bersama mempelai apakah bisa foto lagi?',
+    'ans3': 'Sayangnya tidak bisa, karena hanya bisa foto di dalam pelaminan',
+    'que4': 'Siapa saja yang ada di balik pembuatan kondangan virtual Tomy & Lexa?',
+    'footerfaq': 'Pertanyaan menyangkut teknis?',
+    // angpao
+    'amplopTitle': 'Amplop Digital',
+    'amplopText1': 'Jangan kuatir, kamu tetap bisa memberikan amplop digital untuk Tomy & Lexa dengan cara di bawah ini:',
+    'amplopHp': 'Nomor Telfon 081316660643',
+    'amplopRek': 'Nomor Rekening 6790050809',
+    'amplopText2': 'Kamu juga bisa mengirimkan kado pernikahan ke alamat di bawah ini:',
+    // souvenir
+    'souvenir1': 'Cinderamata digital ini dibuat sendiri oleh Alexa & Tomy spesial untuk kamu.',
+    'souvenir2': 'Yang merupakan sebuah album musik yang telah dikerjakan oleh Alexa & Tomy sejak tahun 2019. Mereka menggunakan nama Antadoux untuk projek musik ini.',
+    'souvenir3': 'Selamat mendengarkan',
+    'download': 'Download Cinderamata',
+    // entertainment
+    'backHiburan': 'Kembali ke Hiburan',
+    'musicVideo': 'This is the first music video from Antadoux, taken from their first single “Emotion in Motion”.',
+    'musicStream': 'RAYKA & OFRI dari OFFSET.TV akan menemanimu selama resepsi dengan suguhan nada-nada pilihan',
+    'lokasi': 'Lokasi: Bandung, Jawa Barat',
+    // Gallery - akad
+    'backGallery': 'Kembali ke Galeri',
+    'akad_1': 'berlangsung 5 September 2020',
+    'akad_2': 'jam 15:00-17:00,',
+    'akad_3': 'di Pendopo Kemang, Jakarta Selatan.',
+    'akad_4': 'Alexa dan Tomy mengenakan pakaian adat Lampung, Sumatera dari keluarga nenek dari Bundanya Alexa',
+    // Gallery - lamaran
+    'lamaran_1': 'Merupakan salah satu rangkaian acara dalam sebuah pernikahan. Dalam acara ini Tomy dan keluarga datang ke rumah Alexa',
+    'lamaran_2': 'untuk bertemu keluarga Alexa dan melamarnya, dengan membawa seserahan. Acara ini berlangsung satu hari sebelum pernikahan.',
+    // vcall
+    'kamera': 'Kamera',
+    'mic': 'Mikrofon',
+    'vcall': 'Silakan pilih dan pastikan kamera dan mikrofon yang akan digunakan menyala',
+    'mulaiVcall': 'Mulai Video Call',
   }
 };
 

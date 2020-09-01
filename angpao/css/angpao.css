@@ -52,39 +52,38 @@ body{
 /* Modal Vcall */
 .content-vcall {
   width: 32%;
-  padding: 5% 2%;
+  padding: 3%;
 }
 
 .content-vcall h4 {
-  width: 85%;
   margin: auto;
+  margin-bottom: 7%;
+}
+
+.content-vcall h5 {
+  font-weight: normal;
 }
 
 .content-wrapper{
   width: 85%;
   height: 70%;
-  background-color: rgba(221, 77, 244, 0.16);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 15px rgba(255, 255, 255, 0.25);
-  border-radius: 5px;
 
   position: relative;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 13%;
+  left: 0%;
 
   color: #FFFFFF;
   padding: 3% 5%;
 }
 
 .content-wrapper p{
-  font-size: 16px;
+  font-size: 1.2vw;
 }
 
 .content-left{
-  /* border: 1px solid black; */
   width: 60%;
   float: left;
-  padding-right: 10%;
+  padding-right: 5%;
   margin-top: 2%;
   font-style: normal;
 }
@@ -102,15 +101,13 @@ body{
   height: 320px;
   display: inline-block;
   float: left;
-  margin-right: 20%;
+  margin-right: 10%;
 }
 
 .qrcode-list {
   display: flex;
-  /* flex-wrap: wrap; */
   width: 100%;
   margin: 5% 0;
-  /* border: 1px solid red; */
 }
 
 .qrcode {
@@ -122,12 +119,13 @@ body{
 
 .qrcode p {
   margin: auto;
-  font-size: 12px;
+  font-size: 1vw;
 }
 
 .desc-angpao{
   width: 75%;
   margin: auto;
+  margin-bottom: 0;
 }
 
 .qrcode img{
@@ -143,13 +141,54 @@ body{
   margin-right: 10%;
 }
 
-.bca img{
-  width: 95%;
-}
-
 .alamat{
   width: 80%;
   font-weight: bolder;
+}
+
+/* LIVE MC */
+.live-mc {
+  position: absolute;
+  right: 2%;
+  width: 20%;
+  height: 60%;
+  bottom: -10%;
+  background: url('../images/tvmc.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 150% auto;
+  z-index: 10;
+  /* border: 1px solid red; */
+}
+
+.video-mc {
+  position: absolute;
+  right: 1.5%;
+  width: 20%;
+  height: 60%;
+  bottom: 2%;
+  /* border: 1px solid black; */
+}
+
+.video-wrapper {
+  position: relative;
+  top: 57.5%;
+  align-items: center;
+  margin: auto;
+  width: 60%;
+  height: 40%;
+  z-index: 9;
+  /* border: 1px solid blue; */
+}
+
+.video-wrapper iframe {
+  -webkit-mask-image: url('../images/mask2.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  width: 95%;
+  height: 80%;
+  margin: auto;
+  z-index: 9;
 }
 
 @media screen and (min-width:1900px){
@@ -159,21 +198,20 @@ body{
 
   .content-wrapper h4{
     font-size: 2.5rem;
-    /*margin-bottom: 2%;*/
   }
 
-  .content-wrapper p{
+  /* .content-wrapper p{
     font-size: 22px;
     margin-bottom: 5%;
     font-weight: normal;
-  }
+  } */
 
   .qrcode-list{
     margin-top: 4%;
   }
-  .qrcode p{
+  /* .qrcode p{
     font-size: 20px;
-  }
+  } */
 
   .desc-angpao{
     width: 90%;

@@ -48,13 +48,11 @@
       </div>
 
       <!-- Video Call Modal -->
-      <div id="vcallModal" class="modal">
-
-        <div class="modal-content content-vcall">
-          <h4 class="lang text">Sebentar lagi kamu bertemu dengan mempelai.</h4>
-          <h4 class="lang text">Silakan masuk antrian.</h4>
+      <div id="vcallModal" class="modal modal-baru">
+        <div class="modal-content-baru content-vcall">
+          <h4 class="lang text" key="vcall_1">Sebentar lagi kamu akan bertemu dengan mempelai.</h4>
+          <h5 class="lang text" key="vcall_2">Sambil mengantri di ruang tunggu jika kamu punya pertanyaan dapat bertanya kepada host.</h5>
         </div>
-
       </div>
 
       <div class="countdown countdown-page">
@@ -62,7 +60,7 @@
           <span class="vl"></span>
           <span>- </span>
           <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span>
-          <p class="textResize">bertemu pengantin</p>
+          <p class="textResize lang" key="countdown">bertemu pengantin</p>
         </div>
       </div>
 
@@ -91,11 +89,12 @@
 
       </div>
 
-      <!-- <div id="live-mc" class="live-mc"></div>
-
-      <div class="video-mc embed-responsive">
-        <iframe class="" src="https://www.youtube.com/embed/6ksnNqA302I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div> -->
+      <div id="live-mc" class="live-mc"></div>
+      <div class="video-mc">
+        <div class="video-wrapper">
+          <iframe id="videoMC" src="https://www.youtube.com/embed/pUGdf_pjMOM?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
   </div>
 

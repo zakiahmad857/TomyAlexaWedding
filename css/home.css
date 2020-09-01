@@ -313,12 +313,16 @@
 /* Modal Vcall */
 .content-vcall {
   width: 32%;
-  padding: 5% 2%;
+  padding: 3%;
 }
 
 .content-vcall h4 {
-  width: 85%;
   margin: auto;
+  margin-bottom: 7%;
+}
+
+.content-vcall h5 {
+  font-weight: normal;
 }
 
 
@@ -330,6 +334,8 @@
   top: 50% !important;
   transform: translateX(-50%) translateY(-50%) !important;
 }
+
+
 
 @media (min-width:576px){
   .modal-dialog{
@@ -364,7 +370,7 @@
 }
 
 .modal-body p{
-  font-size: 12px;
+  font-size: 1vw;
   display: block;
 }
 
@@ -374,7 +380,8 @@
 
 .question{
   margin-bottom: 0;
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: 1.2vw;
 }
 
 .whatsapp{

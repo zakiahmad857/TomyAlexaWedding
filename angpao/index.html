@@ -48,13 +48,11 @@
       </div>
 
       <!-- Video Call Modal -->
-      <div id="vcallModal" class="modal">
-
-        <div class="modal-content content-vcall">
-          <h4 class="lang text">Sebentar lagi kamu bertemu dengan mempelai.</h4>
-          <h4 class="lang text">Silakan masuk antrian.</h4>
+      <div id="vcallModal" class="modal modal-baru">
+        <div class="modal-content-baru content-vcall">
+          <h4 class="lang text" key="vcall_1">Sebentar lagi kamu akan bertemu dengan mempelai.</h4>
+          <h5 class="lang text" key="vcall_2">Sambil mengantri di ruang tunggu jika kamu punya pertanyaan dapat bertanya kepada host.</h5>
         </div>
-
       </div>
 
       <div class="countdown countdown-page">
@@ -62,36 +60,39 @@
           <span class="vl"></span>
           <span>- </span>
           <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span>
-          <p class="textResize">bertemu pengantin</p>
+          <p class="lang textResize" key="countdown">bertemu pengantin</p>
         </div>
       </div>
 
       <div class="content-wrapper">
-        <h4>Amplop Digital</h4>
+        <h4 class="lang" key="amplopTitle">Amplop Digital</h4>
         <div class="content-left">
-          <p>Jangan kuatir, kamu tetap bisa memberikan amplop digital untuk Tomy & Lexa dengan cara di bawah ini:</p>
+          <p class="lang" key="amplopText1">Jangan kuatir, kamu tetap bisa memberikan amplop digital untuk Tomy & Lexa dengan cara di bawah ini:</p>
           <div class="qrcode-list">
             <div class="qrcode ovo">
               <p>Scan QR via OVO</p>
               <img src="images/ovo.png" alt="ovo">
-              <p class="desc-angpao">Nomor Telfon 081316660643 a/n Tomy Herseta</p>
+              <p class="desc-angpao lang" key="amplopHp">Nomor Telfon 081316660643</p>
+              <p>a/n Alexandra R</p>
             </div>
             <div class="qrcode gopay">
               <p class="lang">Scan QR via Gopay</p>
               <img src="images/gopay.png" alt="gopay">
-              <p class="desc-angpao">Nomor Telfon 081316660643 a/n Tomy Herseta</p>
+              <p class="desc-angpao lang" key="amplopHp">Nomor Telfon 081316660643</p>
+              <p>a/n Alexandra R</p>
             </div>
             <div class="qrcode bca">
               <p>Scan QR via BCA</p>
               <img src="images/bca.png" alt="bca">
-              <p class="desc-angpao">Nomor rekening 12345678910 a/n Tomy Herseta</p>
+              <p class="desc-angpao lang" key="amplopRek">Nomor rekening 6790050809</p>
+              <p>a/n Alexandra R</p>
             </div>
           </div>
         </div>
 
         <div class="content-right">
           <span class="vl2"></span>
-          <p>Kamu juga bisa mengirimkan kado pernikahan ke alamat di bawah ini:</p>
+          <p class="lang" key="amplopText2">Kamu juga bisa mengirimkan kado pernikahan ke alamat di bawah ini:</p>
           <p class="alamat">Jl. Mawar no 26 Komp.deplu Pondok Aren, Tangerang Selatan 15225</p>
         </div>
 
@@ -99,9 +100,10 @@
       </div>
 
       <div id="live-mc" class="live-mc"></div>
-
-      <div class="video-mc embed-responsive">
-        <iframe class="" src="https://www.youtube.com/embed/6ksnNqA302I?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="video-mc">
+        <div class="video-wrapper">
+          <iframe id="videoMC" src="https://www.youtube.com/embed/pUGdf_pjMOM?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
 
     </div>

@@ -79,7 +79,7 @@
           </div>
         </div>
 
-        <button type="button" class="lang btn btn-modal btn-welcome" key="" id="btn-welcome">Lanjut</button>
+        <button type="button" class="lang btn btn-modal btn-welcome" key="next" id="btn-welcome">Lanjut</button>
       </div>
 
     </div>
@@ -96,7 +96,7 @@
         </div>
         <h6 class="lang text" key="earlyBird_3">Jika sudah waktunya Kamu akan dapat informasi untuk bertemu dengan mempelai dan keluarga</h6>
         <p class="lang text" key="earlyBird_4">Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa</p>
-        <button type="button" class="lang btn btn-modal" id="btn-next" name="next">Lanjut</button>
+        <button type="button" class="lang btn btn-modal" id="btn-next" key="next">Lanjut</button>
       </div>
 
     </div>
@@ -104,8 +104,8 @@
     <!-- Video Call Modal -->
     <div id="vcallModal" class="modal modal-baru">
       <div class="modal-content-baru content-vcall">
-        <h4 class="lang text">Sebentar lagi kamu bertemu dengan mempelai.</h4>
-        <h4 class="lang text">Silakan masuk antrian.</h4>
+        <h4 class="lang text" key="vcall_1">Sebentar lagi kamu akan bertemu dengan mempelai.</h4>
+        <h5 class="lang text" key="vcall_2">Sambil mengantri di ruang tunggu jika kamu punya pertanyaan dapat bertanya kepada host.</h5>
       </div>
     </div>
 
@@ -113,10 +113,10 @@
     <div id="karetModal" class="modal modal-baru">
 
       <div class="modal-content-baru content-karet">
-        <h4 class="lang heading">Pesan dari tomy & lexa</h4>
-        <h6 class="lang text" key="sorry">Kamu tidak bisa bertemu mempelai karena melewat waktu yang ditentukan. Play video di bawah ini untuk melihat pesan dari Tomy dan Lexa</h6>
+        <h4 class="lang heading" key="sorry_1">Pesan dari tomy & lexa</h4>
+        <h6 class="lang text" key="sorry_2">Kamu tidak bisa bertemu mempelai karena melewat waktu yang ditentukan. Play video di bawah ini untuk melihat pesan dari Tomy dan Lexa</h6>
         <iframe id="video" width="448" height="252" src="https://www.youtube.com/embed/xOsLIiBStEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <button type="button" class="btn btn-modal" id="btn-karetModal">Lihat Resepsi</button>
+        <button type="button" class="btn btn-modal lang" key="next-karet" id="btn-karetModal">Lihat Resepsi</button>
       </div>
 
     </div>
@@ -131,13 +131,13 @@
 
           </div>
           <div class="modal-body text">
-              <p class="question">Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi?</p>
-              <p>Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang</p>
-              <p class="question">Apakah bisa mengubah jam video call?</p>
-              <p>Karena keterbatasan waktu, jam untuk bertemu mempelai sudah ditentukan</p>
-              <p class="question">Jika saya tidak sempat foto bersama mempelai apakah bisa foto lagi?</p>
-              <p>Sayangnya tidak bisa, karena hanya bisa foto di dalam pelaminan</p>
-              <p class="question">Siapa saja yang ada di balik pembuatan kondangan virtual Tomy & Lexa?</p>
+              <p class="lang question" key="que1">Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi?</p>
+              <p class="lang" key="ans1">Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang</p>
+              <p class="lang question" key="que2">Apakah bisa mengubah jam video call?</p>
+              <p class="lang" key="ans2">Karena keterbatasan waktu, jam untuk bertemu mempelai sudah ditentukan</p>
+              <p class="lang question" key="que3">Jika saya tidak sempat foto bersama mempelai apakah bisa foto lagi?</p>
+              <p class="lang" key="ans3">Sayangnya tidak bisa, karena hanya bisa foto di dalam pelaminan</p>
+              <p class="lang question" key="que4">Siapa saja yang ada di balik pembuatan kondangan virtual Tomy & Lexa?</p>
               <p class="listFaq">Project Concept: Tomy & Alexa</p>
               <p class="listFaq">UX & UI: Alexa Ronodipuro</p>
               <p class="listFaq">Developer: Arthatronic Studio</p>
@@ -150,7 +150,7 @@
 
           </div>
           <div class="modal-footer modal-footer-faq text">
-            <h6>Pertanyaan menyangkut teknis?</h6>
+            <h6 class="lang" key="footerfaq">Pertanyaan menyangkut teknis?</h6>
             <a href="https://wa.me/628111605090" target="_blank"><img src="images/whatsapp.png" class="whatsapp" alt=""></a>
             <p>Wedding CS <span class="nohp">+62 811-1605-090</span></p>
           </div>
@@ -203,17 +203,11 @@
             <img class="flag-circle ind" src="images/lang/ind-circle.png" alt="">
             <div class="ball"></div>
           </label>
-
-
         </div>
         <div class="header-div">
           <img id="faq" class="header-icon faq" src="images/faq.png" alt="">
           <img id="info" class="header-icon info" src="images/info.png" alt="">
-
-
         </div>
-
-
       </div>
 
 
@@ -222,7 +216,7 @@
           <span class="vl"></span>
           <span>- </span>
           <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span>
-          <p class="textResize">bertemu pengantin</p>
+          <p class="lang textResize" key="countdown">bertemu pengantin</p>
         </div>
       </div>
 
@@ -383,50 +377,51 @@
     var tourEng = new Tour({
       steps: [{
           element: ".countdown",
-          title: "Video & Photo Gallery",
-          content: "Take a look of Lexa & Tomy’s Pre-Wedding, Engagement and Wedding Ceremony photos and videos here",
-          placement: "right",
+          title: "Countdown Reminder",
+          content: "We know there are a lot of things to see but we don’t want you to miss out to meet the bride & groom!",
+          placement: "bottom",
         },
         {
           element: "#gallery",
           title: "Video & Photo Gallery",
-          content: "Take a look of Lexa & Tomy’s Pre-Wedding, Engagement and Wedding Ceremony photos and videos here",
-          placement: "right",
-        },
-        {
-          element: "#idPlanet",
-          title: "The Aisle",
-          content: "Take a peak of who are currently meeting the bride & groom. You can also see who’s up in the line to meet them soon!",
-          placement: "bottom",
-        },
-        {
-          element: "#angpao",
-          title: "Show your support here",
-          content: "We have provided ways on how you can support Tomy & Lexa’s in their next season.",
+          content: "Take a look of Lexa & Tomy’s Pre-Wedding, Engagement and Wedding Ceremony photos and videos here. ",
           placement: "right",
         },
         {
           element: "#souvenir",
           title: "Wedding Souvenir",
-          content: "As a thank you, Tomy & Lexa have a special little something for you to remember this precious moment with them",
+          content: "As a thank you, Tomy & Lexa have something special for you to remember this precious moment.",
           placement: "top",
+        },
+        {
+          element: "#angpao",
+          title: "Show your love here",
+          content: "We have provided ways if you want to send some wedding gift for Tomy & Lexa.",
+          placement: "right",
+        },
+        {
+          element: "#live-mc",
+          title: "MC",
+          content: "MC Chandra will accompany you throughout the event.",
+          placement: "left",
         },
         {
           element: "#jukebox",
           title: "Entertainment",
-          content: "Enjoy",
+          content: "It’s not a wedding without some music and dance performances! You can enjoy special appearances from Norrrm Radio and video from Antadoux. ",
           placement: "left",
         },
         {
-          element: "#live-mc",
-          content: "MC (name) will accompany the guests during the event but we’re sorry he/she will only use Bahasa",
-          placement: "top",
+          element: "#pelaminan",
+          title: "Aisle",
+          content: "Take a peek of who are currently meeting the bride & groom. You can also see who’s up in the line to meet them soon!",
+          placement: "bottom",
         },
         {
           element: "#info",
-          title: "Instructions",
-          content: "You can click this icon if you want to repeat the instructions",
-          placement: "left",
+          title: "Intructions",
+          content: "You can click this icon if you want to repeat the instructions.",
+          placement: "bottom",
         }
       ],
       container: 'body',
