@@ -153,11 +153,11 @@ input[type=number] {
   -webkit-mask-image: url("../images/tvtamuB.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
-  transform: scale(0.9) rotateY(180deg);;
+  transform: scale(0.9) rotateY(180deg);
  }
 
  .video-placeholder{
-   transform: scale(1);
+   transform: scale(1) rotateY(180deg);
  }
 
  .video-view-mc, .video-placeholder-mc{
@@ -170,6 +170,7 @@ input[type=number] {
    -webkit-mask-image: url("../images/maskmc.png");
    -webkit-mask-repeat: no-repeat;
    -webkit-mask-position: center;
+   transform: rotateY(180deg);
  }
 
 .dot {
@@ -410,7 +411,7 @@ input[type=number] {
 
 @media screen and (min-device-width: 1900px){
   .video-view, .video-placeholder{
-    transform: scale(0.9);
+    transform: scale(0.9)  rotateY(180deg);
   }
 
    .maskResize{
@@ -418,7 +419,7 @@ input[type=number] {
   }
 
   .video-view-mc, .video-placeholder-mc{
-    transform: scale(1);
+    transform: scale(1) rotateY(180deg);
   }
 
 }
