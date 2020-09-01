@@ -153,11 +153,11 @@ input[type=number] {
   -webkit-mask-image: url("../images/tvtamuB.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
-  transform: scale(0.9) rotateY(180deg);
+  transform: scale(0.9);
  }
 
  .video-placeholder{
-   transform: scale(1) rotateY(180deg);
+   transform: scale(1);
  }
 
  .video-view-mc, .video-placeholder-mc{
@@ -170,7 +170,6 @@ input[type=number] {
    -webkit-mask-image: url("../images/maskmc.png");
    -webkit-mask-repeat: no-repeat;
    -webkit-mask-position: center;
-   transform: rotateY(180deg);
  }
 
 .dot {
@@ -180,7 +179,7 @@ input[type=number] {
   display: inline-block;
   position: absolute;
   z-index: 9 !important;
-
+  transform:  rotateY(180deg);
 }
 
 .dot-mc{
@@ -191,6 +190,7 @@ input[type=number] {
   bottom: 2%;
   right: 1%;
   z-index: 10 !important;
+  transform:  rotateY(180deg);
    /*border: 2px solid black; */
 }
 
@@ -343,6 +343,7 @@ input[type=number] {
   width: 100%;
   position: relative;
   top: 105%;
+  transform:  rotateY(180deg);
 }
 
 .wrapper-usernameMC{
@@ -350,6 +351,7 @@ input[type=number] {
   width: 100%;
   position: relative;
   top: -25%;
+  transform:  rotateY(180deg);
 }
 
 .username {
@@ -411,7 +413,7 @@ input[type=number] {
 
 @media screen and (min-device-width: 1900px){
   .video-view, .video-placeholder{
-    transform: scale(0.9)  rotateY(180deg);
+    transform: scale(0.9);
   }
 
    .maskResize{
@@ -419,7 +421,7 @@ input[type=number] {
   }
 
   .video-view-mc, .video-placeholder-mc{
-    transform: scale(1) rotateY(180deg);
+    transform: scale(1);
   }
 
 }
