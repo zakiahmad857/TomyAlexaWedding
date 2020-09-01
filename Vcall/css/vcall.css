@@ -157,7 +157,7 @@ input[type=number] {
  }
 
  .video-placeholder{
-   transform: scale(1) rotateY(180deg);
+   transform: scale(1);
  }
 
  .video-view-mc, .video-placeholder-mc{
@@ -179,6 +179,7 @@ input[type=number] {
   display: inline-block;
   position: absolute;
   z-index: 9 !important;
+  transform:  rotateY(180deg);
 }
 
 .dot-mc{
