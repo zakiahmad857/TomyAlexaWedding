@@ -157,7 +157,7 @@ input[type=number] {
  }
 
  .video-placeholder{
-   transform: scale(1);
+   transform: scale(1) rotateY(180deg);
  }
 
  .video-view-mc, .video-placeholder-mc{
@@ -374,7 +374,7 @@ input[type=number] {
   background-size: cover;
 
   left: 50%;
-  transform: translateX(-50%) ;
+  transform: translateX(-50%) rotateY(180deg);
 }
 
 /* .video-view2, .video-placeholder2 { */
