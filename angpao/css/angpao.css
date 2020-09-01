@@ -28,6 +28,16 @@ body{
   width: 70%;
 }
 
+.angpaoanimasi{
+  position: absolute;
+  right: -2%;
+  bottom: -4%;
+}
+
+.angpaoanimasi img{
+  width: 75%;
+}
+
 .modal {
   display: none;
   z-index: 12;
