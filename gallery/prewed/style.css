@@ -1,4 +1,4 @@
-body{
+body {
   padding: 0;
   margin: 0;
 }
@@ -18,33 +18,81 @@ body{
   font-weight: normal;
 }
 
-.slide{
-  width: 200vw;
+.slide {
+  width: 100vw;
   height: 100vh;
 }
 
-.wrapper{
+.wrapper {
   display: flex;
   flex-direction: row;
-  width: 400vw;
+  width: 800vw;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
+  color: black;
 }
 
-.one{
-  background-color: pink;
+.one {
+  background-image: url('images/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
 
-.two{
-  background-color: blue;
+.two {
+  background-image: url('images/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -2;
 }
 
-.three{
-  background-color: red;
+.three {
+  background-image: url('images/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -3;
 }
 
-.four{
-  background-color: grey;
+.four {
+  background-image: url('images/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -4;
+}
+
+.five {
+  background-image: url('images/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -5;
+}
+
+.six {
+  background-image: url('images/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -6;
+}
+
+.seven {
+  background-image: url('images/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -7;
+}
+
+.eight {
+  background-image: url('images/background1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -8;
 }
 
 .outer-wrapper {
@@ -60,50 +108,343 @@ body{
 }
 
 ::-webkit-scrollbar {
-  display:none;
+  display: none;
 }
 
-.wrapperFoto1{
-  /* background-color: rgba(221, 77, 244, 0.16); */
-  color: white;
-  width: 125%;
-  height: 100%;
+.wrapperFoto1 {
+  width: 101%;
+  height: 75%;
   margin: auto;
-  padding: 1%;
   position: relative;
-  top: 50%;
+  top: 58%;
   left: 2%;
+  z-index: 3;
   transform: translateY(-50%);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 15px rgba(255, 255, 255, 0.25);
-  border-radius: 5px;
-}
-
-.back-button {
-  height: 100%;
 }
 
 .back-button img {
-  width: 12%;
+  width: 10%;
   display: inline-block;
+  cursor: pointer;
 }
 
 .back-button p {
   display: inline-block;
   vertical-align: middle;
   width: 15%;
-  font-size: 12px;
+  font-size: 1vw;
   margin: 0;
 }
 
 .left-wrapper {
+  width: 49%;
+  height: 98%;
+  float: left;
+  padding: 1%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.text-content{
+  padding: 5%;
+}
+
+.text-content p{
+  width: 80%;
+}
+
+.titleVendor{
+  font-style: italic;
+  font-weight: bold;
+  font-size: 0.9vw;
+  margin-bottom: 0;
+}
+
+.vendor1{
+  margin-top: 8%;
+}
+
+.textVendor{
+  font-style: italic;
+  font-size: 0.9vw;
+}
+
+.foto1 {
+  width: 51%;
+  height: 100%;
+}
+
+.nextpage{
+  position: absolute;
+  z-index: 4;
+  top: 42%;
+  right: 4%;
+  width: 4%;
+}
+
+.wrapperFoto2{
   width: 40%;
+  height: 60%;
+  position: absolute;
+  top: 25%;
+  left: 12%;
+  border: 1px solid red;
+}
+
+.foto2{
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.wrapperFoto3{
+  width: 28%;
+  position: absolute;
+  top: 25%;
+  left: 62%;
+  border: 1px solid red;
+}
+
+.foto3{
+  width: 100%;
+}
+
+.wrapperFoto4{
+  width: 45%;
+  position: absolute;
+  bottom: -5%;
+  left: 62%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto4{
+  width: 60%;
+  float: right;
+}
+
+.wrapperFoto5{
+  width: 42.5%;
+  position: absolute;
+  top: 25%;
+  left: 95.5%;
+  border: 1px solid red;
+}
+
+.foto5{
+  width: 62%;
   float: left;
 }
 
-.right-wrapper{
-
+.wrapperFoto5 h6{
+  text-align: right;
+  vertical-align: middle;
+  width: 20%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.foto1{
+.wrapperFoto6{
+  width: 26%;
+  position: absolute;
+  bottom: -5%;
+  left: 12%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto6{
+  width: 100%;
+  float: right;
+}
+
+.wrapperFoto7{
   width: 50%;
+  position: absolute;
+  top: 25%;
+  left: 43%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto7{
+  width: 100%;
+  float: right;
+}
+
+.wrapperFoto8{
+  width: 20%;
+  position: absolute;
+  top: 34%;
+  left: 7%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto8{
+  width: 100%;
+  float: left;
+  margin-top: 15%;
+}
+
+.wrapperFoto9{
+  width: 20%;
+  position: absolute;
+  top: 34%;
+  left: 35%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto9{
+  width: 100%;
+}
+
+.wrapperFoto10{
+  width: 45%;
+  position: absolute;
+  top: 20%;
+  left: 63%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto10{
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.wrapperFoto11{
+  width: 23.5%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto11{
+  width: 100%;
+  margin-bottom: 20%;
+}
+
+.wrapperFoto12{
+  width: 48%;
+  position: absolute;
+  top: 20%;
+  left: 55%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto12{
+  width: 100%;
+  margin-top: 5%;
+}
+
+.wrapperFoto13{
+  width: 25%;
+  position: absolute;
+  top: 20%;
+  left: 13%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto13{
+  width: 100%;
+}
+
+.wrapperFoto14{
+  width: 46%;
+  position: absolute;
+  top: 20%;
+  left: 48%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto14{
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.wrapperFoto15{
+  width: 35%;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto15{
+  width: 75%;
+  margin-bottom: 5%;
+}
+
+.wrapperFoto16{
+  width: 28%;
+  position: absolute;
+  top: 68%;
+  left: 17%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto16{
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+
+.wrapperFoto17{
+  width: 23%;
+  position: absolute;
+  top: 20%;
+  left: 51%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto17{
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.wrapperFoto18{
+  width: 43%;
+  position: absolute;
+  top: 32%;
+  left: 81%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto18{
+  width: 100%;
+}
+
+.wrapperFoto19{
+  width: 40%;
+  position: absolute;
+  top: 28%;
+  left: 40%;
+  z-index: 3;
+  border: 1px solid red;
+}
+
+.foto19{
+  width: 60%;
+  float: left;
+}
+
+.wrapperFoto19 h6{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }
