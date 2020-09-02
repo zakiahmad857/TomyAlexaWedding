@@ -94,6 +94,10 @@ body {
   width: 80%;
 }
 
+.endcall{
+  font-size: 0.9em;
+}
+
 /* Hide arrow UID input */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

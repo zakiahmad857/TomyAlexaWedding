@@ -83,6 +83,9 @@ var arrLang = {
     'mic': 'Microphone',
     'vcall': 'Please choose the camera and mic  you’re using because it can’t be changed afterwards.',
     'mulaiVcall': 'Start Video Call',
+    'endCall': 'Your photo will be sent to your registered Whatsapp number.',
+    'endCall2': 'You still can take a look around at the Reception of Tomy & Lexa.',
+    'endCallButton': 'Back to Reception'
   },
 
   'ind': {
@@ -146,6 +149,8 @@ var arrLang = {
     'mic': 'Mikrofon',
     'vcall': 'Silakan pilih dan pastikan kamera dan mikrofon yang akan digunakan menyala',
     'mulaiVcall': 'Mulai Video Call',
+    'endCall': 'Foto akan dikirim ke Whatsapp yang telah terdaftar setelah acara selesai.',
+    'endCallButton': 'Kembali ke Resepsi'
   }
 };
 
