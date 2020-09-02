@@ -172,9 +172,9 @@ body{
 
 .video-wrapper-2 p{
   position: absolute;
-  bottom: 0;
-    width: 95%;
-    right: 0
+  width: 95%;
+  right: 0;
+  /* bottom: 0; */
 }
 
 /* LIVE MC */
@@ -220,35 +220,4 @@ body{
   height: 80%;
   margin: auto;
   z-index: 9;
-}
-
-@media screen and (min-width:1900px) {
-  .home-button img {
-    width: 100%;
-  }
-
-  .video-kecil {
-    display: none;
-  }
-
-  .content-wrapper p {
-    font-size: 26px;
-  }
-
-  .box-wrapper p {
-    width: 30%;
-  }
-}
-
-@media screen and (max-width:1400px) {
-
-  .videoWrapper iframe {
-    width: 16%;
-    height: 9%;
-    z-index: 1;
-  }
-
-  .video-besar {
-    display: none;
-  }
 }

@@ -1,0 +1,13 @@
+/* Responsive */
+@media screen and (min-width:1900px){
+
+  .video-wrapper {
+    top: 58.5%;
+  }
+
+  .animation{
+    width: 35%;
+    left: 12%;
+  }
+
+}

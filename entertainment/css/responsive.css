@@ -1,0 +1,59 @@
+/* 1920 x 1080p */
+@media screen and (min-width:1900px){
+
+  .video-wrapper {
+    top: 58.5%;
+  }
+
+  .animation{
+    width: 45%;
+  }
+
+  .home-button img {
+    width: 100%;
+  }
+
+  .video-kecil {
+    display: none;
+  }
+
+  .content-wrapper{
+    height: 75%;
+  }
+
+  .video-wrapper-2 {
+    height: 90%;
+  }
+
+  .video-wrapper-2 p {
+    font-size: 20px;
+  }
+
+  .caption1{
+    bottom: 4%;
+    margin-bottom: 2%;
+  }
+
+  .caption2{
+    bottom: -4%;
+  }
+
+  .box-wrapper p {
+    width: 30%;
+  }
+
+}
+
+
+@media screen and (max-width:1400px) {
+
+  .videoWrapper iframe {
+    width: 16%;
+    height: 9%;
+    z-index: 1;
+  }
+
+  .video-besar {
+    display: none;
+  }
+}

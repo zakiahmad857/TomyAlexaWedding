@@ -201,21 +201,3 @@ body{
   margin: auto;
   z-index: 9;
 }
-
-@media screen and (min-width:1900px){
-  .home-button img {
-    width: 100%;
-  }
-
-  .content-wrapper h4{
-    font-size: 2.5rem;
-  }
-
-  .qrcode-list{
-    margin-top: 4%;
-  }
-
-  .desc-angpao{
-    width: 90%;
-  }
-}

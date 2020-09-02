@@ -1,0 +1,40 @@
+/* Responsive */
+@media screen and (min-width: 1900px) {
+  .header-icon {
+    width: 60%;
+  }
+
+  .info {
+    width: 40%;
+  }
+
+  .video-mc {
+    bottom: -9%;
+    width: 400px;
+    height: 500px;
+  }
+
+  .video-wrapper {
+    top: 32%;
+    width: 55.5%;
+    height: 41%;
+  }
+
+  .parent-pelaminan {
+    top: 8%;
+  }
+
+  .parent-jukebox {
+    top: 27%;
+  }
+
+  .parent-gallery {
+    top: 6%;
+  }
+
+  .div-souvenir{
+    width: 400px;
+    height: 400px;
+  }
+
+}
