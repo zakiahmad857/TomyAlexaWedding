@@ -51,7 +51,7 @@ var arrLang = {
     'ans2': 'Due to limited time, the time to meet the bride and groom has already been scheduled and cannot be changed',
     'que3': 'If I don’t get the chance to meet the bride and groom, can I still take a picture with them?',
     'ans3': 'Too bad you can’t since the photo session can only be taken place during the video call',
-    'que4': 'Siapa saja yang ada di balik pembuatan kondangan virtual Tomy & Lexa?',
+    'que4': 'Who made this virtual wedding website comes true?',
     'footerfaq': 'Do you have any technical difficulties?',
     // angpao
     'amplopTitle': 'Show your love!',
@@ -104,7 +104,7 @@ var arrLang = {
     'vcall_1': 'Sebentar lagi kamu akan bertemu dengan mempelai.',
     'vcall_2': 'Sambil mengantri di ruang tunggu jika kamu punya pertanyaan dapat bertanya kepada host.',
     // Pelaminan
-    'in-pelaminan': "Sedang di pelaminan:",
+    'in-pelaminan': "Di pelaminan:",
     // button
     'next': 'Lanjut',
     'next-karet': 'Lihat Resepsi',

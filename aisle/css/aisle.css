@@ -105,7 +105,8 @@
   position: relative;
   top: 10%;
   left: 0;
-  width: 60%;
+  width: 75%;
+  padding-top: 1%;
   /* height: 100vh; */
   /* border: 1px solid red; */
   float: right;

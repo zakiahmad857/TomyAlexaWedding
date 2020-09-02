@@ -136,8 +136,8 @@
 
     // Time group
     var timeCheck = new Date();
-    var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 5);
-    var minuteEdit2 = minuteEdit + 5;
+    var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 3);
+    var minuteEdit2 = minuteEdit + 3;
 
     var groupVcall = [];
     var groupVcall2 = [];
@@ -186,7 +186,7 @@
       $("#tamu4").html(groupVcall[3] + "<span> , </span>");
       $("#tamu5").html(groupVcall[4] + "<span> , </span>");
       $("#tamu6").html(groupVcall[5] + "<span> , </span>");
-      $("#tamu7").html(groupVcall[6] + "<span> , </span>");
+      $("#tamu7").html(groupVcall[6]);
     }
 
     // TOKEN DATA
