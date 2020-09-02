@@ -57,7 +57,7 @@ var arrLang = {
     'amplopTitle': 'Show your love!',
     'amplopText1': 'Don’t mind the hassle, you can still send your love for Tomy and Lexa ',
     'amplopHp': 'Phone Number 081316660643',
-    'amplopRek': 'Account Number 6790050809',
+    'amplopRek': 'Account Number',
     'amplopText2': 'You can also send your gift to the address below:',
     // souvenir
     'souvenir1': 'This digital souvenir is self-made by Alexa and Tomy, special for you.',
@@ -120,7 +120,7 @@ var arrLang = {
     'amplopTitle': 'Amplop Digital',
     'amplopText1': 'Jangan kuatir, kamu tetap bisa memberikan amplop digital untuk Tomy & Lexa dengan cara di bawah ini:',
     'amplopHp': 'Nomor Telfon 081316660643',
-    'amplopRek': 'Nomor Rekening 6790050809',
+    'amplopRek': 'Nomor Rekening',
     'amplopText2': 'Kamu juga bisa mengirimkan kado pernikahan ke alamat di bawah ini:',
     // souvenir
     'souvenir1': 'Cinderamata digital ini dibuat sendiri oleh Alexa & Tomy spesial untuk kamu.',
