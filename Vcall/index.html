@@ -480,7 +480,7 @@
 
 
     // Jam video call
-    var startTimeDate = new Date("2 September 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("3 September 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -505,7 +505,7 @@
       // console.log("endTime " + endTime);
 
       var now = new Date();
-      var timeNow = "2 September 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNow = "3 September 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
       var timeNowParse = (Date.parse(timeNow) / 1000);
 
       // console.log("timeParse " + timeNowParse);
@@ -640,7 +640,7 @@
       $("#username7").html(groupVcall[6]);
 
 
-      var timeGroupPlusDate = new Date("2 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("3 September 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
       var endTimeGroup = timeGroupParse + 360;
 
@@ -783,9 +783,9 @@
       timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
 
 
-      var timeGroupPlusDate = new Date("2 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("3 September 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
-      var endTimeGroup = timeGroupParse + 179;
+      var endTimeGroup = timeGroupParse + 180;
 
       console.log("time group dalem function " + timeGroup);
       console.log("timeGroupParse " + timeGroupParse);
