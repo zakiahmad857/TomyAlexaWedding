@@ -19,6 +19,7 @@
 
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../css/gallery.css">
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -44,8 +45,8 @@
   <div class="desktop-content">
 
       <!-- Video Call Modal -->
-      <div id="vcallModal" class="modal modal-baru">
-        <div class="modal-content-baru content-vcall">
+      <div id="vcallModal" class="modal">
+        <div class="modal-content content-vcall">
           <h4 class="lang text" key="vcall_1">Sebentar lagi kamu akan bertemu dengan mempelai.</h4>
           <h5 class="lang text" key="vcall_2">Sambil mengantri di ruang tunggu jika kamu punya pertanyaan dapat bertanya kepada host.</h5>
         </div>
@@ -370,7 +371,7 @@
       }
     });
 
-    var endTime = new Date("25 August 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("2 September 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
@@ -402,11 +403,11 @@
         seconds = "0" + seconds;
       }
 
-      // if(hours <= "23" && hours >= "7"){
-      //   $(".countdown").css("display", "none");
-      // } else {
-      //   $(".countdown").css("display", "block");
-      // }
+      if(hours <= "23" && hours >= "7"){
+        $(".countdown").css("display", "none");
+      } else {
+        $(".countdown").css("display", "block");
+      }
 
       $(".hours").html(hours + "<span> :</span>");
       $(".minutes").html(minutes + "<span> :</span>");
@@ -415,7 +416,7 @@
       console.log(hours + ":" + minutes + ":" + seconds);
 
       // Popup Vcall
-      if (timeLeft <= 0 && timeLeft >= -600) {
+      if (timeLeft <= 0 && timeLeft >= -360) {
 
         $("#vcallModal").css('display', 'block');
 

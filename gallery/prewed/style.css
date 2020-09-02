@@ -62,21 +62,6 @@ body {
   margin: 1.5%;
 }
 
-/* Modal Vcall */
-.content-vcall {
-  width: 32%;
-  padding: 3%;
-}
-
-.content-vcall h4 {
-  margin: auto;
-  margin-bottom: 7%;
-}
-
-.content-vcall h5 {
-  font-weight: normal;
-}
-
 .slide {
   width: 100vw;
   height: 100vh;
