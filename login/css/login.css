@@ -6,9 +6,16 @@ body{
 }
 
 .desktop-content{
-  background-color: #5704AA;
+  /* background-color: #5704AA; */
   width: 100vw;
   height: 100vh;
+}
+
+.login-content{
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/background.png');
+  background-size: cover;
 }
 
 .login-page{
@@ -30,8 +37,8 @@ body{
 .login-form{
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  top: 40%;
+  transform: translateX(-50%);
 }
 
 .login-title{
@@ -167,8 +174,8 @@ input[type="text"]:focus{
 /* Toggle */
 .toggle-login{
   position: absolute;
-  top: 9%;
-  right: 11%;
+  top: 23%;
+  right: 25%;
 }
 
 .checkbox {
