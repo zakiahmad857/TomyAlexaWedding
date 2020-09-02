@@ -543,49 +543,49 @@ function getZoomValues () {
 }
 
 
-console.log("window screen");
-console.log(window.screen.width);
-
-var browserWidth = $(window).width();
-var browserHeight = $(window).height();
-var screenWidth = window.screen.width;
-var screenHeight = window.screen.height;
-var perfectWidth = 0.85 * screenWidth;
-var perfectHeight = 0.7 * screenHeight;
-var defaultBrowser = 0.86 * screenHeight;
-
-var divider = screenWidth/16;
-var screenRatio = screenHeight/divider;
-
-if(screenRatio > 9){
-  var widthEdit = screenHeight*16/9;
-  $(".kotak").css("width", widthEdit);
-  $(".kotak").css("height", screenHeight);
-}
-
-console.log("screenRatio " + screenRatio);
-
-console.log("masuk js utama");
-console.log("screenWidth awal " + screenWidth);
-console.log("screenHeight awal " + screenHeight);
-console.log("browserWidth awal " + browserWidth);
-console.log("browserHeight awal " + browserHeight);
-console.log("perfectWidth awal " + perfectWidth);
-console.log("perfectHeight awal " + perfectHeight);
-console.log("browserZoom awal " + browserZoom);
-console.log("defaultBrowser " + defaultBrowser);
-
-if(browserHeight > 1.3*defaultBrowser){
-  $(".browserZoomOut").css('display', 'none');
-  $(".browser-resize").css('display', 'none');
-  $(".browserZoomIn").css('display', 'block');
-  $(".desktop-content").css('display', 'none');
-} else if(browserHeight < 0.9*defaultBrowser){
-  $(".browserZoomOut").css('display', 'block');
-  $(".browser-resize").css('display', 'none');
-  $(".browserZoomIn").css('display', 'none');
-  $(".desktop-content").css('display', 'none');
-}
+// console.log("window screen");
+// console.log(window.screen.width);
+//
+// var browserWidth = $(window).width();
+// var browserHeight = $(window).height();
+// var screenWidth = window.screen.width;
+// var screenHeight = window.screen.height;
+// var perfectWidth = 0.85 * screenWidth;
+// var perfectHeight = 0.7 * screenHeight;
+// var defaultBrowser = 0.86 * screenHeight;
+//
+// var divider = screenWidth/16;
+// var screenRatio = screenHeight/divider;
+//
+// if(screenRatio > 9){
+//   var widthEdit = screenHeight*16/9;
+//   $(".kotak").css("width", widthEdit);
+//   $(".kotak").css("height", screenHeight);
+// }
+//
+// console.log("screenRatio " + screenRatio);
+//
+// console.log("masuk js utama");
+// console.log("screenWidth awal " + screenWidth);
+// console.log("screenHeight awal " + screenHeight);
+// console.log("browserWidth awal " + browserWidth);
+// console.log("browserHeight awal " + browserHeight);
+// console.log("perfectWidth awal " + perfectWidth);
+// console.log("perfectHeight awal " + perfectHeight);
+// console.log("browserZoom awal " + browserZoom);
+// console.log("defaultBrowser " + defaultBrowser);
+//
+// if(browserHeight > 1.3*defaultBrowser){
+//   $(".browserZoomOut").css('display', 'none');
+//   $(".browser-resize").css('display', 'none');
+//   $(".browserZoomIn").css('display', 'block');
+//   $(".desktop-content").css('display', 'none');
+// } else if(browserHeight < 0.9*defaultBrowser){
+//   $(".browserZoomOut").css('display', 'block');
+//   $(".browser-resize").css('display', 'none');
+//   $(".browserZoomIn").css('display', 'none');
+//   $(".desktop-content").css('display', 'none');
+// }
 
 // $(window).resize(function() {
 //   getZoomValues();
