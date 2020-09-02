@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./assets/common.css" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="css/vcall.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
 
 </head>
@@ -248,82 +249,82 @@
 
   <script type="text/javascript">
     console.log("masuk js di html");
-    // WEB TOUR
-    var vcallTour = new Tour({
-      steps: [{
-          element: "#countdownCall",
-          title: "Countdown",
-          content: "HItung mundur waktu concall",
-          placement: "bottom",
-        },
-        {
-          element: "#selectCam",
-          title: "Select Kamera",
-          content: "Pilih kamera yang akan digunakan ",
-          placement: "right",
-        },
-        {
-          element: "#selectMic",
-          title: "Select Microphone",
-          content: "Pilih microphone yang akan digunakan",
-          placement: "right",
-        },
-        {
-          element: "#join",
-          title: "Join ConCall",
-          content: "Lalala",
-          placement: "bottom",
-        }
-      ],
-      container: 'body',
-      // backdrop: true,
-      smartPlacement: true,
-      keyboard: true,
-      // storage: window.localStorage,
-      debug: false,
-      autoscroll: false,
-      backdropPadding: 0,
-      redirect: true,
-      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
-    });
-
-    var vcallTourEng = new Tour({
-      steps: [{
-          element: "#countdownCall",
-          title: "Countdown",
-          content: "HItung mundur waktu concall",
-          placement: "bottom",
-        },
-        {
-          element: "#selectCam",
-          title: "Select Kamera",
-          content: "Pilih kamera yang akan digunakan ",
-          placement: "right",
-        },
-        {
-          element: "#selectMic",
-          title: "Select Microphone",
-          content: "Pilih microphone yang akan digunakan",
-          placement: "right",
-        },
-        {
-          element: "#join",
-          title: "Join ConCall",
-          content: "Lalala",
-          placement: "bottom",
-        }
-      ],
-      container: 'body',
-      // backdrop: true,
-      smartPlacement: true,
-      keyboard: true,
-      // storage: window.localStorage,
-      debug: false,
-      autoscroll: false,
-      backdropPadding: 0,
-      redirect: true,
-      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
-    });
+    // // WEB TOUR
+    // var vcallTour = new Tour({
+    //   steps: [{
+    //       element: "#countdownCall",
+    //       title: "Countdown",
+    //       content: "HItung mundur waktu concall",
+    //       placement: "bottom",
+    //     },
+    //     {
+    //       element: "#selectCam",
+    //       title: "Select Kamera",
+    //       content: "Pilih kamera yang akan digunakan ",
+    //       placement: "right",
+    //     },
+    //     {
+    //       element: "#selectMic",
+    //       title: "Select Microphone",
+    //       content: "Pilih microphone yang akan digunakan",
+    //       placement: "right",
+    //     },
+    //     {
+    //       element: "#join",
+    //       title: "Join ConCall",
+    //       content: "Lalala",
+    //       placement: "bottom",
+    //     }
+    //   ],
+    //   container: 'body',
+    //   // backdrop: true,
+    //   smartPlacement: true,
+    //   keyboard: true,
+    //   // storage: window.localStorage,
+    //   debug: false,
+    //   autoscroll: false,
+    //   backdropPadding: 0,
+    //   redirect: true,
+    //   template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+    // });
+    //
+    // var vcallTourEng = new Tour({
+    //   steps: [{
+    //       element: "#countdownCall",
+    //       title: "Countdown",
+    //       content: "HItung mundur waktu concall",
+    //       placement: "bottom",
+    //     },
+    //     {
+    //       element: "#selectCam",
+    //       title: "Select Kamera",
+    //       content: "Pilih kamera yang akan digunakan ",
+    //       placement: "right",
+    //     },
+    //     {
+    //       element: "#selectMic",
+    //       title: "Select Microphone",
+    //       content: "Pilih microphone yang akan digunakan",
+    //       placement: "right",
+    //     },
+    //     {
+    //       element: "#join",
+    //       title: "Join ConCall",
+    //       content: "Lalala",
+    //       placement: "bottom",
+    //     }
+    //   ],
+    //   container: 'body',
+    //   // backdrop: true,
+    //   smartPlacement: true,
+    //   keyboard: true,
+    //   // storage: window.localStorage,
+    //   debug: false,
+    //   autoscroll: false,
+    //   backdropPadding: 0,
+    //   redirect: true,
+    //   template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+    // });
 
 
     // showcountdown
@@ -331,7 +332,7 @@
 
     // Set localStorage
     var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues")) || {};
-    var tourState = localStorage.getItem("tourState");
+    // var tourState = localStorage.getItem("tourState");
     var settingState = localStorage.getItem("settingState");
     var pindahState = localStorage.getItem("pindahState");
 
@@ -487,15 +488,15 @@
     // endtime vcall 6 minutes
     var endTime = startTimeParse + 360;
 
-    if (tourState != 'done') {
-      if (englishState) {
-        vcallTourEng.restart();
-        localStorage.setItem('tourState', 'done');
-      } else {
-        vcallTour.restart();
-        localStorage.setItem('tourState', 'done');
-      }
-    }
+    // if (tourState != 'done') {
+    //   if (englishState) {
+    //     vcallTourEng.restart();
+    //     localStorage.setItem('tourState', 'done');
+    //   } else {
+    //     vcallTour.restart();
+    //     localStorage.setItem('tourState', 'done');
+    //   }
+    // }
 
     // Countdown Concall
     function makeTimerCall() {
@@ -516,8 +517,8 @@
         $("#setAgora").css('display', 'none');
         $("#byeVcallModal").css('display', 'block');
         console.log("sama");
-        vcallTour.end();
-        vcallTourEng.end();
+        // vcallTour.end();
+        // vcallTourEng.end();
         leave(rtc);
 
       }
@@ -1639,8 +1640,8 @@
 
         console.log("setting state 2");
         // console.log(settingState);
-        vcallTour.end();
-        vcallTourEng.end();
+        // vcallTour.end();
+        // vcallTourEng.end();
         console.log("join")
         e.preventDefault();
         var params = serializeformData(); // Data is feteched and serilized from the form element.
