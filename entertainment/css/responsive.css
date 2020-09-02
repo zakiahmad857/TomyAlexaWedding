@@ -13,10 +13,6 @@
     width: 100%;
   }
 
-  .video-kecil {
-    display: none;
-  }
-
   .content-wrapper{
     height: 75%;
   }
@@ -36,7 +32,7 @@
 }
 
 
-@media screen and (max-width:1400px) {
+/* @media screen and (max-width:1400px) {
 
   .videoWrapper iframe {
     width: 16%;
@@ -46,5 +42,21 @@
 
   .video-besar {
     display: none;
+  }
+} */
+
+/* 1280 x 720p */
+@media screen and (min-width: 1250px) and (max-width: 1300px) and (max-height: 740px){
+  .video-mc{
+    right: 1.8%;
+    width: 19.8%;
+  }
+
+  .animation{
+    bottom: -3%;
+  }
+
+  .content-wrapper{
+    top: 52%;
   }
 }

@@ -11,3 +11,11 @@
   }
 
 }
+
+/* 1280 x 720p */
+@media screen and (min-width: 1250px) and (max-width: 1300px) and (max-height: 740px){
+  .animation{
+    left: 15%;
+    width: 30%;
+  }
+}

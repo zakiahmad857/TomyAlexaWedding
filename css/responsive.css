@@ -1,4 +1,4 @@
-/* Responsive */
+/* 1080p */
 @media screen and (min-width: 1900px) {
   .header-icon {
     width: 60%;
@@ -37,4 +37,12 @@
     height: 400px;
   }
 
+}
+
+/* 1280 x 720p */
+@media screen and (min-width: 1250px) and (max-width: 1300px) and (max-height: 740px){
+  .video-mc{
+    left: 55.3%;
+    width: 19.8%;
+  }
 }
