@@ -419,10 +419,10 @@
 
 .video-wrapper {
   position: relative;
-  top: 57.5%;
+  top: 57%;
   align-items: center;
   margin: auto;
-  width: 60%;
+  width: 57%;
   height: 40%;
   z-index: 9;
   /* border: 1px solid blue; */

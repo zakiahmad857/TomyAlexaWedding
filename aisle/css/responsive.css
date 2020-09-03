@@ -3,6 +3,10 @@
   .video-wrapper{
     top: 58.5%;
   }
+
+  .home-button img {
+    width: 100%;
+  }
 }
 
 /* 1440 x 900 */
