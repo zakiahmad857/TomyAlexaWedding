@@ -458,6 +458,10 @@
   display: none;
 }
 
+.screenOff{
+  display: block;
+}
+
 .off{
   position: absolute;
   bottom: 2%;
