@@ -32,18 +32,21 @@
 }
 
 
-/* @media screen and (max-width:1400px) {
-
-  .videoWrapper iframe {
-    width: 16%;
-    height: 9%;
-    z-index: 1;
+/* 1440 x 900 */
+@media screen and (min-device-width: 1400px) and (max-device-width: 1460px) and (min-device-height: 880px){
+  .home-button img{
+    width: 80%;
   }
 
-  .video-besar {
-    display: none;
+  .video-mc {
+    bottom: -1%;
   }
-} */
+
+  .inner-countdown{
+    padding-top: 4%;
+  }
+
+}
 
 /* 1280 x 720p */
 @media screen and (min-width: 1250px) and (max-width: 1300px) and (max-height: 740px){
