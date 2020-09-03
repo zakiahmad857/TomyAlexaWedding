@@ -376,7 +376,7 @@
 
 .question {
   margin-bottom: 0;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.2vw;
 }
 
@@ -436,6 +436,28 @@
   height: 80%;
   margin: auto;
   z-index: 9;
+}
+
+.screen-wrapper{
+  background-image: url(../images/mask2.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 57%;
+  align-items: center;
+  margin: auto;
+  width: 57%;
+  height: 40%;
+  z-index: 10;
+}
+
+.off{
+  position: absolute;
+  bottom: 2%;
+  left: 68%;
+  width: 2%;
+  cursor: pointer;
+  z-index: 11;
 }
 
 /* Hide Image (load) */
