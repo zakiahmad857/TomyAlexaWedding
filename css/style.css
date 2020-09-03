@@ -9,6 +9,11 @@ body {
   /* overflow: hidden; */
 }
 
+.bgMusic{
+  position: absolute;
+  z-index: -100;
+}
+
 .heading{
   font-family: 'Cinzel', serif;
 }
