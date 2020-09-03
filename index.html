@@ -227,10 +227,11 @@
       <div class="video-mc">
         <div class="video-wrapper">
           <iframe id="videoMC" src="https://www.youtube.com/embed/I9kHmJNFPLQ?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="screen-wrapper"></div>
         </div>
-        <!-- <div class="screen-wrapper"></div> -->
+
       </div>
-      <!-- <img class="off" src="images/turn-off.png" alt=""> -->
+      <img class="off" src="images/turn-off.png" alt="">
 
       <div class="parent-angpao">
         <a href="angpao">
@@ -462,13 +463,6 @@
 
     function dirname(path) {
       return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
-    }
-
-    // BUtton naming
-    if (toggleLang.checked) {
-      $(".angpao").css("background-image", "url('images/button/gift-still.png')");
-    } else {
-
     }
 
     // TOKEN DATA
