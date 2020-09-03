@@ -85,7 +85,14 @@ var arrLang = {
     'mulaiVcall': 'Start Video Call',
     'endCall': 'Your photo will be sent to your registered Whatsapp number.',
     'endCall2': 'You still can take a look around at the Reception of Tomy & Lexa.',
-    'endCallButton': 'Back to Reception'
+    'endCallButton': 'Back to Reception',
+    // LOGIN
+    'login': 'Please insert Guest ID that you have received from Whatsapp',
+    'idSalah': 'Your Guest ID is wrong. Please check again and please make sure that it has no space and accurate',
+    'login-btn': 'Enter',
+    'lupaId': 'Click here if your forgot your Guest ID',
+    'popLupa': 'Forgot Guest ID',
+    'popLupa2': 'Please contact Customer Service through Whatsapp',
   },
 
   'ind': {
@@ -150,7 +157,14 @@ var arrLang = {
     'vcall': 'Silakan pilih dan pastikan kamera dan mikrofon yang akan digunakan menyala',
     'mulaiVcall': 'Mulai Video Call',
     'endCall': 'Foto akan dikirim ke Whatsapp yang telah terdaftar setelah acara selesai.',
-    'endCallButton': 'Kembali ke Resepsi'
+    'endCallButton': 'Kembali ke Resepsi',
+    // LOGIN
+    'login': 'Masukkan ID tamu yang didapatkan dari chat Whatsapp',
+    'idSalah': 'ID tamu salah. Coba periksa kembali dan pastikan ID tidak ada spasi dan akurat',
+    'login-btn': 'Masuk',
+    'lupaId': 'Klik di sini jika lupa ID tamu',
+    'popLupa': 'Lupa ID Tamu',
+    'popLupa2': 'Mohon hubungi Customer Service melalui Whatsapp',
   }
 };
 
