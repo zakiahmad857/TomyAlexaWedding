@@ -5,10 +5,10 @@ body{
 }
 
 .gallery-page {
-  background-image: url("../images/gallery-background2.png");
+  background-image: url("../images/gallery-background.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0% 80%;
+  background-position: 0% 60%;
   overflow: hidden !important;
   width: 100vw !important;
   height: 100vh !important;
@@ -76,32 +76,151 @@ body{
 }
 
 /* box */
-.wrapper-prewed{
-  width: 12%;
-  height: 23%;
+.parent-prewed img, .parent-akad img, .parent-lamaran img{
+  display: none;
+}
+
+.div-prewed{
+  width: 60%;
+  height: 65%;
   position: absolute;
   top: 17%;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+  /* border: 1px solid red; */
+  z-index: 6;
 }
 
-.wrapper-lamaran{
+.parent-prewed{
+  /* border: 1px solid orange; */
+  position: absolute;
+  width: 25%;
+  height: 40%;
+  top: 5.5%;
+  left: 37%;
+}
+
+.prewed{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('../images/prewed-idle.png');
+  background-size: 130% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border: 1px solid blue; */
+  z-index: 5;
+  cursor: default;
+}
+
+.div-prewed:hover~.prewed {
+  background: url('../images/prewed-select.png');
+  background-size: 130% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* .wrapper-lamaran{
   width: 12%;
   height: 23%;
   position: absolute;
   top: 43%;
   left: 28%;
   cursor: pointer;
+  border: 1px solid red;
+} */
+
+.div-lamaran{
+  width: 60%;
+  height: 65%;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  /* border: 1px solid red; */
+  z-index: 6;
 }
 
-.wrapper-akad{
+.parent-lamaran{
+  /* border: 1px solid orange; */
+  position: absolute;
+  width: 24.5%;
+  height: 40%;
+  top: 31%;
+  left: 21.5%;
+}
+
+.lamaran{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('../images/lamaran-idle.png');
+  background-size: 130% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border: 1px solid blue; */
+  z-index: 5;
+  cursor: default;
+}
+
+.div-lamaran:hover~.lamaran {
+  background: url('../images/lamaran-select.png');
+  background-size: 130% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* .wrapper-akad{
   width: 13%;
   height: 23%;
   position: absolute;
   top: 43%;
   right: 29%;
   cursor: pointer;
+  border: 1px solid red;
+} */
+
+.div-akad{
+  width: 60%;
+  height: 65%;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  /* border: 1px solid red; */
+  z-index: 6;
+}
+
+.parent-akad{
+  /* border: 1px solid orange; */
+  position: absolute;
+  width: 24%;
+  height: 40%;
+  top: 31%;
+  left: 53%;
+}
+
+.akad{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('../images/akad-idle.png');
+  background-size: 128% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border: 1px solid blue; */
+  z-index: 5;
+  cursor: default;
+}
+
+.div-akad:hover~.akad {
+  background: url('../images/akad-select.png');
+  background-size: 128% auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* AKAD - lAMARAN */
@@ -120,7 +239,7 @@ body{
   border-radius: 5px;
 }
 
-.akad, .lamaran{
+.wrapper-akad, .wrapper-lamaran{
   z-index: 11;
   display: none;
 }

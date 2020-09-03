@@ -57,7 +57,7 @@
       </div>
 
       <!-- Pop Up Akad -->
-      <div class="content-wrapper akad">
+      <div class="content-wrapper wrapper-akad">
         <div class="left-wrapper">
           <div class="back-button">
             <img src="images/back.png" class="btn-back" alt="back">
@@ -78,7 +78,7 @@
       </div>
 
       <!-- Pop Up Lamaran -->
-      <div class="content-wrapper lamaran">
+      <div class="content-wrapper wrapper-lamaran">
         <div class="left-wrapper">
 
           <div class="back-button">
@@ -111,11 +111,31 @@
       </div>
 
 
-      <a href="prewed">
+      <!-- <a href="prewed">
         <div class="wrapper-prewed"></div>
       </a>
       <div class="wrapper-lamaran"></div>
-      <div class="wrapper-akad"></div>
+      <div class="wrapper-akad"></div> -->
+
+      <div class="parent-prewed">
+        <a href="prewed">
+          <div class="div-prewed"></div>
+          <div class="prewed"></div>
+          <img src="images/prewed-select.png" alt="">
+        </a>
+      </div>
+
+      <div class="parent-lamaran">
+          <div class="div-lamaran"></div>
+          <div class="lamaran"></div>
+          <img src="images/lamaran-select.png" alt="">
+      </div>
+
+      <div class="parent-akad">
+          <div class="div-akad"></div>
+          <div class="akad"></div>
+          <img src="images/akad-select.png" alt="">
+      </div>
 
 
       <div id="live-mc" class="live-mc"></div>
@@ -156,17 +176,17 @@
     });
 
     // Menu click
-    $(".wrapper-akad").click(function() {
-      $(".akad").css("display", "block");
+    $(".div-akad").click(function() {
+      $(".wrapper-akad").css("display", "block");
     });
 
-    $(".wrapper-lamaran").click(function() {
-      $(".lamaran").css("display", "block");
+    $(".div-lamaran").click(function() {
+      $(".wrapper-lamaran").css("display", "block");
     });
 
     $(".btn-back").click(function() {
-      $(".akad").css("display", "none");
-      $(".lamaran").css("display", "none");
+      $(".wrapper-lamaran").css("display", "none");
+      $(".wrapper-akad").css("display", "none");
     });
 
     // TOKEN DATA
