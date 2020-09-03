@@ -50,6 +50,7 @@
   .video-mc{
     right: 1.8%;
     width: 19.8%;
+    bottom: 3%;
   }
 
   .animation{
@@ -58,5 +59,16 @@
 
   .content-wrapper{
     top: 52%;
+  }
+}
+
+/* 1280 x 800p */
+@media screen and (min-device-width: 1250px) and (max-device-width: 1300px) and (min-device-height: 780px) and (max-device-height: 820px){
+  .video-wrapper {
+    top: 63%;
+    height: 38%;
+  }
+  .inner-countdown{
+    margin-top: 18%;
   }
 }
