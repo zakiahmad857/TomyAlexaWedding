@@ -855,6 +855,7 @@ function selectLanguage(check) {
     $(".lang").each(function(index, element) {
       $(this).text(arrLang[lang][$(this).attr('key')]);
     });
+
     buttonNamingInd();
   }
 
@@ -864,6 +865,7 @@ function selectLanguage(check) {
     $(".lang").each(function(index, element) {
       $(this).text(arrLang[lang][$(this).attr('key')]);
     });
+
     buttonNamingEng();
   }
 }
@@ -878,6 +880,8 @@ function toggleLanguange(tog) {
       $(this).css("background-image", "url(images/uk.png)");
       $(".flag-left").addClass("flag-left-off");
       $(".flag-right").removeClass("flag-right-off");
+      $(".loginIndo").css("display", "none");
+      $(".loginEnglish").css("display", "block");
       next();
     });
     buttonNamingEng();
@@ -892,6 +896,8 @@ function toggleLanguange(tog) {
       $(this).css("background-image", "url(images/indo.png)");
       $(".flag-right").addClass("flag-right-off");
       $(".flag-left").removeClass("flag-left-off");
+      $(".loginIndo").css("display", "block");
+      $(".loginEnglish").css("display", "none");
       next();
     });
     buttonNamingInd();

@@ -5,6 +5,10 @@ body {
   /* background-color: #5704AA; */
 }
 
+.loginEnglish{
+  display: none;
+}
+
 .desktop-content {
   /* background-color: #5704AA; */
   width: 100vw;
