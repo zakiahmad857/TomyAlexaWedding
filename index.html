@@ -306,7 +306,7 @@
 
       $("#loading").addClass("loader-hidden");
       if(localStorage.fadeOutScreen != 'true') {
-        $(".firstScreen").fadeIn(1500).delay(1000).fadeOut(1500);
+        $(".firstScreen").fadeIn(1500).delay(5000).fadeOut(1500);
         localStorage.setItem('fadeOutScreen', 'true');
       } else {
         $(".firstScreen").css("display", "none");
