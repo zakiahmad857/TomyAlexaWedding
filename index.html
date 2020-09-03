@@ -474,6 +474,8 @@
     // TOKEN DATA
     var name = null;
     var idPosition = null;
+    var timeSet= null;
+
 
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
@@ -545,15 +547,35 @@
 
     };
 
+    function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
     function makeTimer() {
 
+      var coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      console.log(coba);
+      var obj = JSON.parse(coba);
+      console.log(obj.datetime)
+
+      var res = obj.datetime.split("T");
+      console.log(res[1]);
+
+      res1 = res[1].split(".");
+      res2 = res1[0].split(":");
       now = new Date();
-      timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+      timeNow = res2[0] + ":" + res2[1] + ":" + res2[2];
 
-      timeNow = (Date.parse(now) / 1000);
-
+      console.log(timeNow);
+      timeNow = (obj.unixtime);
+      console.log(endTime);
+      console.log(timeNow);
       var timeLeft = endTime - timeNow;
-      // console.log("timeleft " + timeLeft);
+       console.log("timeleft " + timeLeft);
       var days = Math.floor(timeLeft / 86400);
       var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
       var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
