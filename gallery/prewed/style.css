@@ -9,7 +9,8 @@ body {
 
 .home-button {
   position: absolute;
-  margin: 0.2%;
+  margin: 2%;
+  z-index: 10;
 }
 
 .home-button:hover {
@@ -30,13 +31,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
   font-size: 1.2vw;
+  position: relative;
 }
 
 .countdown{
   display: block;
   position: absolute;
   z-index: 15;
-  width: 2%;
+  width: 15%;
   height: 17%;
   background-image: url(images/countdown.png);
   background-size: 100% auto;
@@ -49,8 +51,8 @@ body {
 }
 
 .countdown-page{
-  left: 1%;
-  top: 0;
+  left: 8%;
+  top: 1%;
 }
 
 .vl {
@@ -233,7 +235,7 @@ body {
   position: absolute;
   z-index: 4;
   top: 35.5%;
-  right: 3%;
+  right: 5%;
   width: 3%;
 }
 
