@@ -42,7 +42,6 @@
 /* 1440 x 900 */
 @media screen and (min-device-width: 1400px) and (max-device-width: 1460px) and (min-device-height: 880px){
   .parent-gallery{
-    border: 1px solid red;
     top: 11%;
   }
 
