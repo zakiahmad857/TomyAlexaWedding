@@ -1,5 +1,5 @@
 /* 1080p */
-@media screen and (min-width:1900px){
+@media screen and (min-device-width: 1900px) and (max-device-height: 1100px){
 
   .dot2{
     left: 12%;

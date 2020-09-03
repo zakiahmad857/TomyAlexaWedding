@@ -1,5 +1,5 @@
 /* 1920 x 1080 */
-@media screen and (min-device-width: 1900px){
+@media screen and (min-device-width: 1900px) and (max-device-height: 1100px){
   .home-button img {
     width: 100%;
   }
