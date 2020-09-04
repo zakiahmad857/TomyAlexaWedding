@@ -46,9 +46,13 @@
   <div id="loading" class="loader">
     <div class="load-content">
       <img src="images/loadtext.webp" alt="text" class="loadtext">
-      <img src="images/loading.svg" alt="loading" class="loader-icon"/>
+      <img src="images/loading.svg" alt="loading" class="loader-icon" />
     </div>
 
+  </div>
+
+  <div class="firstScreenPrewed">
+    <img src="images/splash.png" alt="">
   </div>
 
   <div class="desktop-content">
@@ -91,7 +95,7 @@
         <div class="left-wrapper">
 
           <div class="back-button">
-            <img src="images/back.png" class="btn-back"  alt="back">
+            <img src="images/back.png" class="btn-back" alt="back">
             <p class="lang" key="backGallery">Kembali ke Galeri</p>
           </div>
 
@@ -127,23 +131,23 @@
       <div class="wrapper-akad"></div> -->
 
       <div class="parent-prewed">
-        <a href="prewed">
+        <!-- <a href="prewed"> -->
           <div class="div-prewed"></div>
           <div class="prewed"></div>
           <img src="images/prewed-select.png" alt="">
-        </a>
+        <!-- </a> -->
       </div>
 
       <div class="parent-lamaran">
-          <div class="div-lamaran"></div>
-          <div class="lamaran"></div>
-          <img src="images/lamaran-select.png" alt="">
+        <div class="div-lamaran"></div>
+        <div class="lamaran"></div>
+        <img src="images/lamaran-select.png" alt="">
       </div>
 
       <div class="parent-akad">
-          <div class="div-akad"></div>
-          <div class="akad"></div>
-          <img src="images/akad-select.png" alt="">
+        <div class="div-akad"></div>
+        <div class="akad"></div>
+        <img src="images/akad-select.png" alt="">
       </div>
 
 
@@ -166,8 +170,8 @@
   <script type="text/javascript" src="../index.js"></script>
 
   <script type="text/javascript">
-  // lOADER
-  var fadeOutScreen = localStorage.getItem('fadeOutScreen');
+    // lOADER
+    var fadeOutScreen = localStorage.getItem('fadeOutScreen');
     $('html, body').css({
       overflow: 'hidden',
       height: '100%'
@@ -181,14 +185,9 @@
       })
 
       $("#loading").addClass("loader-hidden");
-      if(localStorage.fadeOutScreen != 'true') {
-        $(".firstScreen").fadeIn(1500).delay(5000).fadeOut(1500);
-        localStorage.setItem('fadeOutScreen', 'true');
-      } else {
-        $(".firstScreen").css("display", "none");
-      }
 
     });
+
 
     // Path
     var dirPath = dirname(location.href);
@@ -203,6 +202,18 @@
       the_arr.pop();
       return (the_arr.join('/'));
     }
+
+    $(".div-prewed").click(function(){
+      console.log("masuk1");
+      $(".firstScreenPrewed").fadeIn(1000).delay(500);
+      $(".firstScreenPrewed").queue(function(next){
+        console.log("masuk sini gaksih");
+        window.location = dirPath + "/prewed";
+        next();
+      });
+
+
+    });
 
     $(".home-button").click(function() {
       window.location = homePath;
