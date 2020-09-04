@@ -47,6 +47,27 @@ body {
   animation-fill-mode: forwards;
 }
 
+.tour{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255,255,255, 0.4);
+  position: absolute;
+  z-index: 48;
+}
+
+.tourEng, .tourIndo{
+  display: none;
+}
+
+.info{
+  position: absolute;
+  top: 45%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+
+
 .popover-content {
   height: 30px !important;
   margin-bottom: 30px !important;
@@ -154,6 +175,10 @@ input[type=number] {
 }
 
 /* Header */
+.countdown{
+  width: 16%;
+}
+
 .countdownVC{
   z-index: 10;
   margin: auto;
@@ -163,7 +188,7 @@ input[type=number] {
 }
 
 .countdownVC p{
-  font-size: 0.9vw;
+  font-size: 1vw;
 }
 
 .header-icon {

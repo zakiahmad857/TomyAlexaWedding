@@ -80,7 +80,14 @@
         <span>- </span>
         <span id="hours1"></span><span id="minutes1"></span><span id="seconds1"></span>
       </div>
+    </div>
 
+    <!-- webtour allow cam mic -->
+    <div class="tour tourIndo">
+      <img class="info" src="images/info.png" alt="">
+    </div>
+    <div class="tour tourEng">
+      <img class="info" src="images/infoEng.png" alt="">
     </div>
 
     <!-- MC -->
@@ -1738,6 +1745,20 @@
         }
 
         $("#setAgora").css("display", "none");
+        console.log("bahasa");
+        if(checkboxValues.toggleLang){
+          $(".tourEng").css("display", "block");
+          $(".tourEng").delay(4000).queue(function(next){
+            $(".tourEng").css("display", "none");
+            next();
+          });
+        } else {
+          $(".tourIndo").css("display", "block");
+          $(".tourIndo").delay(4000).queue(function(next){
+            $(".tourIndo").css("display", "none");
+            next();
+          });
+        }
 
         if (idPosisi == 8888) {
           localStorage.setItem('settingState', 'done');
