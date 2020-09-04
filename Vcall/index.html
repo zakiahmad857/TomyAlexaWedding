@@ -357,7 +357,7 @@
     //   redirect: true,
     //   template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
     // });
-    var coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+    var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
     console.log(coba);
     var obj = JSON.parse(coba);
     var res = obj.datetime.split("T");
@@ -548,7 +548,7 @@
       // console.log("startTimeParse " + startTimeParse);
       // console.log("endTime " + endTime);
 
-      var coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
       console.log(coba);
       var obj = JSON.parse(coba);
 
@@ -703,7 +703,7 @@
       // Countdown host
       // Time now
       //var now = new Date();
-      coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
       console.log(coba);
       obj = JSON.parse(coba);
 
@@ -854,7 +854,7 @@
       // Countdown
       // Time now
       //var now = new Date();
-      coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
       console.log(coba);
       obj = JSON.parse(coba);
 
