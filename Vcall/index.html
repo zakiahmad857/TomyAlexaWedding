@@ -563,13 +563,13 @@
 
       // Kalo waktu skrg udah melebihi jatah vcall, exit
       if (timeNowParse >= endTime) {
-
+        leave(rtc);
         $("#setAgora").css('display', 'none');
         $("#byeVcallModal").css('display', 'block');
         console.log("sama");
         // vcallTour.end();
         // vcallTourEng.end();
-        leave(rtc);
+        //leave(rtc);
 
       }
 
