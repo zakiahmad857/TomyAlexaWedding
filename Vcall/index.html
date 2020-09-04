@@ -754,14 +754,14 @@
       if (countTime >= "180") {
         // Waiting room
         console.log("waiting room");
-        $("#countdownTitle").html("Waiting Room");
+        $("#countdownTitle").html("Bertemu pengantin dalam");
         $("#minutes1").html(minutes1 - 3 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
       } else if (countTime < "180") {
         // Ketemu pengantin
         console.log("ketemu");
-        $("#countdownTitle").html("Waktu Video Call");
+        $("#countdownTitle").html("Bertemu pengantin");
         $("#minutes1").html(minutes1 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
