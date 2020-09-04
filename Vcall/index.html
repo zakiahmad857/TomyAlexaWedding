@@ -563,15 +563,11 @@
 
       // Kalo waktu skrg udah melebihi jatah vcall, exit
 
-      if(timeNowParse >= (parseInt(endTime)-3)){
-        $("#setAgora").css('display', 'none');
-        $("#byeVcallModal").css('display', 'block');
-
-      }
 
       if (timeNowParse >= endTime) {
         leave(rtc);
-        
+        $("#setAgora").css('display', 'none');
+        $("#byeVcallModal").css('display', 'block');
         console.log("sama");
         // vcallTour.end();
         // vcallTourEng.end();
@@ -782,6 +778,12 @@
       //var time = new Date();
       var menit = parseInt(res2[1]);
       var menitMod = menit - menit % 3;
+
+
+      if(obj.unixtime >= (parseInt(endTime)-3)){
+        $("#pindahRoomModal").css("display", "block");
+
+      }
 
       if ((menit % 3 == 0) && (localStorage.pindahState != 'pindah')) {
         console.log("muncul pindah room modal");
