@@ -562,10 +562,16 @@
       // console.log("endtime " + endTime);
 
       // Kalo waktu skrg udah melebihi jatah vcall, exit
-      if (timeNowParse >= endTime) {
-        leave(rtc);
+
+      if(timeNowParse >= endTime-3){
         $("#setAgora").css('display', 'none');
         $("#byeVcallModal").css('display', 'block');
+
+      }
+
+      if (timeNowParse >= endTime) {
+        leave(rtc);
+        
         console.log("sama");
         // vcallTour.end();
         // vcallTourEng.end();
@@ -780,7 +786,7 @@
       if ((menit % 3 == 0) && (localStorage.pindahState != 'pindah')) {
         console.log("muncul pindah room modal");
         $("#pindahRoomModal").css("display", "block");
-        var counterVcall = 3;
+        var counterVcall = 1;
         var interval = setInterval(function() {
           // Display 'counter' wherever you want to display it.
           counterVcall--;
