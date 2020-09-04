@@ -233,13 +233,17 @@ body {
 
 .left-wrapper {
   width: 49%;
-  height: 98%;
+  height: 100%;
   float: left;
   padding: 1%;
   background-color: rgba(255, 255, 255, 0.9);
   border: 3px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   border-radius: 5px;
+}
+
+.right-wrapper{
+  height: 100%;
 }
 
 .text-content-prewed{
