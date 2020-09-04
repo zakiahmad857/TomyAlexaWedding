@@ -43,6 +43,15 @@
     <h1>Please zoom in your browser for the full experience</h1>
   </div>
 
+  <!-- lOADER -->
+  <div id="loading" class="loader">
+    <div class="load-content">
+      <img src="images/loadtext.webp" alt="text" class="loadtext">
+      <img src="images/loading.svg" alt="loading" class="loader-icon"/>
+    </div>
+
+  </div>
+
   <div class="desktop-content prewed2">
 
       <!-- Video Call Modal -->
@@ -228,7 +237,30 @@
   <script type="text/javascript" src="index.js"></script>
 
   <script type="text/javascript">
+  // lOADER
+  var fadeOutScreen = localStorage.getItem('fadeOutScreen');
+    $('html, body').css({
+      overflow: 'hidden',
+      height: '100%'
+    });
 
+    $(window).on('load', function() {
+
+      $('html, body').css({
+        overflow: 'hidden',
+        height: 'auto'
+      })
+
+      $("#loading").addClass("loader-hidden");
+      if(localStorage.fadeOutScreen != 'true') {
+        $(".firstScreen").fadeIn(1500).delay(5000).fadeOut(1500);
+        localStorage.setItem('fadeOutScreen', 'true');
+      } else {
+        $(".firstScreen").css("display", "none");
+      }
+
+    });
+    
     // Path
     var dirPath = dirname(location.href);
     var galleryPath = RemoveLastDirectoryPartOf(dirPath);
