@@ -64,8 +64,13 @@
       <!-- Video Call Modal -->
       <div id="vcallModal" class="modal">
         <div class="modal-content content-vcall">
+          <h2 class="lang text titleVcall" key="vcall_0">Mari Bersiap!</h2>
+          <div class="timer">
+            <span>- </span>
+            <span class="minutes"></span><span class="seconds"></span>
+          </div>
           <h4 class="lang text" key="vcall_1">Sebentar lagi kamu akan bertemu dengan mempelai.</h4>
-          <h5 class="lang text" key="vcall_2">Sambil mengantri di ruang tunggu jika kamu punya pertanyaan dapat bertanya kepada host.</h5>
+          <h5 class="lang text" key="vcall_2">Sambil menunggu mempelai datang, host video call akan memandutata cara video call. </h5>
         </div>
       </div>
 
@@ -117,9 +122,9 @@
       <div class="countdown countdown-page">
         <div class="inner-countdown">
           <span class="vl"></span>
+          <p class="lang" key="countdown">Bertemu mempelai dalam</p>
           <span>- </span>
           <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span>
-          <p class="textResize lang" key="countdown">bertemu pengantin</p>
         </div>
       </div>
 
@@ -274,7 +279,7 @@
       }
     });
 
-    var endTime = new Date("4 September 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("5 September 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 

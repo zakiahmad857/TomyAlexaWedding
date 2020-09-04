@@ -272,17 +272,22 @@
   font-size: 13px;
 }
 
-.content-earlyBird .timer {
-  padding: 1%;
-  width: 25%;
+.content-earlyBird .timer, .content-vcall .timer {
+  padding: 2%;
+  width: 30%;
   margin: 1% auto;
-  background-color: #2D2D2D;
+  background-color: #236974;
   border-radius: 3px;
   font-family: 'Exo', sans-serif;
   color: white;
   font-style: normal;
-  font-weight: 100;
+  font-weight: 500;
   font-size: 20px;
+}
+
+.content-vcall .timer {
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 
 .content-earlyBird .btn-modal {
@@ -322,6 +327,10 @@
 
 .content-vcall h5 {
   font-weight: normal;
+}
+
+.titleVcall{
+  font-weight: 700;
 }
 
 /* Modal FAQ */

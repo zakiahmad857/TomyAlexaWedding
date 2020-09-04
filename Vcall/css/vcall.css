@@ -162,6 +162,10 @@ input[type=number] {
   bottom: -2%;
 }
 
+.countdownVC p{
+  font-size: 0.9vw;
+}
+
 .header-icon {
   width: 50%;
   display: inline;
@@ -210,9 +214,22 @@ input[type=number] {
    display: inline-block;
    position: absolute;
    z-index: 7;
-   -webkit-mask-image: url("../images/maskmc.png");
+   -webkit-mask-image: url("../images/maskhost.svg");
    -webkit-mask-repeat: no-repeat;
    -webkit-mask-position: center;
+ }
+
+ .tvhost{
+   position: absolute;
+   z-index: 8;
+   background-image: url(../images/tvmc.png);
+   background-position: bottom;
+   background-repeat: no-repeat;
+   background-size: 150% auto;
+   bottom: 2%;
+   right: 1%;
+   width: 20%;
+   height: 20%;
  }
 
 .dot {

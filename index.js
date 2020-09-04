@@ -24,15 +24,17 @@ var arrLang = {
     'language': 'Choose Language',
     // welcoming modal - early bird
     'earlyBird_1': 'Meeting the Bride & Groom ',
-    'earlyBird_2': 'You will meet the lovebirds in:',
-    'earlyBird_3': 'There will be a pop-up information to notify you when it’s time to see the bride & groom',
-    'earlyBird_4': 'While waiting, let us show you around what can be seen at Tomy & Lexa’s Reception',
+    'earlyBird_2': 'You will meet the couple in:',
+    'earlyBird_3': 'There will be a pop-up information to notify you when it’s time to see the couple',
+    'earlyBird_4': '',
+    'earlyBird_5': 'While waiting, let us show you around what can be seen at Tomy & Lexa’s Reception',
     // welcoming modal - jam Karet
     'sorry_1': 'A MESSAGE FROM tomy & lexa',
     'sorry_2': 'Whoops! You’re late, we’re sorry you won’t be able to meet Tomy & Lexa. Don’t worry they have prepared you a message below:',
     // video call pop-up
-    'vcall_1': 'Get Ready! 3 minutes to meet the bride & groom',
-    'vcall_2': 'You will be seated in the waiting room, If you have any question you can ask the host',
+    'vcall_0': 'Let’s Get Ready',
+    'vcall_1': 'You will meet the bride & groom soon.',
+    'vcall_2': 'While waiting for the couple, the Host will explain  about the video call procedures.',
     // angpao
     'gift': 'Send Gift with Ease :)',
     'bank': 'Via Bank Transfer',
@@ -43,7 +45,7 @@ var arrLang = {
     'next': 'Next',
     'next-karet': 'Back to Reception',
     // Countdown
-    'countdown': 'to meet the couple',
+    'countdown': 'Meet the couple in',
     // faq
     'que1': 'If I’m late to a video call, can I still meet with the bride and groom?',
     'ans1': 'We’re sorry due to limited time, the video call cannot be allocated to another time.',
@@ -93,6 +95,18 @@ var arrLang = {
     'lupaId': 'Click here if your forgot your Guest ID',
     'popLupa': 'Forgot Guest ID',
     'popLupa2': 'Please contact Customer Service through Whatsapp',
+    'popLupa3': 'through Whatsapp +62 811-1605-090',
+    // prewed
+    'prewed1': 'A visualization of how two different entities met, separated, until they got reunited again, to sail their ship through the ocean of uncertainty.',
+    'prewed2': '',
+    'prewed3': 'Photographer & Digital Imaging',
+    'prewed4': 'by Eandaru Kusumaatmadja',
+    'prewed5': 'Costume & Stylist',
+    'prewed6': 'by Timami Yestha',
+    'prewed7': 'Make up artist',
+    'prewed8': 'by Raydinda Karina',
+    'prewed9': 'Photo Studio',
+    'prewed10': 'FH Studio, Lebak Bulus',
   },
 
   'ind': {
@@ -102,21 +116,23 @@ var arrLang = {
     // welcoming modal - early bird
     'earlyBird_1': 'Pertemuan Dengan Mempelai',
     'earlyBird_2': 'Kamu akan bertemu dengan mempelai dalam waktu:',
-    'earlyBird_3': 'Jika sudah waktunya Kamu akan dapat informasi untuk bertemu dengan mempelai dan keluarga',
-    'earlyBird_4': 'Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa',
+    'earlyBird_3': 'Jika hitungan mundur sudah habis kamu akan mendapatkan informasi untuk bertemu dengan mempelai dan keluarga.',
+    'earlyBird_4': 'Mohon persiapkan penampilan terbaik anda sebelum waktu video call dimulai',
+    'earlyBird_5': 'Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa',
     // welcoming modal - jam Karet
     'sorry_1': 'Pesan dari tomy & lexa',
     'sorry_2': 'Kamu tidak bisa bertemu mempelai karena melewat waktu yang ditentukan. Play video di bawah ini untuk melihat pesan dari Tomy dan Lexa',
     // video call pop-up
+    'vcall_0': 'Mari Bersiap!',
     'vcall_1': 'Sebentar lagi kamu akan bertemu dengan mempelai.',
-    'vcall_2': 'Sambil mengantri di ruang tunggu jika kamu punya pertanyaan dapat bertanya kepada host.',
+    'vcall_2': 'Sambil menunggu mempelai datang, host video call akan memandu tata cara video call. ',
     // Pelaminan
     'in-pelaminan': "Di pelaminan:",
     // button
     'next': 'Lanjut',
     'next-karet': 'Lihat Resepsi',
     // Countdown
-    'countdown': 'bertemu pengantin',
+    'countdown': 'Bertemu mempelai dalam',
     // faq
     'que1': 'Jika saya telat masuk video call apakah bisa bertemu dengan mempelai lagi?',
     'ans1': 'Mohon maaf karena waktu yang terbatas tidak bisa untuk video call ulang',
@@ -164,7 +180,19 @@ var arrLang = {
     'login-btn': 'Masuk',
     'lupaId': 'Klik di sini jika lupa ID tamu',
     'popLupa': 'Lupa ID Tamu',
-    'popLupa2': 'Mohon hubungi Customer Service melalui Whatsapp',
+    'popLupa2': 'Mohon hubungi Customer Service',
+    'popLupa3': 'melalui Whatsapp +62 811-1605-090',
+    // prewed
+    'prewed1': 'Sebuah visualisasi dari perjalanan dua entitas.',
+    'prewed2': 'Bagaimana mereka bertemu, berpisah, hingga akhirnya dipertemukan kembali, untuk menjalani bahtera rumah tangga',
+    'prewed3': 'Fotografer dan pengarah gaya',
+    'prewed4': 'oleh Eandaru Kusumaatmadja',
+    'prewed5': 'Kostum dan stylist',
+    'prewed6': 'oleh Timami Yestha',
+    'prewed7': 'Tata rias',
+    'prewed8': 'oleh Raydinda Karina',
+    'prewed9': 'Studio Foto',
+    'prewed10': 'FH Studio, Lebak Bulus',
   }
 };
 

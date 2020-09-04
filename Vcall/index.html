@@ -76,9 +76,9 @@
       <div class="inner-countdown">
         <!-- <p id="countWaiting"></p> -->
         <span class="vl"></span>
+        <p id="countdownTitle"></p>
         <span>- </span>
         <span id="hours1"></span><span id="minutes1"></span><span id="seconds1"></span>
-        <p id="countdownTitle"></p>
       </div>
 
     </div>
@@ -98,6 +98,7 @@
         <p class="username" id="usernameMC"></p>
       </div>
     </span>
+    <div class="tvhost"></div>
 
 
     <!-- Video Tamu-->
@@ -524,7 +525,7 @@
 
 
     // Jam video call
-    var startTimeDate = new Date("4 September 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("5 September 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -597,7 +598,13 @@
       if (timeCount >= "180") {
         // Waiting room
         console.log("waiting room");
-        $("#countdownTitle").html("Waiting Room");
+        console.log(checkboxValues.toggleLang);
+        if(checkboxValues.toggleLang){
+          $("#countdownTitle").html("Meet the couple in");
+        } else {
+          $("#countdownTitle").html("Bertemu pengantin dalam");
+        }
+
         $("#minutes1").html(minutes1 - 3 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
@@ -612,7 +619,12 @@
       } else if (timeCount < "180") {
         // Ketemu pengantin
         // console.log("ketemu");
-        $("#countdownTitle").html("Waktu Video Call");
+        if(checkboxValues.toggleLang){
+          $("#countdownTitle").html("Meeting the couple");
+        } else {
+          $("#countdownTitle").html("Bertemu pengantin");
+        }
+
         $("#minutes1").html(minutes1 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
@@ -694,7 +706,7 @@
       $("#username7").html(groupVcall[6]);
 
 
-      var timeGroupPlusDate = new Date("4 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("5 September 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
       var endTimeGroup = timeGroupParse + 360;
 
@@ -851,7 +863,7 @@
       timeGroup = res2[0] + ":" + minuteEdit.toString();
 
 
-      var timeGroupPlusDate = new Date("4 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("5 September 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
       var endTimeGroup = timeGroupParse + 180;
 

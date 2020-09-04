@@ -133,6 +133,10 @@ body {
 }
 
 /* WEB TOUR */
+.popover{
+  font-family: 'Open Sans', sans-serif;
+}
+
 .popover-title {
   border: 0 !important;
   background-color: white !important;
@@ -265,7 +269,7 @@ body {
 }
 
 .countdown p{
-  font-size: 12px;
+  font-size: 0.9vw;
   margin: 0;
 }
 

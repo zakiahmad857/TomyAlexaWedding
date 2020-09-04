@@ -185,6 +185,10 @@ input[type="text"]:focus {
   color: #6E12CB;
 }
 
+.icon-whatsapp{
+  margin-top: 2%;
+}
+
 /* Toggle */
 .toggle-login {
   position: absolute;
