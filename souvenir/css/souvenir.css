@@ -8,6 +8,19 @@
   font-family: 'Kodchasan', sans-serif;
 }
 
+.content-vcall .timer {
+  padding: 2%;
+  width: 30%;
+  margin: 4% auto;
+  background-color: #236974;
+  border-radius: 3px;
+  font-family: 'Exo', sans-serif;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 /* LOADER */
 .loader {
   position: fixed;

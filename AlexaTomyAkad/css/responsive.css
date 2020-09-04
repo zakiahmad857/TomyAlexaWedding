@@ -1,43 +1,26 @@
-/* 1080p */
+/* 1980 x 1080 */
 @media screen and (min-device-width: 1900px) and (max-device-height: 1100px){
-
-  .dot2{
-    left: 12%;
-  }
-
-  .dot-mc{
-    bottom: 4%;
+  .janurkiri, .janurkanan{
+    width: 20%;
   }
 
 }
 
 /* 1440 x 900 */
 @media screen and (min-device-width: 1400px) and (max-device-width: 1460px) and (min-device-height: 880px){
-  .dot2{
-    left: 12%;
+  .janurkiri, .janurkanan{
+    width: 22%;
   }
+}
 
-  .inner-countdown{
-    padding-top: 4%;
+/* 1280 x 720p */
+@media screen and (min-device-width: 1250px) and (max-device-width: 1300px) and (max-device-height: 740px){
+  .janurkiri, .janurkanan{
+    width: 20%;
   }
-
-  .dot-mc{
-    bottom: 3%;
-    height: 12%;
-  }
-
 }
 
 /* 1280 x 800p */
 @media screen and (min-device-width: 1250px) and (max-device-width: 1300px) and (min-device-height: 780px) and (max-device-height: 820px){
-  .dot2{
-    left: 12.5%;
-  }
-  .inner-countdown{
-    margin-top: 18%;
-  }
-
-  .dot-mc{
-    bottom: 3%;
-  }
+  
 }

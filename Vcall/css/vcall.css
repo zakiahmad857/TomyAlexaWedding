@@ -47,6 +47,27 @@ body {
   animation-fill-mode: forwards;
 }
 
+.tour{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255,255,255, 0.4);
+  position: absolute;
+  z-index: 48;
+}
+
+.tourEng, .tourIndo{
+  display: none;
+}
+
+.info{
+  position: absolute;
+  top: 45%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+
+
 .popover-content {
   height: 30px !important;
   margin-bottom: 30px !important;
@@ -154,12 +175,20 @@ input[type=number] {
 }
 
 /* Header */
+.countdown{
+  width: 16%;
+}
+
 .countdownVC{
   z-index: 10;
   margin: auto;
   position: absolute;
   left: 1%;
   bottom: -2%;
+}
+
+.countdownVC p{
+  font-size: 1vw;
 }
 
 .header-icon {
@@ -210,9 +239,22 @@ input[type=number] {
    display: inline-block;
    position: absolute;
    z-index: 7;
-   -webkit-mask-image: url("../images/maskmc.png");
+   -webkit-mask-image: url("../images/maskhost.svg");
    -webkit-mask-repeat: no-repeat;
    -webkit-mask-position: center;
+ }
+
+ .tvhost{
+   position: absolute;
+   z-index: 10;
+   background-image: url(../images/tvmc.png);
+   background-position: bottom;
+   background-repeat: no-repeat;
+   background-size: 130% auto;
+   bottom: -12%;
+   right: -3%;
+   width: 20%;
+   height: 60%;
  }
 
 .dot {
@@ -230,8 +272,8 @@ input[type=number] {
   position: absolute;
   width: 10%;
   height: 15%;
-  bottom: 2%;
-  right: 1%;
+  bottom: 5%;
+  right: 2%;
   z-index: 10 !important;
   transform:  rotateY(180deg);
    /*border: 2px solid black; */

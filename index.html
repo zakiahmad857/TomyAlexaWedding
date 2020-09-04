@@ -16,7 +16,7 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"> -->
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@700&family=Cinzel&family=Exo:wght@200&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Kodchasan:wght@700&family=Cinzel&family=Exo:wght@200&amily=Exo:wght@500&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheet  -->
   <link rel="stylesheet" href="css/style.css">
@@ -97,8 +97,9 @@
           <span>- </span>
           <span class="hours"></span><span class="minutes"></span><span class="seconds"></span>
         </div>
-        <h6 class="lang text" key="earlyBird_3">Jika sudah waktunya Kamu akan dapat informasi untuk bertemu dengan mempelai dan keluarga</h6>
-        <p class="lang text" key="earlyBird_4">Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa</p>
+        <h6 class="lang text" key="earlyBird_3">Jika hitungan mundur sudah habis kamu akan mendapatkan informasi untuk bertemu dengan mempelai dan keluarga. </h6>
+        <h6 class="lang text" key="earlyBird_4">Mohon persiapkan penampilan terbaik anda sebelum waktu video call dimulai</h6>
+        <p class="lang text" key="earlyBird_5">Selagi menunggu, mari kami tunjukkan apa saja yang ada di sekitar Resepsi Tomy & Lexa</p>
         <button type="button" class="lang btn btn-modal" id="btn-next" key="next">Lanjut</button>
       </div>
 
@@ -107,8 +108,13 @@
     <!-- Video Call Modal -->
     <div id="vcallModal" class="modal modal-baru">
       <div class="modal-content-baru content-vcall">
+        <h2 class="lang text titleVcall" key="vcall_0">Mari Bersiap!</h2>
+        <div class="timer">
+          <span>- </span>
+          <span class="minutes"></span><span class="seconds"></span>
+        </div>
         <h4 class="lang text" key="vcall_1">Sebentar lagi kamu akan bertemu dengan mempelai.</h4>
-        <h5 class="lang text" key="vcall_2">Sambil mengantri di ruang tunggu jika kamu punya pertanyaan dapat bertanya kepada host.</h5>
+        <h5 class="lang text" key="vcall_2">Sambil menunggu mempelai datang, host video call akan memandutata cara video call. </h5>
       </div>
     </div>
 
@@ -192,9 +198,9 @@
       <div class="countdown">
         <div class="inner-countdown">
           <span class="vl"></span>
+          <p class="lang" key="countdown">Bertemu mempelai dalam</p>
           <span>- </span>
           <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span>
-          <p class="lang textResize" key="countdown">bertemu pengantin</p>
         </div>
       </div>
 
@@ -204,9 +210,10 @@
           <iframe id="videoMC" src="https://www.youtube.com/embed/I9kHmJNFPLQ?enablejsapi=1&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div class="screen-wrapper"></div>
         </div>
-
+        <img class="on" src="images/tv-on.png" alt="">
+        <img class="off" src="images/tv-off.png" alt="">
       </div>
-      <img class="off" src="images/turn-off.png" alt="">
+
 
       <div class="parent-angpao">
         <a href="angpao">
@@ -297,25 +304,25 @@
       steps: [{
           element: ".countdown",
           title: "Hitungan Mundur",
-          content: "Ini adalah waktu yang tersisa untuk bertemu dengan pengantin agar kamu tidak lupa",
+          content: "Setelah waktu habis kamu akan dapat info untuk langsung bertemu mempelai melalui video call.",
           placement: "bottom",
         },
         {
           element: ".parent-gallery",
           title: "Gallery Foto & Video",
-          content: "Kamu bisa melihat foto dan video Pre-Wed, Lamaran, serta Akad Pernikahan dari Tomy & Lexa ",
+          content: "Sambil menunggu yuk lihat foto Pre-Wed, video lamaran, serta Akad Pernikahan dari Tomy & Alexa.",
           placement: "right",
         },
         {
           element: ".parent-souvenir",
           title: "Cinderamata",
-          content: "Sebagai tanda terima kasih dari Tomy & Lexa, ada cinderamata untukmu di sini",
+          content: "Sebagai tanda terima kasih dari Tomy & Alexa, ada cinderamata untukmu di sini.",
           placement: "top",
         },
         {
           element: ".parent-angpao",
-          title: "Amplop Digital",
-          content: "Kamu juga bisa memberikan amplop pernikahan secara virtual di sini",
+          title: "E-Amplop",
+          content: "Kamu juga bisa memberikan amplop pernikahan secara digital lohh.. Intip caranya disini.",
           placement: "right",
         },
         {
@@ -327,19 +334,19 @@
         {
           element: ".parent-jukebox",
           title: "Hiburan",
-          content: "Nikmati special performance dari Norrrm Radio disini",
+          content: "Nikmati special performance dari Norrrm Radio dan video musik Antadoux di sini.",
           placement: "left",
         },
         {
           element: ".parent-pelaminan",
-          title: "Pelaminan",
-          content: "Di sini kamu bisa melihat siapa yang sedang bertemu dengan mempelai",
+          title: "LIVE Pelaminan",
+          content: "Di sini kamu bisa melihat siapa saja yang sedang bertemu dengan mempelai.",
           placement: "bottom",
         },
         {
           element: "#info",
           title: "Petunjuk Penggunaan",
-          content: "Jika kamu ingin membaca ulang petunjuk penggunaan website, silakan klik tombol ini",
+          content: "Untuk membaca ulang petunjuk penggunaan website kondangan virtual silakan klik tombol ini",
           placement: "bottom",
         }
       ],
@@ -352,7 +359,7 @@
       autoscroll: false,
       backdropPadding: 0,
       redirect: true,
-      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div><span class="close-tour" data-role="end">&#10006;</span> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">&#10094;</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> </div> </div> </div>',
     });
 
     var tourEng = new Tour({
@@ -365,24 +372,24 @@
         {
           element: ".parent-gallery",
           title: "Video & Photo Gallery",
-          content: "Take a look of Lexa & Tomy’s Pre-Wedding, Engagement and Wedding Ceremony photos and videos here. ",
+          content: "Take a look of Alexa & Tomy’s Pre-Wedding, Engagement and Wedding Ceremony photos and videos here.  ",
           placement: "right",
         },
         {
           element: ".parent-souvenir",
           title: "Wedding Souvenir",
-          content: "As a thank you, Tomy & Lexa have something special for you to remember this precious moment.",
+          content: "As a thank you, Tomy & Alexa have something special for you to remember this precious moment.",
           placement: "top",
         },
         {
           element: ".parent-angpao",
           title: "Show your love here",
-          content: "We have provided ways if you want to send some wedding gift for Tomy & Lexa.",
+          content: "We have provided ways if you want to send some wedding gift for Tomy & Alexa.",
           placement: "right",
         },
         {
           element: "#live-mc",
-          title: "MC",
+          title: "The Presenter",
           content: "MC Chandra will accompany you throughout the event.",
           placement: "left",
         },
@@ -395,12 +402,12 @@
         {
           element: ".parent-pelaminan",
           title: "Aisle",
-          content: "Take a peek of who are currently meeting the bride & groom. You can also see who’s up in the line to meet them soon!",
+          content: "Take a peek of who are currently meeting the bride & groom. ",
           placement: "bottom",
         },
         {
           element: "#info",
-          title: "Intructions",
+          title: "Website Instructions",
           content: "You can click this icon if you want to repeat the instructions.",
           placement: "bottom",
         }
@@ -414,7 +421,7 @@
       autoscroll: false,
       backdropPadding: 0,
       redirect: true,
-      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div><span class="close-tour" data-role="end">&#10006;</span> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">&#10094;</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> </div> </div> </div>',
     });
 
 
@@ -494,7 +501,7 @@
       window.location = fullPath;
     }
 
-    var endTime = new Date("4 September 2020 " + timeSet + " GMT+07:00");
+    var endTime = new Date("5 September 2020 " + timeSet + " GMT+07:00");
 
     console.log("endtimeeeee" + endTime);
 
