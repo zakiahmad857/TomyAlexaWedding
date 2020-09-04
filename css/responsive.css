@@ -52,6 +52,11 @@
   .content-earlyBird .heading{
     font-size: 1.5vw;
   }
+
+  .on, .off{
+    bottom: 18%;
+    left: 43%;
+  }
 }
 
 /* 1440 x 900 */
