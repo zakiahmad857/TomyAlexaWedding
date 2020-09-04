@@ -1,3 +1,27 @@
+// lOADER
+var fadeOutScreen = localStorage.getItem('fadeOutScreen');
+  $('html, body').css({
+    overflow: 'hidden',
+    height: '100%'
+  });
+
+  $(window).on('load', function() {
+
+    $('html, body').css({
+      overflow: 'hidden',
+      height: 'auto'
+    })
+
+    $("#loading").addClass("loader-hidden");
+    if(localStorage.fadeOutScreen != 'true') {
+      $(".firstScreen").fadeIn(1500).delay(5000).fadeOut(1500);
+      localStorage.setItem('fadeOutScreen', 'true');
+    } else {
+      $(".firstScreen").css("display", "none");
+    }
+
+  });
+
 $(document).ready(function() {
 
 console.log("masuk js login");
