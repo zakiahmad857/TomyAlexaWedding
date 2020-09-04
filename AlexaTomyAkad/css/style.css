@@ -1,0 +1,573 @@
+body{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden !important;
+}
+
+.akad-wrapper{
+  background-image: url(../images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 70%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hideImage{
+  display: none;
+}
+
+.title{
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 45%;
+}
+
+.video{
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 48%;
+  height: 56%;
+}
+
+.amplop{
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: -2%;
+  left: -1.5%;
+  width: 20%;
+  height: 40%;
+  background-image: url(../images/ayam-still.png);
+  background-size: 120% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.amplop:hover{
+  background-image: url(../images/ayam-animated.png);
+  background-size: 120% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.souvenir{
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: -3%;
+  right: -1%;
+  width: 21%;
+  height: 40%;
+  background-image: url(../images/cinderamata-still.png);
+  background-size: 145% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 3;
+  transform: rotate(1.78deg);
+}
+
+.souvenir:hover{
+  background-image: url(../images/cinderamata-animated.png);
+  background-size: 145% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.janurkiri{
+  position: absolute;
+  left: 0;
+  bottom: 4%;
+}
+
+.janurkanan{
+  position: absolute;
+  right: 0;
+  bottom: 3%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  text-align: right;
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+  margin: 5px 15px 0 0;
+}
+
+.mobile-content .close{
+  font-size: 10vw;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content-wrapper {
+  background-color: rgba(39, 33, 80, 0.9);
+  color: white;
+  width: 92%;
+  height: 75%;
+  /* padding: 3%; */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 15px rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  z-index: 10;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+.modal-angpao, .modal-souvenir{
+  display: none;
+}
+
+.modal-angpao .content-text{
+  padding: 3%;
+}
+
+.content-wrapper p{
+  font-size: 1.1vw;
+}
+
+.content-left{
+  width: 60%;
+  float: left;
+  padding-right: 5%;
+  margin-top: 2%;
+  font-style: normal;
+}
+
+.content-right{
+  /* border: 1px solid black; */
+  width: 40%;
+  float: right;
+  margin-top: 2%;
+  font-style: normal;
+}
+
+.vl2 {
+  border-left: 1px solid white;
+  height: 320px;
+  display: inline-block;
+  float: left;
+  margin-right: 10%;
+}
+
+.qrcode-list {
+  display: flex;
+  width: 100%;
+  margin: 5% 0;
+}
+
+.qrcode {
+  flex: auto;
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid blue; */
+}
+
+.qrcode p {
+  font-size: 0.9vw;
+}
+
+.qrcode p.judul{
+  font-size: 1.1vw;
+}
+
+.desc-angpao{
+  width: 100%;
+  margin: auto;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.qrcode img{
+  width: 100%;
+  margin: 7% 0;
+}
+
+.ovo {
+  margin-right: 5%;
+}
+
+.gopay {
+  margin-right: 5%;
+}
+
+.alamat{
+  width: 80%;
+  font-weight: bolder;
+}
+
+/* souvenir */
+.modal-souvenir .content-text{
+  padding: 4% 6%;
+}
+
+.modal-souvenir .content-left{
+  width: 40%;
+}
+
+.modal-souvenir .content-right{
+  width: 60%;
+}
+
+.img-souvenir{
+  width: 85%;
+}
+
+.modal-souvenir p{
+  margin-bottom: 4%;
+  width: 80%;
+  font-size: 1.2vw;
+}
+
+.btn-download {
+  background-color: #34337F;
+  color: white;
+  border: 1px solid #4F5989;
+  box-shadow: -2px -2px 5px 2px rgba(255, 255, 255, 0.12), 3px 3px 5px 3px rgba(8, 43, 96, 0.41);
+  border-radius: 14px;
+  margin-top: 2%;
+  font-size: 1.2vw;
+  padding: 1% 4%;
+}
+
+.btn-download:hover{
+  color: white;
+}
+
+.btn-download:focus{
+  border: 0;
+  color: white;
+  outline: none !important;
+  box-shadow: -2px -2px 5px 2px rgba(255, 255, 255, 0.12), 3px 3px 5px 3px rgba(8, 43, 96, 0.41);
+}
+
+/* Mobile content */
+.mobile-content{
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mobile-wrapper{
+  background-image: url(../images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobile-wrapper .title{
+  width: 100%;
+  top: 10%;
+}
+
+.mobile-wrapper .video{
+  width: 80%;
+  height: 25%;
+  top: 45%;
+}
+
+.amplop-mobile{
+  position: absolute;
+  bottom: 0%;
+  left: -1.5%;
+  width: 55%;
+  height: 30%;
+  background-image: url(../images/ayam-still.png);
+  background-size: 120% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.souvenir-mobile{
+  position: absolute;
+  bottom: 8%;
+  right: 1%;
+  width: 55%;
+  height: 32%;
+  background-image: url(../images/cinderamata-still.png);
+  background-size: 145% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 3;
+  transform: rotate(1.78deg);
+  overflow: hidden;
+}
+
+.souvenir-popup, .amplop-popup{
+  background-color: rgba(39, 33, 80, 0.9);
+  position: absolute;
+  z-index: 20;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  overflow-y: scroll;
+  display: none;
+}
+
+.account-wrapper{
+  margin: 7% 0 0 2%;
+}
+
+.amplop-popup .content-popup img{
+  width: 70%;
+  margin: 3% 0;
+}
+
+.amplop-popup h4{
+  font-size: 4vw;
+  font-weight: 800;
+}
+
+.amplop-popup p{
+  font-size: 4vw;
+  font-weight: normal;
+}
+
+.account-wrapper p{
+  margin-bottom: 0;
+  font-size: 3.5vw;
+}
+
+.account-wrapper.address h5{
+  font-size: 3.5vw;
+}
+
+.account-wrapper.address p{
+  font-size: 4vw;
+}
+
+hr{
+  border: 1px solid white;
+  margin-top: 7%;
+}
+
+.close-popup{
+  position: absolute;
+  z-index: 21;
+  right: 4%;
+}
+
+.content-popup{
+  padding: 5%;
+  font-family: 'Kodchasan', sans-serif;
+  position: absolute;
+}
+
+.souvenir-popup h1, .amplop-popup h1{
+  margin-bottom: 5%;
+  font-size: 6vw;
+}
+
+.souvenir-popup p{
+  margin-bottom: 4%;
+  font-size: 4vw;
+  font-weight: normal;
+}
+
+.img-souvenir-popup{
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.btn-download {
+  background-color: #34337F;
+  color: white;
+  border: 1px solid #4F5989;
+  box-shadow: -2px -2px 5px 2px rgba(255, 255, 255, 0.12), 3px 3px 5px 3px rgba(8, 43, 96, 0.41);
+  border-radius: 14px;
+  margin-top: 2%;
+  padding: 1% 3%;
+  position: absolute;
+  margin-bottom: 5%;
+}
+
+.btn-download:hover{
+  color: white;
+}
+
+.btn-download:focus{
+  border: 0;
+  color: white;
+  outline: none !important;
+  box-shadow: -2px -2px 5px 2px rgba(255, 255, 255, 0.12), 3px 3px 5px 3px rgba(8, 43, 96, 0.41);
+}
+
+.mobile-content .btn-download{
+  font-size: 4vw;
+  padding: 2% 4%;
+}
+
+/* Ipad pro landscape*/
+@media screen and (min-device-width: 1360px) and (max-device-width: 1370px) and (min-device-height: 1000px) and (max-device-height: 1100px){
+  .mobile-wrapper .title{
+    width: 60%;
+    top: 2%;
+  }
+
+  .mobile-wrapper .video{
+    width: 60%;
+    height: 45%;
+    top: 48%;
+  }
+
+  .amplop-mobile{
+    width: 30%;
+    height: 40%;
+  }
+
+  .souvenir-mobile{
+    width: 30%;
+    height: 40%;
+    bottom: 0;
+  }
+
+  /* popup */
+  .souvenir-popup h1, .amplop-popup h1{
+    margin-bottom: 5%;
+    font-size: 4vw;
+  }
+
+  .amplop-popup .content-popup img{
+    width: 30%;
+    margin: 3% 0;
+  }
+
+  .amplop-popup h4{
+    font-size: 2.5vw;
+    font-weight: 800;
+  }
+
+  .amplop-popup p{
+    font-size: 2.5vw;
+    font-weight: normal;
+  }
+
+  .account-wrapper p{
+    margin-bottom: 0;
+    font-size: 2vw;
+  }
+
+  .account-wrapper.address h5{
+    font-size: 2vw;
+  }
+
+  .account-wrapper.address p{
+    font-size: 2.5vw;
+  }
+
+  .souvenir-popup p{
+    margin-bottom: 4%;
+    font-size: 2vw;
+    font-weight: normal;
+  }
+
+  .img-souvenir-popup{
+    width: 60%;
+    margin-bottom: 5%;
+  }
+
+  .btn-download {
+    font-size: 2vw;
+    margin-bottom: 5%;
+  }
+}
+
+/* Ipad*/
+@media screen and (min-device-width: 1000px) and (max-device-width: 1050px) and (min-device-height: 750px) and (max-device-height: 800px){
+  .mobile-wrapper .title{
+    width: 60%;
+    top: 2%;
+  }
+
+  .mobile-wrapper .video{
+    width: 60%;
+    height: 45%;
+    top: 48%;
+  }
+
+  .amplop-mobile{
+    width: 30%;
+    height: 40%;
+  }
+
+  .souvenir-mobile{
+    width: 30%;
+    height: 40%;
+    bottom: 0;
+  }
+
+  /* popup */
+  .souvenir-popup h1, .amplop-popup h1{
+    margin-bottom: 5%;
+    font-size: 4vw;
+  }
+
+  .amplop-popup .content-popup img{
+    width: 30%;
+    margin: 3% 0;
+  }
+
+  .amplop-popup h4{
+    font-size: 2.5vw;
+    font-weight: 800;
+  }
+
+  .amplop-popup p{
+    font-size: 2.5vw;
+    font-weight: normal;
+  }
+
+  .account-wrapper p{
+    margin-bottom: 0;
+    font-size: 2vw;
+  }
+
+  .account-wrapper.address h5{
+    font-size: 2vw;
+  }
+
+  .account-wrapper.address p{
+    font-size: 2.5vw;
+  }
+
+  .souvenir-popup p{
+    margin-bottom: 4%;
+    font-size: 2vw;
+    font-weight: normal;
+  }
+
+  .img-souvenir-popup{
+    width: 60%;
+    margin-bottom: 5%;
+  }
+
+  .btn-download {
+    font-size: 2vw;
+    margin-bottom: 5%;
+  }
+}

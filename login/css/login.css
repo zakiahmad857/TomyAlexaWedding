@@ -5,6 +5,14 @@ body {
   /* background-color: #5704AA; */
 }
 
+.mobile-content{
+  background-image: url('../images/mobileview.png');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
 .loginEnglish{
   display: none;
 }
