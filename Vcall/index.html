@@ -46,7 +46,7 @@
   <div id="loading" class="loader">
     <div class="load-content">
       <img src="images/loadtext.webp" alt="text" class="loadtext">
-      <img src="images/loading.svg" alt="loading" class="loader-icon"/>
+      <img src="images/loading.svg" alt="loading" class="loader-icon" />
     </div>
 
   </div>
@@ -260,27 +260,27 @@
     console.log("masuk js di html");
     // lOADER
     var fadeOutScreen = localStorage.getItem('fadeOutScreen');
+    $('html, body').css({
+      overflow: 'hidden',
+      height: '100%'
+    });
+
+    $(window).on('load', function() {
+
       $('html, body').css({
         overflow: 'hidden',
-        height: '100%'
-      });
+        height: 'auto'
+      })
 
-      $(window).on('load', function() {
+      $("#loading").addClass("loader-hidden");
+      if (localStorage.fadeOutScreen != 'true') {
+        $(".firstScreen").fadeIn(1500).delay(5000).fadeOut(1500);
+        localStorage.setItem('fadeOutScreen', 'true');
+      } else {
+        $(".firstScreen").css("display", "none");
+      }
 
-        $('html, body').css({
-          overflow: 'hidden',
-          height: 'auto'
-        })
-
-        $("#loading").addClass("loader-hidden");
-        if(localStorage.fadeOutScreen != 'true') {
-          $(".firstScreen").fadeIn(1500).delay(5000).fadeOut(1500);
-          localStorage.setItem('fadeOutScreen', 'true');
-        } else {
-          $(".firstScreen").css("display", "none");
-        }
-
-      });
+    });
     // // WEB TOUR
     // var vcallTour = new Tour({
     //   steps: [{
@@ -358,11 +358,11 @@
     //   template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
     // });
     var coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
-      console.log(coba);
-      var obj = JSON.parse(coba);
-      var res = obj.datetime.split("T");
-      var res1 = res[1].split(".");
-      var res2 = res1[0].split(":");
+    console.log(coba);
+    var obj = JSON.parse(coba);
+    var res = obj.datetime.split("T");
+    var res1 = res[1].split(".");
+    var res2 = res1[0].split(":");
 
     // showcountdown
     $(".countdown").css("display", "block");
@@ -395,13 +395,12 @@
       return (the_arr.join('/'));
     }
 
-        function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
-}
+    function httpGet(theUrl) {
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open("GET", theUrl, false); // false for synchronous request
+      xmlHttp.send(null);
+      return xmlHttp.responseText;
+    }
 
     // TOKEN DATA
     var name = null;
@@ -472,7 +471,7 @@
     var minuteEdit = parseInt(res2[1]) - (res2[1] % 6);
     console.log("minute room 1 " + minuteEdit);
 
-    if(idPosisi == 8888){
+    if (idPosisi == 8888) {
       room = localStorage.storageRoom;
     }
 
@@ -519,13 +518,13 @@
 
     if (room == 1) {
       var id_room = "room1";
-    } else if (room == 2){
+    } else if (room == 2) {
       var id_room = "room2";
     }
 
 
     // Jam video call
-    var startTimeDate = new Date("3 September 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("4 September 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -552,6 +551,10 @@
       var coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
       console.log(coba);
       var obj = JSON.parse(coba);
+
+      res = obj.datetime.split("T");
+      res1 = res[1].split(".");
+      res2 = res1[0].split(":");
 
       timeNowParse = (obj.unixtime);
 
@@ -619,6 +622,7 @@
     // countdown untuk host
     var get = false;
     var sama = false;
+
     function countdownAdmin() {
 
       // Time group
@@ -643,7 +647,7 @@
       var minuteNow = parseInt(res2[1]);
 
       console.log("cek menit admin " + minuteNow);
-      if(minuteEdit == minuteNow){
+      if (minuteEdit == minuteNow) {
         sama = true;
         // if (get == false){
 
@@ -654,7 +658,7 @@
         get = false;
       }
 
-      if((sama == true) && (get== false)){
+      if ((sama == true) && (get == false)) {
         groupVcall = [];
         console.log("GET DATA BUAT ADMIN");
         $.ajax({
@@ -688,7 +692,7 @@
       $("#username7").html(groupVcall[6]);
 
 
-      var timeGroupPlusDate = new Date("3 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("4 September 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
       var endTimeGroup = timeGroupParse + 360;
 
@@ -699,6 +703,14 @@
       // Countdown host
       // Time now
       //var now = new Date();
+      coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      console.log(coba);
+      obj = JSON.parse(coba);
+
+      res = obj.datetime.split("T");
+      res1 = res[1].split(".");
+      res2 = res1[0].split(":");
+
       var timeNowParse = obj.unixtime;
 
       var countTime = endTimeGroup - timeNowParse;
@@ -739,14 +751,14 @@
     var storageIdRoom = localStorage.getItem("storageIdRoom");
     var storageRoom = localStorage.getItem("storageRoom");
 
-    $(document).ready(function(){
+    $(document).ready(function() {
       console.log("doc ready id_room " + localStorage.storageIdRoom);
       console.log("doc ready room " + localStorage.storageRoom);
-      if(idPosisi == 8888){
+      if (idPosisi == 8888) {
         setInterval(function() {
           pindahRoom();
         }, 1000);
-        if(localStorage.settingState == 'done'){
+        if (localStorage.settingState == 'done') {
           var fields = ["appID", "channel"];
           var params = serializeformData(); // Data is feteched and serilized from the form element.
           console.log("PARAMS");
@@ -763,9 +775,9 @@
       // Pindah room
       //var time = new Date();
       var menit = parseInt(res2[1]);
-      var menitMod = menit - menit%3;
+      var menitMod = menit - menit % 3;
 
-      if ((menit%3 == 0) && (localStorage.pindahState != 'pindah')) {
+      if ((menit % 3 == 0) && (localStorage.pindahState != 'pindah')) {
         console.log("muncul pindah room modal");
         $("#pindahRoomModal").css("display", "block");
         var counterVcall = 3;
@@ -782,7 +794,7 @@
             location.reload();
           }
         }, 1000);
-      } else if (menit%3 > 0){
+      } else if (menit % 3 > 0) {
         localStorage.setItem('pindahState', 'x');
       }
 
@@ -790,14 +802,14 @@
 
       if (idPosisi == 8888) {
         console.log("MASUK ID POSISI");
-        if (menitMod%2==0) {
+        if (menitMod % 2 == 0) {
           // room 2
           console.log("pengantin masuk room 2");
           id_room = "room2";
           room = 2;
           localStorage.setItem("storageIdRoom", "room2");
           localStorage.setItem("storageRoom", 2);
-        } else if (menitMod%2==1) {
+        } else if (menitMod % 2 == 1) {
           // room 1
           console.log("pengantin masuk room 1");
           id_room = "room1";
@@ -831,7 +843,7 @@
       timeGroup = res2[0] + ":" + minuteEdit.toString();
 
 
-      var timeGroupPlusDate = new Date("3 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("4 September 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
       var endTimeGroup = timeGroupParse + 180;
 
@@ -842,6 +854,14 @@
       // Countdown
       // Time now
       //var now = new Date();
+      coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      console.log(coba);
+      obj = JSON.parse(coba);
+
+      res = obj.datetime.split("T");
+      res1 = res[1].split(".");
+      res2 = res1[0].split(":");
+
       var timeNowParse = (obj.unixtime);
 
       var countTime = endTimeGroup - timeNowParse;
@@ -894,7 +914,7 @@
 
     console.log("USERNAME " + usernameCall);
     // $(document).ready(function() {
-    if (localStorage.settingState != 'done'){
+    if (localStorage.settingState != 'done') {
       $("#setAgora").css("display", "block");
     }
 
@@ -972,7 +992,7 @@
       }
 
       obj["uid"] = vcallPos
-      if (idPosisi == 8888){
+      if (idPosisi == 8888) {
         room = localStorage.storageRoom;
         id_room = localStorage.storageIdRoom;
       }
@@ -1288,38 +1308,38 @@
         // Delete username yang leave
         if (id == 1111) {
           $("#username1").html("");
-          if(idPosisi == 9999){
+          if (idPosisi == 9999) {
             $("#username1").css("display", "none");
           }
 
         } else if (id == 2222) {
           $("#username2").html("");
-          if(idPosisi == 9999){
+          if (idPosisi == 9999) {
             $("#username2").css("display", "none");
           }
         } else if (id == 3333) {
           $("#username3").html("");
-          if(idPosisi == 9999){
+          if (idPosisi == 9999) {
             $("#username3").css("display", "none");
           }
         } else if (id == 4444) {
           $("#username4").html("");
-          if(idPosisi == 9999){
+          if (idPosisi == 9999) {
             $("#username4").css("display", "none");
           }
         } else if (id == 5555) {
           $("#username5").html("");
-          if(idPosisi == 9999){
+          if (idPosisi == 9999) {
             $("#username5").css("display", "none");
           }
         } else if (id == 6666) {
           $("#username6").html("");
-          if(idPosisi == 9999){
+          if (idPosisi == 9999) {
             $("#username6").css("display", "none");
           }
         } else if (id == 7777) {
           $("#username7").html("");
-          if(idPosisi == 9999){
+          if (idPosisi == 9999) {
             $("#username7").css("display", "none");
           }
         }
@@ -1332,7 +1352,7 @@
         Toast.notice("stream published success")
         console.log("stream-published")
         console.log("MASUK KESATU");
-        if(idPosisi == 9999){
+        if (idPosisi == 9999) {
           $("#username1").css("display", "none");
           $("#username2").css("display", "none");
           $("#username3").css("display", "none");
@@ -1366,7 +1386,7 @@
         Toast.info("stream-subscribed remote-uid: " + id)
         console.log("stream-subscribed remote-uid: ", id)
         console.log("MASUK KEDUA");
-        if(idPosisi == 9999){
+        if (idPosisi == 9999) {
           if (id == 1111) {
             $("#username1").css("display", "block");
           } else if (id == 2222) {
@@ -1385,7 +1405,7 @@
         }
 
         console.log("GAK KETENDANG");
-        if (id == idPosisi){
+        if (id == idPosisi) {
           console.log("KETENDANG!!!!!!");
           leave(rtc)
         }
@@ -1494,7 +1514,7 @@
           var camId = localStorage.getItem("camId");
 
           console.log("MASUK YEY");
-          if(localStorage.micId == null){
+          if (localStorage.micId == null) {
             console.log("MASUK KE NULL");
             var microphoneId = option.microphoneId;
             localStorage.setItem("micId", option.microphoneId);
@@ -1503,7 +1523,7 @@
             console.log("microphoneId dalem join lala" + microphoneId);
           }
 
-          if(localStorage.camId == null){
+          if (localStorage.camId == null) {
             var cameraId = option.cameraId;
             localStorage.setItem("camId", option.cameraId);
           } else {
@@ -1699,7 +1719,7 @@
 
         $("#setAgora").css("display", "none");
 
-        if(idPosisi == 8888){
+        if (idPosisi == 8888) {
           localStorage.setItem('settingState', 'done');
         }
       })
