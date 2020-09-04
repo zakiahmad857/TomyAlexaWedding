@@ -357,7 +357,7 @@
     //   redirect: true,
     //   template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
     // });
-    var coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+    var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
     console.log(coba);
     var obj = JSON.parse(coba);
     var res = obj.datetime.split("T");
@@ -548,7 +548,7 @@
       // console.log("startTimeParse " + startTimeParse);
       // console.log("endTime " + endTime);
 
-      var coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
       console.log(coba);
       var obj = JSON.parse(coba);
 
@@ -562,14 +562,20 @@
       // console.log("endtime " + endTime);
 
       // Kalo waktu skrg udah melebihi jatah vcall, exit
-      if (timeNowParse >= endTime) {
 
+      if(timeNowParse >= (parseInt(endTime)-3)){
         $("#setAgora").css('display', 'none');
         $("#byeVcallModal").css('display', 'block');
+
+      }
+
+      if (timeNowParse >= endTime) {
+        leave(rtc);
+        
         console.log("sama");
         // vcallTour.end();
         // vcallTourEng.end();
-        leave(rtc);
+        //leave(rtc);
 
       }
 
@@ -703,7 +709,7 @@
       // Countdown host
       // Time now
       //var now = new Date();
-      coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
       console.log(coba);
       obj = JSON.parse(coba);
 
@@ -780,7 +786,7 @@
       if ((menit % 3 == 0) && (localStorage.pindahState != 'pindah')) {
         console.log("muncul pindah room modal");
         $("#pindahRoomModal").css("display", "block");
-        var counterVcall = 3;
+        var counterVcall = 1;
         var interval = setInterval(function() {
           // Display 'counter' wherever you want to display it.
           counterVcall--;
@@ -854,7 +860,7 @@
       // Countdown
       // Time now
       //var now = new Date();
-      coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
       console.log(coba);
       obj = JSON.parse(coba);
 
@@ -973,7 +979,7 @@
       for (let key of keys) {
         if (fields.indexOf(key) != -1) {
           if (!formData[key]) {
-            Toast.error("Please Enter " + key)
+            //Toast.error("Please Enter " + key)
             return false
           }
         }
@@ -1302,7 +1308,7 @@
         if (id !== rtc.params.uid) {
           removeView(id)
         }
-        Toast.notice("peer leave")
+        //Toast.notice("peer leave")
         console.log("peer-leave", id)
 
         // Delete username yang leave
@@ -1349,7 +1355,7 @@
       })
       // Occurs when the local stream is published.
       rtc.client.on("stream-published", function(evt) {
-        Toast.notice("stream published success")
+        //Toast.notice("stream published success")
         console.log("stream-published")
         console.log("MASUK KESATU");
         if (idPosisi == 9999) {
@@ -1367,7 +1373,7 @@
       rtc.client.on("stream-added", function(evt) {
         var remoteStream = evt.stream
         var id = remoteStream.getId()
-        Toast.info("stream-added uid: " + id)
+        //Toast.info("stream-added uid: " + id)
         if (id !== rtc.params.uid) {
           rtc.client.subscribe(remoteStream, function(err) {
             console.log("stream subscribe failed", err)
@@ -1383,7 +1389,7 @@
         rtc.remoteStreams.push(remoteStream)
         addView(id)
         remoteStream.play("remote_video_" + id)
-        Toast.info("stream-subscribed remote-uid: " + id)
+        //Toast.info("stream-subscribed remote-uid: " + id)
         console.log("stream-subscribed remote-uid: ", id)
         console.log("MASUK KEDUA");
         if (idPosisi == 9999) {
@@ -1415,7 +1421,7 @@
       rtc.client.on("stream-removed", function(evt) {
         var remoteStream = evt.stream
         var id = remoteStream.getId()
-        Toast.info("stream-removed uid: " + id)
+        //Toast.info("stream-removed uid: " + id)
         if (remoteStream.isPlaying()) {
           remoteStream.stop()
         }
@@ -1429,13 +1435,13 @@
       rtc.client.on("onTokenPrivilegeWillExpire", function() {
         // After requesting a new token
         // rtc.client.renewToken(token);
-        Toast.info("onTokenPrivilegeWillExpire")
+        //Toast.info("onTokenPrivilegeWillExpire")
         console.log("onTokenPrivilegeWillExpire")
       })
       rtc.client.on("onTokenPrivilegeDidExpire", function() {
         // After requesting a new token
         // client.renewToken(token);
-        Toast.info("onTokenPrivilegeDidExpire")
+        //Toast.info("onTokenPrivilegeDidExpire")
         console.log("onTokenPrivilegeDidExpire")
       })
     }
@@ -1453,7 +1459,7 @@
      **/
     function join(rtc, option) {
       if (rtc.joined) {
-        Toast.error("Your already joined")
+        //Toast.error("Your already joined")
         return;
       }
 
@@ -1503,7 +1509,7 @@
          *      If you use a number as the user ID, it should be a 32-bit unsigned integer with a value ranging from 0 to (232-1).
          **/
         rtc.client.join(option.token ? option.token : null, option.channel, option.uid ? +option.uid : null, function(uid) {
-          Toast.notice("join channel: " + option.channel + " success, uid: " + uid)
+          //Toast.notice("join channel: " + option.channel + " success, uid: " + uid)
           console.log("join channel: " + option.channel + " success, uid: " + uid)
           rtc.joined = true
 
@@ -1577,26 +1583,26 @@
             // publish local stream
             publish(rtc)
           }, function(err) {
-            Toast.error("stream init failed, please open console see more detail")
+            //Toast.error("stream init failed, please open console see more detail")
             console.error("init local stream failed ", err)
           })
         }, function(err) {
-          Toast.error("client join failed, please open console see more detail")
+          //Toast.error("client join failed, please open console see more detail")
           console.error("client join failed", err)
         })
       }, (err) => {
-        Toast.error("client init failed, please open console see more detail")
+        //Toast.error("client init failed, please open console see more detail")
         console.error(err)
       })
     }
 
     function publish(rtc) {
       if (!rtc.client) {
-        Toast.error("Please Join Room First")
+        //Toast.error("Please Join Room First")
         return
       }
       if (rtc.published) {
-        Toast.error("Your already published")
+        //Toast.error("Your already published")
         return
       }
       var oldState = rtc.published
@@ -1605,16 +1611,16 @@
       rtc.client.publish(rtc.localStream, function(err) {
         rtc.published = oldState
         console.log("publish failed")
-        Toast.error("publish failed")
+        //Toast.error("publish failed")
         console.error(err)
       })
-      Toast.info("publish")
+      //Toast.info("publish")
       rtc.published = true
     }
 
     function unpublish(rtc) {
       if (!rtc.client) {
-        Toast.error("Please Join Room First")
+        //Toast.error("Please Join Room First")
         return
       }
       if (!rtc.published) {
@@ -1625,10 +1631,10 @@
       rtc.client.unpublish(rtc.localStream, function(err) {
         rtc.published = oldState
         console.log("unpublish failed")
-        Toast.error("unpublish failed")
+        //Toast.error("unpublish failed")
         console.error(err)
       })
-      Toast.info("unpublish")
+      //Toast.info("unpublish")
       rtc.published = false
     }
 
@@ -1666,10 +1672,10 @@
         console.log("client leaves channel success")
         rtc.published = false
         rtc.joined = false
-        Toast.notice("leave success")
+        //Toast.notice("leave success")
       }, function(err) {
         console.log("channel leave failed")
-        Toast.error("leave success")
+        //Toast.error("leave success")
         console.error(err)
       })
     }
