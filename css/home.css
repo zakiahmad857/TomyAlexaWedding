@@ -472,21 +472,22 @@
   /* border: 1px solid red; */
 }
 
-.offMC{
-  display: none;
-}
-
 .screenOff{
   display: block;
 }
 
-.off{
+.on, .off{
   position: absolute;
-  bottom: 2%;
-  left: 68%;
-  width: 2%;
+  bottom: -2%;
+  left: 45%;
+  width: 12%;
   cursor: pointer;
-  z-index: 11;
+  z-index: 13;
+}
+
+.off{
+  display: none;
+  z-index: 14;
 }
 
 /* Hide Image (load) */
