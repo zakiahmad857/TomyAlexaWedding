@@ -410,6 +410,9 @@ hr{
   font-weight: normal;
 }
 
+.wrapper-img-souvenir{
+  
+}
 .img-souvenir-popup{
   width: 100%;
   margin-bottom: 5%;
@@ -430,6 +433,7 @@ hr{
 
 .mobile-content .btn-download{
   width: 60%;
+  margin-bottom: 10%;
 }
 
 .btn-download:hover{
