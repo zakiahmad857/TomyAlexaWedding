@@ -40,6 +40,7 @@ if (isMobile) {
   $(".mobile-content").css("display", "none");
 }
 
+
 $(".amplop").click(function() {
   $(".modal-angpao").css("display", "block");
 });
