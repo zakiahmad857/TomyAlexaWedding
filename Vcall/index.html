@@ -76,11 +76,18 @@
       <div class="inner-countdown">
         <!-- <p id="countWaiting"></p> -->
         <span class="vl"></span>
+        <p id="countdownTitle"></p>
         <span>- </span>
         <span id="hours1"></span><span id="minutes1"></span><span id="seconds1"></span>
-        <p id="countdownTitle"></p>
       </div>
+    </div>
 
+    <!-- webtour allow cam mic -->
+    <div class="tour tourIndo">
+      <img class="info" src="images/info.png" alt="">
+    </div>
+    <div class="tour tourEng">
+      <img class="info" src="images/infoEng.png" alt="">
     </div>
 
     <!-- MC -->
@@ -98,6 +105,7 @@
         <p class="username" id="usernameMC"></p>
       </div>
     </span>
+    <div class="tvhost"></div>
 
 
     <!-- Video Tamu-->
@@ -376,7 +384,7 @@
     console.log("toggle ");
     console.log(checkboxValues.toggleLang);
 
-    //console.log("localStorage ");
+    console.log("localStorage ");
     console.log(localStorage);
 
     var englishState = checkboxValues.toggleLang;
@@ -438,11 +446,11 @@
         idPosisi = result[0].id_room;
 
         startTime = result[0].time;
-        //console.log(vcallPos);
-        //console.log(room);
-        //console.log("waktu vcall " + startTime);
+        console.log(vcallPos);
+        console.log(room);
+        console.log("waktu vcall " + startTime);
         usernameCall = result[0].name;
-        //console.log(usernameCall);
+        console.log(usernameCall);
       },
       error: function(err) {
         console.log(err);
@@ -469,25 +477,25 @@
     // Time group
     //var timeCheck = new Date();
     var minuteEdit = parseInt(res2[1]) - (res2[1] % 6);
-    //console.log("minute room 1 " + minuteEdit);
+    console.log("minute room 1 " + minuteEdit);
 
     if (idPosisi == 8888) {
       room = localStorage.storageRoom;
     }
 
-    //console.log("ROOM CHECK" + room);
+    console.log("ROOM CHECK" + room);
     if (room == 2) {
       var menitMinLima = parseInt(res2[1]) - 3;
       var minuteEdit = menitMinLima - (menitMinLima % 6) + 3;
-      //console.log("minute room 2 " + minuteEdit);
-      $("#usernameMC").html("Room 2");
+      console.log("minute room 2 " + minuteEdit);
+      // $("#usernameMC").html("Room 2");
     } else if (room == 1) {
-      $("#usernameMC").html("Room 1");
+      // $("#usernameMC").html("Room 1");
     }
 
 
     timeGroup = res2[0] + ":" + minuteEdit.toString();
-    //console.log("timeGroup " + timeGroup);
+    console.log("timeGroup " + timeGroup);
 
 
     // Concall group
@@ -524,7 +532,7 @@
 
 
     // Jam video call
-    var startTimeDate = new Date("4 September 2020 " + startTime + " GMT+07:00")
+    var startTimeDate = new Date("5 September 2020 " + startTime + " GMT+07:00")
     console.log("startTimeDate " + startTimeDate);
 
     var startTimeParse = (Date.parse(startTimeDate) / 1000);
@@ -549,7 +557,7 @@
       // console.log("endTime " + endTime);
 
       var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
-      //console.log(coba);
+      console.log(coba);
       var obj = JSON.parse(coba);
 
       res = obj.datetime.split("T");
@@ -597,7 +605,13 @@
       if (timeCount >= "180") {
         // Waiting room
         console.log("waiting room");
-        $("#countdownTitle").html("Waiting Room");
+        console.log(checkboxValues.toggleLang);
+        if(checkboxValues.toggleLang){
+          $("#countdownTitle").html("Meet the couple in");
+        } else {
+          $("#countdownTitle").html("Bertemu pengantin dalam");
+        }
+
         $("#minutes1").html(minutes1 - 3 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
@@ -612,7 +626,12 @@
       } else if (timeCount < "180") {
         // Ketemu pengantin
         // console.log("ketemu");
-        $("#countdownTitle").html("Waktu Video Call");
+        if(checkboxValues.toggleLang){
+          $("#countdownTitle").html("Meeting the couple");
+        } else {
+          $("#countdownTitle").html("Bertemu pengantin");
+        }
+
         $("#minutes1").html(minutes1 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
@@ -694,7 +713,7 @@
       $("#username7").html(groupVcall[6]);
 
 
-      var timeGroupPlusDate = new Date("4 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("5 September 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
       var endTimeGroup = timeGroupParse + 360;
 
@@ -722,7 +741,7 @@
       var hours1 = Math.floor((countTime - (days1 * 86400)) / 3600);
       var minutes1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600)) / 60);
       var seconds1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600) - (minutes1 * 60)));
-      //console.log("masuk countdown admin");
+      console.log("masuk countdown admin");
 
       if (minutes1 < "10") {
         minutes1 = "0" + minutes1;
@@ -735,14 +754,14 @@
       if (countTime >= "180") {
         // Waiting room
         console.log("waiting room");
-        $("#countdownTitle").html("Waiting Room");
+        $("#countdownTitle").html("Bertemu pengantin dalam");
         $("#minutes1").html(minutes1 - 3 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
       } else if (countTime < "180") {
         // Ketemu pengantin
         console.log("ketemu");
-        $("#countdownTitle").html("Waktu Video Call");
+        $("#countdownTitle").html("Bertemu pengantin");
         $("#minutes1").html(minutes1 + "<span> :</span>");
         $("#seconds1").html(seconds1);
 
@@ -809,34 +828,34 @@
       // Pengantin pindah room
 
       if (idPosisi == 8888) {
-        //console.log("MASUK ID POSISI");
+        console.log("MASUK ID POSISI");
         if (menitMod % 2 == 0) {
           // room 2
-          //console.log("pengantin masuk room 2");
+          console.log("pengantin masuk room 2");
           id_room = "room2";
           room = 2;
           localStorage.setItem("storageIdRoom", "room2");
           localStorage.setItem("storageRoom", 2);
         } else if (menitMod % 2 == 1) {
           // room 1
-          //console.log("pengantin masuk room 1");
+          console.log("pengantin masuk room 1");
           id_room = "room1";
           room = 1;
           localStorage.setItem("storageIdRoom", "room1");
           localStorage.setItem("storageRoom", 1);
         }
-       // console.log("locstorage idRoom " + localStorage.storageIdRoom);
-       // console.log("locstorage room " + localStorage.storageRoom);
+        console.log("locstorage idRoom " + localStorage.storageIdRoom);
+        console.log("locstorage room " + localStorage.storageRoom);
       }
-      //console.log("pindahRoom function. id_room " + id_room);
-     // console.log("pindahRoom function. room " + room);
+      console.log("pindahRoom function. id_room " + id_room);
+      console.log("pindahRoom function. room " + room);
 
 
       // countdown
       // Time group
       //var timeCheck = new Date();
       var minuteEdit = parseInt(res2[1]) - (parseInt(res2[1]) % 3);
-      //console.log("minute room 1 " + minuteEdit);
+      console.log("minute room 1 " + minuteEdit);
 
       // if (room == 2) {
       //   var menitMinLima = parseInt(timeCheck.getMinutes()) - 3
@@ -851,19 +870,19 @@
       timeGroup = res2[0] + ":" + minuteEdit.toString();
 
 
-      var timeGroupPlusDate = new Date("4 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupPlusDate = new Date("5 September 2020 " + timeGroup + " GMT+07:00");
       var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
       var endTimeGroup = timeGroupParse + 180;
 
-      //console.log("time group dalem function " + timeGroup);
-      //console.log("timeGroupParse " + timeGroupParse);
+      console.log("time group dalem function " + timeGroup);
+      console.log("timeGroupParse " + timeGroupParse);
 
 
       // Countdown
       // Time now
       //var now = new Date();
       coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
-      //console.log(coba);
+      console.log(coba);
       obj = JSON.parse(coba);
 
       res = obj.datetime.split("T");
@@ -879,7 +898,7 @@
       var hours1 = Math.floor((countTime - (days1 * 86400)) / 3600);
       var minutes1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600)) / 60);
       var seconds1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600) - (minutes1 * 60)));
-      //console.log("masuk countdown admin");
+      console.log("masuk countdown admin");
 
       if (minutes1 < "10") {
         minutes1 = "0" + minutes1;
@@ -1356,11 +1375,10 @@
 
       })
       // Occurs when the local stream is published.
-
       rtc.client.on("stream-published", function(evt) {
         //Toast.notice("stream published success")
         console.log("stream-published")
-        //console.log("MASUK KESATU");
+        console.log("MASUK KESATU");
         if (idPosisi == 9999) {
           $("#username1").css("display", "none");
           $("#username2").css("display", "none");
@@ -1466,7 +1484,6 @@
         return;
       }
 
-
       /**
        * A class defining the properties of the config parameter in the createClient method.
        * Note:
@@ -1512,13 +1529,6 @@
          *      All users in the same channel should have the same type (number or string) of uid.
          *      If you use a number as the user ID, it should be a 32-bit unsigned integer with a value ranging from 0 to (232-1).
          **/
-
-
-         
-
-          
-
-         
         rtc.client.join(option.token ? option.token : null, option.channel, option.uid ? +option.uid : null, function(uid) {
           //Toast.notice("join channel: " + option.channel + " success, uid: " + uid)
           console.log("join channel: " + option.channel + " success, uid: " + uid)
@@ -1615,8 +1625,6 @@
       if (rtc.published) {
         //Toast.error("Your already published")
         return
-
-
       }
       var oldState = rtc.published
 
@@ -1628,18 +1636,7 @@
         console.error(err)
       })
       //Toast.info("publish")
-
-      if($("remote_video_panel_8888").is('visible')){
-            console.log("id udah adaaaa");
-            return;
-
-         }else{
-          console.log("malah masuk sini")
-          return;
-         }
       rtc.published = true
-
-
     }
 
     function unpublish(rtc) {
@@ -1748,6 +1745,20 @@
         }
 
         $("#setAgora").css("display", "none");
+        console.log("bahasa");
+        if(checkboxValues.toggleLang){
+          $(".tourEng").css("display", "block");
+          $(".tourEng").delay(4000).queue(function(next){
+            $(".tourEng").css("display", "none");
+            next();
+          });
+        } else {
+          $(".tourIndo").css("display", "block");
+          $(".tourIndo").delay(4000).queue(function(next){
+            $(".tourIndo").css("display", "none");
+            next();
+          });
+        }
 
         if (idPosisi == 8888) {
           localStorage.setItem('settingState', 'done');
