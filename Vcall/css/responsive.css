@@ -5,6 +5,10 @@
     left: 12%;
   }
 
+  .dot-mc{
+    bottom: 4%;
+  }
+
 }
 
 /* 1440 x 900 */
@@ -17,6 +21,11 @@
     padding-top: 4%;
   }
 
+  .dot-mc{
+    bottom: 3%;
+    height: 12%;
+  }
+
 }
 
 /* 1280 x 800p */
@@ -26,5 +35,9 @@
   }
   .inner-countdown{
     margin-top: 18%;
+  }
+
+  .dot-mc{
+    bottom: 3%;
   }
 }
