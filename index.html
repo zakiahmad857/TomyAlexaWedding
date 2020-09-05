@@ -348,6 +348,7 @@
           title: "Petunjuk Penggunaan",
           content: "Untuk membaca ulang petunjuk penggunaan website kondangan virtual silakan klik tombol ini",
           placement: "bottom",
+          template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div><span class="close-tour" data-role="end">&#10006;</span> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">&#10094;</button><button class="btn btn-sm btn-next" data-role="end">Selesai</button> </div> </div> </div>',
         }
       ],
       container: 'body',
@@ -359,7 +360,7 @@
       autoscroll: false,
       backdropPadding: 0,
       redirect: true,
-      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div><span class="close-tour" data-role="end">&#10006;</span> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">&#10094;</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> </div> </div> </div>',
+      template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div><span class="close-tour" data-role="end">&#10006;</span> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">&#10094;</button> <button class="btn btn-sm btn-next" data-role="next">Lanjut</button> </div> </div> </div>',
     });
 
     var tourEng = new Tour({
@@ -410,6 +411,7 @@
           title: "Website Instructions",
           content: "You can click this icon if you want to repeat the instructions.",
           placement: "bottom",
+          template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div><span class="close-tour" data-role="end">&#10006;</span> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">&#10094;</button><button class="btn btn-sm btn-next" data-role="end">Finish</button> </div> </div> </div>',
         }
       ],
       container: 'body',
@@ -530,12 +532,12 @@
     xmlHttp.send( null );
     return xmlHttp.responseText;
   }
-  
+
   var masuk = false;
     function makeTimer() {
 
       var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
-      
+
       var obj = JSON.parse(coba);
 
       timeNow = (obj.unixtime);
@@ -625,8 +627,8 @@
             }
           }, 1000);
           }
-          
-          
+
+
         }
       }
 
