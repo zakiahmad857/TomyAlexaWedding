@@ -8,7 +8,7 @@
   <meta property="og:description" content="Tomy & Alexa Virtual Wedding Reception">
 
   <title>Tomy & Lexa | Virtual Wedding Reception</title>
-  <link rel="icon" href="images/favicon-16.png">
+  <link rel="icon" href="../images/favicon-16.png">
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -297,13 +297,13 @@
     xmlHttp.send( null );
     return xmlHttp.responseText;
   }
-  
+
   var masuk = false;
 
     function makeTimer() {
 
       var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
-      
+
       var obj = JSON.parse(coba);
 
       timeNow = (obj.unixtime);
