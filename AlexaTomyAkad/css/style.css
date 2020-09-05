@@ -365,8 +365,8 @@ body{
 
 .souvenir-mobile{
   position: fixed;
-  bottom: 8%;
-  right: 1%;
+  bottom: 3%;
+  right: -3%;
   width: 55%;
   height: 32%;
   background-image: url(../images/cinderamata-still.png);
