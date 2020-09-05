@@ -800,7 +800,7 @@ $(document).ready(function() {
       src:"https://www.youtube.com/embed/I9kHmJNFPLQ?enablejsapi=1&autoplay=1",
       frameborder:"0",
       allow:"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-    }).appendTo("#mcwrapper")
+    }).appendTo(".video-wrapper")
   });
 
   // getZoomValues();
