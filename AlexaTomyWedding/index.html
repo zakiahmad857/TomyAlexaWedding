@@ -537,11 +537,11 @@
     function makeTimer() {
 
       //var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
-      var coba = Date();
+      var coba = new Date();
       //var obj = JSON.parse(coba);
 
       timeNow = (obj.unixtime);
-      timeNow = Date.parse(coba) / 1000;
+      timeNow = (Date.parse(coba) / 1000);
       console.log(endTime);
       console.log(timeNow);
       var timeLeft = endTime - timeNow;
