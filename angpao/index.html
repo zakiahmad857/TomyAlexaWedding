@@ -63,7 +63,7 @@
           <h2 class="lang text titleVcall" key="vcall_0">Mari Bersiap!</h2>
           <div class="timer">
             <span>- </span>
-            <span class="minutes"></span><span class="seconds"></span>
+            <span>00:0</span><span class="seconds2"></span>
           </div>
           <h4 class="lang text" key="vcall_1">Sebentar lagi kamu akan bertemu dengan mempelai.</h4>
           <h5 class="lang text" key="vcall_2">Sambil menunggu mempelai datang, host video call akan memandutata cara video call. </h5>
@@ -232,12 +232,23 @@
 
     var timeLeft;
 
+    function httpGet(theUrl)
+  {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+  }
+  
+  var masuk = false;
+
     function makeTimer() {
 
-      now = new Date();
-      timeNow = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+      var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      
+      var obj = JSON.parse(coba);
 
-      timeNow = (Date.parse(now) / 1000);
+      timeNow = (obj.unixtime);
 
       var timeLeft = endTime - timeNow;
       console.log("timeleft " + timeLeft);
@@ -273,23 +284,29 @@
 
         $("#vcallModal").css('display', 'block');
 
-        var counterVcall = 4;
-        var interval = setInterval(function() {
+        var counterVcall;
+        if(masuk == false){
+            counterVcall = 4;
+            masuk = true;
 
-          counterVcall--;
+            var interval = setInterval(function() {
+            // Display 'counter' wherever you want to display it.
+            counterVcall--;
+            $(".seconds2").html(counterVcall);
 
-          console.log(counterVcall);
-          if (counterVcall == 0) {
-            // Display a login box
-            clearInterval(interval);
-            $("#vcallModal").css('display', 'block');
-            console.log(dirPath);
-            var fullPath = homePath + "/Vcall";
-            console.log(fullPath);
-            window.location = fullPath;
-            // return false;
+            console.log("countervcall " + counterVcall);
+            if (counterVcall == 0) {
+              // Display a login box
+              clearInterval(interval);
+              $("#vcallModal").css('display', 'block');
+              console.log(dirPath);
+              var fullPath = homePath + "/Vcall";
+              console.log(fullPath);
+              window.location = fullPath;
+              // return false;
+            }
+          }, 1000);
           }
-        }, 1000);
 
       }
 

@@ -111,7 +111,7 @@
         <h2 class="lang text titleVcall" key="vcall_0">Mari Bersiap!</h2>
         <div class="timer">
           <span>- </span>
-          <span class="seconds2"></span>
+          <span>00:0</span><span class="seconds2"></span>
         </div>
         <h4 class="lang text" key="vcall_1">Sebentar lagi kamu akan bertemu dengan mempelai.</h4>
         <h5 class="lang text" key="vcall_2">Sambil menunggu mempelai datang, host video call akan memandutata cara video call. </h5>
@@ -523,19 +523,19 @@
 
     };
 
-    function httpGet(theUrl)
-{
+  function httpGet(theUrl)
+  {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
     return xmlHttp.responseText;
-}
+  }
   
   var masuk = false;
     function makeTimer() {
 
       var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
-      console.log(coba);
+      
       var obj = JSON.parse(coba);
 
       timeNow = (obj.unixtime);
