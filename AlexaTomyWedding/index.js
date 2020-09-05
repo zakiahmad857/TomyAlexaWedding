@@ -779,7 +779,7 @@ $(document).ready(function() {
   }
 
   // Off MC
-  
+
   $(".on").click(function() {
     $("#videoMC").css("display", "none");
     $(".screen-wrapper").css("display", "block");
@@ -797,7 +797,7 @@ $(document).ready(function() {
     toggleSound();
     $("<iframe/>",{
       id:"videoMC",
-      src:"https://www.youtube.com/embed/I9kHmJNFPLQ?enablejsapi=1&autoplay=1",
+      src:"https://www.youtube.com/embed/hxuBd7VOGvY?enablejsapi=1&autoplay=1",
       frameborder:"0",
       allow:"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
     }).appendTo(".video-wrapper")
