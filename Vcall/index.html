@@ -102,7 +102,7 @@
       </div>
 
       <div class="wrapper-usernameMC">
-        <p class="username" id="usernameMC"></p>
+        <!-- <p class="username" id="usernameMC"></p> -->
       </div>
     </span>
     <div class="tvhost"></div>
@@ -121,7 +121,7 @@
       </div>
 
       <div class="wrapper-username">
-        <p class="username" id="username1"></p>
+        <!-- <p class="username" id="username1"></p> -->
       </div>
     </span>
 
@@ -137,7 +137,7 @@
       </div>
 
       <div class="wrapper-username">
-        <p class="username" id="username2"></p>
+        <!-- <p class="username" id="username2"></p> -->
       </div>
     </span>
 
@@ -153,7 +153,7 @@
       </div>
 
       <div class="wrapper-username">
-        <p class="username" id="username3"></p>
+        <!-- <p class="username" id="username3"></p> -->
       </div>
     </span>
 
@@ -169,7 +169,7 @@
       </div>
 
       <div class="wrapper-username">
-        <p class="username" id="username4"></p>
+        <!-- <p class="username" id="username4"></p> -->
       </div>
     </span>
 
@@ -185,7 +185,7 @@
       </div>
 
       <div class="wrapper-username">
-        <p class="username" id="username5"></p>
+        <!-- <p class="username" id="username5"></p> -->
       </div>
     </span>
 
@@ -201,7 +201,7 @@
       </div>
 
       <div class="wrapper-username">
-        <p class="username" id="username6"></p>
+        <!-- <p class="username" id="username6"></p> -->
       </div>
     </span>
 
@@ -215,7 +215,7 @@
         </div>
       </div>
       <div class="wrapper-username">
-        <p class="username" id="username7"></p>
+        <!-- <p class="username" id="username7"></p> -->
       </div>
     </span>
 
@@ -458,21 +458,21 @@
     });
 
     // Nama sendiri
-    if (idPosisi == 1111) {
-      $("#username1").html(usernameCall);
-    } else if (idPosisi == 2222) {
-      $("#username2").html(usernameCall);
-    } else if (idPosisi == 3333) {
-      $("#username3").html(usernameCall);
-    } else if (idPosisi == 4444) {
-      $("#username4").html(usernameCall);
-    } else if (idPosisi == 5555) {
-      $("#username5").html(usernameCall);
-    } else if (idPosisi == 6666) {
-      $("#username6").html(usernameCall);
-    } else if (idPosisi == 7777) {
-      $("#username7").html(usernameCall);
-    }
+    // if (idPosisi == 1111) {
+    //   $("#username1").html(usernameCall);
+    // } else if (idPosisi == 2222) {
+    //   $("#username2").html(usernameCall);
+    // } else if (idPosisi == 3333) {
+    //   $("#username3").html(usernameCall);
+    // } else if (idPosisi == 4444) {
+    //   $("#username4").html(usernameCall);
+    // } else if (idPosisi == 5555) {
+    //   $("#username5").html(usernameCall);
+    // } else if (idPosisi == 6666) {
+    //   $("#username6").html(usernameCall);
+    // } else if (idPosisi == 7777) {
+    //   $("#username7").html(usernameCall);
+    // }
 
     // Time group
     //var timeCheck = new Date();
@@ -656,7 +656,7 @@
         var menitMinLima = parseInt(res2[1] - 3)
         var minuteEdit = menitMinLima - (menitMinLima % 6) + 3;
         // console.log("minute room 2 " + minuteEdit);
-        $("#usernameMC").html("Room 2");
+        // $("#usernameMC").html("Room 2");
       } else if (room == 1) {
         // $("#usernameMC").html("Room 1");
 
@@ -704,13 +704,13 @@
         get = true;
       }
 
-      $("#username1").html(groupVcall[0]);
-      $("#username2").html(groupVcall[1]);
-      $("#username3").html(groupVcall[2]);
-      $("#username4").html(groupVcall[3]);
-      $("#username5").html(groupVcall[4]);
-      $("#username6").html(groupVcall[5]);
-      $("#username7").html(groupVcall[6]);
+      // $("#username1").html(groupVcall[0]);
+      // $("#username2").html(groupVcall[1]);
+      // $("#username3").html(groupVcall[2]);
+      // $("#username4").html(groupVcall[3]);
+      // $("#username5").html(groupVcall[4]);
+      // $("#username6").html(groupVcall[5]);
+      // $("#username7").html(groupVcall[6]);
 
 
       var timeGroupPlusDate = new Date("5 September 2020 " + timeGroup + " GMT+07:00");
@@ -1066,7 +1066,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username1").html(groupVcall[0]);
+          // $("#username1").html(groupVcall[0]);
 
           console.log("HADIIIRR");
         }
@@ -1090,7 +1090,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username2").html(groupVcall[1]);
+          // $("#username2").html(groupVcall[1]);
         }
         if (id == 3333) {
           $("<div/>", {
@@ -1112,7 +1112,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username3").html(groupVcall[2]);
+          // $("#username3").html(groupVcall[2]);
         }
         if (id == 4444) {
           $("<div/>", {
@@ -1134,7 +1134,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username4").html(groupVcall[3]);
+          // $("#username4").html(groupVcall[3]);
         }
         if (id == 5555) {
           $("<div/>", {
@@ -1156,7 +1156,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username5").html(groupVcall[4]);
+          // $("#username5").html(groupVcall[4]);
         }
         if (id == 6666) {
           $("<div/>", {
@@ -1178,7 +1178,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username6").html(groupVcall[5]);
+          // $("#username6").html(groupVcall[5]);
         }
         if (id == 7777) {
           $("<div/>", {
@@ -1200,7 +1200,7 @@
             class: "autoplay-fallback hide",
           }).appendTo("#remote_video_panel_" + id)
 
-          $("#username7").html(groupVcall[6]);
+          // $("#username7").html(groupVcall[6]);
         }
         if (id == 8888) {
           $("<div/>", {
@@ -1333,43 +1333,43 @@
         console.log("peer-leave", id)
 
         // Delete username yang leave
-        if (id == 1111) {
-          $("#username1").html("");
-          if (idPosisi == 9999) {
-            $("#username1").css("display", "none");
-          }
-
-        } else if (id == 2222) {
-          $("#username2").html("");
-          if (idPosisi == 9999) {
-            $("#username2").css("display", "none");
-          }
-        } else if (id == 3333) {
-          $("#username3").html("");
-          if (idPosisi == 9999) {
-            $("#username3").css("display", "none");
-          }
-        } else if (id == 4444) {
-          $("#username4").html("");
-          if (idPosisi == 9999) {
-            $("#username4").css("display", "none");
-          }
-        } else if (id == 5555) {
-          $("#username5").html("");
-          if (idPosisi == 9999) {
-            $("#username5").css("display", "none");
-          }
-        } else if (id == 6666) {
-          $("#username6").html("");
-          if (idPosisi == 9999) {
-            $("#username6").css("display", "none");
-          }
-        } else if (id == 7777) {
-          $("#username7").html("");
-          if (idPosisi == 9999) {
-            $("#username7").css("display", "none");
-          }
-        }
+        // if (id == 1111) {
+        //   $("#username1").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username1").css("display", "none");
+        //   }
+        //
+        // } else if (id == 2222) {
+        //   $("#username2").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username2").css("display", "none");
+        //   }
+        // } else if (id == 3333) {
+        //   $("#username3").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username3").css("display", "none");
+        //   }
+        // } else if (id == 4444) {
+        //   $("#username4").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username4").css("display", "none");
+        //   }
+        // } else if (id == 5555) {
+        //   $("#username5").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username5").css("display", "none");
+        //   }
+        // } else if (id == 6666) {
+        //   $("#username6").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username6").css("display", "none");
+        //   }
+        // } else if (id == 7777) {
+        //   $("#username7").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username7").css("display", "none");
+        //   }
+        // }
 
 
 
@@ -1379,15 +1379,15 @@
         //Toast.notice("stream published success")
         console.log("stream-published")
         console.log("MASUK KESATU");
-        if (idPosisi == 9999) {
-          $("#username1").css("display", "none");
-          $("#username2").css("display", "none");
-          $("#username3").css("display", "none");
-          $("#username4").css("display", "none");
-          $("#username5").css("display", "none");
-          $("#username6").css("display", "none");
-          $("#username7").css("display", "none");
-        }
+        // if (idPosisi == 9999) {
+        //   $("#username1").css("display", "none");
+        //   $("#username2").css("display", "none");
+        //   $("#username3").css("display", "none");
+        //   $("#username4").css("display", "none");
+        //   $("#username5").css("display", "none");
+        //   $("#username6").css("display", "none");
+        //   $("#username7").css("display", "none");
+        // }
 
       })
       // Occurs when the remote stream is added.
@@ -1413,23 +1413,23 @@
         //Toast.info("stream-subscribed remote-uid: " + id)
         console.log("stream-subscribed remote-uid: ", id)
         console.log("MASUK KEDUA");
-        if (idPosisi == 9999) {
-          if (id == 1111) {
-            $("#username1").css("display", "block");
-          } else if (id == 2222) {
-            $("#username2").css("display", "block");
-          } else if (id == 3333) {
-            $("#username3").css("display", "block");
-          } else if (id == 4444) {
-            $("#username4").css("display", "block");
-          } else if (id == 5555) {
-            $("#username5").css("display", "block");
-          } else if (id == 6666) {
-            $("#username6").css("display", "block");
-          } else if (id == 7777) {
-            $("#username7").css("display", "block");
-          }
-        }
+        // if (idPosisi == 9999) {
+        //   if (id == 1111) {
+        //     $("#username1").css("display", "block");
+        //   } else if (id == 2222) {
+        //     $("#username2").css("display", "block");
+        //   } else if (id == 3333) {
+        //     $("#username3").css("display", "block");
+        //   } else if (id == 4444) {
+        //     $("#username4").css("display", "block");
+        //   } else if (id == 5555) {
+        //     $("#username5").css("display", "block");
+        //   } else if (id == 6666) {
+        //     $("#username6").css("display", "block");
+        //   } else if (id == 7777) {
+        //     $("#username7").css("display", "block");
+        //   }
+        // }
 
         console.log("GAK KETENDANG");
         if (id == idPosisi) {
@@ -1748,13 +1748,13 @@
         console.log("bahasa");
         if(checkboxValues.toggleLang){
           $(".tourEng").css("display", "block");
-          $(".tourEng").delay(4000).queue(function(next){
+          $(".tourEng").delay(5000).queue(function(next){
             $(".tourEng").css("display", "none");
             next();
           });
         } else {
           $(".tourIndo").css("display", "block");
-          $(".tourIndo").delay(4000).queue(function(next){
+          $(".tourIndo").delay(5000).queue(function(next){
             $(".tourIndo").css("display", "none");
             next();
           });
