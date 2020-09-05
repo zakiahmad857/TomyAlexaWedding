@@ -37,6 +37,22 @@
   .info{
     width: 40%;
   }
+
+  .content-faq .heading{
+    font-size: 1.8vw;
+  }
+  .modal-footer h6{
+    font-size: 1vw;
+  }
+  .modal-footer p {
+    font-size: 1.1vw;
+  }
+  .modal-body p{
+    font-size: 1.1vw;
+  }
+  .modal-header h4{
+    font-size: 1.5vw;
+  }
 }
 
 
