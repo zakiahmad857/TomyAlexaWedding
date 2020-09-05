@@ -334,19 +334,17 @@ body{
 }
 
 .video-wrapper-mobile{
-  width: 80%;
-  height: 165%;
+  width: 85%;
+  height: 70%;
   position: absolute;
   left: 50%;
-  top: 0%;
-  transform: translateX(-50%);
-  padding-top: 40%;
-  /* border: 1px solid red; */
+  top: 60%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .video-wrapper-mobile .video3{
   width: 100%;
-  height: 18%;
+  /* height: 25%; */
 }
 
 
@@ -569,15 +567,14 @@ hr{
   }
 
   .video-wrapper-mobile{
-    padding-top: 20%;
-    /* padding-bottom: 20%; */
+    top: 60%;
     width: 60%;
-    height: 250%;
+    height: 70%;
   }
 
   .video-wrapper-mobile .video3{
     width: 100%;
-    height: 21%;
+    height: 40%;
   }
 }
 
@@ -603,6 +600,7 @@ hr{
     width: 30%;
     height: 40%;
     bottom: 0;
+    right: -3%;
   }
 
   /* popup */
@@ -656,14 +654,13 @@ hr{
   }
 
   .video-wrapper-mobile{
-    padding-top: 20%;
-    padding-bottom: 20%;
     width: 60%;
-    height: 220%;
+    height: 70%;
+    top: 58%;
   }
 
   .video-wrapper-mobile .video3{
     width: 100%;
-    height: 24%;
+    height: 40%;
   }
 }
