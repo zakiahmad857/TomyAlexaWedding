@@ -58,6 +58,28 @@ body{
   overflow: hidden;
 }
 
+.video-wrapper-akad{
+  width: 55%;
+  height: 70%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wrapper-atas{
+  width: 100%;
+  height: 50%;
+  position: absolute;
+}
+
+.wrapper-bawah{
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+}
+
 .hideImage{
   display: none;
 }
@@ -70,13 +92,17 @@ body{
   width: 45%;
 }
 
-.video{
+.video1{
   position: absolute;
-  left: 50%;
-  top: 55%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 48%;
-  height: 56%;
+  width: 50%;
+  height: 100%;
+}
+
+.video2{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
 }
 
 .amplop{
@@ -294,22 +320,38 @@ body{
   background-position: center;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .mobile-wrapper .title{
   width: 100%;
-  top: 10%;
+  top: 5%;
+  position: fixed;
+  z-index: 5;
 }
 
-.mobile-wrapper .video{
+.video-wrapper-mobile{
   width: 80%;
-  height: 30%;
-  top: 45%;
+  height: 165%;
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+  padding-top: 40%;
+  /* border: 1px solid red; */
 }
+
+.video-wrapper-mobile .video3{
+  width: 100%;
+  height: 18%;
+}
+
 
 .amplop-mobile{
-  position: absolute;
+  position: fixed;
   bottom: 1%;
   left: -1.5%;
   width: 55%;
@@ -324,7 +366,7 @@ body{
 }
 
 .souvenir-mobile{
-  position: absolute;
+  position: fixed;
   bottom: 8%;
   right: 1%;
   width: 55%;
@@ -411,7 +453,7 @@ hr{
 }
 
 .wrapper-img-souvenir{
-  
+
 }
 .img-souvenir-popup{
   width: 100%;
@@ -525,6 +567,18 @@ hr{
     font-size: 2vw;
     margin-bottom: 5%;
   }
+
+  .video-wrapper-mobile{
+    padding-top: 20%;
+    /* padding-bottom: 20%; */
+    width: 60%;
+    height: 250%;
+  }
+
+  .video-wrapper-mobile .video3{
+    width: 100%;
+    height: 21%;
+  }
 }
 
 /* Ipad*/
@@ -599,5 +653,17 @@ hr{
   .btn-download {
     font-size: 2vw;
     margin-bottom: 5%;
+  }
+
+  .video-wrapper-mobile{
+    padding-top: 20%;
+    padding-bottom: 20%;
+    width: 60%;
+    height: 220%;
+  }
+
+  .video-wrapper-mobile .video3{
+    width: 100%;
+    height: 24%;
   }
 }
