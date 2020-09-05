@@ -771,28 +771,36 @@ $(document).ready(function() {
   }
 
   function toggleSound() {
-    if (player.isMuted()) {
-      player.unMute();
-    } else {
-      player.mute();
-    }
+    // if (player.isMuted()) {
+    //   player.unMute();
+    // } else {
+    //   player.mute();
+    // }
   }
 
   // Off MC
+  
   $(".on").click(function() {
     $("#videoMC").css("display", "none");
     $(".screen-wrapper").css("display", "block");
     $(".on").css("display", "none");
     $(".off").css("display", "block")
     toggleSound();
+    $("#videoMC").remove()
   });
 
   $(".off").click(function() {
-    $("#videoMC").css("display", "block");
+    //$("#videoMC").css("display", "block");
     $(".screen-wrapper").css("display", "none");
     $(".on").css("display", "block");
     $(".off").css("display", "none")
     toggleSound();
+    $("<iframe/>",{
+      id:"videoMC",
+      src:"https://www.youtube.com/embed/I9kHmJNFPLQ?enablejsapi=1&autoplay=1",
+      frameborder:"0",
+      allow:"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+    }).appendTo("#mcwrapper")
   });
 
   // getZoomValues();
