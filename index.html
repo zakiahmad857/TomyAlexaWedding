@@ -111,7 +111,7 @@
         <h2 class="lang text titleVcall" key="vcall_0">Mari Bersiap!</h2>
         <div class="timer">
           <span>- </span>
-          <span class="minutes"></span><span class="seconds"></span>
+          <span class="seconds2"></span>
         </div>
         <h4 class="lang text" key="vcall_1">Sebentar lagi kamu akan bertemu dengan mempelai.</h4>
         <h5 class="lang text" key="vcall_2">Sambil menunggu mempelai datang, host video call akan memandutata cara video call. </h5>
@@ -530,7 +530,8 @@
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
-
+  
+  var masuk = false;
     function makeTimer() {
 
       var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
@@ -601,10 +602,15 @@
         if (localStorage.welcomeState == 'shown'){
           console.log("LOCALSTORAGE WELCOME DALEM IF" + welcomeState);
           $("#welcomeModal").css("display", "none");
-          var counterVcall = 4;
-          var interval = setInterval(function() {
+          var counterVcall;
+          if(masuk == false){
+            counterVcall = 4;
+            masuk = true;
+
+            var interval = setInterval(function() {
             // Display 'counter' wherever you want to display it.
             counterVcall--;
+            $(".seconds2").html(counterVcall);
 
             console.log("countervcall " + counterVcall);
             if (counterVcall == 0) {
@@ -618,9 +624,10 @@
               // return false;
             }
           }, 1000);
+          }
+          
+          
         }
-
-
       }
 
       // Concall masih agak lama, Explore web
@@ -676,7 +683,7 @@
 
         }
       }
-    }
+  }
     // end of function maketimercall
 
 
