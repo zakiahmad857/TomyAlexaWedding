@@ -220,12 +220,11 @@
 
     function makeTimer() {
 
-      var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      var coba = new Date();
+      //var obj = JSON.parse(coba);
 
-      var obj = JSON.parse(coba);
-
-      timeNow = (obj.unixtime);
-
+      //timeNow = (obj.unixtime);
+      timeNow = (Date.parse(coba) / 1000);
       var timeLeft = endTime - timeNow;
       console.log("timeleft " + timeLeft);
       var days = Math.floor(timeLeft / 86400);
