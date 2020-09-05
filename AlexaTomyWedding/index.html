@@ -536,11 +536,12 @@
   var masuk = false;
     function makeTimer() {
 
-      var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
-
-      var obj = JSON.parse(coba);
+      //var coba = httpGet("https://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      var coba = Date();
+      //var obj = JSON.parse(coba);
 
       timeNow = (obj.unixtime);
+      timeNow = Date.parse(coba) / 1000;
       console.log(endTime);
       console.log(timeNow);
       var timeLeft = endTime - timeNow;
