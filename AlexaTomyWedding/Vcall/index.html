@@ -574,8 +574,9 @@
       //res1 = res[1].split(".");
       //res2 = res1[0].split(":");
 
-      var coba = Date();
-      timeNowParse = Date.parse(coba)/1000;
+      var now = new Date();
+      var timeNow = "3 September 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNowParse = (Date.parse(timeNow) / 1000);
 =======
       var now = new Date();
       var timeNow = "3 September 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
@@ -666,7 +667,9 @@
 <<<<<<< HEAD:AlexaTomyWedding/Vcall/index.html
 
       //var timeCheck = new Date();
-      var minuteEdit = parseInt(res2[1] - (res2[1] % 6));
+      //var minuteEdit = parseInt(res2[1] - (res2[1] % 6));
+      var timeCheck = new Date();
+      var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 6);
 =======
       var timeCheck = new Date();
       var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 6);
@@ -746,9 +749,10 @@
       // Time now
 <<<<<<< HEAD:AlexaTomyWedding/Vcall/index.html
       //var now = new Date();
-      var coba = Date();
-      timeNowParse = Date.parse(coba)/1000;
-
+      //var coba = Date();
+      //timeNowParse = Date.parse(coba)/1000;
+      var now = new Date();
+      var timeNowParse = (Date.parse(now) / 1000);
       
 =======
       var now = new Date();
@@ -817,8 +821,11 @@
       // Pindah room
 <<<<<<< HEAD:AlexaTomyWedding/Vcall/index.html
       //var time = new Date();
-      var menit = parseInt(res2[1]);
-      var menitMod = menit - menit % 3;
+      //var menit = parseInt(res2[1]);
+      //var menitMod = menit - menit % 3;
+      var time = new Date();
+      var menit = parseInt(time.getMinutes());
+      var menitMod = menit - menit%3;
 =======
       var time = new Date();
       var menit = parseInt(time.getMinutes());
@@ -909,8 +916,10 @@
       // Time now
 <<<<<<< HEAD:AlexaTomyWedding/Vcall/index.html
       //var now = new Date();
-      var coba = Date();
-      timeNowParse = Date.parse(coba)/1000;
+      //var coba = Date();
+      //timeNowParse = Date.parse(coba)/1000;
+      var now = new Date();
+      var timeNowParse = (Date.parse(now) / 1000);
 =======
       var now = new Date();
       var timeNowParse = (Date.parse(now) / 1000);
