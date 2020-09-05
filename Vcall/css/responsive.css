@@ -1,3 +1,20 @@
+/* 2880 * 1880 */
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .dot2{
+    left: 12%;
+  }
+
+  .dot-mc{
+    bottom: 2%;
+  }
+
+  .countdownVC span{
+    font-size: 1.5vw;
+  }
+}
+
 /* 1080p */
 @media screen and (min-device-width: 1900px) and (max-device-height: 1100px){
 
