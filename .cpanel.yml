@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ahmadza3/kondanganvirtual.com/
+    - /bin/cp -R ../web360 $DEPLOYPATH
