@@ -461,13 +461,13 @@
     console.log("localStorageeeeeee ");
     console.log(localStorage);
 
-    if (cookieToken == null) {
-      localStorage.clear();
-      console.log("clear localStorage");
-      var loginPath = dirPath + "/login";
-      console.log(fullPath);
-      window.location = loginPath;
-    }
+    // if (cookieToken == null) {
+    //   localStorage.clear();
+    //   console.log("clear localStorage");
+    //   var loginPath = dirPath + "/login";
+    //   console.log(fullPath);
+    //   window.location = loginPath;
+    // }
 
     $.ajax({
       url: "https://webnikahapi.arthatronic.com/api/user/",
@@ -501,7 +501,7 @@
       var fullPath = dirPath + "/Vcall";
       console.log(fullPath);
       window.location = fullPath;
-    }
+    } 
 
     var endTime = new Date("5 September 2020 " + timeSet + " GMT+07:00");
 
