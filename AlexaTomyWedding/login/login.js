@@ -64,69 +64,73 @@ cookieToken = $.cookie("token");
 
 $("#btn-login").click(function() {
 
-  var person = {
-    username: $("#username").val(),
-    password: "12345678"
-  };
+  // var person = {
+  //   username: $("#username").val(),
+  //   password: "12345678"
+  // };
 
-  console.log(person);
+  // console.log(person);
 
-  var tmp = null;
-  var dataNull = false;
+  // var tmp = null;
+  // var dataNull = false;
 
-  $.ajax({
-    async: false,
-    type: "POST",
-    global: false,
-    dataType: 'json',
-    url: url,
-    data: person,
+  // $.ajax({
+  //   async: false,
+  //   type: "POST",
+  //   global: false,
+  //   dataType: 'json',
+  //   url: url,
+  //   data: person,
 
-    success: function(data) {
-      tmp = data;
-    },
+  //   success: function(data) {
+  //     tmp = data;
+  //   },
 
-    complete: function(e, xhr, settings) {
+  //   complete: function(e, xhr, settings) {
 
-      console.log(e.status);
-      statusCode = e.status;
-      console.log(statusCode);
+  //     console.log(e.status);
+  //     statusCode = e.status;
+  //     console.log(statusCode);
 
-      if (statusCode !== 200) {
-        $("#login-form").submit(function(e) {
-          e.preventDefault();
-        });
+  //     if (statusCode !== 200) {
+  //       $("#login-form").submit(function(e) {
+  //         e.preventDefault();
+  //       });
 
-        console.log("id salah");
-        $(".idSalah").css("display", "block");
-        // $("#username").css("color", "red");
-      }
+  //       console.log("id salah");
+  //       $(".idSalah").css("display", "block");
+  //       // $("#username").css("color", "red");
+  //     }
 
-    },
+  //   },
 
-    statusCode: {
-      400: function() {
-        statusError = true,
-          console.log(statusError);
-      }
-    }
-  });
+    // statusCode: {
+    //   400: function() {
+    //     statusError = true,
+    //       console.log(statusError);
+    //   }
+    // }
+  // });
 
-  console.log("statusCode " + statusCode);
+  // console.log("statusCode " + statusCode);
 
-  var token = tmp.token;
-  console.log(token);
+  // var token = tmp.token;
+  // console.log(token);
 
-  $.cookie("token", token, {
-    path: '/'
-  });
+  // $.cookie("token", token, {
+  //   path: '/'
+  // });
 
-  console.log("token " + cookieToken);
+  // console.log("token " + cookieToken);
+  localStorage.setItem("nama",$("#username").val());
 
-  if (statusCode === 200) {
-    window.location = homePath;
-    return false;
-  }
+  console.log ("nama = " + localStorage.getItem("nama"));
+
+
+  //if (statusCode === 200) {
+  window.location = homePath;
+  return false;
+  //}
 
   // return false;
 });

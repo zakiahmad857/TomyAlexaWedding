@@ -461,13 +461,13 @@
     console.log("localStorageeeeeee ");
     console.log(localStorage);
 
-    // if (cookieToken == null) {
-    //   localStorage.clear();
-    //   console.log("clear localStorage");
-    //   var loginPath = dirPath + "/login";
-    //   console.log(fullPath);
-    //   window.location = loginPath;
-    // }
+    if (localStorage.getItem("nama") == null) {
+      localStorage.clear();
+      console.log("clear localStorage");
+      var loginPath = dirPath + "/login";
+      console.log(fullPath);
+      window.location = loginPath;
+    }
 
     $.ajax({
       url: "https://webnikahapi.arthatronic.com/api/user/",

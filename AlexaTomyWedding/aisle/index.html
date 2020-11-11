@@ -241,7 +241,7 @@
     console.log("localStorageeeeeee ");
     console.log(localStorage);
 
-    if (cookieToken == null) {
+    if (localStorage.getItem("nama") == null) {
       localStorage.clear();
       console.log("clear localStorage");
       var loginPath = homePath + "/login";
