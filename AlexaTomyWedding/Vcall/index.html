@@ -413,7 +413,7 @@
     cookieToken = $.cookie("token");
     console.log("token " + cookieToken);
 
-    if (cookieToken == null) {
+    if (localStorage.getItem("nama") == null) {
       localStorage.clear();
       console.log("clear localStorage");
       var loginPath = homePath + "/login";
