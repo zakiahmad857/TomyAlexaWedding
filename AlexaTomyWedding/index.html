@@ -469,39 +469,40 @@
       window.location = loginPath;
     }
 
-    $.ajax({
-      url: "https://webnikahapi.arthatronic.com/api/user/",
-      async: false,
-      type: "GET",
-      global: false,
-      // Fetch the stored token from localStorage and set in the header
-      headers: {
-        "Authorization": "Token " + cookieToken
-      },
-      success: function(result) {
-        console.log(result);
-        name = result[0].name;
-        timeSet = result[0].time;
-        idPosition = result[0].id_room;
-        console.log(name);
-        console.log(timeSet);
-
-      },
-      error: function(err) {
-        console.log(err);
-      }
-    });
+    // $.ajax({
+    //   url: "https://webnikahapi.arthatronic.com/api/user/",
+    //   async: false,
+    //   type: "GET",
+    //   global: false,
+    //   // Fetch the stored token from localStorage and set in the header
+    //   headers: {
+    //     "Authorization": "Token " + cookieToken
+    //   },
+    //   success: function(result) {
+    //     console.log(result);
+    //     name = result[0].name;
+    //     timeSet = result[0].time;
+    //     idPosition = result[0].id_room;
+    //     console.log(name);
+    //     console.log(timeSet);
+    //
+    //   },
+    //   error: function(err) {
+    //     console.log(err);
+    //   }
+    // });
 
     $("#welcomeName").html(name);
 
     // Admin langsung masuk concall
     // 9999 dan 9898 : mc
     // 9797 dan 99696 : screenrecord
+    timeSet = "19:00:00"
     if (idPosition == "9999" || idPosition == "9898" || idPosition == "9797" || idPosition == "9696" || idPosition == "8888") {
       var fullPath = dirPath + "/Vcall";
       console.log(fullPath);
       window.location = fullPath;
-    } 
+    }
 
     var endTime = new Date("5 September 2020 " + timeSet + " GMT+07:00");
 
