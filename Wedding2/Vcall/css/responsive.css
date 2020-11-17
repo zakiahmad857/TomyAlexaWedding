@@ -1,0 +1,60 @@
+/* 2880 * 1880 */
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .dot2{
+    left: 12%;
+  }
+
+  .dot-mc{
+    bottom: 2%;
+  }
+
+  .countdownVC span{
+    font-size: 1.5vw;
+  }
+}
+
+/* 1080p */
+@media screen and (min-device-width: 1900px) and (max-device-height: 1100px){
+
+  .dot2{
+    left: 12%;
+  }
+
+  .dot-mc{
+    bottom: 4%;
+  }
+
+}
+
+/* 1440 x 900 */
+@media screen and (min-device-width: 1400px) and (max-device-width: 1460px) and (min-device-height: 880px){
+  .dot2{
+    left: 12%;
+  }
+
+  .inner-countdown{
+    padding-top: 4%;
+  }
+
+  .dot-mc{
+    bottom: 3%;
+    height: 12%;
+  }
+
+}
+
+/* 1280 x 800p */
+@media screen and (min-device-width: 1250px) and (max-device-width: 1300px) and (min-device-height: 780px) and (max-device-height: 820px){
+  .dot2{
+    left: 12.5%;
+  }
+  .inner-countdown{
+    margin-top: 18%;
+  }
+
+  .dot-mc{
+    bottom: 3%;
+  }
+}

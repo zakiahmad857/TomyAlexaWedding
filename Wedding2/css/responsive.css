@@ -1,0 +1,176 @@
+/* 2880 * 1880 */
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .parent-gallery{
+    top: 14%;
+  }
+  .parent-pelaminan{
+    top: 14%;
+  }
+  .parent-jukebox{
+    top: 33%;
+  }
+  .video-wrapper{
+    top: 63%;
+  }
+  .countdown span{
+    font-size: 1.3vw;
+  }
+
+  .countdown p{
+    font-size: 0.9vw;
+  }
+
+  .inner-countdown{
+    top: 9%;
+  }
+
+  .vl{
+    height: 35%;
+  }
+
+  .header-icon{
+    width: 60%;
+  }
+
+  .info{
+    width: 40%;
+  }
+
+  .content-faq .heading{
+    font-size: 1.8vw;
+  }
+  .modal-footer h6{
+    font-size: 1vw;
+  }
+  .modal-footer p {
+    font-size: 1.1vw;
+  }
+  .modal-body p{
+    font-size: 1.1vw;
+  }
+  .modal-header h4{
+    font-size: 1.5vw;
+  }
+}
+
+
+/* 1980 x 1080 */
+@media screen and (min-device-width: 1900px) and (max-device-height: 1100px){
+  .header-icon {
+    width: 60%;
+  }
+
+  .info {
+    width: 40%;
+  }
+
+  .video-mc {
+    bottom: -9%;
+
+  }
+
+  .video-wrapper {
+    top: 28%;
+    width: 64.5%;
+    height: 47.5%;
+  }
+
+  .parent-pelaminan {
+    top: 8%;
+  }
+
+  .parent-jukebox {
+    top: 27%;
+  }
+
+  .parent-gallery {
+    top: 6%;
+  }
+
+  .div-souvenir{
+    width: 400px;
+    height: 400px;
+  }
+
+  .countdown span{
+    font-size: 22px;
+  }
+
+  .countdown p{
+    font-size: 18px;
+  }
+
+  .content-earlyBird .timer{
+    width: 20%;
+  }
+
+  .content-earlyBird .heading{
+    font-size: 1.5vw;
+  }
+
+  .on, .off{
+    bottom: 18%;
+    left: 42.5%;
+  }
+}
+
+/* 1440 x 900 */
+@media screen and (min-device-width: 1400px) and (max-device-width: 1460px) and (min-device-height: 880px){
+  .parent-gallery{
+    top: 11%;
+  }
+
+  .parent-pelaminan{
+    top: 12%;
+  }
+
+  .parent-jukebox{
+    top: 30%;
+  }
+
+  .video-mc {
+    bottom: -1%;
+  }
+
+  .inner-countdown{
+    padding-top: 4%;
+  }
+
+  .content-earlyBird .timer{
+    width: 25%;
+  }
+
+}
+
+/* 1280 x 720p */
+@media screen and (min-device-width: 1250px) and (max-device-width: 1300px) and (max-device-height: 740px){
+  .video-mc{
+    left: 55.6%;
+    width: 19%;
+  }
+}
+
+/* 1280 x 800p */
+@media screen and (min-device-width: 1250px) and (max-device-width: 1300px) and (min-device-height: 780px) and (max-device-height: 820px){
+  .parent-gallery{
+    top: 10%;
+  }
+
+  .parent-pelaminan{
+    top: 11%;
+  }
+
+  .parent-jukebox{
+    top: 30%;
+  }
+
+  .video-wrapper {
+    top: 61%;
+  }
+
+  .inner-countdown{
+    margin-top: 18%;
+  }
+}

@@ -1,0 +1,90 @@
+/* 2880 * 1880 */
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .home-button img{
+    width: 100%;
+  }
+  .video-wrapper{
+    top: 64%;
+  }
+  .parent-prewed{
+    top: 10%;
+  }
+  .outer-wrapper h6{
+    font-size: 1.4vw;
+  }
+  .countdown span{
+    font-size: 1.3vw;
+  }
+
+  .countdown p{
+    font-size: 0.9vw;
+  }
+
+  .inner-countdown{
+    top: 9%;
+  }
+
+  .vl{
+    height: 35%;
+  }
+}
+
+/* 1920 x 1080 */
+@media screen and (min-device-width: 1900px) and (max-device-height: 1100px){
+  .home-button img {
+    width: 100%;
+  }
+
+  .img-home{
+    width: 105%;
+  }
+
+  .parent-prewed{
+    top: 6%;
+  }
+}
+
+/* 1440 x 900 */
+@media screen and (min-device-width: 1400px) and (max-device-width: 1460px) and (min-device-height: 880px){
+  .home-button img{
+    width: 80%;
+  }
+
+  .video-mc {
+    bottom: -1%;
+  }
+
+  .inner-countdown{
+    padding-top: 4%;
+  }
+
+  .parent-prewed{
+    top: 9%;
+  }
+
+}
+
+/* 1280 x 720p */
+@media screen and (min-device-width: 1250px) and (max-device-width: 1300px) and (max-device-height: 740px){
+  .video-mc{
+    right: 1.8%;
+    width: 19.8%;
+  }
+}
+
+/* 1280 x 800p */
+@media screen and (min-device-width: 1250px) and (max-device-width: 1300px) and (min-device-height: 780px) and (max-device-height: 820px){
+  .video-wrapper {
+    top: 63%;
+    height: 38%;
+  }
+  .inner-countdown{
+    margin-top: 18%;
+  }
+
+  .parent-prewed{
+    top: 9%;
+  }
+}

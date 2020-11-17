@@ -20,7 +20,7 @@
 }
 
 .homepage {
-  background-image: url("../images/background.webp");
+  background-image: url("../images/background.png");
   margin: 0;
   padding: 0;
   height: 100vh !important;
@@ -414,24 +414,24 @@
 /* LIVE MC */
 .live-mc {
   position: absolute;
-  left: 55%;
-  width: 20%;
-  height: 60%;
-  bottom: -10%;
+  left: 55vw;
+  width: 20vw;
+  height: 60vh;
+  bottom: -10vh;
   background: url('../images/button/tvmc.png');
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: 150% auto;
+  background-size: 80% auto;
   z-index: 11;
   /* border: 1px solid red; */
 }
 
 .video-mc {
   position: absolute;
-  left: 55%;
+  left: 55.5%;
   width: 20%;
   height: 60%;
-  bottom: 2%;
+  bottom: 5%;
   /* border: 1px solid black; */
 }
 
@@ -512,7 +512,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../images/button/cinderamata-still.png');
+
   background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -536,7 +536,7 @@
 }
 
 .div-souvenir:hover~.souvenir {
-  background: url('../images/button/cinderamata-animated.png');
+
   background-size: 120% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -557,7 +557,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url('../images/button/galeri-still.png');
+
   background-size: 90% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -580,7 +580,7 @@
 }
 
 .div-gallery:hover~.gallery {
-  background: url('../images/button/galeri-animated.png');
+
   background-size: 90% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -602,7 +602,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url('../images/button/pelaminan-still.png');
+
   background-size: 110% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -623,7 +623,7 @@
 }
 
 .div-pelaminan:hover~.pelaminan {
-  background: url('../images/button/pelaminan-animated.png');
+
   background-size: 110% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -647,7 +647,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../images/button/hiburan-still.png');
+
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -667,7 +667,7 @@
 }
 
 .div-jukebox:hover~.jukebox {
-  background: url('../images/button/hiburan-animated.png');
+
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -688,7 +688,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../images/button/ayam-still.png');
+
   background-size: 105% auto;
   background-repeat: no-repeat;
   background-position: 55% 100%;
@@ -710,7 +710,7 @@
 }
 
 .div-ayam:hover~.angpao {
-  background: url('../images/button/ayam-animated.png');
+
   background-size: 105% auto;
   background-repeat: no-repeat;
   background-position: 55% 100%;

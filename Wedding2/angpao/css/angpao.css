@@ -1,0 +1,258 @@
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.angpao-page{
+  background-image: url("../images/background-angpao.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 90%;
+  overflow: hidden !important;
+  height: 100vh !important;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+.content-vcall .timer {
+  padding: 2%;
+  width: 30%;
+  margin: 4% auto;
+  background-color: #236974;
+  border-radius: 3px;
+  font-family: 'Exo', sans-serif;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* LOADER */
+.loader {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+}
+
+.load-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  align-items: center;
+  text-align: center;
+}
+
+.loader img{
+  display: block;
+}
+
+.loader-icon{
+  width: 15%;
+  margin: auto;
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader-hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+.home-button{
+  position: absolute;
+  margin: 1%;
+}
+
+.home-button:hover{
+  cursor: pointer;
+}
+
+.home-button img{
+  width: 70%;
+}
+
+.angpaoanimasi{
+  position: absolute;
+  right: -2%;
+  bottom: -4%;
+}
+
+.angpaoanimasi img{
+  width: 75%;
+}
+
+.modal {
+  display: none;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Vcall */
+.modal-content {
+  box-sizing: border-box;
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 2%;
+  text-align: center;
+  border-radius: 3rem;
+}
+
+/* Modal Vcall */
+.content-vcall {
+  width: 32%;
+  padding: 3%;
+}
+
+.content-vcall h4 {
+  margin: auto;
+  margin-bottom: 7%;
+}
+
+.content-vcall h5 {
+  font-weight: normal;
+}
+
+.content-wrapper{
+  width: 85%;
+  height: 70%;
+
+  position: relative;
+  top: 13%;
+  left: 0%;
+
+  color: #FFFFFF;
+  padding: 3% 5%;
+}
+
+.content-wrapper p{
+  font-size: 1.2vw;
+}
+
+.content-left{
+  width: 60%;
+  float: left;
+  padding-right: 5%;
+  margin-top: 2%;
+  font-style: normal;
+}
+
+.content-right{
+  /* border: 1px solid black; */
+  width: 40%;
+  float: right;
+  margin-top: 2%;
+  font-style: normal;
+}
+
+.vl2 {
+  border-left: 1px solid white;
+  height: 320px;
+  display: inline-block;
+  float: left;
+  margin-right: 10%;
+}
+
+.qrcode-list {
+  display: flex;
+  width: 100%;
+  margin: 5% 0;
+}
+
+.qrcode {
+  flex: auto;
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid blue; */
+}
+
+.qrcode p {
+  margin: auto;
+  font-size: 1vw;
+}
+
+.desc-angpao{
+  width: 100%;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+.qrcode img{
+  width: 100%;
+  margin: 7% 0;
+}
+
+.ovo {
+  margin-right: 10%;
+}
+
+.gopay {
+  margin-right: 10%;
+}
+
+.alamat{
+  width: 80%;
+  font-weight: bolder;
+}
+
+/* LIVE MC */
+.live-mc {
+  position: absolute;
+  right: 2vw;
+  width: 20vw;
+  height: 60vh;
+  bottom: -5vh;
+  background: url('../images/tvmc.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 80% auto;
+  z-index: 10;
+  /* border: 1px solid red; */
+}
+
+.video-mc {
+  position: absolute;
+  right: 0.9vw;
+  width: 22vw;
+  height: 66vh;
+  bottom: 10vh;
+  /* border: 1px solid black; */
+}
+
+.video-wrapper {
+  position: relative;
+  top: 57.5%;
+  align-items: center;
+  margin: auto;
+  width: 60%;
+  height: 40%;
+  z-index: 9;
+  /* border: 1px solid blue; */
+}
+
+.video-wrapper iframe {
+  -webkit-mask-image: url('../images/mask2.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  width: 95%;
+  height: 80%;
+  margin: auto;
+  z-index: 9;
+}

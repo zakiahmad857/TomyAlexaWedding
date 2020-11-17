@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Alexa & Tomy | Virtual Wedding</title>
+  <link rel="icon" href="../images/favicon-16.png">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/css/bootstrap-tour-standalone.min.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Exo:wght@200&family=Kodchasan&family=Questrial&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/common.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/vcall.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+
+</head>
+
+<body>
+
+  <div class="mobile-content">
+    <h1>Please access this website from desktop</h1>
+    <h2>Can't wait to see you!</h2>
+  </div>
+
+  <div class="browser-resize">
+    <h1>Please maximize your browser for the full experience</h1>
+  </div>
+
+  <div class="browserZoomOut">
+    <h1>Please zoom out your browser for the full experience</h1>
+  </div>
+
+  <div class="browserZoomIn">
+    <h1>Please zoom in your browser for the full experience</h1>
+  </div>
+
+  <!-- lOADER -->
+  <div id="loading" class="loader">
+    <div class="load-content">
+      <img src="images/loadtext.webp" alt="text" class="loadtext">
+      <img src="images/loading.svg" alt="loading" class="loader-icon" />
+    </div>
+
+  </div>
+
+  <div class="desktop-content pelaminan">
+
+
+    <!-- Modal -->
+    <div id="setAgora" class="modal modal-agora">
+      <div class="modal-content modal-setting">
+        <h5 class="lang text" key="vcall">Silakan pilih dan pastikan kamera dan mikrofon yang akan digunakan menyala</h5>
+        <form id="form">
+          <div id="selectCam" class="input-field">
+            <label for="cameraId" class="active text lang" key="kamera">Kamera</label>
+            <select class="" name="cameraId" id="cameraId"></select>
+          </div>
+          <div id="selectMic" class="input-field">
+            <label for="microphoneId" class="active text lang" key="mic">Mikrofon</label>
+            <select class="" name="microphoneId" id="microphoneId"></select>
+          </div>
+          <button type="submit" id="join" class="btn btn-modal lang" key="mulaiVcall">Mulai Video Call</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="countdown countdownVC">
+      <div class="inner-countdown">
+        <!-- <p id="countWaiting"></p> -->
+        <span class="vl"></span>
+        <p id="countdownTitle"></p>
+        <span>- </span>
+        <span id="hours1"></span><span id="minutes1"></span><span id="seconds1"></span>
+      </div>
+    </div>
+
+    <!-- webtour allow cam mic -->
+    <div class="tour tourIndo">
+      <img class="info" src="images/info.png" alt="">
+    </div>
+    <div class="tour tourEng">
+      <img class="info" src="images/infoEng.png" alt="">
+    </div>
+
+    <!-- MC -->
+    <span class="dot-mc">
+
+      <div class="video-grid" id="video8">
+        <div class="video-view-mc">
+          <div id="local_stream_8" class="video-placeholder-mc"></div>
+          <div id="local_video_info_8" class="video-profile hide"></div>
+          <div id="video_autoplay_local_8" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-usernameMC">
+        <!-- <p class="username" id="usernameMC"></p> -->
+      </div>
+    </span>
+    <div class="tvhost"></div>
+
+
+    <!-- Video Tamu-->
+    <div class="tvFrame1 frameResize"></div>
+    <span class="dot dot1">
+
+      <div class="video-grid" id="video1">
+        <div class="video-view">
+          <div id="local_stream_1" class="video-placeholder"></div>
+          <div id="local_video_info_1" class="video-profile hide"></div>
+          <div id="video_autoplay_local_1" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <!-- <p class="username" id="username1"></p> -->
+      </div>
+    </span>
+
+    <div class="tvFrame2 frameResize"></div>
+    <span class="dot dot2">
+
+      <div class="video-grid" id="video2">
+        <div class="video-view">
+          <div id="local_stream_2" class="video-placeholder"></div>
+          <div id="local_video_info_2" class="video-profile hide"></div>
+          <div id="video_autoplay_local_2" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <!-- <p class="username" id="username2"></p> -->
+      </div>
+    </span>
+
+    <div class="tvFrame3 frameResize"></div>
+    <span class="dot dot3">
+
+      <div class="video-grid" id="video3">
+        <div class="video-view">
+          <div id="local_stream_3" class="video-placeholder"></div>
+          <div id="local_video_info_3" class="video-profile hide"></div>
+          <div id="video_autoplay_local_3" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <!-- <p class="username" id="username3"></p> -->
+      </div>
+    </span>
+
+    <div class="tvFrame4 frameResize"></div>
+    <span class="dot dot4">
+
+      <div class="video-grid" id="video4">
+        <div class="video-view">
+          <div id="local_stream_4" class="video-placeholder"></div>
+          <div id="local_video_info_4" class="video-profile hide"></div>
+          <div id="video_autoplay_local_4" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <!-- <p class="username" id="username4"></p> -->
+      </div>
+    </span>
+
+    <div class="tvFrame5 frameResize"></div>
+    <span class="dot dot5">
+
+      <div class="video-grid" id="video5">
+        <div class="video-view">
+          <div id="local_stream_5" class="video-placeholder"></div>
+          <div id="local_video_info_5" class="video-profile hide"></div>
+          <div id="video_autoplay_local_5" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <!-- <p class="username" id="username5"></p> -->
+      </div>
+    </span>
+
+    <div class="tvFrame6 frameResize"></div>
+    <span class="dot dot6">
+
+      <div class="video-grid" id="video6">
+        <div class="video-view">
+          <div id="local_stream_6" class="video-placeholder"></div>
+          <div id="local_video_info_6" class="video-profile hide"></div>
+          <div id="video_autoplay_local_6" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+
+      <div class="wrapper-username">
+        <!-- <p class="username" id="username6"></p> -->
+      </div>
+    </span>
+
+    <div class="tvFrame7 frameResize"></div>
+    <span class="dot dot7">
+      <div class="video-grid" id="video7">
+        <div class="video-view">
+          <div id="local_stream_7" class="video-placeholder"></div>
+          <div id="local_video_info_7" class="video-profile hide"></div>
+          <div id="video_autoplay_local_7" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+      <div class="wrapper-username">
+        <!-- <p class="username" id="username7"></p> -->
+      </div>
+    </span>
+
+
+    <span class="kotak">
+      <div class="video-grid" id="video0">
+        <div class="video-view2">
+          <div id="local_stream_0" class="video-placeholder2"></div>
+          <div id="local_video_info_0" class="video-profile hide"></div>
+          <div id="video_autoplay_local_0" class="autoplay-fallback hide"></div>
+        </div>
+      </div>
+    </span>
+
+    <!-- Bye Vcall Modal -->
+    <div id="byeVcallModal" class="modal modal-agora">
+      <div class="modal-content modal-bye">
+        <h6 class="lang text" key="endCall">Foto akan dikirim ke Whatsapp yang telah terdaftar setelah acara selesai.</h6>
+        <h6 class="lang text endcall" key="endCall2"></h6>
+        <button type="button" class="btn btn-modal lang" key="endCallButton" id="btn-home">Kembali ke Resepsi</button>
+      </div>
+    </div>
+
+    <!-- Pengantin Pindah Room -->
+    <div id="pindahRoomModal" class="modal modal-agora">
+      <div class="modal-content modal-bye">
+        <h6 class="lang text" key="">Pindah Room</h6>
+        <!-- <button type="button" class="btn btn-modal" id="btn-pindah">Lanjut</button> -->
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js" charset="utf-8"></script>
+
+  <script src="vendor/jquery.min.js"></script>
+  <script src="vendor/materialize.min.js"></script>
+  <script src="AgoraRTCSDK-3.1.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" charset="utf-8"></script>
+
+  <script type="text/javascript" src="../index.js"></script>
+
+  <script type="text/javascript">
+    console.log("masuk js di html");
+    // lOADER
+    var fadeOutScreen = localStorage.getItem('fadeOutScreen');
+    $('html, body').css({
+      overflow: 'hidden',
+      height: '100%'
+    });
+
+    $(window).on('load', function() {
+
+      $('html, body').css({
+        overflow: 'hidden',
+        height: 'auto'
+      })
+
+      $("#loading").addClass("loader-hidden");
+      if (localStorage.fadeOutScreen != 'true') {
+        $(".firstScreen").fadeIn(1500).delay(5000).fadeOut(1500);
+        localStorage.setItem('fadeOutScreen', 'true');
+      } else {
+        $(".firstScreen").css("display", "none");
+      }
+
+    });
+    // // WEB TOUR
+    // var vcallTour = new Tour({
+    //   steps: [{
+    //       element: "#countdownCall",
+    //       title: "Countdown",
+    //       content: "HItung mundur waktu concall",
+    //       placement: "bottom",
+    //     },
+    //     {
+    //       element: "#selectCam",
+    //       title: "Select Kamera",
+    //       content: "Pilih kamera yang akan digunakan ",
+    //       placement: "right",
+    //     },
+    //     {
+    //       element: "#selectMic",
+    //       title: "Select Microphone",
+    //       content: "Pilih microphone yang akan digunakan",
+    //       placement: "right",
+    //     },
+    //     {
+    //       element: "#join",
+    //       title: "Join ConCall",
+    //       content: "Lalala",
+    //       placement: "bottom",
+    //     }
+    //   ],
+    //   container: 'body',
+    //   // backdrop: true,
+    //   smartPlacement: true,
+    //   keyboard: true,
+    //   // storage: window.localStorage,
+    //   debug: false,
+    //   autoscroll: false,
+    //   backdropPadding: 0,
+    //   redirect: true,
+    //   template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+    // });
+    //
+    // var vcallTourEng = new Tour({
+    //   steps: [{
+    //       element: "#countdownCall",
+    //       title: "Countdown",
+    //       content: "HItung mundur waktu concall",
+    //       placement: "bottom",
+    //     },
+    //     {
+    //       element: "#selectCam",
+    //       title: "Select Kamera",
+    //       content: "Pilih kamera yang akan digunakan ",
+    //       placement: "right",
+    //     },
+    //     {
+    //       element: "#selectMic",
+    //       title: "Select Microphone",
+    //       content: "Pilih microphone yang akan digunakan",
+    //       placement: "right",
+    //     },
+    //     {
+    //       element: "#join",
+    //       title: "Join ConCall",
+    //       content: "Lalala",
+    //       placement: "bottom",
+    //     }
+    //   ],
+    //   container: 'body',
+    //   // backdrop: true,
+    //   smartPlacement: true,
+    //   keyboard: true,
+    //   // storage: window.localStorage,
+    //   debug: false,
+    //   autoscroll: false,
+    //   backdropPadding: 0,
+    //   redirect: true,
+    //   template: '<div class="popover tour" role="tooltip"> <div class="arrow"></div> <h3 class="popover-title"></h3> <div class="popover-content"></div> <div class="popover-navigation"> <div class="btn-group"> <button class="btn btn-sm btn-prev" data-role="prev">Prev</button> <button class="btn btn-sm btn-next" data-role="next">Next</button> <button class="btn btn-sm btn-secondary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">Pause</button> </div> <button class="btn btn-sm end" data-role="end">End tour</button> </div> </div>',
+    // });
+
+
+    // showcountdown
+    $(".countdown").css("display", "block");
+
+    // Set localStorage
+    var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues")) || {};
+    // var tourState = localStorage.getItem("tourState");
+    var settingState = localStorage.getItem("settingState");
+    var pindahState = localStorage.getItem("pindahState");
+
+    console.log("toggle ");
+    console.log(checkboxValues.toggleLang);
+
+    console.log("localStorage ");
+    console.log(localStorage);
+
+    var englishState = checkboxValues.toggleLang;
+
+    // path
+    var dirPath = dirname(location.href);
+    var homePath = RemoveLastDirectoryPartOf(dirPath);
+
+    function dirname(path) {
+      return path.replace(/\\/g, '/').replace(/\/[^\/]*$/, '');
+    }
+
+    function RemoveLastDirectoryPartOf(the_url) {
+      var the_arr = the_url.split('/');
+      the_arr.pop();
+      return (the_arr.join('/'));
+    }
+
+
+    // TOKEN DATA
+    var name = null;
+    var vcallPos;
+    if(localStorage.getItem("uid")!=null)
+      vcallPos = localStorage.getItem("uid");
+    else
+      vcallPos = "9999";
+    var usernameCall = null;
+    var startTime = null;
+    var idSalah = null;
+    var idPosisi = null;
+    var room;
+
+
+
+    cookieToken = $.cookie("token");
+    console.log("token " + cookieToken);
+
+    if (localStorage.getItem("nama") == null) {
+      localStorage.clear();
+      console.log("clear localStorage");
+      var loginPath = homePath + "/login";
+      window.location = loginPath;
+    }
+    room = 1;
+
+    // $.ajax({
+    //   url: "https://webnikahapi.arthatronic.com/api/user/",
+    //   async: false,
+    //   type: "GET",
+    //   global: false,
+    //   // Fetch the stored token from localStorage and set in the header
+    //   headers: {
+    //     "Authorization": "Token " + cookieToken
+    //   },
+    //   success: function(result) {
+    //     console.log(result);
+    //     vcallPos = result[0].id_room;
+    //     room = result[0].room;
+    //     idPosisi = result[0].id_room;
+    //
+    //     startTime = result[0].time;
+    //     console.log(vcallPos);
+    //     console.log(room);
+    //     console.log("waktu vcall " + startTime);
+    //     usernameCall = result[0].name;
+    //     console.log(usernameCall);
+    //   },
+    //   error: function(err) {
+    //     console.log(err);
+    //   }
+    // });
+
+    // Nama sendiri
+    // if (idPosisi == 1111) {
+    //   $("#username1").html(usernameCall);
+    // } else if (idPosisi == 2222) {
+    //   $("#username2").html(usernameCall);
+    // } else if (idPosisi == 3333) {
+    //   $("#username3").html(usernameCall);
+    // } else if (idPosisi == 4444) {
+    //   $("#username4").html(usernameCall);
+    // } else if (idPosisi == 5555) {
+    //   $("#username5").html(usernameCall);
+    // } else if (idPosisi == 6666) {
+    //   $("#username6").html(usernameCall);
+    // } else if (idPosisi == 7777) {
+    //   $("#username7").html(usernameCall);
+    // }
+
+    // Time group
+    var timeCheck = new Date();
+    var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 6);
+    console.log("minute room 1 " + minuteEdit);
+
+    if (idPosisi == 8888) {
+      room = localStorage.storageRoom;
+    }
+
+    console.log("ROOM CHECK" + room);
+    if (room == 2) {
+      var menitMinLima = parseInt(timeCheck.getMinutes()) - 3;
+      var minuteEdit = menitMinLima - (menitMinLima % 6) + 3;
+      console.log("minute room 2 " + minuteEdit);
+      // $("#usernameMC").html("Room 2");
+    } else if (room == 1) {
+      // $("#usernameMC").html("Room 1");
+    }
+
+
+    timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
+    console.log("timeGroup " + timeGroup);
+
+
+    // Concall group
+    var groupVcall = [];
+
+
+    // $.ajax({
+    //   url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
+    //   async: false,
+    //   type: "GET",
+    //   global: false,
+    //   success: function(result) {
+    //     console.log("get time group");
+    //     console.log(result);
+    //     for (var i = 0; i < result.length; i++) {
+    //       var item = result[i].name;
+    //       groupVcall.push(item);
+    //     }
+    //     console.log("Group Call ");
+    //     console.log(groupVcall);
+    //   },
+    //   error: function(err) {
+    //     console.log(err);
+    //   }
+    // });
+
+    var id_room;
+
+    if (room == 1) {
+      var id_room = "room1";
+    } else if (room == 2) {
+      var id_room = "room2";
+    }
+
+    var startnow = new Date();
+    var minutes10 = parseInt(startnow.getMinutes()) - (parseInt(startnow.getMinutes())%6);
+    startTime = startnow.getHours() + ":" + minutes10;
+
+    // Jam video call
+    var startTimeDate = new Date("5 September 2020 " + startTime + " GMT+07:00")
+    console.log("startTimeDate " + startTimeDate);
+
+    var startTimeParse = (Date.parse(startTimeDate) / 1000);
+
+    // endtime vcall 6 minutes
+    var endTime = startTimeParse + 360;
+
+    // if (tourState != 'done') {
+    //   if (englishState) {
+    //     vcallTourEng.restart();
+    //     localStorage.setItem('tourState', 'done');
+    //   } else {
+    //     vcallTour.restart();
+    //     localStorage.setItem('tourState', 'done');
+    //   }
+    // }
+
+    // Countdown Concall
+    function makeTimerCall() {
+
+      // console.log("startTimeParse " + startTimeParse);
+      // console.log("endTime " + endTime);
+
+      //var coba = httpGet("http://worldtimeapi.org/api/timezone/Asia/Jakarta");
+      //console.log(coba);
+      //var obj = JSON.parse(coba);
+
+      //res = obj.datetime.split("T");
+      //res1 = res[1].split(".");
+      //res2 = res1[0].split(":");
+
+      var now = new Date();
+      var timeNow = "5 September 2020 " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " GMT+07:00";
+      var timeNowParse = (Date.parse(timeNow) / 1000);
+
+      // console.log("timeParse " + timeNowParse);
+      // console.log("endtime " + endTime);
+
+      // Kalo waktu skrg udah melebihi jatah vcall, exit
+
+
+      if (timeNowParse >= endTime) {
+        leave(rtc);
+        $("#setAgora").css('display', 'none');
+        $("#byeVcallModal").css('display', 'block');
+        console.log("sama");
+        // vcallTour.end();
+        // vcallTourEng.end();
+        //leave(rtc);
+
+      }
+
+      // Countdown untuk tamu
+      var timeCount = endTime - timeNowParse;
+      // console.log("timecount " + timeCount);
+
+
+      var days1 = Math.floor(timeCount / 86400);
+      var hours1 = Math.floor((timeCount - (days1 * 86400)) / 3600);
+      var minutes1 = Math.floor((timeCount - (days1 * 86400) - (hours1 * 3600)) / 60);
+      var seconds1 = Math.floor((timeCount - (days1 * 86400) - (hours1 * 3600) - (minutes1 * 60)));
+
+
+
+      if (minutes1 < "10") {
+        minutes1 = "0" + minutes1;
+      }
+      if (seconds1 < "10") {
+        seconds1 = "0" + seconds1;
+      }
+
+      if (timeCount >= "180") {
+        // Waiting room
+        console.log("waiting room");
+        console.log(checkboxValues.toggleLang);
+        if(checkboxValues.toggleLang){
+          $("#countdownTitle").html("Meet the couple in");
+        } else {
+          $("#countdownTitle").html("Bertemu pengantin dalam");
+        }
+
+        $("#minutes1").html(minutes1 - 3 + "<span> :</span>");
+        $("#seconds1").html(seconds1);
+
+      } else if (timeCount <= 0) {
+        // Done
+        console.log("beresnih");
+        $(".timer1").css('display', 'none');
+        $("#hours1").css('display', 'none');
+        $("#minutes1").css('display', 'none');
+        $("#seconds1").css('display', 'none');
+
+      } else if (timeCount < "180") {
+        // Ketemu pengantin
+        // console.log("ketemu");
+        if(checkboxValues.toggleLang){
+          $("#countdownTitle").html("Meeting the couple");
+        } else {
+          $("#countdownTitle").html("Bertemu pengantin");
+        }
+
+        $("#minutes1").html(minutes1 + "<span> :</span>");
+        $("#seconds1").html(seconds1);
+
+      }
+
+    }
+    // end of function makeTimerCall
+
+    // countdown untuk host
+    var get = false;
+    var sama = false;
+
+    function countdownAdmin() {
+
+      // Time group
+
+      var timeCheck = new Date();
+      var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 6);
+      console.log("minute room 1 " + minuteEdit);
+
+      if (room == 2) {
+        var menitMinLima = parseInt(timeCheck.getMinutes()) - 3
+        var minuteEdit = menitMinLima - (menitMinLima % 6) + 3;
+        // console.log("minute room 2 " + minuteEdit);
+        // $("#usernameMC").html("Room 2");
+      } else if (room == 1) {
+        // $("#usernameMC").html("Room 1");
+
+      }
+
+      timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
+
+      // get group
+      var minuteNow = parseInt(timeCheck.getMinutes());
+
+      console.log("cek menit admin " + minuteNow);
+      if (minuteEdit == minuteNow) {
+        sama = true;
+        // if (get == false){
+
+        // }
+
+      } else {
+        sama = false;
+        get = false;
+      }
+
+      if ((sama == true) && (get == false)) {
+        groupVcall = [];
+        console.log("GET DATA BUAT ADMIN");
+        $.ajax({
+          url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
+          async: false,
+          type: "GET",
+          global: false,
+          success: function(result) {
+            console.log("get time group");
+            console.log(result);
+            for (var i = 0; i < result.length; i++) {
+              var item = result[i].name;
+              groupVcall.push(item);
+            }
+            console.log("Group Call ");
+            console.log(groupVcall);
+          },
+          error: function(err) {
+            console.log(err);
+          }
+        });
+        get = true;
+      }
+
+      // $("#username1").html(groupVcall[0]);
+      // $("#username2").html(groupVcall[1]);
+      // $("#username3").html(groupVcall[2]);
+      // $("#username4").html(groupVcall[3]);
+      // $("#username5").html(groupVcall[4]);
+      // $("#username6").html(groupVcall[5]);
+      // $("#username7").html(groupVcall[6]);
+
+
+      var timeGroupPlusDate = new Date("5 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
+      var endTimeGroup = timeGroupParse + 360;
+
+      console.log("time group dalem function " + timeGroup);
+      console.log("timeGroupParse " + timeGroupParse);
+
+
+      // Countdown host
+      // Time now
+
+      var now = new Date();
+      var timeNowParse = (Date.parse(now) / 1000);
+
+      var countTime = endTimeGroup - timeNowParse;
+
+
+      var days1 = Math.floor(countTime / 86400);
+      var hours1 = Math.floor((countTime - (days1 * 86400)) / 3600);
+      var minutes1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600)) / 60);
+      var seconds1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600) - (minutes1 * 60)));
+      console.log("masuk countdown admin");
+
+      if (minutes1 < "10") {
+        minutes1 = "0" + minutes1;
+      }
+      if (seconds1 < "10") {
+        seconds1 = "0" + seconds1;
+      }
+
+      console.log("countTime " + countTime);
+      if (countTime >= "180") {
+        // Waiting room
+        console.log("waiting room");
+        $("#countdownTitle").html("Bertemu pengantin dalam");
+        $("#minutes1").html(minutes1 - 3 + "<span> :</span>");
+        $("#seconds1").html(seconds1);
+
+      } else if (countTime < "180") {
+        // Ketemu pengantin
+        console.log("ketemu");
+        $("#countdownTitle").html("Bertemu pengantin");
+        $("#minutes1").html(minutes1 + "<span> :</span>");
+        $("#seconds1").html(seconds1);
+
+      }
+
+    }
+
+    var storageIdRoom = localStorage.getItem("storageIdRoom");
+    var storageRoom = localStorage.getItem("storageRoom");
+
+    $(document).ready(function() {
+      console.log("doc ready id_room " + localStorage.storageIdRoom);
+      console.log("doc ready room " + localStorage.storageRoom);
+      if (idPosisi == 8888) {
+        setInterval(function() {
+          pindahRoom();
+        }, 1000);
+        if (localStorage.settingState == 'done') {
+          var fields = ["appID", "channel"];
+          var params = serializeformData(); // Data is feteched and serilized from the form element.
+          console.log("PARAMS");
+          console.log(params);
+          if (validator(params, fields)) {
+            join(rtc, params)
+          }
+
+        }
+      }
+    });
+
+    function pindahRoom() {
+      // Pindah room
+      var time = new Date();
+      var menit = parseInt(time.getMinutes());
+      var menitMod = menit - menit%3;
+
+
+      // if(obj.unixtime >= (parseInt(endTime)-3)){
+      //   $("#pindahRoomModal").css("display", "block");
+
+      // }
+
+      if ((menit % 3 == 0) && (localStorage.pindahState != 'pindah')) {
+        console.log("muncul pindah room modal");
+        $("#pindahRoomModal").css("display", "block");
+        var counterVcall = 1;
+        var interval = setInterval(function() {
+          // Display 'counter' wherever you want to display it.
+          counterVcall--;
+
+          console.log("countervcall " + counterVcall);
+          if (counterVcall == 0) {
+            // Display a login box
+            clearInterval(interval);
+            $("#pindahRoomModal").css("display", "none");
+            localStorage.setItem('pindahState', 'pindah');
+            location.reload();
+          }
+        }, 1000);
+      } else if (menit % 3 > 0) {
+        localStorage.setItem('pindahState', 'x');
+      }
+
+      // Pengantin pindah room
+
+      if (idPosisi == 8888) {
+        console.log("MASUK ID POSISI");
+        if (menitMod % 2 == 0) {
+          // room 2
+          console.log("pengantin masuk room 2");
+          id_room = "room2";
+          room = 2;
+          localStorage.setItem("storageIdRoom", "room2");
+          localStorage.setItem("storageRoom", 2);
+        } else if (menitMod % 2 == 1) {
+          // room 1
+          console.log("pengantin masuk room 1");
+          id_room = "room1";
+          room = 1;
+          localStorage.setItem("storageIdRoom", "room1");
+          localStorage.setItem("storageRoom", 1);
+        }
+        console.log("locstorage idRoom " + localStorage.storageIdRoom);
+        console.log("locstorage room " + localStorage.storageRoom);
+      }
+      console.log("pindahRoom function. id_room " + id_room);
+      console.log("pindahRoom function. room " + room);
+
+
+      // countdown
+      // Time group
+      var timeCheck = new Date();
+      var minuteEdit = parseInt(timeCheck.getMinutes()) - (parseInt(timeCheck.getMinutes()) % 3);
+      console.log("minute room 1 " + minuteEdit);
+
+      // if (room == 2) {
+      //   var menitMinLima = parseInt(timeCheck.getMinutes()) - 3
+      //   // var minuteEdit = menitMinLima - (menitMinLima % 6) + 3;
+      //   console.log("minute room 2 " + minuteEdit);
+      //   $("#usernameMC").html("Room 2");
+      // } else if (room == 1) {
+      //   console.log("minute room 1 " + minuteEdit);
+      //   // $("#usernameMC").html("Room 1");
+      // }
+
+      timeGroup = timeCheck.getHours() + ":" + minuteEdit.toString();
+
+
+      var timeGroupPlusDate = new Date("5 September 2020 " + timeGroup + " GMT+07:00");
+      var timeGroupParse = (Date.parse(timeGroupPlusDate) / 1000);
+      var endTimeGroup = timeGroupParse + 180;
+
+      console.log("time group dalem function " + timeGroup);
+      console.log("timeGroupParse " + timeGroupParse);
+
+
+      // Countdown
+      // Time now
+      var now = new Date();
+      var timeNowParse = (Date.parse(now) / 1000);
+
+      var countTime = endTimeGroup - timeNowParse;
+
+
+      var days1 = Math.floor(countTime / 86400);
+      var hours1 = Math.floor((countTime - (days1 * 86400)) / 3600);
+      var minutes1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600)) / 60);
+      var seconds1 = Math.floor((countTime - (days1 * 86400) - (hours1 * 3600) - (minutes1 * 60)));
+      console.log("masuk countdown admin");
+
+      if (minutes1 < "10") {
+        minutes1 = "0" + minutes1;
+      }
+      if (seconds1 < "10") {
+        seconds1 = "0" + seconds1;
+      }
+
+      $("#countdownTitle").html("Waktu Video Call");
+      $("#minutes1").html(minutes1 + "<span> :</span>");
+      $("#seconds1").html(seconds1);
+    }
+
+    setInterval(function() {
+      // Guest
+      // 9999 dan 9898 : mc
+      // 9797 dan 9696 : screenrecord
+      // 8888 pengantin
+      // lainnya tamu
+      if ((idPosisi != "9999") && (idPosisi != "9898") && (idPosisi != "9797") && (idPosisi != "9696") && (idPosisi != "8888")) {
+        makeTimerCall();
+      } else if (idPosisi == "8888") {
+        // pindahRoom();
+      } else {
+        countdownAdmin();
+      }
+    }, 1000);
+
+    $("#btn-home").click(function() {
+      window.location = homePath;
+    });
+
+    // $("#btn-pindah").click(function() {
+    //   $("#pindahRoomModal").css("display", "none");
+    //
+    //   localStorage.setItem('pindahState', 'pindah');
+    //   location.reload();
+    //
+    // });
+
+    console.log("USERNAME " + usernameCall);
+    // $(document).ready(function() {
+    if (localStorage.settingState != 'done') {
+      $("#setAgora").css("display", "block");
+    }
+
+    $(".desktop-content").css("display", "block");
+    // });
+
+    console.log("agora sdk version: " + AgoraRTC.VERSION + " compatible: " + AgoraRTC.checkSystemRequirements());
+    var resolutions = [{
+        name: "default",
+        value: "default",
+      },
+      {
+        name: "480p",
+        value: "480p",
+      },
+      {
+        name: "720p",
+        value: "720p",
+      },
+      {
+        name: "1080p",
+        value: "1080p"
+      }
+    ]
+
+    function Toastify(options) {
+      M.toast({
+        html: options.text,
+        classes: options.classes
+      })
+    }
+
+    var Toast = {
+      info: (msg) => {
+        Toastify({
+          text: msg,
+          classes: "info-toast"
+        })
+      },
+      notice: (msg) => {
+        Toastify({
+          text: msg,
+          classes: "notice-toast"
+        })
+      },
+      error: (msg) => {
+        Toastify({
+          text: msg,
+          classes: "error-toast"
+        })
+      }
+    }
+
+    function validator(formData, fields) {
+      var keys = Object.keys(formData)
+      for (let key of keys) {
+        if (fields.indexOf(key) != -1) {
+          if (!formData[key]) {
+            //Toast.error("Please Enter " + key)
+            return false
+          }
+        }
+      }
+      return true
+    }
+
+    function serializeformData() {
+      console.log("MASUK SERIALIZE");
+      var formData = $("#form").serializeArray()
+      var obj = {}
+      for (var item of formData) {
+        var key = item.name
+        var val = item.value
+        obj[key] = val
+      }
+
+      obj["uid"] = vcallPos
+      if (idPosisi == 8888) {
+        room = localStorage.storageRoom;
+        id_room = localStorage.storageIdRoom;
+      }
+
+      if (room == 1) {
+        obj["appID"] = "48025a2877b744c4afee2182bb106981"
+      } else if (room == 2) {
+        obj["appID"] = "10ca4e644db44fc9a24de6ccf393ebaa"
+      }
+
+
+      console.log("ROOM " + room);
+
+      console.log("ID ROOM  " + id_room);
+
+      obj["channel"] = id_room
+      obj["cameraResolution"] = "720p"
+      obj["mode"] = "live"
+      obj["codec"] = "h264"
+
+      return obj
+    }
+
+    function addView(id, show) {
+
+      if (!$("#" + id)[0]) {
+        if (id == 1111) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view",
+          }).appendTo("#video1")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+
+          // $("#username1").html(groupVcall[0]);
+
+          console.log("HADIIIRR");
+        }
+        if (id == 2222) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view",
+          }).appendTo("#video2")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+
+          // $("#username2").html(groupVcall[1]);
+        }
+        if (id == 3333) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view",
+          }).appendTo("#video3")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+
+          // $("#username3").html(groupVcall[2]);
+        }
+        if (id == 4444) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view",
+          }).appendTo("#video4")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+
+          // $("#username4").html(groupVcall[3]);
+        }
+        if (id == 5555) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view",
+          }).appendTo("#video5")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+
+          // $("#username5").html(groupVcall[4]);
+        }
+        if (id == 6666) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view",
+          }).appendTo("#video6")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+
+          // $("#username6").html(groupVcall[5]);
+        }
+        if (id == 7777) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view",
+          }).appendTo("#video7")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+
+          // $("#username7").html(groupVcall[6]);
+        }
+        if (id == 8888) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view2",
+          }).prependTo("#video0")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder2",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+        }
+
+        if (id == 9999) {
+          $("<div/>", {
+            id: "remote_video_panel_" + id,
+            class: "video-view-mc",
+          }).appendTo("#video8")
+          $("<div/>", {
+            id: "remote_video_" + id,
+            class: "video-placeholder-mc",
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "remote_video_info_" + id,
+            class: "video-profile " + (show ? "" : "hide"),
+          }).appendTo("#remote_video_panel_" + id)
+
+          $("<div/>", {
+            id: "video_autoplay_" + id,
+            class: "autoplay-fallback hide",
+          }).appendTo("#remote_video_panel_" + id)
+        }
+
+
+      }
+    }
+
+    function removeView(id) {
+      if ($("#remote_video_panel_" + id)[0]) {
+        $("#remote_video_panel_" + id).remove()
+      }
+    }
+
+    function getDevices(next) {
+      AgoraRTC.getDevices(function(items) {
+        items.filter(function(item) {
+            return ["audioinput", "videoinput"].indexOf(item.kind) !== -1
+          })
+          .map(function(item) {
+            return {
+              name: item.label,
+              value: item.deviceId,
+              kind: item.kind,
+            }
+          })
+        var videos = []
+        var audios = []
+        for (var i = 0; i < items.length; i++) {
+          var item = items[i]
+          if ("videoinput" == item.kind) {
+            var name = item.label
+            var value = item.deviceId
+            if (!name) {
+              name = "camera-" + videos.length
+            }
+            videos.push({
+              name: name,
+              value: value,
+              kind: item.kind
+            })
+          }
+          if ("audioinput" == item.kind) {
+            var name = item.label
+            var value = item.deviceId
+            if (!name) {
+              name = "microphone-" + audios.length
+            }
+            audios.push({
+              name: name,
+              value: value,
+              kind: item.kind
+            })
+          }
+        }
+        next({
+          videos: videos,
+          audios: audios
+        })
+      })
+    }
+
+    var rtc = {
+      client: null,
+      joined: false,
+      published: false,
+      localStream: null,
+      remoteStreams: [],
+      params: {}
+    }
+
+    function handleEvents(rtc) {
+      // Occurs when an error message is reported and requires error handling.
+      rtc.client.on("error", (err) => {
+        console.log(err)
+      })
+      // Occurs when the peer user leaves the channel; for example, the peer user calls Client.leave.
+      rtc.client.on("peer-leave", function(evt) {
+        var id = evt.uid;
+        console.log("id", evt)
+        let streams = rtc.remoteStreams.filter(e => id !== e.getId())
+        let peerStream = rtc.remoteStreams.find(e => id === e.getId())
+        if (peerStream && peerStream.isPlaying()) {
+          peerStream.stop()
+        }
+        rtc.remoteStreams = streams
+        if (id !== rtc.params.uid) {
+          removeView(id)
+        }
+        //Toast.notice("peer leave")
+        console.log("peer-leave", id)
+
+        // Delete username yang leave
+        // if (id == 1111) {
+        //   $("#username1").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username1").css("display", "none");
+        //   }
+        //
+        // } else if (id == 2222) {
+        //   $("#username2").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username2").css("display", "none");
+        //   }
+        // } else if (id == 3333) {
+        //   $("#username3").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username3").css("display", "none");
+        //   }
+        // } else if (id == 4444) {
+        //   $("#username4").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username4").css("display", "none");
+        //   }
+        // } else if (id == 5555) {
+        //   $("#username5").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username5").css("display", "none");
+        //   }
+        // } else if (id == 6666) {
+        //   $("#username6").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username6").css("display", "none");
+        //   }
+        // } else if (id == 7777) {
+        //   $("#username7").html("");
+        //   if (idPosisi == 9999) {
+        //     $("#username7").css("display", "none");
+        //   }
+        // }
+
+
+
+      })
+      // Occurs when the local stream is published.
+      rtc.client.on("stream-published", function(evt) {
+        //Toast.notice("stream published success")
+        console.log("stream-published")
+        console.log("MASUK KESATU");
+        // if (idPosisi == 9999) {
+        //   $("#username1").css("display", "none");
+        //   $("#username2").css("display", "none");
+        //   $("#username3").css("display", "none");
+        //   $("#username4").css("display", "none");
+        //   $("#username5").css("display", "none");
+        //   $("#username6").css("display", "none");
+        //   $("#username7").css("display", "none");
+        // }
+
+      })
+      // Occurs when the remote stream is added.
+      rtc.client.on("stream-added", function(evt) {
+        var remoteStream = evt.stream
+        var id = remoteStream.getId()
+        //Toast.info("stream-added uid: " + id)
+        if (id !== rtc.params.uid) {
+          rtc.client.subscribe(remoteStream, function(err) {
+            console.log("stream subscribe failed", err)
+          })
+        }
+        console.log("stream-added remote-uid: ", id)
+
+      })
+      // Occurs when a user subscribes to a remote stream.
+      rtc.client.on("stream-subscribed", function(evt) {
+        var remoteStream = evt.stream
+        var id = remoteStream.getId()
+        rtc.remoteStreams.push(remoteStream)
+        addView(id)
+        remoteStream.play("remote_video_" + id)
+        //Toast.info("stream-subscribed remote-uid: " + id)
+        console.log("stream-subscribed remote-uid: ", id)
+        console.log("MASUK KEDUA");
+        // if (idPosisi == 9999) {
+        //   if (id == 1111) {
+        //     $("#username1").css("display", "block");
+        //   } else if (id == 2222) {
+        //     $("#username2").css("display", "block");
+        //   } else if (id == 3333) {
+        //     $("#username3").css("display", "block");
+        //   } else if (id == 4444) {
+        //     $("#username4").css("display", "block");
+        //   } else if (id == 5555) {
+        //     $("#username5").css("display", "block");
+        //   } else if (id == 6666) {
+        //     $("#username6").css("display", "block");
+        //   } else if (id == 7777) {
+        //     $("#username7").css("display", "block");
+        //   }
+        // }
+
+        console.log("GAK KETENDANG");
+        if (id == idPosisi) {
+          console.log("KETENDANG!!!!!!");
+          leave(rtc)
+        }
+
+      })
+      // Occurs when the remote stream is removed; for example, a peer user calls Client.unpublish.
+      rtc.client.on("stream-removed", function(evt) {
+        var remoteStream = evt.stream
+        var id = remoteStream.getId()
+        //Toast.info("stream-removed uid: " + id)
+        if (remoteStream.isPlaying()) {
+          remoteStream.stop()
+        }
+        rtc.remoteStreams = rtc.remoteStreams.filter(function(stream) {
+          return stream.getId() !== id
+        })
+        removeView(id)
+        console.log("stream-removed remote-uid: ", id)
+        console.log("INI ID YANG DICARI " + id);
+      })
+      rtc.client.on("onTokenPrivilegeWillExpire", function() {
+        // After requesting a new token
+        // rtc.client.renewToken(token);
+        //Toast.info("onTokenPrivilegeWillExpire")
+        console.log("onTokenPrivilegeWillExpire")
+      })
+      rtc.client.on("onTokenPrivilegeDidExpire", function() {
+        // After requesting a new token
+        // client.renewToken(token);
+        //Toast.info("onTokenPrivilegeDidExpire")
+        console.log("onTokenPrivilegeDidExpire")
+      })
+    }
+
+    /**
+     * rtc: rtc object
+     * option: {
+     *  mode: string, "live" | "rtc"
+     *  codec: string, "h264" | "vp8"
+     *  appID: string
+     *  channel: string, channel name
+     *  uid: number
+     *  token; string,
+     * }
+     **/
+    function join(rtc, option) {
+      if (rtc.joined) {
+        //Toast.error("Your already joined")
+        return;
+      }
+
+      /**
+       * A class defining the properties of the config parameter in the createClient method.
+       * Note:
+       *    Ensure that you do not leave mode and codec as empty.
+       *    Ensure that you set these properties before calling Client.join.
+       *  You could find more detail here. https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.clientconfig.html
+       **/
+      rtc.client = AgoraRTC.createClient({
+        mode: option.mode,
+        codec: option.codec
+      })
+
+      rtc.params = option
+
+      // handle AgoraRTC client event
+      handleEvents(rtc)
+
+      // rtc.setVideoProfile = AgoraRTC.setVideoProfile("720p_2");
+
+
+
+      // init client
+      rtc.client.init(option.appID, function() {
+        console.log("init success")
+
+        /**
+         * Joins an AgoraRTC Channel
+         * This method joins an AgoraRTC channel.
+         * Parameters
+         * tokenOrKey: string | null
+         *    Low security requirements: Pass null as the parameter value.
+         *    High security requirements: Pass the string of the Token or Channel Key as the parameter value. See Use Security Keys for details.
+         *  channel: string
+         *    A string that provides a unique channel name for the Agora session. The length must be within 64 bytes. Supported character scopes:
+         *    26 lowercase English letters a-z
+         *    26 uppercase English letters A-Z
+         *    10 numbers 0-9
+         *    Space
+         *    "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", "{", "}", "|", "~", ","
+         *  uid: number | null
+         *    The user ID, an integer. Ensure this ID is unique. If you set the uid to null, the server assigns one and returns it in the onSuccess callback.
+         *   Note:
+         *      All users in the same channel should have the same type (number or string) of uid.
+         *      If you use a number as the user ID, it should be a 32-bit unsigned integer with a value ranging from 0 to (232-1).
+         **/
+        rtc.client.join(option.token ? option.token : null, option.channel, option.uid ? +option.uid : null, function(uid) {
+          //Toast.notice("join channel: " + option.channel + " success, uid: " + uid)
+          console.log("join channel: " + option.channel + " success, uid: " + uid)
+          rtc.joined = true
+
+          rtc.params.uid = uid
+
+          //localstorage camera dan microphone
+          var micId = localStorage.getItem("micId");
+          var camId = localStorage.getItem("camId");
+
+          console.log("MASUK YEY");
+          if (localStorage.micId == null) {
+            console.log("MASUK KE NULL");
+            var microphoneId = option.microphoneId;
+            localStorage.setItem("micId", option.microphoneId);
+          } else {
+            var microphoneId = localStorage.micId;
+            console.log("microphoneId dalem join lala" + microphoneId);
+          }
+
+          if (localStorage.camId == null) {
+            var cameraId = option.cameraId;
+            localStorage.setItem("camId", option.cameraId);
+          } else {
+            var cameraId = localStorage.camId;
+          }
+
+          // create local stream
+          rtc.localStream = AgoraRTC.createStream({
+            streamID: rtc.params.uid,
+            audio: true,
+            video: true,
+            screen: false,
+            microphoneId: microphoneId,
+            cameraId: cameraId
+
+          })
+
+          // initialize local stream. Callback function executed after intitialization is done
+          rtc.localStream.init(function() {
+            console.log("init local stream success")
+            // play stream with html element id "local_stream"
+
+            var params2 = serializeformData();
+            console.log("luar" + params2["uid"]);
+            if (params2["uid"] == 1111) {
+              console.log("mazuk");
+              rtc.localStream.play("local_stream_1")
+            } else if (params2["uid"] == 2222) {
+              rtc.localStream.play("local_stream_2")
+            } else if (params2["uid"] == 3333) {
+              rtc.localStream.play("local_stream_3")
+            } else if (params2["uid"] == 4444) {
+              rtc.localStream.play("local_stream_4")
+            } else if (params2["uid"] == 5555) {
+              rtc.localStream.play("local_stream_5")
+            } else if (params2["uid"] == 6666) {
+              rtc.localStream.play("local_stream_6")
+            } else if (params2["uid"] == 7777) {
+              rtc.localStream.play("local_stream_7")
+            } else if (params2["uid"] == 9999) {
+              rtc.localStream.play("local_stream_8")
+            } else if (params2["uid"] == 8888) {
+              rtc.localStream.setVideoProfile("720p_1");
+              console.log("cobagantiresolusi");
+              rtc.localStream.play("local_stream_0", {
+                fit: "cover"
+              })
+            }
+            console.log("masuk join gak yaaa");
+            publish(rtc)
+            // publish local streams
+
+            setInterval(function() {
+              if(localStorage.getItem("awal") == null){
+                console.log("published gamasuk");
+                localStorage.setItem("awal", "1");
+                if ($('#video1 > div').length<2){
+                  idPosisi = "1111";
+                  console.log("masuk 1111");
+                }
+                else if($('#video2 > div').length<2){
+                  idPosisi = "2222";
+                  console.log("masuk 2222");
+                }
+                else if($('#video3 > div').length<2){
+                  idPosisi = "3333";
+                  console.log("masuk 3333");
+                }
+                else if($('#video4 > div').length<2){
+                  idPosisi = "4444";
+                  console.log("masuk 4444");
+                }
+                else if($('#video5 > div').length<2){
+                  idPosisi = "5555";
+                  console.log("masuk 5555");
+                }
+                else if($('#video6 > div').length<2){
+                  idPosisi = "6666";
+                  console.log("masuk 6666");
+                }
+                else if($('#video7 > div').length<2){
+                  idPosisi = "7777";
+                  console.log("masuk 7777");
+                }
+                localStorage.setItem("uid", idPosisi);
+                location.reload();
+
+              } else{
+
+                console.log("published masuk");
+              }
+            },3000);
+
+          }, function(err) {
+            //Toast.error("stream init failed, please open console see more detail")
+            console.error("init local stream failed ", err)
+          })
+        }, function(err) {
+          //Toast.error("client join failed, please open console see more detail")
+          console.error("client join failed", err)
+        })
+      }, (err) => {
+        //Toast.error("client init failed, please open console see more detail")
+        console.error(err)
+      })
+    }
+
+    function publish(rtc) {
+      if (!rtc.client) {
+        //Toast.error("Please Join Room First")
+        return
+      }
+      if (rtc.published) {
+        //Toast.error("Your already published")
+        return
+      }
+      var oldState = rtc.published
+
+      // publish localStream
+      rtc.client.publish(rtc.localStream, function(err) {
+        rtc.published = oldState
+        console.log("publish failed")
+        //Toast.error("publish failed")
+        console.error(err)
+      })
+      //Toast.info("publish")
+      rtc.published = true
+    }
+
+    function unpublish(rtc) {
+      if (!rtc.client) {
+        //Toast.error("Please Join Room First")
+        return
+      }
+      if (!rtc.published) {
+        Toast.error("Your didn't publish")
+        return
+      }
+      var oldState = rtc.published
+      rtc.client.unpublish(rtc.localStream, function(err) {
+        rtc.published = oldState
+        console.log("unpublish failed")
+        //Toast.error("unpublish failed")
+        console.error(err)
+      })
+      //Toast.info("unpublish")
+      rtc.published = false
+    }
+
+    function leave(rtc) {
+      if (!rtc.client) {
+        // Toast.error("Please Join First!")
+        return
+      }
+      if (!rtc.joined) {
+        // Toast.error("You are not in channel")
+        return
+      }
+      /**
+       * Leaves an AgoraRTC Channel
+       * This method enables a user to leave a channel.
+       **/
+      rtc.client.leave(function() {
+        // stop stream
+        if (rtc.localStream.isPlaying()) {
+          rtc.localStream.stop()
+        }
+        // close stream
+        rtc.localStream.close()
+        for (let i = 0; i < rtc.remoteStreams.length; i++) {
+          var stream = rtc.remoteStreams.shift()
+          var id = stream.getId()
+          if (stream.isPlaying()) {
+            stream.stop()
+          }
+          removeView(id)
+        }
+        rtc.localStream = null
+        rtc.remoteStreams = []
+        rtc.client = null
+        console.log("client leaves channel success")
+        rtc.published = false
+        rtc.joined = false
+        //Toast.notice("leave success")
+      }, function(err) {
+        console.log("channel leave failed")
+        //Toast.error("leave success")
+        console.error(err)
+      })
+    }
+
+    // This function automatically executes when a document is ready.
+    $(function() {
+      // This will fetch all the devices and will populate the UI for every device. (Audio and Video)
+      getDevices(function(devices) {
+        devices.audios.forEach(function(audio) {
+          $("<option/>", {
+            value: audio.value,
+            text: audio.name,
+          }).appendTo("#microphoneId")
+        })
+        devices.videos.forEach(function(video) {
+          $("<option/>", {
+            value: video.value,
+            text: video.name,
+          }).appendTo("#cameraId")
+          console.log("cek nama video: " + video.name + " : " + video.value)
+        })
+        // To populate UI with different camera resolutions
+        resolutions.forEach(function(resolution) {
+          $("<option/>", {
+            value: resolution.value,
+            text: resolution.name
+          }).appendTo("#cameraResolution")
+        })
+        M.AutoInit()
+      })
+
+      var fields = ["appID", "channel"]
+
+      // This will start the join functions with all the configuration selected by the user.
+      $("#join").on("click", function(e) {
+
+        console.log("setting state 2");
+        // console.log(settingState);
+        // vcallTour.end();
+        // vcallTourEng.end();
+        console.log("join")
+        e.preventDefault();
+        var params = serializeformData(); // Data is feteched and serilized from the form element.
+        if (validator(params, fields)) {
+          join(rtc, params)
+        }
+
+        $("#setAgora").css("display", "none");
+        console.log("bahasa");
+        if(checkboxValues.toggleLang){
+          $(".tourEng").css("display", "block");
+          $(".tourEng").delay(5000).queue(function(next){
+            $(".tourEng").css("display", "none");
+            next();
+          });
+        } else {
+          $(".tourIndo").css("display", "block");
+          $(".tourIndo").delay(5000).queue(function(next){
+            $(".tourIndo").css("display", "none");
+            next();
+          });
+        }
+
+        if (idPosisi == 8888) {
+          localStorage.setItem('settingState', 'done');
+        }
+      })
+      // This publishes the video feed to Agora
+      $("#publish").on("click", function(e) {
+        console.log("publish")
+        e.preventDefault()
+        var params = serializeformData()
+        if (validator(params, fields)) {
+          publish(rtc)
+        }
+      });
+      // Unpublishes the video feed from Agora
+      $("#unpublish").on("click", function(e) {
+        console.log("unpublish")
+        e.preventDefault()
+        var params = serializeformData()
+        if (validator(params, fields)) {
+          unpublish(rtc)
+        }
+      });
+
+      $("#leave").on("click", function(e) {
+        console.log("leave")
+        e.preventDefault()
+        var params = serializeformData()
+        if (validator(params, fields)) {
+          leave(rtc)
+        }
+      })
+    })
+  </script>
+
+
+</body>
+
+</html>

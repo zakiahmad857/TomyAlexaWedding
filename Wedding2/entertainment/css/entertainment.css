@@ -1,0 +1,285 @@
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.entertainment-page {
+  background-image: url("../images/entertainment-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 90%;
+  overflow: hidden !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+.content-vcall .timer {
+  padding: 2%;
+  width: 30%;
+  margin: 4% auto;
+  background-color: #236974;
+  border-radius: 3px;
+  font-family: 'Exo', sans-serif;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* LOADER */
+.loader {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+}
+
+.load-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  align-items: center;
+  text-align: center;
+}
+
+.loader img{
+  display: block;
+}
+
+.loader-icon{
+  width: 15%;
+  margin: auto;
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader-hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+.animation{
+  position: absolute;
+  bottom: -1%;
+  right: 2%;
+}
+
+.home-button {
+  position: absolute;
+  margin: 1.5%;
+}
+
+.home-button:hover {
+  cursor: pointer;
+}
+
+.home-button img {
+  width: 70%;
+}
+
+.modal {
+  display: none;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  box-sizing: border-box;
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 2%;
+  text-align: center;
+  border-radius: 3rem;
+}
+
+/* Modal Vcall */
+.content-vcall {
+  width: 32%;
+  padding: 3%;
+}
+
+.content-vcall h4 {
+  margin: auto;
+  margin-bottom: 7%;
+}
+
+.content-vcall h5 {
+  font-weight: normal;
+}
+
+/* Main entertainment page */
+.box-wrapper {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  width: 35%;
+  height: 20%;
+  display: flex;
+}
+
+.box-wrapper img {
+  display: inline-block;
+  width: 30%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.box-wrapper p {
+  color: white;
+  font-size: 1.2vw;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.musicvideo{
+  width: 25% !important;
+}
+
+.box-wrapper a:hover{
+  text-decoration: none;
+}
+
+.box {
+  width: 50%;
+  margin: 1%;
+  background-color: rgba(221, 77, 244, 0.16);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 15px rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+}
+
+/* PAGE */
+.content-wrapper {
+  background-color: rgba(221, 77, 244, 0.16);
+  color: white;
+  width: 60%;
+  height: 75%;
+  padding: 1%;
+  position: relative;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 15px rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+}
+
+.back-button {
+  height: 100%;
+}
+
+.back-button img {
+  width: 40%;
+  display: inline-block;
+}
+
+.back-button p {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  font-size: 1vw;
+  margin: 0 1% 0 0;
+}
+
+.left-wrapper {
+  width: 20%;
+  float: left;
+}
+
+.video-wrapper-2 {
+  width: 80%;
+  height: 95%;
+  float: right;
+  position: relative;
+}
+
+.video-wrapper-2 iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 95%;
+  height: 80%;
+  z-index: 1;
+  /* border: 5px solid blue; */
+}
+
+.video-wrapper-2 p{
+  position: absolute;
+  width: 95%;
+  right: 0;
+}
+
+.caption1{
+  bottom: 4%;
+}
+
+.caption2{
+  bottom: -4%;
+}
+
+/* LIVE MC */
+.live-mc {
+  position: absolute;
+  right: 2vw;
+  width: 20vw;
+  height: 60vh;
+  bottom: -5vh;
+  background: url('../images/tvmc.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 80% auto;
+  z-index: 10;
+  /* border: 1px solid red; */
+}
+
+.video-mc {
+  position: absolute;
+  right: 0.9vw;
+  width: 22vw;
+  height: 66vh;
+  bottom: 10vh;
+  /* border: 1px solid black; */
+}
+
+.video-wrapper {
+  position: relative;
+  top: 57.5%;
+  align-items: center;
+  margin: auto;
+  width: 60%;
+  height: 40%;
+  z-index: 9;
+  /* border: 1px solid blue; */
+}
+
+.video-wrapper iframe {
+  -webkit-mask-image: url('../images/mask2.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  width: 95%;
+  height: 80%;
+  margin: auto;
+  z-index: 9;
+}

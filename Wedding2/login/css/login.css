@@ -1,0 +1,271 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #5704AA; */
+}
+
+.mobile-content{
+  background-image: url('../images/mobileview.png');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loginEnglish{
+  display: none;
+}
+
+.desktop-content {
+  /* background-color: #5704AA; */
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-content {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/background.png');
+  background-size: cover;
+}
+
+.login-page {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 95%;
+  height: 90%;
+}
+
+.pen {
+  position: absolute;
+  bottom: 5%;
+  right: 1%;
+  width: 25%;
+}
+
+/* LOGIN */
+.login-form {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
+}
+
+.login-title {
+  width: 100%;
+  margin-bottom: 7%;
+}
+
+.form-control {
+  border: 0;
+  border-bottom: 1px solid #4F4F4F;
+  background-color: inherit;
+  padding: 3px;
+  width: 70%;
+}
+
+.text-kecil {
+  font-size: 12px;
+}
+
+input[type="text"]:focus {
+  border: 0;
+  border-bottom: 1px solid #4F4F4F;
+  box-shadow: none;
+  outline: 0 none;
+  background-color: inherit;
+}
+
+/* Button login */
+.btn-login {
+  width: 70%;
+  height: 40%;
+  background-color: #F4F5F7;
+  color: #6F02D5;
+  border: 0;
+  box-shadow: -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 5px 7px 10px 5px rgba(4, 61, 170, 0.11);
+  -webkit-box-shadow: -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 5px 7px 10px 5px rgba(4, 61, 170, 0.11);
+  -moz-box-shadow: -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 5px 7px 10px 5px rgba(4, 61, 170, 0.11);
+  border-radius: 14px;
+  margin: 6% 0;
+}
+
+.btn-login:focus {
+  outline: none !important;
+  background-color: #E5E7E8;
+  box-shadow: -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 5px 7px 10px 5px rgba(4, 61, 170, 0.11), inset -2px 2px 12px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 5px 7px 10px 5px rgba(4, 61, 170, 0.11), inset -2px 2px 12px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -4px -4px 10px 5px rgba(255, 255, 255, 0.8), 5px 7px 10px 5px rgba(4, 61, 170, 0.11), inset -2px 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.idSalah {
+  display: none;
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  width: 90%;
+  color: #F40000;
+}
+
+.lupa-id {
+  cursor: pointer;
+  color: #354E9D;
+}
+
+.blur-background {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.modal {
+  display: none;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  box-sizing: border-box;
+  background-color: #fefefe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 2%;
+  /* text-align: left; */
+  border-radius: 2rem;
+  border: 0;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  display: inline;
+  /* margin: 5px 15px 0 0; */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content-forgetID {
+  width: 30%;
+  padding: 2%;
+}
+
+.content-forgetID h6 {
+  font-weight: bold;
+  margin-bottom: 5%;
+  display: inline-block;
+}
+
+.content-forgetID p {
+  font-size: 14px;
+}
+
+.content-forgetID img {
+  width: 40%;
+}
+
+.nohp {
+  color: #6E12CB;
+}
+
+.icon-whatsapp{
+  margin-top: 2%;
+}
+
+/* Toggle */
+.toggle-login {
+  position: absolute;
+  top: 15%;
+  right: 22%;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative !important;
+  height: 32px;
+  width: 89px;
+  transform: scale(1.5);
+  top: 14px;
+  overflow: hidden;
+  box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.2), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 4px -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: -2px;
+  height: 32px;
+  width: 50px;
+  transform: translateX(0px);
+  background-image: url(../images/indo.png);
+  background-size: cover;
+  -webkit-transition: transform 0.4s ease-in;
+  -moz-transition: transform 0.4s ease-in;
+  -o-transition: transform 0.4s ease-in;
+  transition: transform 0.4s ease-in;
+}
+
+.checkbox:checked+.label .ball {
+  transform: translateX(43px);
+}
+
+.flag-left {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  height: 32px;
+  width: 40px;
+  border-radius: 10px 0 0 10px;
+  opacity: 50% !important;
+}
+
+.flag-left-off {
+  width: 52px;
+  opacity: 50%;
+  /* box-shadow: -5px -3px 10px 5px rgba(255, 255, 255, 0.8), 5px 3px 10px 5px rgba(4, 61, 170, 0.2), inset -3px 2px 5px rgba(0, 0, 0, 0.1), inset 2px 2px 10px rgba(47, 128, 237, 0.2); */
+}
+
+.flag-right {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  height: 32px;
+  width: 47px;
+  border-radius: 10px;
+  opacity: 50%;
+}
+
+.flag-right-off {
+  width: 58px;
+  opacity: 50%;
+  right: -4px;
+  /* box-shadow: -5px -3px 10px 5px rgba(255, 255, 255, 0.8), 5px 3px 10px 5px rgba(4, 61, 170, 0.2), inset -3px 2px 5px rgba(0, 0, 0, 0.1), inset 2px 2px 10px rgba(47, 128, 237, 0.2); */
+}
