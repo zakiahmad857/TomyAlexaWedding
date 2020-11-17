@@ -15,6 +15,17 @@ body{
   font-family: 'Kodchasan', sans-serif;
 }
 
+.entertainment-page2 {
+  background-image: url("../images/entertainment-background2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 90%;
+  overflow: hidden !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  font-family: 'Kodchasan', sans-serif;
+}
+
 .content-vcall .timer {
   padding: 2%;
   width: 30%;
@@ -129,7 +140,7 @@ body{
 .box-wrapper {
   position: absolute;
   top: 40%;
-  left: 20%;
+  left: 40%;
   width: 35%;
   height: 20%;
   display: flex;
