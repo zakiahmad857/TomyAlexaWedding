@@ -2,6 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/ahmadza3/kondanganvirtual.com/
-    - /bin/cp -R AlexaTomyWedding $DEPLOYPATH
-    - /bin/cp -R AlexaTomyAkad $DEPLOYPATH
+    - /bin/cp -R Wedding1 $DEPLOYPATH
+    - /bin/cp -R Wedding2 $DEPLOYPATH
     - /bin/cp index.html $DEPLOYPATH
