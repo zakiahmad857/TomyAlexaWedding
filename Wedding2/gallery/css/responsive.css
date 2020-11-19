@@ -9,7 +9,7 @@
     top: 64%;
   }
   .parent-prewed{
-    top: 10%;
+    top: 4%;
   }
   .outer-wrapper h6{
     font-size: 1.4vw;
@@ -42,7 +42,7 @@
   }
 
   .parent-prewed{
-    top: 6%;
+    top: 0%;
   }
 }
 
@@ -61,7 +61,7 @@
   }
 
   .parent-prewed{
-    top: 9%;
+    top: 3%;
   }
 
 }
@@ -85,6 +85,6 @@
   }
 
   .parent-prewed{
-    top: 9%;
+    top: 3%;
   }
 }

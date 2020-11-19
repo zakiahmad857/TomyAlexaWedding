@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:image" itemprop="image" content="/images/bride.png">
-  <meta property="og:description" content="Tomy & Alexa Virtual Wedding Reception">
+  <meta property="og:description" content="Dian & Irham Virtual Wedding Reception">
 
-  <title>Alexa & Tomy | Virtual Wedding</title>
+  <title>Dian & Irham | Virtual Wedding</title>
   <link rel="icon" href="../images/favicon-16.png">
 
   <!-- Bootstrap -->
@@ -45,8 +45,9 @@
   <!-- lOADER -->
   <div id="loading" class="loader">
     <div class="load-content">
-      <img src="images/loadtext.webp" alt="text" class="loadtext">
-      <img src="images/loading.svg" alt="loading" class="loader-icon"/>
+      <img style="width:60%;height:auto;margin-left:auto;margin-right:auto;"src="../images/loadtext.png" alt="text" class="loadtext">
+      <p></p>
+      <img style="width:10%;height:auto;margin-left:auto;margin-right:auto;margin-top:5%;" src="../images/loading.svg" alt="loading" class="loader-icon"/>
     </div>
 
   </div>
@@ -70,15 +71,6 @@
         </div>
       </div>
 
-      <div class="countdown countdown-page">
-        <div class="inner-countdown">
-          <span class="vl"></span>
-          <p class="lang" key="countdown">Bertemu mempelai dalam</p>
-          <span>- </span>
-          <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span>
-        </div>
-      </div>
-
       <div class="content-wrapper">
         <h4 class="lang" key="amplopTitle">Amplop Digital</h4>
         <div class="content-left">
@@ -87,21 +79,21 @@
             <div class="qrcode ovo">
               <p>Scan QR via OVO</p>
               <img src="images/ovo.png" alt="ovo">
-              <p class="desc-angpao lang" key="amplopHp">Nomor Telfon 081316660643</p>
-              <p>a/n Alexandra R</p>
+              <p class="desc-angpao lang" key="amplopHp">Nomor Telfon 08568444866</p>
+              <p>a/n Ahmad Zaki</p>
             </div>
             <div class="qrcode gopay">
               <p class="lang">Scan QR via Gopay</p>
               <img src="images/gopay.png" alt="gopay">
-              <p class="desc-angpao lang" key="amplopHp">Nomor Telfon 081316660643</p>
-              <p>a/n Alexandra R</p>
+              <p class="desc-angpao lang" key="amplopHp">Nomor Telfon 08568444866</p>
+              <p>a/n Ahmad Zaki</p>
             </div>
             <div class="qrcode bca">
               <p>Scan QR via BCA</p>
               <img src="images/bca.png" alt="bca">
               <p class="desc-angpao lang" key="amplopRek">Nomor rekening</p>
-              <p class="desc-angpao">6790050809</p>
-              <p>a/n Alexandra R</p>
+              <p class="desc-angpao">6080308025</p>
+              <p>a/n Ahmad Zaki</p>
             </div>
           </div>
         </div>
@@ -109,7 +101,7 @@
         <div class="content-right">
           <span class="vl2"></span>
           <p class="lang" key="amplopText2">Kamu juga bisa mengirimkan kado pernikahan ke alamat di bawah ini:</p>
-          <p class="alamat">Jl. Mawar no 26 Komp.deplu Pondok Aren, Tangerang Selatan 15225</p>
+          <p class="alamat">Komplek Pondok Hijau Indah Blok H no. 16, Kab. Bandung Barat - 40559</p>
         </div>
 
 
@@ -224,13 +216,6 @@
       }
     });
 
-    var endTime = new Date("5 September 2020 " + timeSet + " GMT+07:00");
-
-    console.log("endtimeeeee" + endTime);
-
-    endTime = (Date.parse(endTime) / 1000);
-
-    var timeLeft;
 
     function httpGet(theUrl)
   {
@@ -242,80 +227,10 @@
 
   var masuk = false;
 
-    function makeTimer() {
 
-      var coba = new Date();
-      //var obj = JSON.parse(coba);
-
-      //timeNow = (obj.unixtime);
-      timeNow = (Date.parse(coba) / 1000);
-
-      var timeLeft = endTime - timeNow;
-      console.log("timeleft " + timeLeft);
-      var days = Math.floor(timeLeft / 86400);
-      var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
-      var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
-      var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
-
-      if (hours < "10") {
-        hours = "0" + hours;
-      }
-      if (minutes < "10") {
-        minutes = "0" + minutes;
-      }
-      if (seconds < "10") {
-        seconds = "0" + seconds;
-      }
-
-      if(hours <= "23" && hours >= "7"){
-        $(".countdown").css("display", "none");
-      } else {
-        $(".countdown").css("display", "block");
-      }
-
-      $(".hours").html(hours + "<span> :</span>");
-      $(".minutes").html(minutes + "<span> :</span>");
-      $(".seconds").html(seconds);
-
-      console.log(hours + ":" + minutes + ":" + seconds);
-
-      // Popup Vcall
-      if (timeLeft <= 0 && timeLeft >= -360) {
-
-        $("#vcallModal").css('display', 'block');
-
-        var counterVcall;
-        if(masuk == false){
-            counterVcall = 4;
-            masuk = true;
-
-            var interval = setInterval(function() {
-            // Display 'counter' wherever you want to display it.
-            counterVcall--;
-            $(".seconds2").html(counterVcall);
-
-            console.log("countervcall " + counterVcall);
-            if (counterVcall == 0) {
-              // Display a login box
-              clearInterval(interval);
-              $("#vcallModal").css('display', 'block');
-              console.log(dirPath);
-              var fullPath = homePath + "/Vcall";
-              console.log(fullPath);
-              window.location = fullPath;
-              // return false;
-            }
-          }, 1000);
-          }
-
-      }
-
-    }
     // end of function maketimercall
 
-    setInterval(function() {
-      makeTimer();
-    }, 1000);
+
   </script>
 </body>
 

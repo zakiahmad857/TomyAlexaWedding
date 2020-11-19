@@ -164,17 +164,16 @@ body{
 .parent-prewed{
   /* border: 1px solid orange; */
   position: absolute;
-  width: 25%;
+  width: 28.5%;
   height: 40%;
-  top: 5.5%;
-  left: 37%;
+  top: -0.5%;
+  left: 33.5%;
 }
 
 .prewed{
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../images/prewed-idle.png');
   background-size: 130% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -184,7 +183,6 @@ body{
 }
 
 .div-prewed:hover~.prewed {
-  background: url('../images/prewed-select.png');
   background-size: 130% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -215,17 +213,16 @@ body{
 .parent-lamaran{
   /* border: 1px solid orange; */
   position: absolute;
-  width: 24.5%;
+  width: 28.5%;
   height: 40%;
-  top: 31%;
-  left: 21.5%;
+  top: 28.5%;
+  left: 16.5%;
 }
 
 .lamaran{
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../images/lamaran-idle.png');
   background-size: 130% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -235,7 +232,6 @@ body{
 }
 
 .div-lamaran:hover~.lamaran {
-  background: url('../images/lamaran-select.png');
   background-size: 130% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -266,18 +262,17 @@ body{
 .parent-akad{
   /* border: 1px solid orange; */
   position: absolute;
-  width: 24%;
-  height: 40%;
-  top: 31%;
-  left: 53%;
+  width: 28.5%;
+  height: 33%;
+  top: 30%;
+  left: 50%;
 }
 
 .akad{
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../images/akad-idle.png');
-  background-size: 128% auto;
+  background-size: 117% auto;
   background-repeat: no-repeat;
   background-position: center;
   /* border: 1px solid blue; */
@@ -286,7 +281,7 @@ body{
 }
 
 .div-akad:hover~.akad {
-  background: url('../images/akad-select.png');
+
   background-size: 128% auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -379,24 +374,24 @@ a, a:hover, a:focus{
 /* LIVE MC */
 .live-mc {
   position: absolute;
-  right: 2%;
-  width: 20%;
-  height: 60%;
-  bottom: -10%;
+  right: 2vw;
+  width: 20vw;
+  height: 60vh;
+  bottom: -5vh;
   background: url('../images/tvmc.png');
   background-position: bottom;
   background-repeat: no-repeat;
-  background-size: 150% auto;
+  background-size: 80% auto;
   z-index: 10;
   /* border: 1px solid red; */
 }
 
 .video-mc {
   position: absolute;
-  right: 1.5%;
-  width: 20%;
-  height: 60%;
-  bottom: 2%;
+  right: 0.9vw;
+  width: 22vw;
+  height: 66vh;
+  bottom: 10vh;
   /* border: 1px solid black; */
 }
 

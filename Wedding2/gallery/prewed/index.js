@@ -1,6 +1,7 @@
 /* =================================
 MAGNIFIC POPUP
 =================================== */
+
 $(document).ready(function(){
   $('.foto1').magnificPopup({
       disableOn: 700,
@@ -11,6 +12,13 @@ $(document).ready(function(){
 
       fixedContentPos: false
     });
+    function noScroll() {
+  window.scrollTo(0, 0);
+}
+
+// add listener to disable scroll
+window.addEventListener('scroll', noScroll);
+
 
   $('.foto1').magnificPopup({
     delegate: 'a',
