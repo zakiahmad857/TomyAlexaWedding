@@ -71,14 +71,7 @@
       <div class="home-button">
         <img src="images/home-button.png" alt="">
       </div>
-      <div class="countdown countdown-page">
-        <div class="inner-countdown">
-          <span class="vl"></span>
-          <p class="lang" key="countdown">Bertemu mempelai dalam</p>
-          <span>- </span>
-          <span class="hours textResize"></span><span class="minutes textResize"></span><span class="seconds textResize"></span>
-        </div>
-      </div>
+
 
 
     <div class="outer-wrapper">
@@ -314,36 +307,30 @@
 
     }
 
-    $.ajax({
-      url: "https://webnikahapi.arthatronic.com/api/user/",
-      async: false,
-      type: "GET",
-      global: false,
-      // Fetch the stored token from localStorage and set in the header
-      headers: {
-        "Authorization": "Token " + cookieToken
-      },
-      success: function(result) {
-        console.log(result);
-        name = result[0].name;
-        timeSet = result[0].time;
-        idPosition = result[0].id_room;
-        console.log(name);
-        console.log(timeSet);
+    // $.ajax({
+    //   url: "https://webnikahapi.arthatronic.com/api/user/",
+    //   async: false,
+    //   type: "GET",
+    //   global: false,
+    //   // Fetch the stored token from localStorage and set in the header
+    //   headers: {
+    //     "Authorization": "Token " + cookieToken
+    //   },
+    //   success: function(result) {
+    //     console.log(result);
+    //     name = result[0].name;
+    //     timeSet = result[0].time;
+    //     idPosition = result[0].id_room;
+    //     console.log(name);
+    //     console.log(timeSet);
+    //
+    //   },
+    //   error: function(err) {
+    //     console.log(err);
+    //   }
+    // });
 
-      },
-      error: function(err) {
-        console.log(err);
-      }
-    });
 
-    var endTime = new Date("5 September 2020 " + timeSet + " GMT+07:00");
-
-    console.log("endtimeeeee" + endTime);
-
-    endTime = (Date.parse(endTime) / 1000);
-
-    var timeLeft;
 
       function httpGet(theUrl)
   {
@@ -353,82 +340,7 @@
     return xmlHttp.responseText;
   }
 
-  var masuk = false;
 
-    function makeTimer() {
-
-      var coba = new Date();
-      //var obj = JSON.parse(coba);
-
-      //timeNow = (obj.unixtime);
-      timeNow = (Date.parse(coba) / 1000);
-
-      var timeLeft = endTime - timeNow;
-      console.log("timeleft " + timeLeft);
-      var days = Math.floor(timeLeft / 86400);
-      var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
-      var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
-      var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
-
-      if (hours < "10") {
-        hours = "0" + hours;
-      }
-      if (minutes < "10") {
-        minutes = "0" + minutes;
-      }
-      if (seconds < "10") {
-        seconds = "0" + seconds;
-      }
-
-      // if(hours <= "23" && hours >= "7"){
-      //   $(".countdown").css("display", "none");
-      // } else {
-      //   $(".countdown").css("display", "block");
-      // }
-
-      $(".hours").html(hours + "<span> :</span>");
-      $(".minutes").html(minutes + "<span> :</span>");
-      $(".seconds").html(seconds);
-
-      console.log(hours + ":" + minutes + ":" + seconds);
-
-      // Popup Vcall
-      if (timeLeft <= 0 && timeLeft >= -360) {
-
-        $("#vcallModal").css('display', 'block');
-
-        var counterVcall;
-        if(masuk == false){
-            counterVcall = 4;
-            masuk = true;
-
-            var interval = setInterval(function() {
-            // Display 'counter' wherever you want to display it.
-            counterVcall--;
-            $(".seconds2").html(counterVcall);
-
-            console.log("countervcall " + counterVcall);
-            if (counterVcall == 0) {
-              // Display a login box
-              clearInterval(interval);
-              $("#vcallModal").css('display', 'block');
-              console.log(dirPath);
-              var fullPath = homePath + "/Vcall";
-              console.log(fullPath);
-              window.location = fullPath;
-              // return false;
-            }
-          }, 1000);
-          }
-
-      }
-
-    }
-    // end of function maketimercall
-
-    setInterval(function() {
-      makeTimer();
-    }, 1000);
   </script>
 
 </body>

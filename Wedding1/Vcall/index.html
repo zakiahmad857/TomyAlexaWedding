@@ -46,8 +46,9 @@
   <!-- lOADER -->
   <div id="loading" class="loader">
     <div class="load-content">
-      <img src="images/loadtext.webp" alt="text" class="loadtext">
-      <img src="images/loading.svg" alt="loading" class="loader-icon" />
+      <img style="width:60%;height:auto;margin-left:auto;margin-right:auto;"src="../images/loadtext.png" alt="text" class="loadtext">
+      <p></p>
+      <img style="width:10%;height:auto;margin-left:auto;margin-right:auto;margin-top:5%;" src="images/loading.svg" alt="loading" class="loader-icon"/>
     </div>
 
   </div>
@@ -402,12 +403,17 @@
 
     // TOKEN DATA
     var name = null;
-    var vcallPos = null;
+    var vcallPos;
+    if(localStorage.getItem("uid")!=null)
+      vcallPos = localStorage.getItem("uid");
+    else
+      vcallPos = "9999";
     var usernameCall = null;
     var startTime = null;
     var idSalah = null;
     var idPosisi = null;
     var room;
+
 
 
     cookieToken = $.cookie("token");
@@ -419,33 +425,34 @@
       var loginPath = homePath + "/login";
       window.location = loginPath;
     }
+    room = 1;
 
-    $.ajax({
-      url: "https://webnikahapi.arthatronic.com/api/user/",
-      async: false,
-      type: "GET",
-      global: false,
-      // Fetch the stored token from localStorage and set in the header
-      headers: {
-        "Authorization": "Token " + cookieToken
-      },
-      success: function(result) {
-        console.log(result);
-        vcallPos = result[0].id_room;
-        room = result[0].room;
-        idPosisi = result[0].id_room;
-
-        startTime = result[0].time;
-        console.log(vcallPos);
-        console.log(room);
-        console.log("waktu vcall " + startTime);
-        usernameCall = result[0].name;
-        console.log(usernameCall);
-      },
-      error: function(err) {
-        console.log(err);
-      }
-    });
+    // $.ajax({
+    //   url: "https://webnikahapi.arthatronic.com/api/user/",
+    //   async: false,
+    //   type: "GET",
+    //   global: false,
+    //   // Fetch the stored token from localStorage and set in the header
+    //   headers: {
+    //     "Authorization": "Token " + cookieToken
+    //   },
+    //   success: function(result) {
+    //     console.log(result);
+    //     vcallPos = result[0].id_room;
+    //     room = result[0].room;
+    //     idPosisi = result[0].id_room;
+    //
+    //     startTime = result[0].time;
+    //     console.log(vcallPos);
+    //     console.log(room);
+    //     console.log("waktu vcall " + startTime);
+    //     usernameCall = result[0].name;
+    //     console.log(usernameCall);
+    //   },
+    //   error: function(err) {
+    //     console.log(err);
+    //   }
+    // });
 
     // Nama sendiri
     // if (idPosisi == 1111) {
@@ -492,25 +499,25 @@
     var groupVcall = [];
 
 
-    $.ajax({
-      url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
-      async: false,
-      type: "GET",
-      global: false,
-      success: function(result) {
-        console.log("get time group");
-        console.log(result);
-        for (var i = 0; i < result.length; i++) {
-          var item = result[i].name;
-          groupVcall.push(item);
-        }
-        console.log("Group Call ");
-        console.log(groupVcall);
-      },
-      error: function(err) {
-        console.log(err);
-      }
-    });
+    // $.ajax({
+    //   url: "https://webnikahapi.arthatronic.com/api/user/" + timeGroup,
+    //   async: false,
+    //   type: "GET",
+    //   global: false,
+    //   success: function(result) {
+    //     console.log("get time group");
+    //     console.log(result);
+    //     for (var i = 0; i < result.length; i++) {
+    //       var item = result[i].name;
+    //       groupVcall.push(item);
+    //     }
+    //     console.log("Group Call ");
+    //     console.log(groupVcall);
+    //   },
+    //   error: function(err) {
+    //     console.log(err);
+    //   }
+    // });
 
     var id_room;
 
@@ -520,6 +527,9 @@
       var id_room = "room2";
     }
 
+    var startnow = new Date();
+    var minutes10 = parseInt(startnow.getMinutes()) - (parseInt(startnow.getMinutes())%6);
+    startTime = startnow.getHours() + ":" + minutes10;
 
     // Jam video call
     var startTimeDate = new Date("5 September 2020 " + startTime + " GMT+07:00")
@@ -1576,10 +1586,51 @@
                 fit: "cover"
               })
             }
-
-
-            // publish local stream
+            console.log("masuk join gak yaaa");
             publish(rtc)
+            // publish local streams
+
+            setInterval(function() {
+              if(localStorage.getItem("awal") == null){
+                console.log("published gamasuk");
+                localStorage.setItem("awal", "1");
+                if ($('#video1 > div').length<2){
+                  idPosisi = "1111";
+                  console.log("masuk 1111");
+                }
+                else if($('#video2 > div').length<2){
+                  idPosisi = "2222";
+                  console.log("masuk 2222");
+                }
+                else if($('#video3 > div').length<2){
+                  idPosisi = "3333";
+                  console.log("masuk 3333");
+                }
+                else if($('#video4 > div').length<2){
+                  idPosisi = "4444";
+                  console.log("masuk 4444");
+                }
+                else if($('#video5 > div').length<2){
+                  idPosisi = "5555";
+                  console.log("masuk 5555");
+                }
+                else if($('#video6 > div').length<2){
+                  idPosisi = "6666";
+                  console.log("masuk 6666");
+                }
+                else if($('#video7 > div').length<2){
+                  idPosisi = "7777";
+                  console.log("masuk 7777");
+                }
+                localStorage.setItem("uid", idPosisi);
+                location.reload();
+
+              } else{
+
+                console.log("published masuk");
+              }
+            },3000);
+
           }, function(err) {
             //Toast.error("stream init failed, please open console see more detail")
             console.error("init local stream failed ", err)
